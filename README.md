@@ -38,10 +38,14 @@ See [package.json]() for full list of current dependencies
  - [x] (^) Include eslint in test-watch?
  - [x] (^) Combined build and test watch
  - [..] (^) Setup Mocha
+    - [ ] (-) Setup global test objects
+ - [ ] (^) Karma webpack integration (for tests in browser)
+ - [ ] (-) Setup EsDoc
+ - [ ] (-) Prettier for autofix
  - [ ] (-) package.json main script (install/run application and open browser)
  - [ ] (-) clean output from watch script
  - [ ] (v) parameterize directories in package.json scripts?
-  - [ ] better npm script?
+    - [ ] better npm script?
 
 **Application**
  - [..] Local Storage DataService

@@ -13,8 +13,8 @@ export default class LocalStorageService {
    * @returns {string} key
    */
   static save({ key, val } : { key: string, val: any }) {
-    key = val;
-    return key;
+
+    localStorage.setItem(key, val);
   }
 
   static get({ key } : { key: string }) {

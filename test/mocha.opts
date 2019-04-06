@@ -1,4 +1,5 @@
 --require @babel/polyfill
 --require @babel/register
 --require ignore-styles
+--require source-map-support
 src/**/*.spec.js
