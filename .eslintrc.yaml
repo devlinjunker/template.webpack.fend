@@ -25,6 +25,7 @@ extends:
   - eslint:recommended
   - prettier
   - prettier/flowtype
+  - plugin:flowtype/recommended
 
 
 # Custom Rules Below
@@ -153,3 +154,12 @@ rules:
   prefer-arrow-callback:
     - error
     - allowNamedFunctions: true
+
+  # Flow Type Rules
+  flowtype/require-return-type:
+    - warn
+    - always
+    - excludeArrowFunctions: true
+  flowtype/require-parameter-type:
+    - warn
+    - excludeArrowFunctions: true

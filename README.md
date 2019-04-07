@@ -17,15 +17,17 @@ See [package.json]() for full list of current dependencies
 
 ### Dev/Tests/Running
 
-`npm run dev-watch` to run the webpack development server and watch for changes on the files to reload
 
-`npm run dev` to run a development version of the application
-
-`npm run test` to run all of the unit tests for the application
+`npm run start-watch` to run Karma + Mocha and watch for changes while also opening the Webpack dev server that will recompile the project and reload the webpage on file changes on http://localhost:3000
 
 `npm run test-watch` to run Karma + Mocha and all of the tests associated with the project and watch for changes on the files to re-run the tests
 
-`npm run watch` to run Mocha and watch for changes while also starting the Webpack dev server that will recompile the project and reload the webpage on file changes
+`npm run dev-watch` to run the only webpack development server and watch for changes on the files to reload
+
+`npm run test` to run all of the unit tests for the application one time
+
+`npm run dev` to run a development version of the application
+
 
 `npm run build` ... TO DO: compile application to production version
 
@@ -39,7 +41,8 @@ See [package.json]() for full list of current dependencies
  - [x] (^) Combined build and test watch
  - [..] (^) Setup Mocha
     - [ ] (-) Setup global test objects
- - [ ] (^) Karma webpack integration (for tests in browser)
+ - [x] (^) Karma webpack integration (for tests in browser)
+ - [x] (^) Flowtype eslint plugin
  - [ ] (-) Setup EsDoc
  - [ ] (-) Prettier for autofix
  - [ ] (-) package.json main script (install/run application and open browser)

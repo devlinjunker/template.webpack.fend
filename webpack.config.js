@@ -3,7 +3,10 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const FlowWebpackPlugin = require('flow-webpack-plugin')
 
-module.exports = {
+const webpack = require('webpack');
+const WebpackDevServer = require('webpack-dev-server');
+
+const config =  {
   mode: 'development',
   // Each entry will be loaded into webpage via <script> tags
   entry: {
@@ -16,9 +19,7 @@ module.exports = {
   },
   // Turn off for production (see https://webpack.js.org/guides/production)
   devtool: "inline-source-map",
-  devServer: {
-    contentBase: "./public"
-  },
+
   resolve: {
     extensions: ['.js'],
     modules: ['node_modules'],
@@ -43,6 +44,8 @@ module.exports = {
       failOnErrorWatch: false,
       reportingSeverity: 'error'
     }),
+
+    new webpack.HotModuleReplacementPlugin({})
   ],
   module: {
     rules: [
@@ -70,4 +73,22 @@ module.exports = {
       }
     ]
   }
-}
+};
+
+module.exports = config;
+
+// Start Webpack Dev Server Manually
+const host = '0.0.0.0';
+const port = 3000;
+WebpackDevServer.addDevServerEntrypoints(config, {
+  contentBase: "./public",
+  hot: true,
+  host,
+  port
+});
+const compiler = webpack(config);
+new WebpackDevServer(compiler).listen(port, host, function (err, result) {
+  if (err) {
+    console.log(err);
+  }
+});

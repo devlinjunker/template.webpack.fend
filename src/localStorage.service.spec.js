@@ -21,6 +21,8 @@ describe('LocalStorage.service', () => {
 
     it('should use local storage to save value with key', () => {
       sandbox.spy(localStorage, 'setItem');
+      const key = 'test';
+      const val = 'val';
 
       LocalStorageService.save({
         key: 'test',
@@ -28,17 +30,47 @@ describe('LocalStorage.service', () => {
       });
 
       expect(localStorage.setItem).to.be.called;
-      // TOOD: Check parameters
+      expect(localStorage.setItem.args[0][0]).to.equal(key);
+      expect(localStorage.setItem.args[0][1]).to.equal(val);
     });
 
-    it('should stringify objects before saving them');
+    it('should stringify objects before saving them', () => {
+      sandbox.spy(localStorage, 'setItem');
 
-    it('should be able to retrieve value using key wtih #get');
+      const val = {
+        test: 123
+      };
+      LocalStorageService.save({
+        key: 'abc',
+        val
+      });
+
+      const stringified = JSON.stringify(val);
+      expect(localStorage.setItem.args[0]).to.include(stringified);
+    });
+
+    it('should be able to retrieve value using key with #get', () => {
+      const val = 'test';
+      const key = 'abc';
+
+      LocalStorageService.save({
+        key,
+        val
+      });
+
+      const saved = LocalStorageService.get({
+        key
+      });
+
+      expect(saved).to.equal(val);
+    });
   });
 
   describe('#get', () => {
 
     it('should retrieve value from local storage using key');
+
+    it('should return object if object stored');
 
     it('should throw error if requesting key with no value assigned');
 

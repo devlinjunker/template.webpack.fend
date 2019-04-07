@@ -1,24 +1,33 @@
 /**
  * @flow
  */
+import _ from 'lodash';
 
 /**
- * DataService Class for Storing
+ * DataService Class for Storing Values in the LocalStorage in the browser
  */
 export default class LocalStorageService {
 
   /**
-   * Saves the value at the key provided in the Browser local storage
+   * Saves the value at the key provided in the browser localStorage
    *
-   * @returns {string} key
+   * @returns {undefined} undefined
    */
-  static save({ key, val } : { key: string, val: any }) {
+  static save({ key, val }: { key: string, val: any }) {
+    if (!_.isString(val)) {
+      val = JSON.stringify(val);
+    }
 
     localStorage.setItem(key, val);
   }
 
-  static get({ key } : { key: string }) {
-    console.log(key + 3);
-    return key;
+  /**
+   * Retrieves a value stored at the key in browser LocalStorage
+
+   * @returns {string | object} the value stored at the key in the LocalStorage
+   */
+  static get({ key }: { key: string }): string | Object {
+    const val = localStorage.getItem(key);
+    return val;
   }
 }

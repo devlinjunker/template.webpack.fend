@@ -1,7 +1,7 @@
 // Karma configuration
-// Generated on Fri Apr 05 2019 21:52:39 GMT-0700 (Pacific Daylight Time)
+const webpack = require('./webpack.config.js');
 
-module.exports = function(config) {
+const config = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -10,7 +10,7 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['browserify', 'mocha'],
+    frameworks: ['mocha'],
 
 
     // list of files / patterns to load in the browser
@@ -27,20 +27,10 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/**/*.js': ['eslint', 'browserify'],
+      'src/**/*.js': ['webpack'],
     },
 
-
-    // Configuration for browserify for imports and dependencies
-    browserify: {
-      debug: true,
-      transform: [ ['babelify', { presets: ["@babel/preset-env", "@babel/flow"] }] ]
-    },
-
-    // Configuration for eslint preprocessor that informs the user of any style errors
-    eslint: {
-      stopOnError: false,
-    },
+    webpack,
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
@@ -68,7 +58,7 @@ module.exports = function(config) {
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: [
-      'Chrome',
+      'ChromeHeadless',
       // 'Firefox'
     ],
 
@@ -82,3 +72,8 @@ module.exports = function(config) {
     concurrency: Infinity
   })
 }
+
+// Set browser to chrome to see tests
+// config.browsers = ['Chrome'];
+
+module.exports = config;
