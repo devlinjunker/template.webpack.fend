@@ -1,15 +1,7 @@
 /**
  * @flow
  */
-import sinon from 'sinon';
-import chai from 'chai';
-import sinonChai from 'sinon-chai';
-
 import LocalStorageService from './localStorage.service';
-
-chai.use(sinonChai);
-const sandbox = sinon.createSandbox();
-const expect = chai.expect;
 
 describe('LocalStorage.service', () => {
 

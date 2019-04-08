@@ -36,8 +36,7 @@ export default class LocalStorageService {
     try {
       const parsed = JSON.parse(val);
       return parsed;
-    /* eslint-disable */
-    } catch (e) {}
+    } catch (e) {} // eslint-disable-line
 
     return val;
   }

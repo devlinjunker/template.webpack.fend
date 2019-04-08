@@ -27,6 +27,9 @@ extends:
   - prettier/flowtype
   - plugin:flowtype/recommended
 
+globals:
+  expect: readonly
+  sandbox: readonly
 
 # Custom Rules Below
 rules:

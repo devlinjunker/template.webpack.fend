@@ -39,10 +39,10 @@ See [package.json]() for full list of current dependencies
  - [x] (^) Karma
  - [x] (^) Include eslint in test-watch?
  - [x] (^) Combined build and test watch
- - [..] (^) Setup Mocha
-    - [ ] (-) Setup global test objects
+ - [x] (^) Setup Mocha
+    - [..] (-) Setup global test objects
  - [x] (^) Karma webpack integration (for tests in browser)
-    - [ ] (^) Use rebuilt bundle when running tests
+    - [x] (^) Use rebuilt bundle when running tests
  - [x] (^) Flowtype eslint plugin
  - [ ] (-) Setup EsDoc
  - [ ] (-) Prettier for autofix

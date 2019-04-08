@@ -15,7 +15,7 @@ const config = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'src/**/*.js'
+      'test/test.bootstrap.js'
     ],
 
 
@@ -27,7 +27,7 @@ const config = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/**/*.js': ['webpack'],
+      'test/test.bootstrap.js': ['webpack', 'sourcemap']
     },
 
     webpack,
@@ -35,9 +35,7 @@ const config = function(config) {
     webpackMiddleware: {
       watchOptions: {
        aggregateTimeout: 300,
-       poll: 1000
-      },
-      writeToDisk: true
+      }
     },
 
     // test results reporter to use
