@@ -11,7 +11,6 @@ const config =  {
   // Each entry will be loaded into webpage via <script> tags
   entry: {
     app: "./src/entry.js",
-    other: "./src/localStorage.service.js"
   },
   output: {
     filename: "[name].bundle.js",
@@ -20,6 +19,7 @@ const config =  {
   },
   // Turn off for production (see https://webpack.js.org/guides/production)
   devtool: "inline-source-map",
+  watch: true,
 
   resolve: {
     extensions: ['.js'],
