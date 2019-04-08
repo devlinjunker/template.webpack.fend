@@ -1,0 +1,17 @@
+{
+  "source": "./src",
+  "destination": "./docs",
+  "excludes": ["entry.js", ".spec.js"],
+  "plugins": [{
+    "name":"esdoc-standard-plugin",
+    "option": {
+      "test": {
+        "source": "./src/",
+        "interfaces": ["describe", "it", "context"],
+        "includes": ["spec.js$"]
+      }
+    }
+  }, {
+    "name": "esdoc-flow-plugin"
+  }]
+}

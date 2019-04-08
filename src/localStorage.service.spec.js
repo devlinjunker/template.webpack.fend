@@ -3,7 +3,7 @@
  */
 import LocalStorageService from './localStorage.service';
 
-describe('LocalStorage.service', () => {
+describe('LocalStorageService', () => {
 
   afterEach(() => {
     sandbox.restore();

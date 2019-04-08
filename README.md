@@ -13,6 +13,7 @@ See [package.json]() for full list of current dependencies
  - Webpack Dev Server
  - Mocha, Chai, Sinon
  - Karma
+ - EsDoc
 
 
 ### Dev/Tests/Running
@@ -28,6 +29,9 @@ See [package.json]() for full list of current dependencies
 
 `npm run dev` to run a development version of the application
 
+`npm run doc` to generate static documention in the doc folder
+
+**TODO**
 
 `npm run build` ... TO DO: compile application to production version
 
@@ -44,8 +48,10 @@ See [package.json]() for full list of current dependencies
  - [x] (^) Karma webpack integration (for tests in browser)
     - [x] (^) Use rebuilt bundle when running tests
  - [x] (^) Flowtype eslint plugin
- - [ ] (-) Setup EsDoc
+ - [x] (-) Setup EsDoc
+    - [ ] (v) run before commit
  - [ ] (-) Prettier for autofix
+ - [ ] (-) production configuraiton and build
  - [ ] (-) package.json main script (install/run application and open browser)
  - [ ] (-) clean output from watch script
  - [ ] (v) parameterize directories in package.json scripts?
