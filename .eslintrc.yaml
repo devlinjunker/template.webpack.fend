@@ -159,7 +159,7 @@ rules:
   flowtype/require-return-type:
     - warn
     - always
-    - excludeArrowFunctions: true
+    - excludeMatching:
+      - "spec.js"
   flowtype/require-parameter-type:
     - warn
-    - excludeArrowFunctions: true

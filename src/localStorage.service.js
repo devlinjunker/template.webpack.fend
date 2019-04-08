@@ -28,6 +28,17 @@ export default class LocalStorageService {
    */
   static get({ key }: { key: string }): string | Object {
     const val = localStorage.getItem(key);
+
+    if (val === undefined || val === null) {
+      throw new Error();
+    }
+
+    try {
+      const parsed = JSON.parse(val);
+      return parsed;
+    /* eslint-disable */
+    } catch (e) {}
+
     return val;
   }
 }

@@ -68,11 +68,38 @@ describe('LocalStorage.service', () => {
 
   describe('#get', () => {
 
-    it('should retrieve value from local storage using key');
+    it('should retrieve value from local storage using key', () => {
+      sandbox.stub(localStorage, 'getItem').returns('abc');
+      const key = 'test';
 
-    it('should return object if object stored');
+      LocalStorageService.get({
+        key
+      });
 
-    it('should throw error if requesting key with no value assigned');
+      expect(localStorage.getItem).to.be.called;
+      expect(localStorage.getItem.args[0][0]).to.equal(key);
+    });
 
+    it('should return object if object stored', () => {
+      const key = 'abc';
+      const val = {
+        test: 123
+      };
+      LocalStorageService.save({
+        key,
+        val
+      });
+
+      const returned = LocalStorageService.get({ key });
+      expect(returned).to.deep.equal(val);
+    });
+
+    it('should throw error if requesting key with no value assigned', () => {
+      const key = 'unused_123_abc';
+
+      expect(() => {
+        LocalStorageService.get({ key });
+      }).to.throw();
+    });
   });
 });

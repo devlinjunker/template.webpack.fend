@@ -42,6 +42,7 @@ See [package.json]() for full list of current dependencies
  - [..] (^) Setup Mocha
     - [ ] (-) Setup global test objects
  - [x] (^) Karma webpack integration (for tests in browser)
+    - [ ] (^) Use rebuilt bundle when running tests
  - [x] (^) Flowtype eslint plugin
  - [ ] (-) Setup EsDoc
  - [ ] (-) Prettier for autofix
@@ -51,6 +52,6 @@ See [package.json]() for full list of current dependencies
     - [ ] better npm script?
 
 **Application**
- - [..] Local Storage DataService
+ - [x] Local Storage DataService
  - [ ] Controller/Component for saving/retrieving stored vals
  - [ ] Interface for displaying vals

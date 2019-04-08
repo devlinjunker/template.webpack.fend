@@ -8,7 +8,7 @@
   "scripts": {
     "dev-watch": "./node_modules/.bin/webpack --watch",
     "dev": "./node_modules/.bin/webpack-dev-server --open",
-    "test": "flow check && ./node_modules/.bin/mocha && eslint src/**",
+    "test": "node_modules/karma/bin/karma start --single-run",
     "test-watch": "node_modules/karma/bin/karma start",
     "start-watch": "(sleep 7s && open http://localhost:3000) & node_modules/karma/bin/karma start",
     "build": "./node_modules/.bin/webpack",

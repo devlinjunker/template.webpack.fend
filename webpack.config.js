@@ -11,6 +11,7 @@ const config =  {
   // Each entry will be loaded into webpage via <script> tags
   entry: {
     app: "./src/entry.js",
+    other: "./src/localStorage.service.js"
   },
   output: {
     filename: "[name].bundle.js",
