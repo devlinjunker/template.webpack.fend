@@ -29,7 +29,7 @@ See [package.json]() for full list of current dependencies
 
 `npm run dev` to run a development version of the application
 
-`npm run doc` to generate static documention in the doc folder
+`npm run doc` to generate static documentation in the doc folder
 
 **TODO**
 
@@ -51,7 +51,7 @@ See [package.json]() for full list of current dependencies
  - [x] (-) Setup EsDoc
     - [ ] (v) run before commit
  - [ ] (-) Prettier for autofix
- - [ ] (-) production configuraiton and build
+ - [ ] (-) production configuration and build
  - [ ] (-) package.json main script (install/run application and open browser)
  - [ ] (-) clean output from watch script
  - [ ] (v) parameterize directories in package.json scripts?
