@@ -44,25 +44,29 @@ See [package.json]() for full list of current dependencies
  - [x] (^) Include eslint in test-watch?
  - [x] (^) Combined build and test watch
  - [x] (^) Setup Mocha
-    - [..] (-) Setup global test objects
+    - [x] (-) Setup global test objects
  - [x] (^) Karma webpack integration (for tests in browser)
     - [x] (^) Use rebuilt bundle when running tests
  - [x] (^) Flowtype eslint plugin
  - [x] (-) Setup EsDoc
-    - [ ] (v) run before commit?
- - [ ] ~~(-) Prettier for autofix~~ (just use eslint atom plugin with fix)
- - [ ] (-) karma/mocha unit test debugging (with atom?)
+    - [ ] (v) run doc before commit?
+ - [x] ~~(-) Prettier for autofix~~ (just use eslint atom plugin with fix)
+ - [ ] (^) karma/mocha unit test debugging (with atom?)
  - [ ] (-) production configuration for webpack
  - [ ] (-) Basic UI Framework (Bootstrap? Foundation?)
-  - Minimize?
-  - No Warnings? No output in tests?
- - [ ] (-) Cypress UI Testing?
- - [ ] (-) package.json main script (install/run application and open browser? or just point to entry or AppController?)
+    - Minimize?
+    - No Warnings? No output in tests?
  - [ ] (-) cleaner output from watch script?
+ - [ ] (v) Cypress UI Testing?
+ - [ ] (v) package.json main script
+    - (install/run application and open browser? or just point to entry or AppController?)
  - [ ] (v) parameterize directories in package.json scripts?
-    - [ ] better npm script?
+    - better npm script?
 
 **Application**
  - [x] Local Storage DataService
  - [x] Controller/Component for saving/retrieving stored vals
  - [x] Interface for displaying vals
+
+**Questions**
+ - PostCSS vs CSS-Loader?

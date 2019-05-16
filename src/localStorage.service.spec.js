@@ -5,10 +5,6 @@ import LocalStorageService from './localStorage.service';
 
 describe('LocalStorageService', () => {
 
-  afterEach(() => {
-    sandbox.restore();
-  });
-
   describe('#save', () => {
 
     it('should use local storage to save value with key', () => {

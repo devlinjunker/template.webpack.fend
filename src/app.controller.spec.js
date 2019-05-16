@@ -46,6 +46,7 @@ describe('App Controller', () => {
       expect(saveStub).to.be.calledWith({ key: 'abc', val: 'val' });
     });
 
+    // TODO: finish spec
     it('should display message to user when saving');
   });
 
@@ -61,6 +62,7 @@ describe('App Controller', () => {
       expect(getStub).to.be.calledWith({ key: 'abc' });
     });
 
+    // TODO: finish spec
     it('should display message if error retrieving value');
   });
 
