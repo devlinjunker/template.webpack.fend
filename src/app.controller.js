@@ -2,13 +2,14 @@
  * @flow
  */
 import LocalStorageService from './localStorage.service';
-
+import './app.css';
 /**
- * [AppController description]
+ * Controller for the application
  */
 class AppController {
   keyInput: any;
   valInput: any;
+
   /**
    * Set up the app, generate html and set up event handlers
    */
@@ -18,8 +19,9 @@ class AppController {
     this.valInput = document.getElementById('value-input');
 
     document.getElementsByClassName('save-btn')[0].onclick = this.save.bind(this);
-
     document.getElementsByClassName('get-btn')[0].onclick = this.view.bind(this);
+
+    document.getElementsByClassName('clear-value-btn')[0].onclick = this.clearValue.bind(this);
   }
 
   /**
@@ -50,6 +52,14 @@ class AppController {
 
     // display value to user
     this.valInput.innerText = val;
+  }
+
+  /**
+   * Clear the value input element of text
+   * @return {void}
+   */
+  clearValue() {
+    this.valInput.innerText = '';
   }
 }
 

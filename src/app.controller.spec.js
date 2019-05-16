@@ -1,15 +1,78 @@
 /**
  * @flow
  */
+import AppController from './app.controller';
+import LocalStorageService from './localStorage.service';
 
 describe('App Controller', () => {
-  it('should set up handlers');
+  let controller;
+  const saveBtn = {};
+  const getBtn = {};
+  const clearBtn = {};
 
-  it('should save values with localStorage service');
+  describe('#constructor', () => {
+    it('should set up handlers', () => {
+      sandbox.stub(document, 'getElementsByClassName').callsFake((param): any => {
+        if (param === 'save-btn') {
+          return [saveBtn];
+        } else if (param === 'get-btn') {
+          return [getBtn];
+        } else {
+          return [clearBtn];
+        }
+      });
 
-  it('should display message to user when saving');
+      controller = new AppController();
 
-  it('should retrieve values from localStorage service');
+      expect(saveBtn.onclick).to.not.be.undefined;
+      expect(getBtn.onclick).to.not.be.undefined;
+      expect(clearBtn.onclick).to.not.be.undefined;
+    });
+  });
 
-  it('should display message if error retrieving value');
+  describe('#save', () => {
+    it('should save values with localStorage service', () => {
+      const saveStub = sandbox.stub(LocalStorageService, 'save');
+      controller.keyInput = {
+        value: 'abc'
+      };
+
+      controller.valInput = {
+        innerText: 'val'
+      };
+
+      controller.save();
+
+      expect(saveStub).to.be.calledWith({ key: 'abc', val: 'val' });
+    });
+
+    it('should display message to user when saving');
+  });
+
+  describe('#view', () => {
+    it('should retrieve values from localStorage service and display', () => {
+      const getStub = sandbox.stub(LocalStorageService, 'get');
+      controller.keyInput = {
+        value: 'abc'
+      };
+
+      controller.view();
+
+      expect(getStub).to.be.calledWith({ key: 'abc' });
+    });
+
+    it('should display message if error retrieving value');
+  });
+
+  describe('#clearValue', () => {
+    it('should clear the input value', () => {
+      controller.valInput = {
+        innerText: 'abc'
+      };
+
+      controller.clearValue();
+
+      expect(controller.valInput.innerText).to.equal('');
+    });
+  });
 });

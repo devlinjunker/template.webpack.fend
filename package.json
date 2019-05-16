@@ -6,11 +6,11 @@
   "version": "0.0.1",
   "main": " // TODO",
   "scripts": {
+    "start-watch": "(sleep 7s && open http://localhost:3000) & node_modules/karma/bin/karma start",
     "dev-watch": "./node_modules/.bin/webpack --watch",
     "dev": "./node_modules/.bin/webpack-dev-server --open",
     "test": "node_modules/karma/bin/karma start --single-run",
     "test-watch": "node_modules/karma/bin/karma start",
-    "start-watch": "(sleep 7s && open http://localhost:3000) & node_modules/karma/bin/karma start",
     "doc": "./node_modules/.bin/esdoc",
     "build": "./node_modules/.bin/webpack",
     "clean": " ## TODO: clean up project files"

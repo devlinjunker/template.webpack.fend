@@ -49,11 +49,15 @@ See [package.json]() for full list of current dependencies
     - [x] (^) Use rebuilt bundle when running tests
  - [x] (^) Flowtype eslint plugin
  - [x] (-) Setup EsDoc
-    - [ ] (v) run before commit
+    - [ ] (v) run before commit?
  - [ ] ~~(-) Prettier for autofix~~ (just use eslint atom plugin with fix)
- - [ ] (-) production configuration and build
+ - [ ] (-) production configuration for webpack
+ - [ ] (-) Basic UI Framework (Bootstrap? Foundation?)
+  - Minimize?
+  - No Warnings? No output in tests?
+ - [ ] (-) Cypress UI Testing?
  - [ ] (-) package.json main script (install/run application and open browser? or just point to entry or AppController?)
- - [ ] (-) cleaner output from watch script
+ - [ ] (-) cleaner output from watch script?
  - [ ] (v) parameterize directories in package.json scripts?
     - [ ] better npm script?
 

@@ -10,3 +10,7 @@ global.sandbox = sinon.createSandbox();
 const testsContext = require.context('../src', true, /.spec$/);
 
 testsContext.keys().forEach(testsContext);
+
+afterEach(() => {
+  sandbox.restore();
+});
