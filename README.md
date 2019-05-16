@@ -8,7 +8,7 @@ Simple web interface for storing values in the Browser Local Storage.
 ## Dependencies
 Node v6+ and npm
 
-See [package.json]() for full list of current dependencies
+See [package.json](https://github.com/devlinjunker/basic.webpack/blob/master/package.json) for full list of current dependencies
  - Webpack + Loaders
  - Babel
  - FlowJS
