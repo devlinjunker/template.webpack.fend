@@ -1,9 +1,51 @@
 window.esdocSearchIndex = [
   [
+    "localstoragedbapp/src/app.controller.js~appcontroller",
+    "class/src/app.controller.js~AppController.html",
+    "<span>AppController</span> <span class=\"search-result-import-path\">LocalStorageDBApp/src/app.controller.js</span>",
+    "class"
+  ],
+  [
     "localstoragedbapp/src/localstorage.service.js~localstorageservice",
     "class/src/localStorage.service.js~LocalStorageService.html",
     "<span>LocalStorageService</span> <span class=\"search-result-import-path\">LocalStorageDBApp/src/localStorage.service.js</span>",
     "class"
+  ],
+  [
+    "",
+    "test-file/src/app.controller.spec.js.html#lineNumber1",
+    "App Controller",
+    "test"
+  ],
+  [
+    "",
+    "test-file/src/app.controller.spec.js.html#lineNumber10",
+    "App Controller should display message if error retrieving value",
+    "test"
+  ],
+  [
+    "",
+    "test-file/src/app.controller.spec.js.html#lineNumber6",
+    "App Controller should display message to user when saving",
+    "test"
+  ],
+  [
+    "",
+    "test-file/src/app.controller.spec.js.html#lineNumber8",
+    "App Controller should retrieve values from localStorage service",
+    "test"
+  ],
+  [
+    "",
+    "test-file/src/app.controller.spec.js.html#lineNumber4",
+    "App Controller should save values with localStorage service",
+    "test"
+  ],
+  [
+    "",
+    "test-file/src/app.controller.spec.js.html#lineNumber2",
+    "App Controller should set up handlers",
+    "test"
   ],
   [
     "",
@@ -340,6 +382,48 @@ window.esdocSearchIndex = [
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
     "src/.external-ecmascript.js~undefined",
     "external"
+  ],
+  [
+    "src/app.controller.js",
+    "file/src/app.controller.js.html",
+    "src/app.controller.js",
+    "file"
+  ],
+  [
+    "src/app.controller.js~appcontroller#constructor",
+    "class/src/app.controller.js~AppController.html#instance-constructor-constructor",
+    "src/app.controller.js~AppController#constructor",
+    "method"
+  ],
+  [
+    "src/app.controller.js~appcontroller#keyinput",
+    "class/src/app.controller.js~AppController.html#instance-member-keyInput",
+    "src/app.controller.js~AppController#keyInput",
+    "member"
+  ],
+  [
+    "src/app.controller.js~appcontroller#save",
+    "class/src/app.controller.js~AppController.html#instance-method-save",
+    "src/app.controller.js~AppController#save",
+    "method"
+  ],
+  [
+    "src/app.controller.js~appcontroller#valinput",
+    "class/src/app.controller.js~AppController.html#instance-member-valInput",
+    "src/app.controller.js~AppController#valInput",
+    "member"
+  ],
+  [
+    "src/app.controller.js~appcontroller#view",
+    "class/src/app.controller.js~AppController.html#instance-method-view",
+    "src/app.controller.js~AppController#view",
+    "method"
+  ],
+  [
+    "src/app.controller.spec.js",
+    "test-file/src/app.controller.spec.js.html",
+    "src/app.controller.spec.js",
+    "testFile"
   ],
   [
     "src/localstorage.service.js",

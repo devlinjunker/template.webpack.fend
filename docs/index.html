@@ -29,7 +29,8 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/localStorage.service.js~LocalStorageService.html">LocalStorageService</a></span></span></li>
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app.controller.js~AppController.html">AppController</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/localStorage.service.js~LocalStorageService.html">LocalStorageService</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -44,13 +45,14 @@
 <li>Webpack Dev Server</li>
 <li>Mocha, Chai, Sinon</li>
 <li>Karma</li>
+<li>EsDoc</li>
 </ul>
 <h3 id="dev-tests-running">Dev/Tests/Running</h3><p><code>npm run start-watch</code> to run Karma + Mocha and watch for changes while also opening the Webpack dev server that will recompile the project and reload the webpage on file changes on <a href="http://localhost:3000">http://localhost:3000</a></p>
 <p><code>npm run test-watch</code> to run Karma + Mocha and all of the tests associated with the project and watch for changes on the files to re-run the tests</p>
 <p><code>npm run dev-watch</code> to run the only webpack development server and watch for changes on the files to reload</p>
 <p><code>npm run test</code> to run all of the unit tests for the application one time</p>
 <p><code>npm run dev</code> to run a development version of the application</p>
-<p><code>npm run doc</code> to generate static documention in the doc folder</p>
+<p><code>npm run doc</code> to generate static documentation in the doc folder</p>
 <p><strong>TODO</strong></p>
 <p><code>npm run build</code> ... TO DO: compile application to production version</p>
 <p><code>npm run clean</code> ... TO DO: clean the workspace</p>
@@ -73,10 +75,10 @@
 <li>[ ] (v) run before commit</li>
 </ul>
 </li>
-<li>[ ] (-) Prettier for autofix</li>
-<li>[ ] (-) production configuraiton and build</li>
-<li>[ ] (-) package.json main script (install/run application and open browser)</li>
-<li>[ ] (-) clean output from watch script</li>
+<li>[ ] <del>(-) Prettier for autofix</del> (just use eslint atom plugin with fix)</li>
+<li>[ ] (-) production configuration and build</li>
+<li>[ ] (-) package.json main script (install/run application and open browser? or just point to entry or AppController?)</li>
+<li>[ ] (-) cleaner output from watch script</li>
 <li>[ ] (v) parameterize directories in package.json scripts?<ul>
 <li>[ ] better npm script?</li>
 </ul>
@@ -85,8 +87,8 @@
 <p><strong>Application</strong></p>
 <ul>
 <li>[x] Local Storage DataService</li>
-<li>[ ] Controller/Component for saving/retrieving stored vals</li>
-<li>[ ] Interface for displaying vals</li>
+<li>[x] Controller/Component for saving/retrieving stored vals</li>
+<li>[x] Interface for displaying vals</li>
 </ul>
 </div>
 </div>

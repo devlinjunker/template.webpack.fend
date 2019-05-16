@@ -50,14 +50,14 @@ See [package.json]() for full list of current dependencies
  - [x] (^) Flowtype eslint plugin
  - [x] (-) Setup EsDoc
     - [ ] (v) run before commit
- - [ ] (-) Prettier for autofix
+ - [ ] ~~(-) Prettier for autofix~~ (just use eslint atom plugin with fix)
  - [ ] (-) production configuration and build
- - [ ] (-) package.json main script (install/run application and open browser)
- - [ ] (-) clean output from watch script
+ - [ ] (-) package.json main script (install/run application and open browser? or just point to entry or AppController?)
+ - [ ] (-) cleaner output from watch script
  - [ ] (v) parameterize directories in package.json scripts?
     - [ ] better npm script?
 
 **Application**
  - [x] Local Storage DataService
- - [ ] Controller/Component for saving/retrieving stored vals
- - [ ] Interface for displaying vals
+ - [x] Controller/Component for saving/retrieving stored vals
+ - [x] Interface for displaying vals
