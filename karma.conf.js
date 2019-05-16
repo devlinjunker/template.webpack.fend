@@ -1,7 +1,7 @@
 // Karma configuration
 const webpack = require('./webpack.config.js');
 
-const config = function(config) {
+const karmaConfig = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -14,14 +14,11 @@ const config = function(config) {
 
 
     // list of files / patterns to load in the browser
-    files: [
-      'test/test.bootstrap.js'
-    ],
+    files: ['test/test.bootstrap.js'],
 
 
     // list of files / patterns to exclude
-    exclude: [
-    ],
+    exclude: [],
 
 
     // preprocess matching files before serving them to the browser
@@ -34,7 +31,7 @@ const config = function(config) {
 
     webpackMiddleware: {
       watchOptions: {
-       aggregateTimeout: 300,
+        aggregateTimeout: 300,
       }
     },
 
@@ -53,7 +50,8 @@ const config = function(config) {
 
 
     // level of logging
-    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN ||
+    //  config.LOG_INFO || config.LOG_DEBUG
     logLevel: config.LOG_WARN,
 
 
@@ -76,10 +74,10 @@ const config = function(config) {
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity
-  })
-}
+  });
+};
 
 // Set browser to chrome to see tests
 // config.browsers = ['Chrome'];
 
-module.exports = config;
+module.exports = karmaConfig;

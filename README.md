@@ -51,6 +51,7 @@ See [package.json]() for full list of current dependencies
  - [x] (-) Setup EsDoc
     - [ ] (v) run before commit?
  - [ ] ~~(-) Prettier for autofix~~ (just use eslint atom plugin with fix)
+ - [ ] (-) karma/mocha unit test debugging (with atom?)
  - [ ] (-) production configuration for webpack
  - [ ] (-) Basic UI Framework (Bootstrap? Foundation?)
   - Minimize?

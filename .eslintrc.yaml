@@ -44,6 +44,16 @@ overrides:
                     \* \@flow\n
                    (\*\n
                     \* .*\n )?$
+      # Flow Type Rules
+      flowtype/require-return-type:
+        - warn
+        - always
+        - excludeMatching:
+          - "spec.js"
+      flowtype/require-parameter-type:
+        - warn
+      flowtype/no-weak-types:
+        - warn
 
 # Custom Rules Below
 rules:
@@ -164,14 +174,3 @@ rules:
   prefer-arrow-callback:
     - error
     - allowNamedFunctions: true
-
-  # Flow Type Rules
-  flowtype/require-return-type:
-    - warn
-    - always
-    - excludeMatching:
-      - "spec.js"
-  flowtype/require-parameter-type:
-    - warn
-  flowtype/no-weak-types:
-    - warn
