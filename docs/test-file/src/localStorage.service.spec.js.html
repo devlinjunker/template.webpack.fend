@@ -43,10 +43,6 @@ import LocalStorageService from &apos;./localStorage.service&apos;;
 
 describe(&apos;LocalStorageService&apos;, () =&gt; {
 
-  afterEach(() =&gt; {
-    sandbox.restore();
-  });
-
   describe(&apos;#save&apos;, () =&gt; {
 
     it(&apos;should use local storage to save value with key&apos;, () =&gt; {

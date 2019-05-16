@@ -35,12 +35,14 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="localstorage-db-app">LocalStorage DB App</h1><p>Example application for practicing webpack builds and adding plugins or other build tools</p>
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="localstorage-db-app">LocalStorage DB App</h1><p>Example application for practicing webpack builds and adding plugins or other build tools.</p>
+<p>Simple web interface for storing values in the Browser Local Storage.</p>
 <h2 id="dependencies">Dependencies</h2><p>Node v6+ and npm</p>
 <p>See <a href>package.json</a> for full list of current dependencies</p>
 <ul>
 <li>Webpack + Loaders</li>
 <li>Babel</li>
+<li>FlowJS</li>
 <li>ESLint</li>
 <li>Webpack Dev Server</li>
 <li>Mocha, Chai, Sinon</li>
@@ -54,8 +56,8 @@
 <p><code>npm run dev</code> to run a development version of the application</p>
 <p><code>npm run doc</code> to generate static documentation in the doc folder</p>
 <p><strong>TODO</strong></p>
-<p><code>npm run build</code> ... TO DO: compile application to production version</p>
-<p><code>npm run clean</code> ... TO DO: clean the workspace</p>
+<p><code>npm run build</code> ... TODO: compile application to production version</p>
+<p><code>npm run clean</code> ... TODO: clean the workspace</p>
 <h3 id="todo">TODO</h3><ul>
 <li>[x] Install Dev Dependencies</li>
 <li>[x] (^) Webpack config</li>
@@ -63,7 +65,7 @@
 <li>[x] (^) Include eslint in test-watch?</li>
 <li>[x] (^) Combined build and test watch</li>
 <li>[x] (^) Setup Mocha<ul>
-<li>[..] (-) Setup global test objects</li>
+<li>[x] (-) Setup global test objects</li>
 </ul>
 </li>
 <li>[x] (^) Karma webpack integration (for tests in browser)<ul>
@@ -72,21 +74,26 @@
 </li>
 <li>[x] (^) Flowtype eslint plugin</li>
 <li>[x] (-) Setup EsDoc<ul>
-<li>[ ] (v) run before commit?</li>
+<li>[ ] (v) run doc before commit?</li>
 </ul>
 </li>
-<li>[ ] <del>(-) Prettier for autofix</del> (just use eslint atom plugin with fix)</li>
+<li>[x] <del>(-) Prettier for autofix</del> (just use eslint atom plugin with fix)</li>
+<li>[ ] (^) karma/mocha unit test debugging (with atom?)</li>
 <li>[ ] (-) production configuration for webpack</li>
 <li>[ ] (-) Basic UI Framework (Bootstrap? Foundation?)<ul>
 <li>Minimize?</li>
 <li>No Warnings? No output in tests?</li>
 </ul>
 </li>
-<li>[ ] (-) Cypress UI Testing?</li>
-<li>[ ] (-) package.json main script (install/run application and open browser? or just point to entry or AppController?)</li>
 <li>[ ] (-) cleaner output from watch script?</li>
+<li>[ ] (-) css variables?</li>
+<li>[ ] (v) Cypress UI Testing?</li>
+<li>[ ] (v) package.json main script<ul>
+<li>(install/run application and open browser? or just point to entry or AppController?)</li>
+</ul>
+</li>
 <li>[ ] (v) parameterize directories in package.json scripts?<ul>
-<li>[ ] better npm script?</li>
+<li>better npm script?</li>
 </ul>
 </li>
 </ul>
@@ -95,6 +102,10 @@
 <li>[x] Local Storage DataService</li>
 <li>[x] Controller/Component for saving/retrieving stored vals</li>
 <li>[x] Interface for displaying vals</li>
+</ul>
+<p><strong>Questions</strong></p>
+<ul>
+<li>PostCSS vs CSS-Loader?</li>
 </ul>
 </div>
 </div>

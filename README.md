@@ -1,6 +1,8 @@
 # LocalStorage DB App
 
-Example application for practicing webpack builds and adding plugins or other build tools
+Example application for practicing webpack builds and adding plugins or other build tools.
+
+Simple web interface for storing values in the Browser Local Storage.
 
 
 ## Dependencies
@@ -9,6 +11,7 @@ Node v6+ and npm
 See [package.json]() for full list of current dependencies
  - Webpack + Loaders
  - Babel
+ - FlowJS
  - ESLint
  - Webpack Dev Server
  - Mocha, Chai, Sinon
@@ -33,9 +36,9 @@ See [package.json]() for full list of current dependencies
 
 **TODO**
 
-`npm run build` ... TO DO: compile application to production version
+`npm run build` ... TODO: compile application to production version
 
-`npm run clean` ... TO DO: clean the workspace
+`npm run clean` ... TODO: clean the workspace
 
 ### TODO
  - [x] Install Dev Dependencies
@@ -57,6 +60,7 @@ See [package.json]() for full list of current dependencies
     - Minimize?
     - No Warnings? No output in tests?
  - [ ] (-) cleaner output from watch script?
+ - [ ] (-) css variables?
  - [ ] (v) Cypress UI Testing?
  - [ ] (v) package.json main script
     - (install/run application and open browser? or just point to entry or AppController?)

@@ -19,13 +19,13 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/src/app.controller.spec.js.html#lineNumber64",
+    "test-file/src/app.controller.spec.js.html#lineNumber66",
     "App Controller #clearValue",
     "test"
   ],
   [
     "",
-    "test-file/src/app.controller.spec.js.html#lineNumber65",
+    "test-file/src/app.controller.spec.js.html#lineNumber67",
     "App Controller #clearValue should clear the input value",
     "test"
   ],
@@ -49,7 +49,7 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/src/app.controller.spec.js.html#lineNumber46",
+    "test-file/src/app.controller.spec.js.html#lineNumber47",
     "App Controller #save should display message to user when saving",
     "test"
   ],
@@ -61,19 +61,19 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/src/app.controller.spec.js.html#lineNumber49",
+    "test-file/src/app.controller.spec.js.html#lineNumber50",
     "App Controller #view",
     "test"
   ],
   [
     "",
-    "test-file/src/app.controller.spec.js.html#lineNumber61",
+    "test-file/src/app.controller.spec.js.html#lineNumber63",
     "App Controller #view should display message if error retrieving value",
     "test"
   ],
   [
     "",
-    "test-file/src/app.controller.spec.js.html#lineNumber50",
+    "test-file/src/app.controller.spec.js.html#lineNumber51",
     "App Controller #view should retrieve values from localStorage service and display",
     "test"
   ],
@@ -85,49 +85,49 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/src/localStorage.service.spec.js.html#lineNumber58",
+    "test-file/src/localStorage.service.spec.js.html#lineNumber54",
     "LocalStorageService #get",
     "test"
   ],
   [
     "",
-    "test-file/src/localStorage.service.spec.js.html#lineNumber60",
+    "test-file/src/localStorage.service.spec.js.html#lineNumber56",
     "LocalStorageService #get should retrieve value from local storage using key",
     "test"
   ],
   [
     "",
-    "test-file/src/localStorage.service.spec.js.html#lineNumber72",
+    "test-file/src/localStorage.service.spec.js.html#lineNumber68",
     "LocalStorageService #get should return object if object stored",
     "test"
   ],
   [
     "",
-    "test-file/src/localStorage.service.spec.js.html#lineNumber86",
+    "test-file/src/localStorage.service.spec.js.html#lineNumber82",
     "LocalStorageService #get should throw error if requesting key with no value assigned",
     "test"
   ],
   [
     "",
-    "test-file/src/localStorage.service.spec.js.html#lineNumber9",
+    "test-file/src/localStorage.service.spec.js.html#lineNumber5",
     "LocalStorageService #save",
     "test"
   ],
   [
     "",
-    "test-file/src/localStorage.service.spec.js.html#lineNumber41",
+    "test-file/src/localStorage.service.spec.js.html#lineNumber37",
     "LocalStorageService #save should be able to retrieve value using key with #get",
     "test"
   ],
   [
     "",
-    "test-file/src/localStorage.service.spec.js.html#lineNumber26",
+    "test-file/src/localStorage.service.spec.js.html#lineNumber22",
     "LocalStorageService #save should stringify objects before saving them",
     "test"
   ],
   [
     "",
-    "test-file/src/localStorage.service.spec.js.html#lineNumber11",
+    "test-file/src/localStorage.service.spec.js.html#lineNumber7",
     "LocalStorageService #save should use local storage to save value with key",
     "test"
   ],
