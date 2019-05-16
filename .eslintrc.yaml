@@ -1,7 +1,7 @@
 parser: babel-eslint
 parserOptions:
   ecmaFeatures:
-    jsx: true
+    # jsx: true
   sourceType: module
 
 settings:
@@ -9,11 +9,10 @@ settings:
     webpack:
       config: ./webpack.config.js
 
-# TODO: turn browser or node off depending on template
 env:
   browser: true
   es6: true
-  node: false
+  # node: true
   mocha: true
 
 plugins:

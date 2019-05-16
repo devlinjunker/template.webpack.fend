@@ -1,14 +1,14 @@
 window.esdocSearchIndex = [
   [
-    "localstoragedbapp/src/app.controller.js~appcontroller",
+    "basicwebpackbrowserdb/src/app.controller.js~appcontroller",
     "class/src/app.controller.js~AppController.html",
-    "<span>AppController</span> <span class=\"search-result-import-path\">LocalStorageDBApp/src/app.controller.js</span>",
+    "<span>AppController</span> <span class=\"search-result-import-path\">BasicWebpackBrowserDB/src/app.controller.js</span>",
     "class"
   ],
   [
-    "localstoragedbapp/src/localstorage.service.js~localstorageservice",
+    "basicwebpackbrowserdb/src/localstorage.service.js~localstorageservice",
     "class/src/localStorage.service.js~LocalStorageService.html",
-    "<span>LocalStorageService</span> <span class=\"search-result-import-path\">LocalStorageDBApp/src/localStorage.service.js</span>",
+    "<span>LocalStorageService</span> <span class=\"search-result-import-path\">BasicWebpackBrowserDB/src/localStorage.service.js</span>",
     "class"
   ],
   [

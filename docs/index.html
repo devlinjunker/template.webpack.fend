@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl">
-  <title data-ice="title">Home | LocalStorageDBApp</title>
+  <title data-ice="title">Home | BasicWebpackBrowserDB</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<meta name="description" content="Quick App for testing webpack building"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="LocalStorageDBApp"><meta property="twitter:description" content="Quick App for testing webpack building"></head>
+<meta name="description" content="Quick Browser LocalStorage DB App for testing webpack building"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="BasicWebpackBrowserDB"><meta property="twitter:description" content="Quick Browser LocalStorage DB App for testing webpack building"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -52,6 +52,7 @@
 <h3 id="dev-tests-running">Dev/Tests/Running</h3><p><code>npm run start-watch</code> to run Karma + Mocha and watch for changes while also opening the Webpack dev server that will recompile the project and reload the webpage on file changes on <a href="http://localhost:3000">http://localhost:3000</a></p>
 <p><code>npm run test-watch</code> to run Karma + Mocha and all of the tests associated with the project and watch for changes on the files to re-run the tests</p>
 <p><code>npm run dev-watch</code> to run the only webpack development server and watch for changes on the files to reload</p>
+<p><code>npm run test-dev</code> to start the unit test runner for debugging unit tests in the browser</p>
 <p><code>npm run test</code> to run all of the unit tests for the application one time</p>
 <p><code>npm run dev</code> to run a development version of the application</p>
 <p><code>npm run doc</code> to generate static documentation in the doc folder</p>
@@ -78,7 +79,7 @@
 </ul>
 </li>
 <li>[x] <del>(-) Prettier for autofix</del> (just use eslint atom plugin with fix)</li>
-<li>[ ] (^) karma/mocha unit test debugging (with atom?)</li>
+<li>[x] (^) karma/mocha unit test debugging <del>(with atom?)</del> in browser</li>
 <li>[ ] (-) production configuration for webpack</li>
 <li>[ ] (-) Basic UI Framework (Bootstrap? Foundation?)<ul>
 <li>Minimize?</li>

@@ -28,6 +28,8 @@ See [package.json]() for full list of current dependencies
 
 `npm run dev-watch` to run the only webpack development server and watch for changes on the files to reload
 
+`npm run test-dev` to start the unit test runner for debugging unit tests in the browser
+
 `npm run test` to run all of the unit tests for the application one time
 
 `npm run dev` to run a development version of the application
@@ -54,7 +56,7 @@ See [package.json]() for full list of current dependencies
  - [x] (-) Setup EsDoc
     - [ ] (v) run doc before commit?
  - [x] ~~(-) Prettier for autofix~~ (just use eslint atom plugin with fix)
- - [ ] (^) karma/mocha unit test debugging (with atom?)
+ - [x] (^) karma/mocha unit test debugging ~~(with atom?)~~ in browser
  - [ ] (-) production configuration for webpack
  - [ ] (-) Basic UI Framework (Bootstrap? Foundation?)
     - Minimize?

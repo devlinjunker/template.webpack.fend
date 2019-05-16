@@ -1,6 +1,6 @@
 {
-  "name": "LocalStorageDBApp",
-  "description": "Quick App for testing webpack building",
+  "name": "BasicWebpackBrowserDB",
+  "description": "Quick Browser LocalStorage DB App for testing webpack building",
   "author": "devlin.junker@gmail.com",
   "license": "ISC",
   "version": "0.0.1",
@@ -9,6 +9,7 @@
     "start-watch": "(sleep 7s && open http://localhost:3000) & node_modules/karma/bin/karma start",
     "dev-watch": "./node_modules/.bin/webpack --watch",
     "dev": "./node_modules/.bin/webpack-dev-server --open",
+    "test-dev": "node_modules/karma/bin/karma start --single-run=false --browser=Chrome --auto-watch",
     "test": "node_modules/karma/bin/karma start --single-run",
     "test-watch": "node_modules/karma/bin/karma start",
     "doc": "./node_modules/.bin/esdoc",
