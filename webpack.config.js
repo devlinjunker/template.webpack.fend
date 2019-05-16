@@ -1,7 +1,7 @@
-const path = require("path");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const FlowWebpackPlugin = require('flow-webpack-plugin')
+const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FlowWebpackPlugin = require('flow-webpack-plugin');
 
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
@@ -10,15 +10,15 @@ const config =  {
   mode: 'development',
   // Each entry will be loaded into webpage via <script> tags
   entry: {
-    app: "./src/entry.js",
+    app: './src/entry.js',
   },
   output: {
-    filename: "[name].bundle.js",
+    filename: '[name].bundle.js',
     // Need to do this because path must be absolute
-    path: path.resolve(__dirname, "public")
+    path: path.resolve(__dirname, 'public')
   },
   // Turn off for production (see https://webpack.js.org/guides/production)
-  devtool: "inline-source-map",
+  devtool: 'inline-source-map',
   watch: true,
 
   resolve: {
@@ -31,12 +31,12 @@ const config =  {
     }
   },
   plugins: [
-    new CleanWebpackPlugin(["public"]),
+    new CleanWebpackPlugin(['public']),
 
     new HtmlWebpackPlugin({
-      template: "src/index.html",
+      template: 'src/index.html',
       // Set the webpage title
-      title:"Test with Webpack Plugin"
+      title: 'Test with Webpack Plugin'
     }),
 
     // Run Flow on Webpack Compile
@@ -53,12 +53,15 @@ const config =  {
       {
         test: /\.m?js$/,
         exclude: /node_modules/,
-        use: [{
+        use: [
+          {
           // Use Babel to get ES6 syntax
-          loader: 'babel-loader'
-        }, {
-          loader: "eslint-loader"
-        }]
+            loader: 'babel-loader'
+          },
+          {
+            loader: 'eslint-loader'
+          }
+        ]
       },
 
       // Load css files imported
@@ -82,13 +85,13 @@ module.exports = config;
 const host = '0.0.0.0';
 const port = 3000;
 WebpackDevServer.addDevServerEntrypoints(config, {
-  contentBase: "./public",
+  contentBase: './public',
   hot: true,
   host,
   port
 });
 const compiler = webpack(config);
-new WebpackDevServer(compiler).listen(port, host, function (err, result) {
+new WebpackDevServer(compiler).listen(port, host, (err /* , result*/) => {
   if (err) {
     console.log(err);
   }

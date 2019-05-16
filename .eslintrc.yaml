@@ -31,16 +31,23 @@ globals:
   expect: readonly
   sandbox: readonly
 
+# Rules for only some file locations/paths (globs)
+overrides:
+  - files:
+    - src/*.js
+    excludedFiles: spec/*.js
+    rules:
+      header/header:
+        - error
+        - block
+        - pattern: ^\*\n
+                    \* \@flow\n
+                   (\*\n
+                    \* .*\n )?$
+
 # Custom Rules Below
 rules:
   # Documentation Rules
-  header/header:
-    - error
-    - block
-    - pattern: ^\*\n
-                \* \@flow\n
-               (\*\n
-                \* .*\n )?$
   valid-jsdoc: error
   require-jsdoc:
     - warn
@@ -165,4 +172,6 @@ rules:
     - excludeMatching:
       - "spec.js"
   flowtype/require-parameter-type:
+    - warn
+  flowtype/no-weak-types:
     - warn
