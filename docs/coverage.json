@@ -1,14 +1,14 @@
 {
-  "coverage": "77.77%",
-  "expectCount": 9,
-  "actualCount": 7,
+  "coverage": "80%",
+  "expectCount": 10,
+  "actualCount": 8,
   "files": {
     "src/app.controller.js": {
-      "expectCount": 6,
-      "actualCount": 4,
+      "expectCount": 7,
+      "actualCount": 5,
       "undocumentLines": [
-        12,
-        13
+        13,
+        14
       ]
     },
     "src/localStorage.service.js": {

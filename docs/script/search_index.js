@@ -13,38 +13,68 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/src/app.controller.spec.js.html#lineNumber1",
+    "test-file/src/app.controller.spec.js.html#lineNumber4",
     "App Controller",
     "test"
   ],
   [
     "",
+    "test-file/src/app.controller.spec.js.html#lineNumber64",
+    "App Controller #clearValue",
+    "test"
+  ],
+  [
+    "",
+    "test-file/src/app.controller.spec.js.html#lineNumber65",
+    "App Controller #clearValue should clear the input value",
+    "test"
+  ],
+  [
+    "",
     "test-file/src/app.controller.spec.js.html#lineNumber10",
-    "App Controller should display message if error retrieving value",
+    "App Controller #constructor",
     "test"
   ],
   [
     "",
-    "test-file/src/app.controller.spec.js.html#lineNumber6",
-    "App Controller should display message to user when saving",
+    "test-file/src/app.controller.spec.js.html#lineNumber11",
+    "App Controller #constructor should set up handlers",
     "test"
   ],
   [
     "",
-    "test-file/src/app.controller.spec.js.html#lineNumber8",
-    "App Controller should retrieve values from localStorage service",
+    "test-file/src/app.controller.spec.js.html#lineNumber30",
+    "App Controller #save",
     "test"
   ],
   [
     "",
-    "test-file/src/app.controller.spec.js.html#lineNumber4",
-    "App Controller should save values with localStorage service",
+    "test-file/src/app.controller.spec.js.html#lineNumber46",
+    "App Controller #save should display message to user when saving",
     "test"
   ],
   [
     "",
-    "test-file/src/app.controller.spec.js.html#lineNumber2",
-    "App Controller should set up handlers",
+    "test-file/src/app.controller.spec.js.html#lineNumber31",
+    "App Controller #save should save values with localStorage service",
+    "test"
+  ],
+  [
+    "",
+    "test-file/src/app.controller.spec.js.html#lineNumber49",
+    "App Controller #view",
+    "test"
+  ],
+  [
+    "",
+    "test-file/src/app.controller.spec.js.html#lineNumber61",
+    "App Controller #view should display message if error retrieving value",
+    "test"
+  ],
+  [
+    "",
+    "test-file/src/app.controller.spec.js.html#lineNumber50",
+    "App Controller #view should retrieve values from localStorage service and display",
     "test"
   ],
   [
@@ -388,6 +418,12 @@ window.esdocSearchIndex = [
     "file/src/app.controller.js.html",
     "src/app.controller.js",
     "file"
+  ],
+  [
+    "src/app.controller.js~appcontroller#clearvalue",
+    "class/src/app.controller.js~AppController.html#instance-method-clearValue",
+    "src/app.controller.js~AppController#clearValue",
+    "method"
   ],
   [
     "src/app.controller.js~appcontroller#constructor",

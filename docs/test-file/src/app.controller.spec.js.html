@@ -39,17 +39,80 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
  * @flow
  */
+import AppController from &apos;./app.controller&apos;;
+import LocalStorageService from &apos;./localStorage.service&apos;;
 
 describe(&apos;App Controller&apos;, () =&gt; {
-  it(&apos;should set up handlers&apos;);
+  let controller;
+  const saveBtn = {};
+  const getBtn = {};
+  const clearBtn = {};
 
-  it(&apos;should save values with localStorage service&apos;);
+  describe(&apos;#constructor&apos;, () =&gt; {
+    it(&apos;should set up handlers&apos;, () =&gt; {
+      sandbox.stub(document, &apos;getElementsByClassName&apos;).callsFake((param): any =&gt; {
+        if (param === &apos;save-btn&apos;) {
+          return [saveBtn];
+        } else if (param === &apos;get-btn&apos;) {
+          return [getBtn];
+        } else {
+          return [clearBtn];
+        }
+      });
 
-  it(&apos;should display message to user when saving&apos;);
+      controller = new AppController();
 
-  it(&apos;should retrieve values from localStorage service&apos;);
+      expect(saveBtn.onclick).to.not.be.undefined;
+      expect(getBtn.onclick).to.not.be.undefined;
+      expect(clearBtn.onclick).to.not.be.undefined;
+    });
+  });
 
-  it(&apos;should display message if error retrieving value&apos;);
+  describe(&apos;#save&apos;, () =&gt; {
+    it(&apos;should save values with localStorage service&apos;, () =&gt; {
+      const saveStub = sandbox.stub(LocalStorageService, &apos;save&apos;);
+      controller.keyInput = {
+        value: &apos;abc&apos;
+      };
+
+      controller.valInput = {
+        innerText: &apos;val&apos;
+      };
+
+      controller.save();
+
+      expect(saveStub).to.be.calledWith({ key: &apos;abc&apos;, val: &apos;val&apos; });
+    });
+
+    it(&apos;should display message to user when saving&apos;);
+  });
+
+  describe(&apos;#view&apos;, () =&gt; {
+    it(&apos;should retrieve values from localStorage service and display&apos;, () =&gt; {
+      const getStub = sandbox.stub(LocalStorageService, &apos;get&apos;);
+      controller.keyInput = {
+        value: &apos;abc&apos;
+      };
+
+      controller.view();
+
+      expect(getStub).to.be.calledWith({ key: &apos;abc&apos; });
+    });
+
+    it(&apos;should display message if error retrieving value&apos;);
+  });
+
+  describe(&apos;#clearValue&apos;, () =&gt; {
+    it(&apos;should clear the input value&apos;, () =&gt; {
+      controller.valInput = {
+        innerText: &apos;abc&apos;
+      };
+
+      controller.clearValue();
+
+      expect(controller.valInput.innerText).to.equal(&apos;&apos;);
+    });
+  });
 });
 </code></pre>
 
