@@ -57,10 +57,11 @@ See [package.json](https://github.com/devlinjunker/basic.webpack/blob/master/pac
     - [ ] (v) run doc before commit?
  - [x] ~~(-) Prettier for autofix~~ (just use eslint atom plugin with fix)
  - [x] (^) karma/mocha unit test debugging ~~(with atom?)~~ in browser
+ - [ ] (^) Demo app in docs
  - [ ] (-) production configuration for webpack
- - [ ] (-) Basic UI Framework (Bootstrap? Foundation?)
     - Minimize?
     - No Warnings? No output in tests?
+ - [ ] (-) Basic UI Framework (Bootstrap? Foundation?)
  - [ ] (-) cleaner output from watch script?
  - [ ] (-) css variables?
  - [ ] (v) Cypress UI Testing?
@@ -74,5 +75,6 @@ See [package.json](https://github.com/devlinjunker/basic.webpack/blob/master/pac
  - [x] Controller/Component for saving/retrieving stored vals
  - [x] Interface for displaying vals
 
-**Questions**
+**Questions/Ideas**
  - PostCSS vs CSS-Loader?
+ - Use LocalStorage to configure which demos are showing in application (if adding: login / task list / server integration)
