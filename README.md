@@ -1,4 +1,4 @@
-# LocalStorage DB App
+# Basic Webpack Example LocalStorage DB App
 
 Example application for practicing webpack builds and adding plugins or other build tools.
 
