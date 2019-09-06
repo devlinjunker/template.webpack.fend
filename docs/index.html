@@ -49,7 +49,14 @@
 <li>Karma</li>
 <li>EsDoc</li>
 </ul>
-<h3 id="dev-tests-running">Dev/Tests/Running</h3><p><code>npm run start-watch</code> to run Karma + Mocha and watch for changes while also opening the Webpack dev server that will recompile the project and reload the webpage on file changes on <a href="http://localhost:3000">http://localhost:3000</a></p>
+<h2 id="development">Development</h2><p>How to use this template to create a basic Frontend Application:</p>
+<ol>
+<li>Download and update dependencies</li>
+<li>Create application in <code>src/</code></li>
+<li>Modify <code>src/entry.js</code> to start up your application</li>
+<li>Update <code>src/index.html</code> with HTML structure</li>
+</ol>
+<h3 id="tests-running">Tests/Running</h3><p><code>npm run start-watch</code> to run Karma + Mocha and watch for changes while also opening the Webpack dev server that will recompile the project and reload the webpage on file changes on <a href="http://localhost:3000">http://localhost:3000</a></p>
 <p><code>npm run test-watch</code> to run Karma + Mocha and all of the tests associated with the project and watch for changes on the files to re-run the tests</p>
 <p><code>npm run dev-watch</code> to run the only webpack development server and watch for changes on the files to reload</p>
 <p><code>npm run test-dev</code> to start the unit test runner for debugging unit tests in the browser</p>
@@ -81,6 +88,10 @@
 <li>[x] <del>(-) Prettier for autofix</del> (just use eslint atom plugin with fix)</li>
 <li>[x] (^) karma/mocha unit test debugging <del>(with atom?)</del> in browser</li>
 <li>[ ] (^) Demo app in docs</li>
+<li>[ ] (^) Move js to <code>src/js</code><ul>
+<li>also do <a href="https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration">https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration</a></li>
+</ul>
+</li>
 <li>[ ] (-) production configuration for webpack<ul>
 <li>Minimize?</li>
 <li>No Warnings? No output in tests?</li>

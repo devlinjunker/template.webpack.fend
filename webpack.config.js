@@ -82,6 +82,9 @@ const config =  {
 
 module.exports = config;
 
+
+// Q: Why are we doing this again?
+
 // Start Webpack Dev Server Manually
 const host = '0.0.0.0';
 const port = 3000;

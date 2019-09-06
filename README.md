@@ -19,8 +19,17 @@ See [package.json](https://github.com/devlinjunker/basic.webpack/blob/master/pac
  - EsDoc
 
 
-### Dev/Tests/Running
+## Development
 
+How to use this template to create a basic Frontend Application:
+
+1. Download and update dependencies
+2. Create application in `src/`
+3. Modify `src/entry.js` to start up your application
+4. Update `src/index.html` with HTML structure
+
+
+### Tests/Running
 
 `npm run start-watch` to run Karma + Mocha and watch for changes while also opening the Webpack dev server that will recompile the project and reload the webpage on file changes on http://localhost:3000
 
@@ -42,6 +51,8 @@ See [package.json](https://github.com/devlinjunker/basic.webpack/blob/master/pac
 
 `npm run clean` ... TODO: clean the workspace
 
+
+
 ### TODO
  - [x] Install Dev Dependencies
  - [x] (^) Webpack config
@@ -58,6 +69,8 @@ See [package.json](https://github.com/devlinjunker/basic.webpack/blob/master/pac
  - [x] ~~(-) Prettier for autofix~~ (just use eslint atom plugin with fix)
  - [x] (^) karma/mocha unit test debugging ~~(with atom?)~~ in browser
  - [ ] (^) Demo app in docs
+ - [ ] (^) Move js to `src/js`
+    - also do https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration
  - [ ] (-) production configuration for webpack
     - Minimize?
     - No Warnings? No output in tests?
