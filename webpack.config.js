@@ -83,7 +83,7 @@ const config =  {
 module.exports = config;
 
 
-// Q: Why are we doing this again?
+// Q: Why are we doing this again? I think it has to do with Karma
 
 // Start Webpack Dev Server Manually
 const host = '0.0.0.0';

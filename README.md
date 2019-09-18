@@ -6,7 +6,7 @@ Simple web interface for storing values in the Browser Local Storage.
 
 
 ## Dependencies
-Node v6+ and npm
+Node v6 and npm
 
 See [package.json](https://github.com/devlinjunker/basic.webpack/blob/master/package.json) for full list of current dependencies
  - Webpack + Loaders
@@ -23,7 +23,7 @@ See [package.json](https://github.com/devlinjunker/basic.webpack/blob/master/pac
 
 How to use this template to create a basic Frontend Application:
 
-1. Download and update dependencies
+1. Download template and update dependencies
 2. Create application in `src/`
 3. Modify `src/entry.js` to start up your application
 4. Update `src/index.html` with HTML structure
@@ -70,7 +70,9 @@ How to use this template to create a basic Frontend Application:
  - [x] (^) karma/mocha unit test debugging ~~(with atom?)~~ in browser
  - [ ] (^) Demo app in docs
  - [ ] (^) Move js to `src/js`
-    - also do https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration
+ - [ ] (^) Update linting rules with descturing/filenames/naming conventions? https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration
+ - [ ] (^) Update Node Version to v10
+ - [ ] (^) Update Dependencies
  - [ ] (-) production configuration for webpack
     - Minimize?
     - No Warnings? No output in tests?
