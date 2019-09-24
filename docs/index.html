@@ -37,7 +37,7 @@
 
 <div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="basic-webpack-example-localstorage-db-app">Basic Webpack Example LocalStorage DB App</h1><p>Example application for practicing webpack builds and adding plugins or other build tools.</p>
 <p>Simple web interface for storing values in the Browser Local Storage.</p>
-<h2 id="dependencies">Dependencies</h2><p>Node v6+ and npm</p>
+<h2 id="dependencies">Dependencies</h2><p>Node v6 and npm</p>
 <p>See <a href="https://github.com/devlinjunker/basic.webpack/blob/master/package.json">package.json</a> for full list of current dependencies</p>
 <ul>
 <li>Webpack + Loaders</li>
@@ -51,7 +51,7 @@
 </ul>
 <h2 id="development">Development</h2><p>How to use this template to create a basic Frontend Application:</p>
 <ol>
-<li>Download and update dependencies</li>
+<li>Download template and update dependencies</li>
 <li>Create application in <code>src/</code></li>
 <li>Modify <code>src/entry.js</code> to start up your application</li>
 <li>Update <code>src/index.html</code> with HTML structure</li>
@@ -88,10 +88,10 @@
 <li>[x] <del>(-) Prettier for autofix</del> (just use eslint atom plugin with fix)</li>
 <li>[x] (^) karma/mocha unit test debugging <del>(with atom?)</del> in browser</li>
 <li>[ ] (^) Demo app in docs</li>
-<li>[ ] (^) Move js to <code>src/js</code><ul>
-<li>also do <a href="https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration">https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration</a></li>
-</ul>
-</li>
+<li>[ ] (^) Move js to <code>src/js</code></li>
+<li>[ ] (^) Update linting rules with descturing/filenames/naming conventions? <a href="https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration">https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration</a></li>
+<li>[ ] (^) Update Node Version to v10</li>
+<li>[ ] (^) Update Dependencies</li>
 <li>[ ] (-) production configuration for webpack<ul>
 <li>Minimize?</li>
 <li>No Warnings? No output in tests?</li>
@@ -116,10 +116,28 @@
 <li>[x] Controller/Component for saving/retrieving stored vals</li>
 <li>[x] Interface for displaying vals</li>
 </ul>
-<p><strong>Questions/Ideas</strong></p>
-<ul>
+<h2 id="notes-ideas">Notes/Ideas</h2><ul>
 <li>PostCSS vs CSS-Loader?</li>
 <li>Use LocalStorage to configure which demos are showing in application (if adding: login / task list / server integration)</li>
+<li>Why hold much state/data in UI rather than display from server on page load?<ul>
+<li>Pros:<ul>
+<li>Speed for user (when results can be preloaded)</li>
+<li>Saves money in server computation costs to create UI/remember state</li>
+</ul>
+</li>
+<li>Cons:<ul>
+<li>Lots of bandwidth to deliver Single Page App</li>
+<li>Can be slower when building large UI after data call</li>
+</ul>
+</li>
+<li>Overall: Save state/preload data in client to improve user experience. Use server for speed<ul>
+<li>Use client when small objects can be stored/edited and returned</li>
+<li>Use server for displayed only data</li>
+</ul>
+</li>
+<li>Redux for sharing state between client/server</li>
+</ul>
+</li>
 </ul>
 </div>
 </div>

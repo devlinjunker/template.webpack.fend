@@ -90,6 +90,17 @@ How to use this template to create a basic Frontend Application:
  - [x] Controller/Component for saving/retrieving stored vals
  - [x] Interface for displaying vals
 
-**Questions/Ideas**
+## Notes/Ideas
  - PostCSS vs CSS-Loader?
  - Use LocalStorage to configure which demos are showing in application (if adding: login / task list / server integration)
+ - Why hold much state/data in UI rather than display from server on page load?
+    - Pros:
+      - Speed for user (when results can be preloaded)
+      - Saves money in server computation costs to create UI/remember state
+    - Cons:
+      - Lots of bandwidth to deliver Single Page App
+      - Can be slower when building large UI after data call
+    - Overall: Save state/preload data in client to improve user experience. Use server for speed
+      - Use client when small objects can be stored/edited and returned
+      - Use server for displayed only data
+    - Redux for sharing state between client/server
