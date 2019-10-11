@@ -45,9 +45,11 @@ How to use this template to create a basic Frontend Application:
 
 `npm run doc` to generate static documentation in the doc folder
 
+`npm run build` compile application to public directory
+
 **TODO**
 
-`npm run build` ... TODO: compile application to production version
+`npm run build-prod` ... TODO: create prod config
 
 `npm run clean` ... TODO: clean the workspace
 
@@ -104,3 +106,5 @@ How to use this template to create a basic Frontend Application:
       - Use client when small objects can be stored/edited and returned
       - Use server for displayed only data
     - Redux for sharing state between client/server
+    - When should we vs static webpages? React/React Static?
+ - Backbone for UI? Seems simpler than react? Doesn't rely/revolve around instant response to interaction
