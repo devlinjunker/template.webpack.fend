@@ -12,7 +12,7 @@
     "test-dev": "node_modules/karma/bin/karma start --single-run=false --browser=Chrome --auto-watch",
     "test": "node_modules/karma/bin/karma start --single-run",
     "test-watch": "node_modules/karma/bin/karma start",
-    "doc": "npm run build && ./node_modules/.bin/esdoc && cp -r public/ docs/demo/",
+    "doc": "./node_modules/.bin/esdoc && cp -r public/ docs/demo/",
     "build": "./node_modules/.bin/webpack",
     "clean": " ## TODO: clean up project files"
   },
