@@ -6,7 +6,7 @@
   "version": "0.0.1",
   "main": " // TODO",
   "scripts": {
-    "start-watch": "npm run build && (sleep 7s && open http://localhost:3000) & node_modules/karma/bin/karma start",
+    "start-watch": "node_modules/karma/bin/karma start",
     "dev-watch": "./node_modules/.bin/webpack --watch",
     "dev": "./node_modules/.bin/webpack-dev-server --open",
     "test-dev": "node_modules/karma/bin/karma start --single-run=false --browser=Chrome --auto-watch",

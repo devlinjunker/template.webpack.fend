@@ -49,6 +49,9 @@
 <li>Create application in <code>src/</code></li>
 <li>Modify <code>src/entry.js</code> to start up your application</li>
 <li>Update <code>src/index.html</code> with HTML structure</li>
+<li>Use <code>npm run start-watch</code> to compile and run dev server + tests in watch mode</li>
+<li>Navigate <a href="http://localhost:3000/">http://localhost:3000/</a> to see a development version of your web app or <a href="http://localhost:3333/docs">http://localhost:3333/docs</a>
+to see the documentation</li>
 </ol>
 <h3 id="tests-running">Tests/Running</h3><p><code>npm run start-watch</code> to run Karma + Mocha and watch for changes while also opening the Webpack dev server that will recompile the project and reload the webpage on file changes on <a href="http://localhost:3000">http://localhost:3000</a></p>
 <p><code>npm run test-watch</code> to run Karma + Mocha and all of the tests associated with the project and watch for changes on the files to re-run the tests</p>
@@ -82,9 +85,15 @@
 </li>
 <li>[x] <del>(-) Prettier for autofix</del> (just use eslint atom plugin with fix)</li>
 <li>[x] (^) karma/mocha unit test debugging <del>(with atom?)</del> in browser</li>
-<li>[ ] (^) Demo app in docs</li>
+<li>[x] (^) Demo app in docs</li>
 <li>[ ] (^) Move js to <code>src/js</code></li>
-<li>[ ] (^) Update linting rules with descturing/filenames/naming conventions? <a href="https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration">https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration</a></li>
+<li>[ ] (^) Fix single build process (args/if statement in webpack)</li>
+<li>[ ] (^) Update linting rules<ul>
+<li>with descturing/filenames/naming conventions? <a href="https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration">https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration</a></li>
+<li>testing rules</li>
+<li>naming conventions?</li>
+</ul>
+</li>
 <li>[ ] (^) Update Node Version to v10</li>
 <li>[ ] (^) Update Dependencies</li>
 <li>[ ] (-) production configuration for webpack<ul>

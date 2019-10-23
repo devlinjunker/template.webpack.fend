@@ -32,8 +32,6 @@ const config =  {
     }
   },
   plugins: [
-    new CleanWebpackPlugin(['public']),
-
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       // Set the webpage title
@@ -82,10 +80,14 @@ const config =  {
 
 module.exports = config;
 
-// TODO: only do this if we want to start server, not when running `npm run build`
+// TODO: only do below stuff if we want to start development server
+// not useful when running `npm run build` to generate `public` directory
+// index.html file doesn't seem to be placed `public` when these exists
+
+const cleanPublicPlugin = new CleanWebpackPlugin(['public']);
+config.plugins.push(cleanPublicPlugin);
 
 // Q: Why are we doing this again? I think it has to do with Karma
-
 // Start Webpack Dev Server Manually
 const host = '0.0.0.0';
 const port = 3000;
@@ -94,6 +96,13 @@ WebpackDevServer.addDevServerEntrypoints(config, {
   hot: true,
   host,
   port
+});
+WebpackDevServer.addDevServerEntrypoints(config, {
+  contentBase: './docs',
+  hot: false,
+  host,
+  port,
+  publicPath: '/docs/'
 });
 const compiler = webpack(config);
 new WebpackDevServer(compiler).listen(port, host, (err /* , result*/) => {

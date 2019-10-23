@@ -27,6 +27,9 @@ How to use this template to create a basic Frontend Application:
 2. Create application in `src/`
 3. Modify `src/entry.js` to start up your application
 4. Update `src/index.html` with HTML structure
+5. Use `npm run start-watch` to compile and run dev server + tests in watch mode
+6. Navigate http://localhost:3000/ to see a development version of your web app or http://localhost:3333/docs
+to see the documentation
 
 
 ### Tests/Running
@@ -70,9 +73,13 @@ How to use this template to create a basic Frontend Application:
     - [ ] (v) run doc before commit?
  - [x] ~~(-) Prettier for autofix~~ (just use eslint atom plugin with fix)
  - [x] (^) karma/mocha unit test debugging ~~(with atom?)~~ in browser
- - [ ] (^) Demo app in docs
+ - [x] (^) Demo app in docs
  - [ ] (^) Move js to `src/js`
- - [ ] (^) Update linting rules with descturing/filenames/naming conventions? https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration
+ - [ ] (^) Fix single build process (args/if statement in webpack)
+ - [ ] (^) Update linting rules
+      - with descturing/filenames/naming conventions? https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration
+      - testing rules
+      - naming conventions?
  - [ ] (^) Update Node Version to v10
  - [ ] (^) Update Dependencies
  - [ ] (-) production configuration for webpack
