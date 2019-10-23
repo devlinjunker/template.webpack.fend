@@ -28,7 +28,7 @@ How to use this template to create a basic Frontend Application:
 3. Modify `src/entry.js` to start up your application
 4. Update `src/index.html` with HTML structure
 5. Use `npm run start-watch` to compile and run dev server + tests in watch mode
-6. Navigate http://localhost:3000/ to see a development version of your web app or http://localhost:3333/docs
+6. Navigate http://localhost:3000/ to see a development version of your web app or http://localhost:3000/docs/
 to see the documentation
 
 
@@ -82,6 +82,9 @@ to see the documentation
       - naming conventions?
  - [ ] (^) Update Node Version to v10
  - [ ] (^) Update Dependencies
+ - [ ] (^) Mock API requests on localhost
+    - Contract testing? https://docs.pact.io/
+    - OpenAPI validation of mocks? https://bitbucket.org/atlassian/swagger-mock-validator/src/master/
  - [ ] (-) production configuration for webpack
     - Minimize?
     - No Warnings? No output in tests?
