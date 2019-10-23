@@ -1,9 +1,9 @@
 {
+  "version": "0.0.1",
   "name": "BasicWebpackBrowserDB",
   "description": "Quick Browser LocalStorage DB App for testing webpack building",
   "author": "devlin.junker@gmail.com",
   "license": "ISC",
-  "version": "0.0.1",
   "main": " // TODO",
   "scripts": {
     "start-watch": "node_modules/karma/bin/karma start",
