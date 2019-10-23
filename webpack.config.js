@@ -20,7 +20,7 @@ const config =  {
   },
   // Turn off for production (see https://webpack.js.org/guides/production)
   devtool: 'inline-source-map',
-  watch: true,
+  // watch: true,
 
   resolve: {
     extensions: ['.js'],
@@ -82,6 +82,7 @@ const config =  {
 
 module.exports = config;
 
+// TODO: only do this if we want to start server, not when running `npm run build`
 
 // Q: Why are we doing this again? I think it has to do with Karma
 

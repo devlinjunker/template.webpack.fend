@@ -9,9 +9,17 @@
         "source": "./src/",
         "interfaces": ["describe", "it", "context"],
         "includes": ["spec.js$"]
-      }
+      },
+			"brand": {
+				"repository": "https://github.com/basic.webpack"
+			}
     }
   }, {
     "name": "esdoc-flow-plugin"
+  }, {
+      "name": "esdoc-publish-html-plugin",
+      "option": {
+        "template": "docs/template"
+      }
   }]
 }
