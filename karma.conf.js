@@ -1,5 +1,13 @@
 // Karma configuration
-const webpack = require('./webpack.config.js');
+/* eslint-disable no-undef */
+const buildWebpack = require('./webpack.config.js');
+
+// webpack config takes some cli arguments that are prefixed with env, we should recreate those here
+const env = {
+  dev_server: process.argv.includes('--env.dev_server')
+};
+const webpack = buildWebpack(env);
+webpack.watch = true;
 
 const karmaConfig = function(config) {
   config.set({

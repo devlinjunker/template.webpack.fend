@@ -6,14 +6,13 @@
   "license": "ISC",
   "main": " // TODO",
   "scripts": {
-    "start-watch": "node_modules/karma/bin/karma start",
-    "dev-watch": "./node_modules/.bin/webpack --watch",
-    "dev": "./node_modules/.bin/webpack-dev-server --open",
+    "start-watch": "node_modules/karma/bin/karma start --env.dev_server",
+    "dev-watch": "./node_modules/.bin/webpack --env.dev_server",
+    "test-watch": "node_modules/karma/bin/karma start",
     "test-dev": "node_modules/karma/bin/karma start --single-run=false --browser=Chrome --auto-watch",
     "test": "node_modules/karma/bin/karma start --single-run",
-    "test-watch": "node_modules/karma/bin/karma start",
-    "doc": "./node_modules/.bin/esdoc && cp -r public/ docs/demo/",
     "build": "./node_modules/.bin/webpack",
+    "doc": "npm run build && ./node_modules/.bin/esdoc && cp -r public/ docs/demo/",
     "clean": " ## TODO: clean up project files"
   },
   "dependencies": {

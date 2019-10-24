@@ -44,11 +44,9 @@ to see the documentation
 
 `npm run test` to run all of the unit tests for the application one time
 
-`npm run dev` to run a development version of the application
+`npm run build` compile application to public directory
 
 `npm run doc` to generate static documentation in the doc folder
-
-`npm run build` compile application to public directory
 
 **TODO**
 
@@ -75,7 +73,7 @@ to see the documentation
  - [x] (^) karma/mocha unit test debugging ~~(with atom?)~~ in browser
  - [x] (^) Demo app in docs
  - [ ] (^) Move js to `src/js`
- - [ ] (^) Fix single build process (args/if statement in webpack)
+ - [x] (^) Fix single build process (args/if statement in webpack)
  - [ ] (^) Update linting rules
       - with descturing/filenames/naming conventions? https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration
       - testing rules
