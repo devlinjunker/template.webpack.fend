@@ -104,7 +104,6 @@ to see the documentation
  - [ ] Use LocalStorage to configure which demos are showing in application (if adding: login / task list / server integration)
  - [ ] Configure server host
  - [ ] Weather/Other Free API
- - [ ] mocking server requests? for tests/demos
 
 
 ## Notes/Ideas
