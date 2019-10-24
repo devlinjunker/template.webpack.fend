@@ -1,133 +1,133 @@
 window.esdocSearchIndex = [
   [
-    "basicwebpackbrowserdb/src/app.controller.js~appcontroller",
-    "class/src/app.controller.js~AppController.html",
-    "<span>AppController</span> <span class=\"search-result-import-path\">BasicWebpackBrowserDB/src/app.controller.js</span>",
+    "basicwebpackbrowserdb/src/app/app.controller.js~appcontroller",
+    "class/src/app/app.controller.js~AppController.html",
+    "<span>AppController</span> <span class=\"search-result-import-path\">BasicWebpackBrowserDB/src/app/app.controller.js</span>",
     "class"
   ],
   [
-    "basicwebpackbrowserdb/src/localstorage.service.js~localstorageservice",
-    "class/src/localStorage.service.js~LocalStorageService.html",
-    "<span>LocalStorageService</span> <span class=\"search-result-import-path\">BasicWebpackBrowserDB/src/localStorage.service.js</span>",
+    "basicwebpackbrowserdb/src/app/localstorage.service.js~localstorageservice",
+    "class/src/app/localStorage.service.js~LocalStorageService.html",
+    "<span>LocalStorageService</span> <span class=\"search-result-import-path\">BasicWebpackBrowserDB/src/app/localStorage.service.js</span>",
     "class"
   ],
   [
     "",
-    "test-file/src/app.controller.spec.js.html#lineNumber4",
+    "test-file/src/app/app.controller.spec.js.html#lineNumber4",
     "App Controller",
     "test"
   ],
   [
     "",
-    "test-file/src/app.controller.spec.js.html#lineNumber66",
+    "test-file/src/app/app.controller.spec.js.html#lineNumber66",
     "App Controller #clearValue",
     "test"
   ],
   [
     "",
-    "test-file/src/app.controller.spec.js.html#lineNumber67",
+    "test-file/src/app/app.controller.spec.js.html#lineNumber67",
     "App Controller #clearValue should clear the input value",
     "test"
   ],
   [
     "",
-    "test-file/src/app.controller.spec.js.html#lineNumber10",
+    "test-file/src/app/app.controller.spec.js.html#lineNumber10",
     "App Controller #constructor",
     "test"
   ],
   [
     "",
-    "test-file/src/app.controller.spec.js.html#lineNumber11",
+    "test-file/src/app/app.controller.spec.js.html#lineNumber11",
     "App Controller #constructor should set up handlers",
     "test"
   ],
   [
     "",
-    "test-file/src/app.controller.spec.js.html#lineNumber30",
+    "test-file/src/app/app.controller.spec.js.html#lineNumber30",
     "App Controller #save",
     "test"
   ],
   [
     "",
-    "test-file/src/app.controller.spec.js.html#lineNumber47",
+    "test-file/src/app/app.controller.spec.js.html#lineNumber47",
     "App Controller #save should display message to user when saving",
     "test"
   ],
   [
     "",
-    "test-file/src/app.controller.spec.js.html#lineNumber31",
+    "test-file/src/app/app.controller.spec.js.html#lineNumber31",
     "App Controller #save should save values with localStorage service",
     "test"
   ],
   [
     "",
-    "test-file/src/app.controller.spec.js.html#lineNumber50",
+    "test-file/src/app/app.controller.spec.js.html#lineNumber50",
     "App Controller #view",
     "test"
   ],
   [
     "",
-    "test-file/src/app.controller.spec.js.html#lineNumber63",
+    "test-file/src/app/app.controller.spec.js.html#lineNumber63",
     "App Controller #view should display message if error retrieving value",
     "test"
   ],
   [
     "",
-    "test-file/src/app.controller.spec.js.html#lineNumber51",
+    "test-file/src/app/app.controller.spec.js.html#lineNumber51",
     "App Controller #view should retrieve values from localStorage service and display",
     "test"
   ],
   [
     "",
-    "test-file/src/localStorage.service.spec.js.html#lineNumber3",
+    "test-file/src/app/localStorage.service.spec.js.html#lineNumber3",
     "LocalStorageService",
     "test"
   ],
   [
     "",
-    "test-file/src/localStorage.service.spec.js.html#lineNumber54",
+    "test-file/src/app/localStorage.service.spec.js.html#lineNumber54",
     "LocalStorageService #get",
     "test"
   ],
   [
     "",
-    "test-file/src/localStorage.service.spec.js.html#lineNumber56",
+    "test-file/src/app/localStorage.service.spec.js.html#lineNumber56",
     "LocalStorageService #get should retrieve value from local storage using key",
     "test"
   ],
   [
     "",
-    "test-file/src/localStorage.service.spec.js.html#lineNumber68",
+    "test-file/src/app/localStorage.service.spec.js.html#lineNumber68",
     "LocalStorageService #get should return object if object stored",
     "test"
   ],
   [
     "",
-    "test-file/src/localStorage.service.spec.js.html#lineNumber82",
+    "test-file/src/app/localStorage.service.spec.js.html#lineNumber82",
     "LocalStorageService #get should throw error if requesting key with no value assigned",
     "test"
   ],
   [
     "",
-    "test-file/src/localStorage.service.spec.js.html#lineNumber5",
+    "test-file/src/app/localStorage.service.spec.js.html#lineNumber5",
     "LocalStorageService #save",
     "test"
   ],
   [
     "",
-    "test-file/src/localStorage.service.spec.js.html#lineNumber37",
+    "test-file/src/app/localStorage.service.spec.js.html#lineNumber37",
     "LocalStorageService #save should be able to retrieve value using key with #get",
     "test"
   ],
   [
     "",
-    "test-file/src/localStorage.service.spec.js.html#lineNumber22",
+    "test-file/src/app/localStorage.service.spec.js.html#lineNumber22",
     "LocalStorageService #save should stringify objects before saving them",
     "test"
   ],
   [
     "",
-    "test-file/src/localStorage.service.spec.js.html#lineNumber7",
+    "test-file/src/app/localStorage.service.spec.js.html#lineNumber7",
     "LocalStorageService #save should use local storage to save value with key",
     "test"
   ],
@@ -414,75 +414,75 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
-    "src/app.controller.js",
-    "file/src/app.controller.js.html",
-    "src/app.controller.js",
+    "src/app/app.controller.js",
+    "file/src/app/app.controller.js.html",
+    "src/app/app.controller.js",
     "file"
   ],
   [
-    "src/app.controller.js~appcontroller#clearvalue",
-    "class/src/app.controller.js~AppController.html#instance-method-clearValue",
-    "src/app.controller.js~AppController#clearValue",
+    "src/app/app.controller.js~appcontroller#clearvalue",
+    "class/src/app/app.controller.js~AppController.html#instance-method-clearValue",
+    "src/app/app.controller.js~AppController#clearValue",
     "method"
   ],
   [
-    "src/app.controller.js~appcontroller#constructor",
-    "class/src/app.controller.js~AppController.html#instance-constructor-constructor",
-    "src/app.controller.js~AppController#constructor",
+    "src/app/app.controller.js~appcontroller#constructor",
+    "class/src/app/app.controller.js~AppController.html#instance-constructor-constructor",
+    "src/app/app.controller.js~AppController#constructor",
     "method"
   ],
   [
-    "src/app.controller.js~appcontroller#keyinput",
-    "class/src/app.controller.js~AppController.html#instance-member-keyInput",
-    "src/app.controller.js~AppController#keyInput",
+    "src/app/app.controller.js~appcontroller#keyinput",
+    "class/src/app/app.controller.js~AppController.html#instance-member-keyInput",
+    "src/app/app.controller.js~AppController#keyInput",
     "member"
   ],
   [
-    "src/app.controller.js~appcontroller#save",
-    "class/src/app.controller.js~AppController.html#instance-method-save",
-    "src/app.controller.js~AppController#save",
+    "src/app/app.controller.js~appcontroller#save",
+    "class/src/app/app.controller.js~AppController.html#instance-method-save",
+    "src/app/app.controller.js~AppController#save",
     "method"
   ],
   [
-    "src/app.controller.js~appcontroller#valinput",
-    "class/src/app.controller.js~AppController.html#instance-member-valInput",
-    "src/app.controller.js~AppController#valInput",
+    "src/app/app.controller.js~appcontroller#valinput",
+    "class/src/app/app.controller.js~AppController.html#instance-member-valInput",
+    "src/app/app.controller.js~AppController#valInput",
     "member"
   ],
   [
-    "src/app.controller.js~appcontroller#view",
-    "class/src/app.controller.js~AppController.html#instance-method-view",
-    "src/app.controller.js~AppController#view",
+    "src/app/app.controller.js~appcontroller#view",
+    "class/src/app/app.controller.js~AppController.html#instance-method-view",
+    "src/app/app.controller.js~AppController#view",
     "method"
   ],
   [
-    "src/app.controller.spec.js",
-    "test-file/src/app.controller.spec.js.html",
-    "src/app.controller.spec.js",
+    "src/app/app.controller.spec.js",
+    "test-file/src/app/app.controller.spec.js.html",
+    "src/app/app.controller.spec.js",
     "testFile"
   ],
   [
-    "src/localstorage.service.js",
-    "file/src/localStorage.service.js.html",
-    "src/localStorage.service.js",
+    "src/app/localstorage.service.js",
+    "file/src/app/localStorage.service.js.html",
+    "src/app/localStorage.service.js",
     "file"
   ],
   [
-    "src/localstorage.service.js~localstorageservice.get",
-    "class/src/localStorage.service.js~LocalStorageService.html#static-method-get",
-    "src/localStorage.service.js~LocalStorageService.get",
+    "src/app/localstorage.service.js~localstorageservice.get",
+    "class/src/app/localStorage.service.js~LocalStorageService.html#static-method-get",
+    "src/app/localStorage.service.js~LocalStorageService.get",
     "method"
   ],
   [
-    "src/localstorage.service.js~localstorageservice.save",
-    "class/src/localStorage.service.js~LocalStorageService.html#static-method-save",
-    "src/localStorage.service.js~LocalStorageService.save",
+    "src/app/localstorage.service.js~localstorageservice.save",
+    "class/src/app/localStorage.service.js~LocalStorageService.html#static-method-save",
+    "src/app/localStorage.service.js~LocalStorageService.save",
     "method"
   ],
   [
-    "src/localstorage.service.spec.js",
-    "test-file/src/localStorage.service.spec.js.html",
-    "src/localStorage.service.spec.js",
+    "src/app/localstorage.service.spec.js",
+    "test-file/src/app/localStorage.service.spec.js.html",
+    "src/app/localStorage.service.spec.js",
     "testFile"
   ]
 ]

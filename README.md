@@ -72,7 +72,7 @@ to see the documentation
  - [x] ~~(-) Prettier for autofix~~ (just use eslint atom plugin with fix)
  - [x] (^) karma/mocha unit test debugging ~~(with atom?)~~ in browser
  - [x] (^) Demo app in docs
- - [ ] (^) Move js to `src/js`
+ - [x] (^) Move js to `src/app`
  - [x] (^) Fix single build process (args/if statement in webpack)
  - [ ] (^) Update linting rules
       - with descturing/filenames/naming conventions? https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration
