@@ -78,6 +78,7 @@ to see the documentation
       - with descturing/filenames/naming conventions? https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration
       - testing rules
       - naming conventions?
+ - [ ] (^) Absolute Paths
  - [ ] (^) Update Node Version to v10
  - [ ] (^) Update Dependencies
  - [ ] (^) Mock API requests on localhost
@@ -90,6 +91,7 @@ to see the documentation
  - [ ] (-) cleaner output from watch script?
  - [ ] (-) css variables?
  - [ ] (v) Cypress UI Testing?
+ - [ ] (v) Serve docs with small script and `npm run doc-serve`
  - [ ] (v) package.json main script
     - (install/run application and open browser? or just point to entry or AppController?)
  - [ ] (v) parameterize directories in package.json scripts?
@@ -99,10 +101,14 @@ to see the documentation
  - [x] Local Storage DataService
  - [x] Controller/Component for saving/retrieving stored vals
  - [x] Interface for displaying vals
+ - [ ] Use LocalStorage to configure which demos are showing in application (if adding: login / task list / server integration)
+ - [ ] Configure server host
+ - [ ] Weather/Other Free API
+ - [ ] mocking server requests? for tests/demos
+
 
 ## Notes/Ideas
  - PostCSS vs CSS-Loader?
- - Use LocalStorage to configure which demos are showing in application (if adding: login / task list / server integration)
  - Why hold much state/data in UI rather than display from server on page load?
     - Pros:
       - Speed for user (when results can be preloaded)
