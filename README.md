@@ -74,6 +74,8 @@ to see the documentation
  - [x] (^) Demo app in docs
  - [x] (^) Move js to `src/app`
  - [x] (^) Fix single build process (args/if statement in webpack)
+ - [ ] (^) Basic CSS Style for all apps:
+      - https://andybrewer.github.io/mvp/
  - [ ] (^) Update linting rules
       - with descturing/filenames/naming conventions? https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration
       - testing rules
