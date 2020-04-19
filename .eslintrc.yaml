@@ -19,12 +19,17 @@ plugins:
   - prettier
   - flowtype
   - header
+  - flowtype-errors
+  - mocha
+  - filenames
+  - import
 
 extends:
   - eslint:recommended
   - prettier
   - prettier/flowtype
   - plugin:flowtype/recommended
+  - plugin:mocha/recommended
 
 globals:
   expect: readonly
@@ -44,6 +49,8 @@ overrides:
                    (\*\n
                     \* .*\n )?$
       # Flow Type Rules
+      flowtype/require-variable-type:
+        - warn
       flowtype/require-return-type:
         - warn
         - always
@@ -53,6 +60,19 @@ overrides:
         - warn
       flowtype/no-weak-types:
         - warn
+      flowtype-errors/show-errors:
+        - error
+      flowtype-errors/show-warnings:
+        - warn
+
+# TODO: File naming conventions
+# Example:
+ # - files:
+ #   - src/controllers/*.js
+ #   rules:
+ #     filenames/match-regex:
+ #       - error
+ #       - .*\.controller(\.spec)?$
 
 # Custom Rules Below
 rules:
@@ -64,6 +84,21 @@ rules:
         FunctionDeclaration: true
         MethodDefinition: true
         ClassDeclaration: true
+
+  # Naming conventions
+  id-length:
+    - warn
+    - min: 3
+      exceptions:
+      - id
+      - i
+      - it
+      - _
+      - fs
+  new-cap:
+    - error
+  camelcase:
+    - warn
 
   # File Conventions
   max-len:
@@ -80,6 +115,34 @@ rules:
   linebreak-style:
     - error
     - unix
+
+  # Import Rules
+  import/no-unresolved:
+    - error
+  import/no-absolute-path:
+    - error
+  import/no-dynamic-require:
+    - error
+  import/no-self-import:
+    - error
+  import/no-cycle:
+    - error
+  import/export:
+    - error
+  import/no-named-as-default:
+    - warn
+  import/no-named-as-default-member:
+    - warn
+  import/no-mutable-exports:
+    - warn
+  import/first:
+    - warn
+  import/no-duplicates:
+    - warn
+  import/newline-after-import:
+    - error
+  import/prefer-default-export:
+    - warn
 
   # Basic Rules
   no-var: error
@@ -170,6 +233,11 @@ rules:
     - error
     - always
   arrow-spacing: error
+  # prefer-arrow-callback:
+  #   - error
+  #   - allowNamedFunctions: true
+  # Mocha prefers function() style to set `this`: http://mochajs.org/#arrow-functions
   prefer-arrow-callback:
+    - off
+  mocha/prefer-arrow-callback:
     - error
-    - allowNamedFunctions: true

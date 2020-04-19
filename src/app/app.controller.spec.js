@@ -4,14 +4,14 @@
 import AppController from './app.controller';
 import LocalStorageService from './localStorage.service';
 
-describe('App Controller', () => {
+describe('App Controller', function() {
   let controller;
   const saveBtn = {};
   const getBtn = {};
   const clearBtn = {};
 
-  describe('#constructor', () => {
-    it('should set up handlers', () => {
+  describe('#constructor', function() {
+    it('should set up handlers', function() {
       sandbox.stub(document, 'getElementsByClassName').callsFake((param): any => {
         if (param === 'save-btn') {
           return [saveBtn];
@@ -30,8 +30,8 @@ describe('App Controller', () => {
     });
   });
 
-  describe('#save', () => {
-    it('should save values with localStorage service', () => {
+  describe('#save', function() {
+    it('should save values with localStorage service', function() {
       const saveStub = sandbox.stub(LocalStorageService, 'save');
       controller.keyInput = {
         value: 'abc'
@@ -50,8 +50,8 @@ describe('App Controller', () => {
     it('should display message to user when saving');
   });
 
-  describe('#view', () => {
-    it('should retrieve values from localStorage service and display', () => {
+  describe('#view', function() {
+    it('should retrieve values from localStorage service and display', function() {
       const getStub = sandbox.stub(LocalStorageService, 'get');
       controller.keyInput = {
         value: 'abc'
@@ -66,8 +66,8 @@ describe('App Controller', () => {
     it('should display message if error retrieving value');
   });
 
-  describe('#clearValue', () => {
-    it('should clear the input value', () => {
+  describe('#clearValue', function() {
+    it('should clear the input value', function() {
       controller.valInput = {
         innerText: 'abc'
       };

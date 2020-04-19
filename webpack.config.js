@@ -91,7 +91,7 @@ module.exports = (env) => {
     // Q: Why are we doing this again? I think it has to do with Karma
     // Start Webpack Dev Server Manually
     const host = '0.0.0.0';
-    const port = 3000;
+    const port = 3030;
     WebpackDevServer.addDevServerEntrypoints(config, {
       contentBase: './public',
       hot: true,

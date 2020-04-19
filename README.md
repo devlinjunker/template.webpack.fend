@@ -6,7 +6,7 @@ Simple web interface for storing values in the Browser Local Storage.
 
 
 ## Dependencies
-Node v6 and npm
+Node v8+ and npm
 
 See [package.json](https://github.com/devlinjunker/basic.webpack/blob/master/package.json) for full list of current dependencies
  - Webpack + Loaders
@@ -74,12 +74,12 @@ to see the documentation
  - [x] (^) Demo app in docs
  - [x] (^) Move js to `src/app`
  - [x] (^) Fix single build process (args/if statement in webpack)
- - [ ] (^) Update linting rules
+ - [x] (^) Update linting rules
       - with descturing/filenames/naming conventions? https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration
       - testing rules
       - naming conventions?
- - [ ] (^) Absolute Paths
- - [ ] (^) Update Node Version to v10
+ - [ ] ~~(^) Absolute Paths~~
+ - [x] (^) Update Node Version to v10
  - [ ] (^) Update Dependencies
  - [ ] (^) Mock API requests on localhost
     - Contract testing? https://docs.pact.io/

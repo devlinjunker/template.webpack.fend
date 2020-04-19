@@ -3,11 +3,11 @@
  */
 import LocalStorageService from './localStorage.service';
 
-describe('LocalStorageService', () => {
+describe('LocalStorageService', function() {
 
-  describe('#save', () => {
+  describe('#save', function() {
 
-    it('should use local storage to save value with key', () => {
+    it('should use local storage to save value with key', function() {
       sandbox.spy(localStorage, 'setItem');
       const key = 'test';
       const val = 'val';
@@ -22,7 +22,7 @@ describe('LocalStorageService', () => {
       expect(localStorage.setItem.args[0][1]).to.equal(val);
     });
 
-    it('should stringify objects before saving them', () => {
+    it('should stringify objects before saving them', function() {
       sandbox.spy(localStorage, 'setItem');
 
       const val = {
@@ -37,7 +37,7 @@ describe('LocalStorageService', () => {
       expect(localStorage.setItem.args[0]).to.include(stringified);
     });
 
-    it('should be able to retrieve value using key with #get', () => {
+    it('should be able to retrieve value using key with #get', function() {
       const val = 'test';
       const key = 'abc';
 
@@ -54,9 +54,9 @@ describe('LocalStorageService', () => {
     });
   });
 
-  describe('#get', () => {
+  describe('#get', function() {
 
-    it('should retrieve value from local storage using key', () => {
+    it('should retrieve value from local storage using key', function() {
       sandbox.stub(localStorage, 'getItem').returns('abc');
       const key = 'test';
 
@@ -68,7 +68,7 @@ describe('LocalStorageService', () => {
       expect(localStorage.getItem.args[0][0]).to.equal(key);
     });
 
-    it('should return object if object stored', () => {
+    it('should return object if object stored', function() {
       const key = 'abc';
       const val = {
         test: 123
@@ -82,7 +82,7 @@ describe('LocalStorageService', () => {
       expect(returned).to.deep.equal(val);
     });
 
-    it('should throw error if requesting key with no value assigned', () => {
+    it('should throw error if requesting key with no value assigned', function() {
       const key = 'unused_123_abc';
 
       expect(() => {

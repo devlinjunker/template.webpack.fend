@@ -81,3 +81,8 @@
   max-width: 100%;
   box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 }
+
+header a[href*=github] {
+  position: fixed !important;
+  right: 10px;
+}
