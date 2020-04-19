@@ -117,6 +117,20 @@ to see the documentation
  - [ ] Weather/Other Free API
  - [ ] Redux Example (w/o React)
  - [ ] React Example
+   - [ ] Notebook App
+     - [ ] Save/Read Gists
+       - https://developer.github.com/v3/gists/#list-gists-for-the-authenticated-user
+     - [ ] Github Readmes in my repos and save with commit
+     - [ ] Sorting Notes
+       - A-Z
+       - Date Created?
+       - Date Modified
+       - Custom (with dragging)
+     - [ ] Font Size
+     - [ ] Tagging
+       - drag to tag
+       - multiple tags per note
+       - shift+click on tags section to filter notes
  - [ ] GraphQL Example
  - [ ] Websocket?
 

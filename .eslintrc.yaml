@@ -164,6 +164,7 @@ rules:
   eqeqeq:
     - error
     - always
+  no-lonely-if: error
 
   indent:
     - error
@@ -171,10 +172,11 @@ rules:
   quotes:
     - error
     - single
+  prefer-template:
+    - error
   semi:
     - error
     - always
-  no-lonely-if: error
 
   # Spacing
   no-trailing-spaces: error
