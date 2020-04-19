@@ -28,13 +28,13 @@ How to use this template to create a basic Frontend Application:
 3. Modify `src/entry.js` to start up your application
 4. Update `src/index.html` with HTML structure
 5. Use `npm run start-watch` to compile and run dev server + tests in watch mode
-6. Navigate http://localhost:3000/ to see a development version of your web app or http://localhost:3000/docs/
+6. Navigate http://localhost:3030/ to see a development version of your web app or http://localhost:3030/docs/
 to see the documentation
 
 
 ### Tests/Running
 
-`npm run start-watch` to run Karma + Mocha and watch for changes while also opening the Webpack dev server that will recompile the project and reload the webpage on file changes on http://localhost:3000
+`npm run start-watch` to run Karma + Mocha and watch for changes while also opening the Webpack dev server that will recompile the project and reload the webpage on file changes on http://localhost:3030
 
 `npm run test-watch` to run Karma + Mocha and all of the tests associated with the project and watch for changes on the files to re-run the tests
 
