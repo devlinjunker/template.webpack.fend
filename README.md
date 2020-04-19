@@ -44,6 +44,8 @@ to see the documentation
 
 `npm run test` to run all of the unit tests for the application one time
 
+`npm run lint` to run the linter on src directory
+
 `npm run build` compile application to public directory
 
 `npm run doc` to generate static documentation in the doc folder
@@ -74,25 +76,34 @@ to see the documentation
  - [x] (^) Demo app in docs
  - [x] (^) Move js to `src/app`
  - [x] (^) Fix single build process (args/if statement in webpack)
- - [ ] (^) Basic CSS Style for all apps:
-      - https://andybrewer.github.io/mvp/
  - [x] (^) Update linting rules
       - with descturing/filenames/naming conventions? https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration
       - testing rules
       - naming conventions?
  - [ ] ~~(^) Absolute Paths~~
  - [x] (^) Update Node Version to v10
- - [ ] (^) Update Dependencies
- - [ ] (^) Mock API requests on localhost
+ - [x] (^) Update Dependencies
+ - [ ] (^) Basic CSS Style for all apps:
+      - https://andybrewer.github.io/mvp/
+ - [ ] (^) Different Folders for examples
+ - [ ] (^) Configuration File
+ - [ ] (^) Githooks
+ - [ ] (^) Github Actions
+ - [ ] (^) Manual in Docs
+ - [ ] (^) Madge?
+ - [ ] Helpers
+   - Internal API Helper
+   - External API Helper?
+ - [ ] (^) Basic UI Framework (Bootstrap? Foundation?)
+ - [ ] (-) css variables?
+ - [ ] (v) Cypress UI Testing?
+ - [ ] (-) Mock API requests on localhost
     - Contract testing? https://docs.pact.io/
     - OpenAPI validation of mocks? https://bitbucket.org/atlassian/swagger-mock-validator/src/master/
  - [ ] (-) production configuration for webpack
     - Minimize?
     - No Warnings? No output in tests?
- - [ ] (-) Basic UI Framework (Bootstrap? Foundation?)
  - [ ] (-) cleaner output from watch script?
- - [ ] (-) css variables?
- - [ ] (v) Cypress UI Testing?
  - [ ] (v) Serve docs with small script and `npm run doc-serve`
  - [ ] (v) package.json main script
     - (install/run application and open browser? or just point to entry or AppController?)
@@ -103,10 +114,11 @@ to see the documentation
  - [x] Local Storage DataService
  - [x] Controller/Component for saving/retrieving stored vals
  - [x] Interface for displaying vals
- - [ ] Use LocalStorage to configure which demos are showing in application (if adding: login / task list / server integration)
- - [ ] Configure server host
  - [ ] Weather/Other Free API
-
+ - [ ] Redux Example (w/o React)
+ - [ ] React Example
+ - [ ] GraphQL Example
+ - [ ] Websocket?
 
 ## Notes/Ideas
  - PostCSS vs CSS-Loader?

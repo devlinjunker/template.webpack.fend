@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+/* eslint-disable no-undef, import/no-named-as-default-member */
 import sinon from 'sinon';
 import chai from 'chai';
 import sinonChai from 'sinon-chai';
@@ -12,6 +12,7 @@ const testsContext = require.context('../src', true, /.spec$/);
 
 testsContext.keys().forEach(testsContext);
 
-afterEach(() => {
+/* eslint-disable mocha/no-top-level-hooks,mocha/no-hooks-for-single-case */
+afterEach(function() {
   sandbox.restore();
 });
