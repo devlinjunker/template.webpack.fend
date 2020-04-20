@@ -102,8 +102,10 @@ to see the documentation
  - [ ] (^) Githooks
  - [ ] (^) Github Actions
  - [ ] (^) Madge?
+ - [ ] (^) If running in development -> console errors/warnings appear in UI bubble
  - [ ] (^) Manual in Docs
- - [ ] Helpers
+ - [..] Helpers
+   - ~~Localstorage~~
    - Internal API Helper
    - External API Helper?
  - [ ] (^) Basic UI Framework
