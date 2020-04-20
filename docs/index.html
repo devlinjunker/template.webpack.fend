@@ -24,15 +24,15 @@
 <nav class="navigation" data-ice="nav"><div>
   <ul>
     
-  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#app">app</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app/app.controller.js~AppController.html">AppController</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/app/localStorage.service.js~LocalStorageService.html">LocalStorageService</a></span></span></li>
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#storage">storage</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/storage/app.controller.js~AppController.html">AppController</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/storage/localStorage.service.js~LocalStorageService.html">LocalStorageService</a></span></span></li>
 </ul>
 </div>
 </nav>
 
 <div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="basic-webpack-example-localstorage-db-app">Basic Webpack Example LocalStorage DB App</h1><p>Example application for practicing webpack builds and adding plugins or other build tools.</p>
 <p>Simple web interface for storing values in the Browser Local Storage.</p>
-<h2 id="dependencies">Dependencies</h2><p>Node v6 and npm</p>
+<h2 id="dependencies">Dependencies</h2><p>Node v12+ and npm</p>
 <p>See <a href="https://github.com/devlinjunker/basic.webpack/blob/master/package.json">package.json</a> for full list of current dependencies</p>
 <ul>
 <li>Webpack + Loaders</li>
@@ -51,14 +51,15 @@
 <li>Modify <code>src/entry.js</code> to start up your application</li>
 <li>Update <code>src/index.html</code> with HTML structure</li>
 <li>Use <code>npm run start-watch</code> to compile and run dev server + tests in watch mode</li>
-<li>Navigate <a href="http://localhost:3000/">http://localhost:3000/</a> to see a development version of your web app or <a href="http://localhost:3000/docs/">http://localhost:3000/docs/</a>
+<li>Navigate <a href="http://localhost:3030/">http://localhost:3030/</a> to see a development version of your web app or <a href="http://localhost:3030/docs/">http://localhost:3030/docs/</a>
 to see the documentation</li>
 </ol>
-<h3 id="tests-running">Tests/Running</h3><p><code>npm run start-watch</code> to run Karma + Mocha and watch for changes while also opening the Webpack dev server that will recompile the project and reload the webpage on file changes on <a href="http://localhost:3000">http://localhost:3000</a></p>
+<h3 id="tests-running">Tests/Running</h3><p><code>npm run start-watch</code> to run Karma + Mocha and watch for changes while also opening the Webpack dev server that will recompile the project and reload the webpage on file changes on <a href="http://localhost:3030">http://localhost:3030</a></p>
 <p><code>npm run test-watch</code> to run Karma + Mocha and all of the tests associated with the project and watch for changes on the files to re-run the tests</p>
 <p><code>npm run dev-watch</code> to run the only webpack development server and watch for changes on the files to reload</p>
 <p><code>npm run test-dev</code> to start the unit test runner for debugging unit tests in the browser</p>
 <p><code>npm run test</code> to run all of the unit tests for the application one time</p>
+<p><code>npm run lint</code> to run the linter on src directory</p>
 <p><code>npm run build</code> compile application to public directory</p>
 <p><code>npm run doc</code> to generate static documentation in the doc folder</p>
 <p><strong>TODO</strong></p>
@@ -88,16 +89,53 @@ to see the documentation</li>
 <li>[x] (^) Demo app in docs</li>
 <li>[x] (^) Move js to <code>src/app</code></li>
 <li>[x] (^) Fix single build process (args/if statement in webpack)</li>
-<li>[ ] (^) Update linting rules<ul>
+<li>[x] (^) Update linting rules<ul>
 <li>with descturing/filenames/naming conventions? <a href="https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration">https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration</a></li>
 <li>testing rules</li>
 <li>naming conventions?</li>
 </ul>
 </li>
-<li>[ ] (^) Absolute Paths</li>
-<li>[ ] (^) Update Node Version to v10</li>
-<li>[ ] (^) Update Dependencies</li>
-<li>[ ] (^) Mock API requests on localhost<ul>
+<li>[ ] <del>(^) Absolute Paths</del></li>
+<li>[x] (^) Update Node Version to v10</li>
+<li>[x] (^) Update Dependencies</li>
+<li>[..] (^) Base CSS Style for all apps:<ul>
+<li><del><a href="https://andybrewer.github.io/mvp/">https://andybrewer.github.io/mvp/</a></del><ul>
+<li>just remember this one for the future if need a splash screen for company/product/webapp</li>
+<li>want a more flexible framework for future</li>
+</ul>
+</li>
+<li>[ ] PostCSS?</li>
+<li>[ ] css variables?</li>
+<li>[ ] Tailwind - integrates with javascript</li>
+<li>[ ] bulma <a href="https://bulma.io/documentation/overview/start/">https://bulma.io/documentation/overview/start/</a></li>
+<li>[ ] Bootstrap? Foundation? -- probably not</li>
+</ul>
+</li>
+<li>[x] (^) Different Folders for examples</li>
+<li>[ ] (^) HTML Page with important stuff<ul>
+<li>header/tags</li>
+<li>[ ] template for all pages?</li>
+</ul>
+</li>
+<li>[ ] (^) HTML Linting</li>
+<li>[ ] (^) CSS Linting</li>
+<li>[ ] (^) Configuration File</li>
+<li>[ ] (^) Githooks</li>
+<li>[ ] (^) Github Actions</li>
+<li>[ ] (^) Madge?</li>
+<li>[ ] (^) Manual in Docs</li>
+<li>[ ] Helpers<ul>
+<li>Internal API Helper</li>
+<li>External API Helper?</li>
+</ul>
+</li>
+<li>[ ] (^) Basic UI Framework<ul>
+<li>[ ] Backbone?</li>
+<li>[ ] Vue?</li>
+</ul>
+</li>
+<li>[ ] (v) Cypress UI Testing?</li>
+<li>[ ] (-) Mock API requests on localhost<ul>
 <li>Contract testing? <a href="https://docs.pact.io/">https://docs.pact.io/</a></li>
 <li>OpenAPI validation of mocks? <a href="https://bitbucket.org/atlassian/swagger-mock-validator/src/master/">https://bitbucket.org/atlassian/swagger-mock-validator/src/master/</a></li>
 </ul>
@@ -107,10 +145,7 @@ to see the documentation</li>
 <li>No Warnings? No output in tests?</li>
 </ul>
 </li>
-<li>[ ] (-) Basic UI Framework (Bootstrap? Foundation?)</li>
 <li>[ ] (-) cleaner output from watch script?</li>
-<li>[ ] (-) css variables?</li>
-<li>[ ] (v) Cypress UI Testing?</li>
 <li>[ ] (v) Serve docs with small script and <code>npm run doc-serve</code></li>
 <li>[ ] (v) package.json main script<ul>
 <li>(install/run application and open browser? or just point to entry or AppController?)</li>
@@ -126,9 +161,35 @@ to see the documentation</li>
 <li>[x] Local Storage DataService</li>
 <li>[x] Controller/Component for saving/retrieving stored vals</li>
 <li>[x] Interface for displaying vals</li>
-<li>[ ] Use LocalStorage to configure which demos are showing in application (if adding: login / task list / server integration)</li>
-<li>[ ] Configure server host</li>
 <li>[ ] Weather/Other Free API</li>
+<li>[ ] Redux Example (w/o React)</li>
+<li>[ ] React Example<ul>
+<li>[ ] Notebook App<ul>
+<li>[ ] Save/Read Gists<ul>
+<li><a href="https://developer.github.com/v3/gists/#list-gists-for-the-authenticated-user">https://developer.github.com/v3/gists/#list-gists-for-the-authenticated-user</a></li>
+</ul>
+</li>
+<li>[ ] Github Readmes in my repos and save with commit</li>
+<li>[ ] Sorting Notes<ul>
+<li>A-Z</li>
+<li>Date Created?</li>
+<li>Date Modified</li>
+<li>Custom (with dragging)</li>
+</ul>
+</li>
+<li>[ ] Font Size</li>
+<li>[ ] Tagging<ul>
+<li>drag to tag</li>
+<li>multiple tags per note</li>
+<li>shift+click on tags section to filter notes</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>[ ] GraphQL Example</li>
+<li>[ ] Websocket?</li>
 </ul>
 <h2 id="notes-ideas">Notes/Ideas</h2><ul>
 <li>PostCSS vs CSS-Loader?</li>

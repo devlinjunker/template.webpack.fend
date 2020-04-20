@@ -3,7 +3,7 @@
   "expectCount": 10,
   "actualCount": 8,
   "files": {
-    "src/app/app.controller.js": {
+    "src/storage/app.controller.js": {
       "expectCount": 7,
       "actualCount": 5,
       "undocumentLines": [
@@ -11,7 +11,7 @@
         14
       ]
     },
-    "src/app/localStorage.service.js": {
+    "src/storage/localStorage.service.js": {
       "expectCount": 3,
       "actualCount": 3,
       "undocumentLines": []
