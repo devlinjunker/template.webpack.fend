@@ -1,8 +1,8 @@
 window.esdocSearchIndex = [
   [
-    "basicwebpackbrowserdb/src/helpers/localstorage.helper.js~localstorageservice",
-    "class/src/helpers/localStorage.helper.js~LocalStorageService.html",
-    "<span>LocalStorageService</span> <span class=\"search-result-import-path\">BasicWebpackBrowserDB/src/helpers/localStorage.helper.js</span>",
+    "basicwebpackbrowserdb/src/helpers/localstorage.helper.js~localstoragehelper",
+    "class/src/helpers/localStorage.helper.js~LocalStorageHelper.html",
+    "<span>LocalStorageHelper</span> <span class=\"search-result-import-path\">BasicWebpackBrowserDB/src/helpers/localStorage.helper.js</span>",
     "class"
   ],
   [
@@ -420,15 +420,15 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "src/helpers/localstorage.helper.js~localstorageservice.get",
-    "class/src/helpers/localStorage.helper.js~LocalStorageService.html#static-method-get",
-    "src/helpers/localStorage.helper.js~LocalStorageService.get",
+    "src/helpers/localstorage.helper.js~localstoragehelper.get",
+    "class/src/helpers/localStorage.helper.js~LocalStorageHelper.html#static-method-get",
+    "src/helpers/localStorage.helper.js~LocalStorageHelper.get",
     "method"
   ],
   [
-    "src/helpers/localstorage.helper.js~localstorageservice.save",
-    "class/src/helpers/localStorage.helper.js~LocalStorageService.html#static-method-save",
-    "src/helpers/localStorage.helper.js~LocalStorageService.save",
+    "src/helpers/localstorage.helper.js~localstoragehelper.save",
+    "class/src/helpers/localStorage.helper.js~LocalStorageHelper.html#static-method-save",
+    "src/helpers/localStorage.helper.js~LocalStorageHelper.save",
     "method"
   ],
   [

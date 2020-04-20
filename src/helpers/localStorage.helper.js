@@ -6,7 +6,7 @@ import _ from 'lodash';
 /**
  * DataService Class for Storing Values in the LocalStorage in the browser
  */
-export default class LocalStorageService {
+export default class LocalStorageHelper {
 
   /**
    * Saves the value at the key provided in the browser localStorage

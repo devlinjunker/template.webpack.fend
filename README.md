@@ -1,8 +1,9 @@
-# Basic Webpack Example LocalStorage DB App
+# Basic Webpack App
 
-Example application for practicing webpack builds and adding plugins or other build tools.
+Example Browser application using webpack build.
 
-Simple web interface for storing values in the Browser Local Storage.
+**Demo:**
+ - Simple web interface for storing values in the Browser Local Storage.
 
 
 ## Dependencies
@@ -83,16 +84,19 @@ to see the documentation
  - [ ] ~~(^) Absolute Paths~~
  - [x] (^) Update Node Version to v10
  - [x] (^) Update Dependencies
+ - [x] (^) Different Folders for examples
  - [..] (^) Base CSS Style for all apps:
       - ~~https://andybrewer.github.io/mvp/~~
         - just remember this one for the future if need a splash screen for company/product/webapp
         - want a more flexible framework for future
-      - [ ] PostCSS?
-      - [ ] css variables?
-      - [ ] Tailwind - integrates with javascript
-      - [ ] bulma https://bulma.io/documentation/overview/start/
-      - [ ] Bootstrap? Foundation? -- probably not
- - [x] (^) Different Folders for examples
+      - [ ] Clearing/standardizing browser css
+ - [ ] CSS Frameworks
+   - [ ] PostCSS?
+   - [ ] css variables?
+   - [ ] Tailwind - integrates with javascript
+   - [ ] bulma https://bulma.io/documentation/overview/start/
+   - [ ] Bootstrap? Foundation? -- probably not 
+ - [ ] (^) Github Actions ----->> Build doc on commit to master <<-----
  - [ ] (^) HTML Page with important stuff
    - header/tags
    - [ ] template for all pages?
@@ -100,12 +104,12 @@ to see the documentation
  - [ ] (^) CSS Linting
  - [ ] (^) Configuration File
  - [ ] (^) Githooks
- - [ ] (^) Github Actions
  - [ ] (^) Madge?
  - [ ] (^) If running in development -> console errors/warnings appear in UI bubble
  - [ ] (^) Manual in Docs
  - [..] Helpers
    - ~~Localstorage~~
+   - Performance Loggers (start/end/post to api? file?)
    - Internal API Helper
    - External API Helper?
  - [ ] (^) Basic UI Framework
@@ -133,7 +137,8 @@ to see the documentation
  - [ ] Redux Example (w/o React)
  - [ ] React Example
    - [ ] Notebook App
-     - [ ] Save/Read Gists
+     - [ ] Daily Scratchpad
+     - [ ] Save/Read Github Gists
        - https://developer.github.com/v3/gists/#list-gists-for-the-authenticated-user
      - [ ] Github Readmes in my repos and save with commit
      - [ ] Sorting Notes
@@ -164,3 +169,4 @@ to see the documentation
     - Redux for sharing state between client/server
     - When should we vs static webpages? React/React Static?
  - Backbone for UI? Seems simpler than react? Doesn't rely/revolve around instant response to interaction
+ - [ ] GraphQL
