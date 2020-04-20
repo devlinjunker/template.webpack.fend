@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">src/storage/app.controller.spec.js | BasicWebpackBrowserDB</title>
+  <title data-ice="title">src/helpers/localStorage.helper.spec.js | BasicWebpackBrowserDB</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -30,84 +30,97 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">src/storage/app.controller.spec.js</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">src/helpers/localStorage.helper.spec.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
  * @flow
  */
-import AppController from &apos;./app.controller&apos;;
-import LocalStorageHelper from &apos;../helpers/localStorage.helper&apos;;
+import LocalStorageHelper from &apos;./localStorage.helper&apos;;
 
-describe(&apos;App Controller&apos;, function() {
-  let controller;
-  const saveBtn = {};
-  const getBtn = {};
-  const clearBtn = {};
-
-  describe(&apos;#constructor&apos;, function() {
-    it(&apos;should set up handlers&apos;, function() {
-      sandbox.stub(document, &apos;getElementsByClassName&apos;).callsFake((param): any =&gt; {
-        if (param === &apos;save-btn&apos;) {
-          return [saveBtn];
-        } else if (param === &apos;get-btn&apos;) {
-          return [getBtn];
-        } else {
-          return [clearBtn];
-        }
-      });
-
-      controller = new AppController();
-
-      expect(saveBtn.onclick).to.not.be.undefined;
-      expect(getBtn.onclick).to.not.be.undefined;
-      expect(clearBtn.onclick).to.not.be.undefined;
-    });
-  });
+describe(&apos;LocalStorageService&apos;, function() {
 
   describe(&apos;#save&apos;, function() {
-    it(&apos;should save values with localStorage service&apos;, function() {
-      const saveStub = sandbox.stub(LocalStorageHelper, &apos;save&apos;);
-      controller.keyInput = {
-        value: &apos;abc&apos;
-      };
 
-      controller.valInput = {
-        innerText: &apos;val&apos;
-      };
+    it(&apos;should use local storage to save value with key&apos;, function() {
+      sandbox.spy(localStorage, &apos;setItem&apos;);
+      const key = &apos;test&apos;;
+      const val = &apos;val&apos;;
 
-      controller.save();
+      LocalStorageHelper.save({
+        key: &apos;test&apos;,
+        val: &apos;val&apos;,
+      });
 
-      expect(saveStub).to.be.calledWith({ key: &apos;abc&apos;, val: &apos;val&apos; });
+      expect(localStorage.setItem).to.be.called;
+      expect(localStorage.setItem.args[0][0]).to.equal(key);
+      expect(localStorage.setItem.args[0][1]).to.equal(val);
     });
 
-    // TODO: finish spec
-    it(&apos;should display message to user when saving&apos;);
-  });
+    it(&apos;should stringify objects before saving them&apos;, function() {
+      sandbox.spy(localStorage, &apos;setItem&apos;);
 
-  describe(&apos;#view&apos;, function() {
-    it(&apos;should retrieve values from localStorage service and display&apos;, function() {
-      const getStub = sandbox.stub(LocalStorageHelper, &apos;get&apos;);
-      controller.keyInput = {
-        value: &apos;abc&apos;
+      const val = {
+        test: 123
       };
+      LocalStorageHelper.save({
+        key: &apos;abc&apos;,
+        val
+      });
 
-      controller.view();
-
-      expect(getStub).to.be.calledWith({ key: &apos;abc&apos; });
+      const stringified = JSON.stringify(val);
+      expect(localStorage.setItem.args[0]).to.include(stringified);
     });
 
-    // TODO: finish spec
-    it(&apos;should display message if error retrieving value&apos;);
+    it(&apos;should be able to retrieve value using key with #get&apos;, function() {
+      const val = &apos;test&apos;;
+      const key = &apos;abc&apos;;
+
+      LocalStorageHelper.save({
+        key,
+        val
+      });
+
+      const saved = LocalStorageHelper.get({
+        key
+      });
+
+      expect(saved).to.equal(val);
+    });
   });
 
-  describe(&apos;#clearValue&apos;, function() {
-    it(&apos;should clear the input value&apos;, function() {
-      controller.valInput = {
-        innerText: &apos;abc&apos;
+  describe(&apos;#get&apos;, function() {
+
+    it(&apos;should retrieve value from local storage using key&apos;, function() {
+      sandbox.stub(localStorage, &apos;getItem&apos;).returns(&apos;abc&apos;);
+      const key = &apos;test&apos;;
+
+      LocalStorageHelper.get({
+        key
+      });
+
+      expect(localStorage.getItem).to.be.called;
+      expect(localStorage.getItem.args[0][0]).to.equal(key);
+    });
+
+    it(&apos;should return object if object stored&apos;, function() {
+      const key = &apos;abc&apos;;
+      const val = {
+        test: 123
       };
+      LocalStorageHelper.save({
+        key,
+        val
+      });
 
-      controller.clearValue();
+      const returned = LocalStorageHelper.get({ key });
+      expect(returned).to.deep.equal(val);
+    });
 
-      expect(controller.valInput.innerText).to.equal(&apos;&apos;);
+    it(&apos;should throw error if requesting key with no value assigned&apos;, function() {
+      const key = &apos;unused_123_abc&apos;;
+
+      expect(() =&gt; {
+        LocalStorageHelper.get({ key });
+      }).to.throw();
     });
   });
 });
