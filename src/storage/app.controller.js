@@ -1,12 +1,12 @@
 /**
  * @flow
  */
-import LocalStorageService from './localStorage.service';
+import LocalStorageHelper from '../helpers/localStorage.helper';
 import './app.css';
 /**
  * Controller for the application
  */
-class AppController {
+class StorageAppController {
   keyInput: any;
   valInput: any;
 
@@ -34,7 +34,7 @@ class AppController {
     const val = this.valInput.innerText;
 
     // save with local storage
-    LocalStorageService.save({ key, val });
+    LocalStorageHelper.save({ key, val });
 
     // TODO: display message to user
   }
@@ -48,7 +48,7 @@ class AppController {
     const key = this.keyInput.value;
 
     // get from local storage
-    const val = LocalStorageService.get({ key });
+    const val = LocalStorageHelper.get({ key });
 
     // display value to user
     this.valInput.innerText = val;
@@ -63,4 +63,4 @@ class AppController {
   }
 }
 
-export default AppController;
+export default StorageAppController;

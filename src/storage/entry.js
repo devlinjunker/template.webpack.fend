@@ -1,10 +1,10 @@
 /**
  * @flow
  */
-import LocalStorageService from './localStorage.service';
-import AppController from './app.controller';
+import LocalStorageHelper from '../helpers/localStorage.helper';
+import StorageAppController from './app.controller';
 // import '../base.css'
 
-LocalStorageService.save({ key: 'test', val: 'abc' });
+LocalStorageHelper.save({ key: 'test', val: 'abc' });
 
-new AppController();
+new StorageAppController();

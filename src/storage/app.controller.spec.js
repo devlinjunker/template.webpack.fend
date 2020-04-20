@@ -2,7 +2,7 @@
  * @flow
  */
 import AppController from './app.controller';
-import LocalStorageService from './localStorage.service';
+import LocalStorageHelper from '../helpers/localStorage.helper';
 
 describe('App Controller', function() {
   let controller;
@@ -32,7 +32,7 @@ describe('App Controller', function() {
 
   describe('#save', function() {
     it('should save values with localStorage service', function() {
-      const saveStub = sandbox.stub(LocalStorageService, 'save');
+      const saveStub = sandbox.stub(LocalStorageHelper, 'save');
       controller.keyInput = {
         value: 'abc'
       };
@@ -52,7 +52,7 @@ describe('App Controller', function() {
 
   describe('#view', function() {
     it('should retrieve values from localStorage service and display', function() {
-      const getStub = sandbox.stub(LocalStorageService, 'get');
+      const getStub = sandbox.stub(LocalStorageHelper, 'get');
       controller.keyInput = {
         value: 'abc'
       };

@@ -1,7 +1,7 @@
 /**
  * @flow
  */
-import LocalStorageService from './localStorage.service';
+import LocalStorageHelper from './localStorage.helper';
 
 describe('LocalStorageService', function() {
 
@@ -12,7 +12,7 @@ describe('LocalStorageService', function() {
       const key = 'test';
       const val = 'val';
 
-      LocalStorageService.save({
+      LocalStorageHelper.save({
         key: 'test',
         val: 'val',
       });
@@ -28,7 +28,7 @@ describe('LocalStorageService', function() {
       const val = {
         test: 123
       };
-      LocalStorageService.save({
+      LocalStorageHelper.save({
         key: 'abc',
         val
       });
@@ -41,12 +41,12 @@ describe('LocalStorageService', function() {
       const val = 'test';
       const key = 'abc';
 
-      LocalStorageService.save({
+      LocalStorageHelper.save({
         key,
         val
       });
 
-      const saved = LocalStorageService.get({
+      const saved = LocalStorageHelper.get({
         key
       });
 
@@ -60,7 +60,7 @@ describe('LocalStorageService', function() {
       sandbox.stub(localStorage, 'getItem').returns('abc');
       const key = 'test';
 
-      LocalStorageService.get({
+      LocalStorageHelper.get({
         key
       });
 
@@ -73,12 +73,12 @@ describe('LocalStorageService', function() {
       const val = {
         test: 123
       };
-      LocalStorageService.save({
+      LocalStorageHelper.save({
         key,
         val
       });
 
-      const returned = LocalStorageService.get({ key });
+      const returned = LocalStorageHelper.get({ key });
       expect(returned).to.deep.equal(val);
     });
 
@@ -86,7 +86,7 @@ describe('LocalStorageService', function() {
       const key = 'unused_123_abc';
 
       expect(() => {
-        LocalStorageService.get({ key });
+        LocalStorageHelper.get({ key });
       }).to.throw();
     });
   });
