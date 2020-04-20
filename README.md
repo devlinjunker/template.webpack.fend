@@ -83,19 +83,32 @@ to see the documentation
  - [ ] ~~(^) Absolute Paths~~
  - [x] (^) Update Node Version to v10
  - [x] (^) Update Dependencies
- - [ ] (^) Basic CSS Style for all apps:
-      - https://andybrewer.github.io/mvp/
- - [ ] (^) Different Folders for examples
+ - [..] (^) Base CSS Style for all apps:
+      - ~~https://andybrewer.github.io/mvp/~~
+        - just remember this one for the future if need a splash screen for company/product/webapp
+        - want a more flexible framework for future
+      - [ ] PostCSS?
+      - [ ] css variables?
+      - [ ] Tailwind - integrates with javascript
+      - [ ] bulma https://bulma.io/documentation/overview/start/
+      - [ ] Bootstrap? Foundation? -- probably not
+ - [x] (^) Different Folders for examples
+ - [ ] (^) HTML Page with important stuff
+   - header/tags
+   - [ ] template for all pages?
+ - [ ] (^) HTML Linting
+ - [ ] (^) CSS Linting
  - [ ] (^) Configuration File
  - [ ] (^) Githooks
  - [ ] (^) Github Actions
- - [ ] (^) Manual in Docs
  - [ ] (^) Madge?
+ - [ ] (^) Manual in Docs
  - [ ] Helpers
    - Internal API Helper
    - External API Helper?
- - [ ] (^) Basic UI Framework (Bootstrap? Foundation?)
- - [ ] (-) css variables?
+ - [ ] (^) Basic UI Framework
+    - [ ] Backbone?
+    - [ ] Vue?
  - [ ] (v) Cypress UI Testing?
  - [ ] (-) Mock API requests on localhost
     - Contract testing? https://docs.pact.io/

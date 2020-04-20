@@ -15,6 +15,7 @@ module.exports = (env) => {
     // Each entry will be loaded into webpage via <script> tags
     entry: {
       app: './src/entry.js',
+      storage: './src/storage/entry.js'
     },
     output: {
       filename: '[name].bundle.js',
@@ -38,6 +39,13 @@ module.exports = (env) => {
         template: 'src/index.html',
         // Set the webpage title
         title: 'Test with Webpack Plugin'
+      }),
+
+      // Create new HtmlWebpackPlugin for each HTML page
+      new HtmlWebpackPlugin({
+        filename: 'storage/index.html',
+        template: 'src/storage/index.html',
+        chunks: ['storage']
       }),
 
       // Run Flow on Webpack Compile
