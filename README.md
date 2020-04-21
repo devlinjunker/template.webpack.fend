@@ -103,9 +103,11 @@ How to use this template to create a basic Frontend Application:
  - [ ] CSS Frameworks
    - [ ] PostCSS?
    - [ ] css variables?
-   - [ ] Tailwind - integrates with javascript
-   - [ ] bulma https://bulma.io/documentation/overview/start/
-   - [ ] Bootstrap? Foundation? -- probably not
+   - Separate Demos for each in this repo?
+     - [ ] Tailwind - integrates with javascript
+     - [ ] bulma https://bulma.io/documentation/overview/start/
+     - [ ] Bootstrap? Foundation? -- probably not
+     - [ ] Material Design?
  - [ ] (^) Configuration File
  - [ ] (^) Githooks
  - [ ] (^) If running in development -> console errors/warnings appear in UI bubble
@@ -114,7 +116,7 @@ How to use this template to create a basic Frontend Application:
    - Performance Loggers (start/end/post to api? file?)
    - Internal API Helper
    - External API Helper?
- - [ ] (^) Basic UI Framework
+ - [ ] (^) Basic UI Framework (other repos?)
     - [ ] Backbone?
     - [ ] Vue?
     - [ ] React?
