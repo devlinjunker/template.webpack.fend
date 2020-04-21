@@ -1,10 +1,23 @@
 {
-  "version": "0.0.1",
-  "name": "BasicWebpackBrowserDB",
-  "description": "Quick Browser LocalStorage DB App for testing webpack building",
+  "version": "0.1.0",
+  "name": "WebpackFend",
+  "description": "Template using Webpack to create a html/javascript/css page with multiple routes",
+  "keywords": [
+    "template",
+    "webpack",
+    "fend",
+    "babel",
+    "flow",
+    "eslint",
+    "esdoc",
+    "browser",
+    "html",
+    "css",
+    "javascript"
+  ],
   "author": "devlin.junker@gmail.com",
   "license": "ISC",
-  "main": " // TODO",
+  "main": "target/app.bundle.js",
   "scripts": {
     "start-watch": "node_modules/karma/bin/karma start --env.dev_server",
     "dev-watch": "./node_modules/.bin/webpack --env.dev_server",

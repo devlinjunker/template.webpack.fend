@@ -9,7 +9,7 @@ Example Browser application using webpack build.
 ## Dependencies
 Node v12+ and npm
 
-See [package.json](https://github.com/devlinjunker/basic.webpack/blob/master/package.json) for full list of current dependencies
+See [package.json](https://github.com/devlinjunker/template.webpack.fend/blob/master/package.json) for full list of current dependencies
  - Webpack + Loaders
  - Babel
  - FlowJS

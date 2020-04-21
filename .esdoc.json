@@ -11,7 +11,7 @@
         "includes": ["spec.js$"]
       },
 			"brand": {
-				"repository": "https://github.com/devlinjunker/basic.webpack"
+				"repository": "https://github.com/devlinjunker/template.webpack.fend"
 			}
     }
   }, {
