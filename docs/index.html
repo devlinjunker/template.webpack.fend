@@ -50,12 +50,20 @@
 <h2 id="development">Development</h2><p>How to use this template to create a basic Frontend Application:</p>
 <ol>
 <li>Download template and update dependencies</li>
-<li>Create application in <code>src/</code></li>
-<li>Modify <code>src/entry.js</code> to start up your application</li>
-<li>Update <code>src/index.html</code> with HTML structure</li>
+<li>Create HTML files in <code>src/</code></li>
+<li>Add javascript files and reference in <code>src/entry.js</code> to run up your application<ul>
+<li>add additional javascript entry points in webpack.config.js</li>
+</ul>
+</li>
+<li>Add to <code>src/index.html</code> to define your html structure<ul>
+<li>add more html files and reference them in webpack.config.js</li>
+</ul>
+</li>
 <li>Use <code>npm run start-watch</code> to compile and run dev server + tests in watch mode</li>
-<li>Navigate <a href="http://localhost:3030/">http://localhost:3030/</a> to see a development version of your web app or <a href="http://localhost:3030/docs/">http://localhost:3030/docs/</a>
-to see the documentation</li>
+<li>Navigate <a href="http://localhost:3030/">http://localhost:3030/</a> to see a development version of your web app<ul>
+<li>or <a href="http://localhost:3030/docs/">http://localhost:3030/docs/</a> to see the documentation</li>
+</ul>
+</li>
 </ol>
 <h3 id="tests-running">Tests/Running</h3><p><code>npm run start-watch</code> to run Karma + Mocha and watch for changes while also opening the Webpack dev server that will recompile the project and reload the webpage on file changes on <a href="http://localhost:3030">http://localhost:3030</a></p>
 <p><code>npm run test-watch</code> to run Karma + Mocha and all of the tests associated with the project and watch for changes on the files to re-run the tests</p>
@@ -111,14 +119,6 @@ to see the documentation</li>
 <li>[ ] Clearing/standardizing browser css</li>
 </ul>
 </li>
-<li>[ ] CSS Frameworks<ul>
-<li>[ ] PostCSS?</li>
-<li>[ ] css variables?</li>
-<li>[ ] Tailwind - integrates with javascript</li>
-<li>[ ] bulma <a href="https://bulma.io/documentation/overview/start/">https://bulma.io/documentation/overview/start/</a></li>
-<li>[ ] Bootstrap? Foundation? -- probably not </li>
-</ul>
-</li>
 <li>[ ] (^) Github Actions -----&gt;&gt; Build doc on commit to master &lt;&lt;-----</li>
 <li>[ ] (^) HTML Page with important stuff<ul>
 <li>header/tags</li>
@@ -127,11 +127,19 @@ to see the documentation</li>
 </li>
 <li>[ ] (^) HTML Linting</li>
 <li>[ ] (^) CSS Linting</li>
+<li>[ ] (^) Madge?</li>
+<li>[ ] (^) Manual in Docs</li>
+<li>[ ] CSS Frameworks<ul>
+<li>[ ] PostCSS?</li>
+<li>[ ] css variables?</li>
+<li>[ ] Tailwind - integrates with javascript</li>
+<li>[ ] bulma <a href="https://bulma.io/documentation/overview/start/">https://bulma.io/documentation/overview/start/</a></li>
+<li>[ ] Bootstrap? Foundation? -- probably not</li>
+</ul>
+</li>
 <li>[ ] (^) Configuration File</li>
 <li>[ ] (^) Githooks</li>
-<li>[ ] (^) Madge?</li>
 <li>[ ] (^) If running in development -&gt; console errors/warnings appear in UI bubble</li>
-<li>[ ] (^) Manual in Docs</li>
 <li>[..] Helpers<ul>
 <li><del>Localstorage</del></li>
 <li>Performance Loggers (start/end/post to api? file?)</li>
@@ -142,9 +150,10 @@ to see the documentation</li>
 <li>[ ] (^) Basic UI Framework<ul>
 <li>[ ] Backbone?</li>
 <li>[ ] Vue?</li>
+<li>[ ] React?</li>
+<li>[ ] Aurelia</li>
 </ul>
 </li>
-<li>[ ] (v) Cypress UI Testing?</li>
 <li>[ ] (-) Mock API requests on localhost<ul>
 <li>Contract testing? <a href="https://docs.pact.io/">https://docs.pact.io/</a></li>
 <li>OpenAPI validation of mocks? <a href="https://bitbucket.org/atlassian/swagger-mock-validator/src/master/">https://bitbucket.org/atlassian/swagger-mock-validator/src/master/</a></li>
@@ -156,6 +165,7 @@ to see the documentation</li>
 </ul>
 </li>
 <li>[ ] (-) cleaner output from watch script?</li>
+<li>[ ] (v) Cypress UI Testing?</li>
 <li>[ ] (v) Serve docs with small script and <code>npm run doc-serve</code></li>
 <li>[ ] (v) package.json main script<ul>
 <li>(install/run application and open browser? or just point to entry or AppController?)</li>

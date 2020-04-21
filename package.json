@@ -16,7 +16,7 @@
     "javascript"
   ],
   "author": "devlin.junker@gmail.com",
-  "license": "ISC",
+  "license": "MIT",
   "main": "target/app.bundle.js",
   "scripts": {
     "start-watch": "node_modules/karma/bin/karma start --env.dev_server",

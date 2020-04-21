@@ -25,12 +25,14 @@ See [package.json](https://github.com/devlinjunker/template.webpack.fend/blob/ma
 How to use this template to create a basic Frontend Application:
 
 1. Download template and update dependencies
-2. Create application in `src/`
-3. Modify `src/entry.js` to start up your application
-4. Update `src/index.html` with HTML structure
+2. Create HTML files in `src/`
+3. Add javascript files and reference in `src/entry.js` to run up your application
+    - add additional javascript entry points in webpack.config.js
+4. Add to `src/index.html` to define your html structure
+   - add more html files and reference them in webpack.config.js
 5. Use `npm run start-watch` to compile and run dev server + tests in watch mode
-6. Navigate http://localhost:3030/ to see a development version of your web app or http://localhost:3030/docs/
-to see the documentation
+6. Navigate http://localhost:3030/ to see a development version of your web app
+   - or http://localhost:3030/docs/ to see the documentation
 
 
 ### Tests/Running
@@ -90,23 +92,23 @@ to see the documentation
         - just remember this one for the future if need a splash screen for company/product/webapp
         - want a more flexible framework for future
       - [ ] Clearing/standardizing browser css
- - [ ] CSS Frameworks
-   - [ ] PostCSS?
-   - [ ] css variables?
-   - [ ] Tailwind - integrates with javascript
-   - [ ] bulma https://bulma.io/documentation/overview/start/
-   - [ ] Bootstrap? Foundation? -- probably not
  - [ ] (^) Github Actions ----->> Build doc on commit to master <<-----
  - [ ] (^) HTML Page with important stuff
    - header/tags
    - [ ] template for all pages?
  - [ ] (^) HTML Linting
  - [ ] (^) CSS Linting
+ - [ ] (^) Madge?
+ - [ ] (^) Manual in Docs
+ - [ ] CSS Frameworks
+   - [ ] PostCSS?
+   - [ ] css variables?
+   - [ ] Tailwind - integrates with javascript
+   - [ ] bulma https://bulma.io/documentation/overview/start/
+   - [ ] Bootstrap? Foundation? -- probably not
  - [ ] (^) Configuration File
  - [ ] (^) Githooks
- - [ ] (^) Madge?
  - [ ] (^) If running in development -> console errors/warnings appear in UI bubble
- - [ ] (^) Manual in Docs
  - [..] Helpers
    - ~~Localstorage~~
    - Performance Loggers (start/end/post to api? file?)
@@ -117,7 +119,6 @@ to see the documentation
     - [ ] Vue?
     - [ ] React?
     - [ ] Aurelia
- - [ ] (v) Cypress UI Testing?
  - [ ] (-) Mock API requests on localhost
     - Contract testing? https://docs.pact.io/
     - OpenAPI validation of mocks? https://bitbucket.org/atlassian/swagger-mock-validator/src/master/
@@ -125,6 +126,7 @@ to see the documentation
     - Minimize?
     - No Warnings? No output in tests?
  - [ ] (-) cleaner output from watch script?
+ - [ ] (v) Cypress UI Testing?
  - [ ] (v) Serve docs with small script and `npm run doc-serve`
  - [ ] (v) package.json main script
     - (install/run application and open browser? or just point to entry or AppController?)
