@@ -103,10 +103,11 @@ How to use this template to create a basic Frontend Application:
  - [ ] CSS Frameworks
    - [ ] PostCSS?
    - [ ] css variables?
+   - [ ] Tailwind - integrates with javascript
    - Separate Demos for each in this repo?
-     - [ ] Tailwind - integrates with javascript
      - [ ] bulma https://bulma.io/documentation/overview/start/
-     - [ ] Bootstrap? Foundation? -- probably not
+     - [ ] Bootstrap?
+     - [ ] Foundation?
      - [ ] Material Design?
  - [ ] (^) Configuration File
  - [ ] (^) Githooks
