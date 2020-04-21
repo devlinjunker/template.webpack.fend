@@ -95,7 +95,7 @@ to see the documentation
    - [ ] css variables?
    - [ ] Tailwind - integrates with javascript
    - [ ] bulma https://bulma.io/documentation/overview/start/
-   - [ ] Bootstrap? Foundation? -- probably not 
+   - [ ] Bootstrap? Foundation? -- probably not
  - [ ] (^) Github Actions ----->> Build doc on commit to master <<-----
  - [ ] (^) HTML Page with important stuff
    - header/tags
@@ -115,6 +115,8 @@ to see the documentation
  - [ ] (^) Basic UI Framework
     - [ ] Backbone?
     - [ ] Vue?
+    - [ ] React?
+    - [ ] Aurelia
  - [ ] (v) Cypress UI Testing?
  - [ ] (-) Mock API requests on localhost
     - Contract testing? https://docs.pact.io/
