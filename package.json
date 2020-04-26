@@ -75,6 +75,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^3.0.5",
     "mocha": "^6.2.3",
+    "normalize.css": "^8.0.1",
     "prettier": "^1.19.1",
     "sinon": "^7.2.7",
     "sinon-chai": "^3.5.0",

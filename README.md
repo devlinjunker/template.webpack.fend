@@ -93,11 +93,11 @@ How to use this template to create a basic Frontend Application:
  - [x] (^) HTML Linting?
    - https://github.com/htmlhint/HTMLHint
    - Took some finagling to get this to work during watch process
- - [ ] Clearing/standardizing browser css
-   - Normalize CSS
+ - [x] Clearing/standardizing browser css
+   - Normalize CSS http://nicolasgallagher.com/about-normalize-css/
  - [ ] PostCSS?
    - [ ] (^) CSS Linting
-   - [ ] css variables?
+   - [ ] css variables/hierarchy?
  - [ ] (^) Madge?
  - [ ] (^) Manual in Docs
  - [ ] HTML template example
