@@ -82,7 +82,29 @@
   box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 }
 
-header a[href*=github] {
-  position: fixed !important;
-  right: 10px;
+header a[href*=github] img {
+  margin-right: 1em;
+}
+
+header .github-badge {
+  display: inline-block;
+  position: relative;
+  right: 7px;
+  top: 5px;
+
+  vertical-align: top;
+
+  height: 9px;
+  width: 11px;
+  border: 2px solid lightgrey;
+  border-radius: 6px;
+
+  padding-top: 1px;
+  line-height: 1;
+  font-size: 0.55em;
+  font-family: sans-serif;
+  text-align: center;
+
+  background-color: lightgrey;
+  color:white;
 }

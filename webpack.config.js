@@ -3,12 +3,20 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FlowWebpackPlugin = require('flow-webpack-plugin');
+const CircularDependencyPlugin = require('circular-dependency-plugin');
 
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 
 module.exports = (env) => {
 
+  const meta = {
+    viewport: 'width=device-width, initial-scale=1',
+    description: 'Template Webpack Application',
+    subject: 'Webpack Software Website Template',
+    robots: 'index,follow',
+    googlebot: 'index,follow'
+  };
 
   const config =  {
     mode: 'development',
@@ -36,15 +44,19 @@ module.exports = (env) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
+        meta,
         template: 'src/index.html',
         // Set the webpage title
-        title: 'Test with Webpack Plugin'
+        title: 'Test with Webpack Plugin',
+        excludeChunks: ['storage']
       }),
 
       // Create new HtmlWebpackPlugin for each HTML page
       new HtmlWebpackPlugin({
+        meta,
         filename: 'storage/index.html',
         template: 'src/storage/index.html',
+        title: 'LocalStorage Example',
         chunks: ['storage']
       }),
 
@@ -55,7 +67,13 @@ module.exports = (env) => {
         reportingSeverity: 'error'
       }),
 
-      new webpack.HotModuleReplacementPlugin({})
+      new webpack.HotModuleReplacementPlugin({}),
+
+      new CircularDependencyPlugin({
+        exclude: /node_modules/,
+        failOnError: true,
+        cwd: process.cwd()
+      })
     ],
     module: {
       rules: [

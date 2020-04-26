@@ -91,18 +91,21 @@ How to use this template to create a basic Frontend Application:
       - ~~https://andybrewer.github.io/mvp/~~
         - just remember this one for the future if need a splash screen for company/product/webapp
         - want a more flexible framework for future
-      - [ ] Clearing/standardizing browser css
- - [ ] (^) Github Actions ----->> Build doc on commit to master <<-----
- - [ ] (^) HTML Page with important stuff
+ - [x] (^) HTML Page with important stuff
    - header/tags
-   - [ ] template for all pages?
- - [ ] (^) HTML Linting
- - [ ] (^) CSS Linting
+ - [ ] (^) Github Actions ----->> Build doc on commit to master <<-----
+ - [ ] (^) HTML Linting?
+   - https://github.com/htmlhint/HTMLHint
+ - [ ] Clearing/standardizing browser css
+   - Normalize CSS
+ - [ ] PostCSS?
+   - [ ] (^) CSS Linting
+   - [ ] css variables?
  - [ ] (^) Madge?
  - [ ] (^) Manual in Docs
+ - [ ] HTML template example
+   - webpack/lodash style? https://github.com/emaphp/underscore-template-loader
  - [ ] CSS Frameworks
-   - [ ] PostCSS?
-   - [ ] css variables?
    - [ ] Tailwind - integrates with javascript
    - Separate Demos for each in this repo?
      - [ ] bulma https://bulma.io/documentation/overview/start/

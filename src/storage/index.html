@@ -1,18 +1,26 @@
-<div class="input">
-  <span> Key: </span>
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title><%= htmlWebpackPlugin.options.title %></title>
 
-  <input id="key-input" type="text"/>
-</div>
+</head>
+<body>
+  <div class="input">
+    <span> Key: </span>
 
-<div class="actions">
-  <button class="btn save-btn"> Save </button>
-  <button class="btn get-btn"> Retrieve </button>
-</div>
-
-<div class="display">
-  <p> Value: </p>
-  <div id="value-input" contenteditable="true">
-
+    <input id="key-input" type="text"/>
   </div>
-  <button class="clear-value-btn"> Clear </button>
-</div>
+
+  <div class="actions">
+    <button class="btn save-btn"> Save </button>
+    <button class="btn get-btn"> Retrieve </button>
+  </div>
+
+  <div class="display">
+    <p> Value: </p>
+    <div id="value-input" contenteditable="true">
+
+    </div>
+    <button class="clear-value-btn"> Clear </button>
+  </div>
+</body>
