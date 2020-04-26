@@ -32,7 +32,7 @@ jobs:
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-        github_token: ${{ secrets.GH_PAT }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}${{ secrets.GH_PAT }}
 
     # - uses: EndBug/add-and-commit@v4 # You can change this to use a specific version
     #   with:
