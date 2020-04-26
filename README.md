@@ -95,9 +95,15 @@ How to use this template to create a basic Frontend Application:
    - Took some finagling to get this to work during watch process
  - [x] Clearing/standardizing browser css
    - Normalize CSS http://nicolasgallagher.com/about-normalize-css/
- - [ ] PostCSS?
-   - [ ] (^) CSS Linting
-   - [ ] css variables/hierarchy?
+ - [..] PostCSS?
+   - ecosystem of parsing css files
+   - [..] (^) CSS Linting
+      - stylelint
+      - bem linting? https://github.com/postcss/postcss-bem-linter#stylelint-plugin
+   - [x] css variables/hierarchy?
+      - https://github.com/jonathantneal/precss
+    - autoprefixer for making css look cleaner (browser prefixes don't need to be added)
+    - list all selectors used: https://github.com/davidtheclark/list-selectors
  - [ ] (^) Madge?
  - [ ] (^) Manual in Docs
  - [ ] HTML template example

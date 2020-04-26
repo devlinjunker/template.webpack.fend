@@ -118,7 +118,20 @@ module.exports = (env) => {
         // Load css files imported
         {
           test: /\.css$/,
-          use: ['style-loader', 'css-loader']
+          use: [
+            {
+              loader: 'style-loader',
+            },
+            {
+              loader: 'css-loader',
+              options: {
+                importLoaders: 1,
+              }
+            },
+            {
+              loader: 'postcss-loader'
+            }
+          ]
         },
 
         // Load images imported
