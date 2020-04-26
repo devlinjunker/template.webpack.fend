@@ -24,14 +24,24 @@ jobs:
     - run: npm install -D
     - run: npm run doc
 
-    - uses: EndBug/add-and-commit@v4 # You can change this to use a specific version
+    - name: Commit files
+      run: |
+        git config --local user.email "devlinjunker@gmail.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "Add changes" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
       with:
-        add: 'docs/*'
-        author_name: DocBuilder
-        author_email: devlinjunker@gmail.com
-        message: 'Build Docs on Commit to Master'
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        github_token: ${{ secrets.GH_PAT }}
+
+    # - uses: EndBug/add-and-commit@v4 # You can change this to use a specific version
+    #   with:
+    #     add: 'docs/*'
+    #     author_name: DocBuilder
+    #     author_email: devlinjunker@gmail.com
+    #     message: 'Build Docs on Commit to Master'
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GH_PAT }}
 
 
     # TODO: Uncomment after setting up wiki
