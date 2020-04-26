@@ -1,9 +1,11 @@
 /* eslint-disable no-undef */
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { exec } = require('child_process');
+// const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FlowWebpackPlugin = require('flow-webpack-plugin');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
+const WriteFilePlugin = require('write-file-webpack-plugin');
 
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
@@ -32,6 +34,9 @@ module.exports = (env) => {
     },
     // Turn off for production (see https://webpack.js.org/guides/production)
     devtool: 'inline-source-map',
+    devServer: {
+      writeToDisk: true
+    },
 
     resolve: {
       extensions: ['.js'],
@@ -71,10 +76,29 @@ module.exports = (env) => {
 
       new CircularDependencyPlugin({
         exclude: /node_modules/,
-        failOnError: true,
+        failOnError: false,
         cwd: process.cwd()
-      })
+      }),
+
+      // Force the html files to be generated to disk so they can be linted with htmlhint
+      new WriteFilePlugin({
+        test: /\.html$/,
+        useHashIndex: true
+      }),
+
+      // Custom Script on end of Build process (this works in watch mode too)
+      {
+        apply: (compiler) => {
+          compiler.hooks.afterEmit.tap('AfterEmitPlugin', () => {
+            exec('./node_modules/.bin/htmlhint public', (err, stdout, stderr) => {
+              if (stdout) process.stdout.write(stdout);
+              if (stderr) process.stderr.write(stderr);
+            });
+          });
+        }
+      }
     ],
+
     module: {
       rules: [
         {
@@ -107,12 +131,11 @@ module.exports = (env) => {
   };
 
   if (env && env.dev_server) {
-    // TODO: only do below stuff if we want to start development server
     // not useful when running `npm run build` to generate `public` directory
     // index.html file doesn't seem to be placed `public` when these exists
 
-    const cleanPublicPlugin = new CleanWebpackPlugin(['public']);
-    config.plugins.push(cleanPublicPlugin);
+    // const cleanPublicPlugin = new CleanWebpackPlugin(['public']);
+    // config.plugins.push(cleanPublicPlugin);
 
     // Q: Why are we doing this again? I think it has to do with Karma
     // Start Webpack Dev Server Manually

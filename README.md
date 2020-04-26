@@ -87,15 +87,12 @@ How to use this template to create a basic Frontend Application:
  - [x] (^) Update Node Version to v10
  - [x] (^) Update Dependencies
  - [x] (^) Different Folders for examples
- - [..] (^) Base CSS Style for all apps:
-      - ~~https://andybrewer.github.io/mvp/~~
-        - just remember this one for the future if need a splash screen for company/product/webapp
-        - want a more flexible framework for future
  - [x] (^) HTML Page with important stuff
    - header/tags
- - [ ] (^) Github Actions ----->> Build doc on commit to master <<-----
- - [ ] (^) HTML Linting?
+ - [x] (^) Github Actions ----->> Build doc on commit to master <<-----
+ - [x] (^) HTML Linting?
    - https://github.com/htmlhint/HTMLHint
+   - Took some finagling to get this to work during watch process
  - [ ] Clearing/standardizing browser css
    - Normalize CSS
  - [ ] PostCSS?
@@ -105,6 +102,10 @@ How to use this template to create a basic Frontend Application:
  - [ ] (^) Manual in Docs
  - [ ] HTML template example
    - webpack/lodash style? https://github.com/emaphp/underscore-template-loader
+ - [..] (^) Base CSS Style for all apps:
+   - ~~https://andybrewer.github.io/mvp/~~
+     - just remember this one for the future if need a splash screen for company/product/webapp
+     - want a more flexible framework for future
  - [ ] CSS Frameworks
    - [ ] Tailwind - integrates with javascript
    - Separate Demos for each in this repo?
