@@ -23,8 +23,10 @@ jobs:
 
     - run: npm install -D
     - run: npm run doc
+
+    ## NOTE: Need to copy demo to docs/ directory manually in this action, will want to remove this if copied to another project
+    - run: cp -r public/ docs/demo/
     - run: git status
-    - run: ls public
 
     - uses: EndBug/add-and-commit@v4 # You can change this to use a specific version
       with:
