@@ -26,7 +26,7 @@
     "test": "node_modules/karma/bin/karma start --single-run",
     "build": "./node_modules/.bin/webpack",
     "lint": "./node_modules/.bin/eslint ./src",
-    "doc": "npm run build && (./node_modules/.bin/esdoc; cp -r public/ docs/demo/; sleep 5s)",
+    "doc": "npm run build && (./node_modules/.bin/esdoc; /cp -r public/ docs/demo/)",
     "clean": " ## TODO: clean up project files"
   },
   "dependencies": {
