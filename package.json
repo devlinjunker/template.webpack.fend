@@ -31,7 +31,8 @@
     "clean": " ## TODO: clean up project files"
   },
   "dependencies": {
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -79,7 +80,6 @@
     "list-selectors": "^2.0.0",
     "madge": "^3.8.0",
     "mocha": "^6.2.3",
-    "normalize.css": "^8.0.1",
     "postcss-exclude-files": "^1.0.15",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",

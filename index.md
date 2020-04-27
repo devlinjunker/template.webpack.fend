@@ -12,6 +12,7 @@ The script retrieves the following markdown files (defined in `./.esdoc.json`) a
 ### Table of Contents
 
 - [Setup](manual/README.setup.html) - dependencies and how to install and start development (eventually production?)
+- [Entry](manual/README.entry.html) - How we define Javascript Bundles and files that can be included
 - [HTML](manual/README.html.html) - How we HTML and the processes we use to ensure quality
 - [CSS](manual/README.css.html) - CSS Normalization, Processing and Frameworks
 - [Helpers](manual/README.helpers.html) - Helper Classes and Code that can be used

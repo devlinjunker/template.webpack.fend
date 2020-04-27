@@ -17,6 +17,7 @@
         "index": "./index.md",
         "files": [
           "./README.setup.md",
+          "./src/README.entry.md",
           "./src/README.html.md",
           "./src/README.css.md",
           "./src/helpers/README.helpers.md",
