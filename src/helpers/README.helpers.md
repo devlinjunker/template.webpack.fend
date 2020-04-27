@@ -1,6 +1,6 @@
 # Helpers
-This project contains Javascript classes that can be used across multiple projects with utility methods for
-useful functionality.
+This project contains a `helpers/` directory that holds Javascript classes that can be used across multiple
+projects with utility methods for useful functionality.
 
 ## LocalStorage
 The localstorage helper ([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/src/helpers/localStorage.helper.js))

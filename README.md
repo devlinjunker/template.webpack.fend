@@ -111,15 +111,12 @@ How to use this template to create a basic Frontend Application:
       - https://github.com/jonathantneal/precss
     - autoprefixer for making css look cleaner (browser prefixes don't need to be added)
     - list all selectors used: https://github.com/davidtheclark/list-selectors
- - [..] (^) Madge?
- - [..] (^) Manual in Docs
+ - [x] (^) Madge?
+ - [x] (^) Manual in Docs
  - [ ] HTML template example
    - webpack/lodash style? https://github.com/emaphp/underscore-template-loader
    - handlebars?
- - [..] (^) Base CSS Style for all apps:
-   - ~~https://andybrewer.github.io/mvp/~~
-     - just remember this one for the future if need a splash screen for company/product/webapp
-     - want a more flexible framework for future
+ - [ ] (^) Base CSS Style for all apps:
  - [ ] Styleguide
     - Page in docsite
     - Examples: http://styleguides.io/examples.html

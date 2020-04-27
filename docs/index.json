@@ -868,7 +868,7 @@
     "kind": "manual",
     "longname": "/Users/junkerd/Programming/js/template.webpack.fend/src/helpers/README.helpers.md",
     "name": "./src/helpers/README.helpers.md",
-    "content": "# Helpers\nThis project contains Javascript classes that can be used across multiple projects with utility methods for\nuseful functionality.\n\n## LocalStorage\nThe localstorage helper ([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/src/helpers/localStorage.helper.js))\ncontains methods for saving/retrieving values with the browser localstorage API. Values saved with this will be\nstored on the clients browser and can be retreived when they return to the web application (until they clear\ntheir browser localstorage/data).\n\n## Notes/Ideas\n - [ ] Configuration file\n - [ ] Performance Logger\n - [ ] API Helpers (Internal vs External?)\n",
+    "content": "# Helpers\nThis project contains a `helpers/` directory that holds Javascript classes that can be used across multiple\nprojects with utility methods for useful functionality.\n\n## LocalStorage\nThe localstorage helper ([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/src/helpers/localStorage.helper.js))\ncontains methods for saving/retrieving values with the browser localstorage API. Values saved with this will be\nstored on the clients browser and can be retreived when they return to the web application (until they clear\ntheir browser localstorage/data).\n\n## Notes/Ideas\n - [ ] Configuration file\n - [ ] Performance Logger\n - [ ] API Helpers (Internal vs External?)\n",
     "static": true,
     "access": "public"
   },
@@ -876,7 +876,7 @@
     "kind": "manual",
     "longname": "/Users/junkerd/Programming/js/template.webpack.fend/scripts/README.scripts.md",
     "name": "./scripts/README.scripts.md",
-    "content": "# Actions and Githooks\n\n## Github Actions\n\n### Build Docs / Update Wiki\n",
+    "content": "# Actions and Githooks\nWe setup github actions on this project so we can enforce actions/checks and workflow processes on github.\n\n### On Merge to Master\nWhenever we merge a PR to master, we want to update the documentation based on the changes the user made in\nthe commits. We run a git action to handle this as well:\n - Collect README files and update wiki\n - Fix/remove links in Wiki\n - Build documentation and generate commit\n\n## Githooks\nTODO...\n",
     "static": true,
     "access": "public"
   },
@@ -884,7 +884,7 @@
     "kind": "manual",
     "longname": "/Users/junkerd/Programming/js/template.webpack.fend/test/README.test.md",
     "name": "./test/README.test.md",
-    "content": "# Testing\n\n\n## Mocha\n\n\n## Karma\n\n\n## Notes/Ideas\n - [ ] Cypress UI\n - [ ] Mock API requests?\n",
+    "content": "# Testing\nWe can run a single run of all unit tests in the application with `npm run test`. This starts [Karma](https://karma-runner.github.io/latest/index.html)\nusing the `karma.conf.js` file([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/karma.conf.js))\n\nThis file defines:\n - the testing framework we use ([mocha](https://mochajs.org/))\n - the test bootstrap entry point([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/test/test.bootstrap.js))\n - The browser launchers that we use to run the Unit Tests (chrome)\n - The log level to display\n - Imports webpack config so we can also run the test and dev server if we use `npm run start-watch`\n\n.  \nThe testing bootstrap file finds all of the test files and imports global objects that can be used in all tests to simplify each test file. It also creates a sinon Sandbox that is reset before each test for mocking/stubbing services and non-tested functions in the test context.\n\nGlobal Imports (available in all `.spec` files):\n - `sinonSandbox` from [Sinon](https://sinonjs.org/)\n - `expect` from [Chai](https://www.chaijs.com/)\n - TODO: `describe`/`it`/`beforeEach` from [Mocha](https://mochajs.org/)\n\n\n## Notes/Ideas\n - [ ] Cypress UI\n - [ ] Mock API requests?\n",
     "static": true,
     "access": "public"
   },

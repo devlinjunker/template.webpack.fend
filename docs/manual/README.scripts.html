@@ -75,23 +75,30 @@
     <ul class="manual-toc">
       
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html" data-ice="link">Actions and Githooks</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#github-actions" data-ice="link">Github Actions</a></li>
-<li data-ice="manualNav" class="indent-h3" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#build-docs---update-wiki" data-ice="link">Build Docs / Update Wiki</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#on-merge-to-master" data-ice="link">On Merge to Master</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#githooks" data-ice="link">Githooks</a></li>
 </ul>
   </div>
 <div data-ice="manual">
     <ul class="manual-toc">
       
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.test.html"><a href="manual/README.test.html" data-ice="link">Testing</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#mocha" data-ice="link">Mocha</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#karma" data-ice="link">Karma</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#notes-ideas" data-ice="link">Notes/Ideas</a></li>
 </ul>
   </div>
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="actions-and-githooks">Actions and Githooks</h1><h2 id="github-actions">Github Actions</h2><h3 id="build-docs---update-wiki">Build Docs / Update Wiki</h3></div>
+<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="actions-and-githooks">Actions and Githooks</h1><p>We setup github actions on this project so we can enforce actions/checks and workflow processes on github.</p>
+<h3 id="on-merge-to-master">On Merge to Master</h3><p>Whenever we merge a PR to master, we want to update the documentation based on the changes the user made in
+the commits. We run a git action to handle this as well:</p>
+<ul>
+<li>Collect README files and update wiki</li>
+<li>Fix/remove links in Wiki</li>
+<li>Build documentation and generate commit</li>
+</ul>
+<h2 id="githooks">Githooks</h2><p>TODO...</p>
+</div>
 </div>
 
 <footer class="footer">

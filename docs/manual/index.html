@@ -75,16 +75,14 @@
     <ul class="manual-toc">
       
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html" data-ice="link">Actions and Githooks</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#github-actions" data-ice="link">Github Actions</a></li>
-<li data-ice="manualNav" class="indent-h3" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#build-docs---update-wiki" data-ice="link">Build Docs / Update Wiki</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#on-merge-to-master" data-ice="link">On Merge to Master</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#githooks" data-ice="link">Githooks</a></li>
 </ul>
   </div>
 <div data-ice="manual">
     <ul class="manual-toc">
       
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.test.html"><a href="manual/README.test.html" data-ice="link">Testing</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#mocha" data-ice="link">Mocha</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#karma" data-ice="link">Karma</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#notes-ideas" data-ice="link">Notes/Ideas</a></li>
 </ul>
   </div>
@@ -217,8 +215,8 @@ json file containing the css selectors that are processed by PostCSS.</p><ul>
     </div>
 <div class="manual-card-wrap" data-ice="cards">
       <div class="manual-card">
-        <div data-ice="card"><h1>Helpers</h1><p>This project contains Javascript classes that can be used across multiple projects with utility methods for
-useful functionality.</p><h2>LocalStorage</h2><p>The localstorage helper (<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/src/helpers/localStorage.helper.js">github</a>)
+        <div data-ice="card"><h1>Helpers</h1><p>This project contains a <code>helpers/</code> directory that holds Javascript classes that can be used across multiple
+projects with utility methods for useful functionality.</p><h2>LocalStorage</h2><p>The localstorage helper (<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/src/helpers/localStorage.helper.js">github</a>)
 contains methods for saving/retrieving values with the browser localstorage API. Values saved with this will be
 stored on the clients browser and can be retreived when they return to the web application (until they clear
 their browser localstorage/data).</p><h2>Notes/Ideas</h2><ul>
@@ -231,13 +229,29 @@ their browser localstorage/data).</p><h2>Notes/Ideas</h2><ul>
     </div>
 <div class="manual-card-wrap" data-ice="cards">
       <div class="manual-card">
-        <div data-ice="card"><h1>Actions and Githooks</h1><h2>Github Actions</h2><h3>Build Docs / Update Wiki</h3></div>
+        <div data-ice="card"><h1>Actions and Githooks</h1><p>We setup github actions on this project so we can enforce actions/checks and workflow processes on github.</p><h3>On Merge to Master</h3><p>Whenever we merge a PR to master, we want to update the documentation based on the changes the user made in
+the commits. We run a git action to handle this as well:</p><ul>
+<li>Collect README files and update wiki</li>
+<li>Fix/remove links in Wiki</li>
+<li>Build documentation and generate commit</li>
+</ul><h2>Githooks</h2><p>TODO...</p></div>
         <a data-ice="link" href="manual/README.scripts.html"></a>
       </div>
     </div>
 <div class="manual-card-wrap" data-ice="cards">
       <div class="manual-card">
-        <div data-ice="card"><h1>Testing</h1><h2>Mocha</h2><h2>Karma</h2><h2>Notes/Ideas</h2><ul>
+        <div data-ice="card"><h1>Testing</h1><p>We can run a single run of all unit tests in the application with <code>npm run test</code>. This starts <a href="https://karma-runner.github.io/latest/index.html">Karma</a>
+using the <code>karma.conf.js</code> file(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/karma.conf.js">github</a>)</p><p>This file defines:</p><ul>
+<li>the testing framework we use (<a href="https://mochajs.org/">mocha</a>)</li>
+<li>the test bootstrap entry point(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/test/test.bootstrap.js">github</a>)</li>
+<li>The browser launchers that we use to run the Unit Tests (chrome)</li>
+<li>The log level to display</li>
+<li>Imports webpack config so we can also run the test and dev server if we use <code>npm run start-watch</code></li>
+</ul><p>.<br>The testing bootstrap file finds all of the test files and imports global objects that can be used in all tests to simplify each test file. It also creates a sinon Sandbox that is reset before each test for mocking/stubbing services and non-tested functions in the test context.</p><p>Global Imports (available in all <code>.spec</code> files):</p><ul>
+<li><code>sinonSandbox</code> from <a href="https://sinonjs.org/">Sinon</a></li>
+<li><code>expect</code> from <a href="https://www.chaijs.com/">Chai</a></li>
+<li>TODO: <code>describe</code>/<code>it</code>/<code>beforeEach</code> from <a href="https://mochajs.org/">Mocha</a></li>
+</ul><h2>Notes/Ideas</h2><ul>
 <li>[ ] Cypress UI</li>
 <li>[ ] Mock API requests?</li>
 </ul></div>

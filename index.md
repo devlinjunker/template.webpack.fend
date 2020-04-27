@@ -13,9 +13,9 @@ The script retrieves the following markdown files (defined in `./.esdoc.json`) a
 
 - [Setup](manual/README.setup.html) - dependencies and how to install and start development (eventually production?)
 - [Entry](manual/README.entry.html) - How we define Javascript Bundles and files that can be included
-- [HTML](manual/README.html.html) - How we HTML and the processes we use to ensure quality
+- [HTML](manual/README.html.html) - How we create HTML and the processes we use to ensure quality
 - [CSS](manual/README.css.html) - CSS Normalization, Processing and Frameworks
-- [Helpers](manual/README.helpers.html) - Helper Classes and Code that can be used
+- [Helpers](manual/README.helpers.html) - Javascript Helper Classes and Code that can be used
 - [Github Actions](manual/README.scripts.html) - Notes about Actions we run on commits
 - [Test](manual/README.test.md) - How testing is configured and how to run tests
 

@@ -75,23 +75,38 @@
     <ul class="manual-toc">
       
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html" data-ice="link">Actions and Githooks</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#github-actions" data-ice="link">Github Actions</a></li>
-<li data-ice="manualNav" class="indent-h3" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#build-docs---update-wiki" data-ice="link">Build Docs / Update Wiki</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#on-merge-to-master" data-ice="link">On Merge to Master</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#githooks" data-ice="link">Githooks</a></li>
 </ul>
   </div>
 <div data-ice="manual">
     <ul class="manual-toc">
       
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.test.html"><a href="manual/README.test.html" data-ice="link">Testing</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#mocha" data-ice="link">Mocha</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#karma" data-ice="link">Karma</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#notes-ideas" data-ice="link">Notes/Ideas</a></li>
 </ul>
   </div>
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="testing">Testing</h1><h2 id="mocha">Mocha</h2><h2 id="karma">Karma</h2><h2 id="notes-ideas">Notes/Ideas</h2><ul>
+<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="testing">Testing</h1><p>We can run a single run of all unit tests in the application with <code>npm run test</code>. This starts <a href="https://karma-runner.github.io/latest/index.html">Karma</a>
+using the <code>karma.conf.js</code> file(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/karma.conf.js">github</a>)</p>
+<p>This file defines:</p>
+<ul>
+<li>the testing framework we use (<a href="https://mochajs.org/">mocha</a>)</li>
+<li>the test bootstrap entry point(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/test/test.bootstrap.js">github</a>)</li>
+<li>The browser launchers that we use to run the Unit Tests (chrome)</li>
+<li>The log level to display</li>
+<li>Imports webpack config so we can also run the test and dev server if we use <code>npm run start-watch</code></li>
+</ul>
+<p>.<br>The testing bootstrap file finds all of the test files and imports global objects that can be used in all tests to simplify each test file. It also creates a sinon Sandbox that is reset before each test for mocking/stubbing services and non-tested functions in the test context.</p>
+<p>Global Imports (available in all <code>.spec</code> files):</p>
+<ul>
+<li><code>sinonSandbox</code> from <a href="https://sinonjs.org/">Sinon</a></li>
+<li><code>expect</code> from <a href="https://www.chaijs.com/">Chai</a></li>
+<li>TODO: <code>describe</code>/<code>it</code>/<code>beforeEach</code> from <a href="https://mochajs.org/">Mocha</a></li>
+</ul>
+<h2 id="notes-ideas">Notes/Ideas</h2><ul>
 <li>[ ] Cypress UI</li>
 <li>[ ] Mock API requests?</li>
 </ul>

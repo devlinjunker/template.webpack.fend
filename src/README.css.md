@@ -43,5 +43,8 @@ TODO...
 ## Notes/Ideas
  - Guidelines: https://cssguidelin.es/
  - During development (`npm run start-watch`) css is included in JS bundles and slow to load
+ - [ ] BEM Linting?
  - [ ] Styleguide
  - [ ] Framework Demos (Separate Repo?)
+ - MVP (Product/Business) Style: https://andybrewer.github.io/mvp/
+   - remember this for the future if need a splash screen for company/product/webapp
