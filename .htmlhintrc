@@ -4,7 +4,7 @@
 
   "style-disabled": false,
   "inline-style-disabled": true,
-  "inline-script-disabled": trues,
+  "inline-script-disabled": true,
 
   "tagname-lowercase": true,
   "tag-pair": true,

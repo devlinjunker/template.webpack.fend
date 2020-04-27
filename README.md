@@ -115,13 +115,19 @@ How to use this template to create a basic Frontend Application:
  - [..] (^) Manual in Docs
  - [ ] HTML template example
    - webpack/lodash style? https://github.com/emaphp/underscore-template-loader
+   - handlebars?
  - [..] (^) Base CSS Style for all apps:
    - ~~https://andybrewer.github.io/mvp/~~
      - just remember this one for the future if need a splash screen for company/product/webapp
      - want a more flexible framework for future
+ - [ ] Styleguide
+    - Page in docsite
+    - Examples: http://styleguides.io/examples.html
+      - http://codeforamerica.clearleft.com/#
+    - Fractal? https://github.com/adamlindqvist/fractal-webpack-plugin
  - [ ] CSS Frameworks
    - [ ] Tailwind - integrates with javascript
-   - Separate Demos for each in this repo?
+   - Fork of this Repo with different directories for each?
      - [ ] bulma https://bulma.io/documentation/overview/start/
      - [ ] Bootstrap?
      - [ ] Foundation?
@@ -134,6 +140,10 @@ How to use this template to create a basic Frontend Application:
    - Performance Loggers (start/end/post to api? file?)
    - Internal API Helper
    - External API Helper?
+ - [ ] Accessibility Linting
+    - https://github.com/pa11y/pa11y
+    - ASLint
+    - https://www.24a11y.com/2017/reacts-accessibility-code-linter/
  - [ ] (^) Basic UI Framework (other repos?)
     - [ ] Backbone?
     - [ ] Vue?
@@ -145,6 +155,8 @@ How to use this template to create a basic Frontend Application:
  - [ ] (-) production configuration for webpack
     - Minimize?
     - No Warnings? No output in tests?
+    - CSS Generated to File and included at top of HTML
+    - Accessibility validation?
  - [ ] (-) cleaner output from watch script?
  - [ ] (v) Cypress UI Testing?
  - [ ] (v) Serve docs with small script and `npm run doc-serve`

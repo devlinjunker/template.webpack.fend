@@ -4,4 +4,7 @@
 ## LocalStorage
 
 
-## TODO
+## Notes/Ideas
+ - [ ] Configuration file
+ - [ ] Performance Logger
+ - [ ] API Helpers (Internal vs External?)

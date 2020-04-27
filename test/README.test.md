@@ -5,3 +5,7 @@
 
 
 ## Karma
+
+## Notes/Ideas
+ - [ ] Cypress UI
+ - [ ] Mock API requests?

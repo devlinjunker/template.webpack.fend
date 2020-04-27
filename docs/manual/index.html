@@ -28,7 +28,6 @@
       
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.setup.html"><a href="manual/README.setup.html" data-ice="link">Setup</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.setup.html"><a href="manual/README.setup.html#webpack" data-ice="link">Webpack</a></li>
-<li data-ice="manualNav" class="indent-h3" data-link="manual/README.setup.html"><a href="manual/README.setup.html#meta-attributes" data-ice="link">Meta Attributes</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/README.setup.html"><a href="manual/README.setup.html#dev-server" data-ice="link">Dev Server</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.setup.html"><a href="manual/README.setup.html#documentation" data-ice="link">Documentation</a></li>
 </ul>
@@ -38,9 +37,10 @@
       
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.html.html"><a href="manual/README.html.html" data-ice="link">HTML</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.html.html"><a href="manual/README.html.html#webpack" data-ice="link">Webpack</a></li>
-<li data-ice="manualNav" class="indent-h3" data-link="manual/README.html.html"><a href="manual/README.html.html#templates" data-ice="link">Templates</a></li>
-<li data-ice="manualNav" class="indent-h3" data-link="manual/README.html.html"><a href="manual/README.html.html#new-pages" data-ice="link">New Pages</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.html.html"><a href="manual/README.html.html#page-header-meta-attributes" data-ice="link">Page Header Meta Attributes</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.html.html"><a href="manual/README.html.html#templating" data-ice="link">Templating</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.html.html"><a href="manual/README.html.html#html-linting" data-ice="link">HTML Linting</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.html.html"><a href="manual/README.html.html#notes-ideas" data-ice="link">Notes/Ideas</a></li>
 </ul>
   </div>
 <div data-ice="manual">
@@ -49,6 +49,11 @@
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.css.html"><a href="manual/README.css.html" data-ice="link">CSS</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#normalize" data-ice="link">Normalize</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#postcss" data-ice="link">PostCSS</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#precss" data-ice="link">PreCSS</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#stylelint" data-ice="link">Stylelint</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#autoprefixer" data-ice="link">Autoprefixer</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#list-selectors" data-ice="link">List Selectors</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#notes-ideas" data-ice="link">Notes/Ideas</a></li>
 </ul>
   </div>
 <div data-ice="manual">
@@ -56,7 +61,7 @@
       
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html" data-ice="link">Helpers</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#localstorage" data-ice="link">LocalStorage</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#todo" data-ice="link">TODO</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#notes-ideas" data-ice="link">Notes/Ideas</a></li>
 </ul>
   </div>
 <div data-ice="manual">
@@ -73,6 +78,7 @@
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.test.html"><a href="manual/README.test.html" data-ice="link">Testing</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#mocha" data-ice="link">Mocha</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#karma" data-ice="link">Karma</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#notes-ideas" data-ice="link">Notes/Ideas</a></li>
 </ul>
   </div>
 </div>
@@ -105,32 +111,79 @@
     
   <div class="manual-card-wrap" data-ice="cards">
       <div class="manual-card">
-        <div data-ice="card"><h1>Setup</h1><p><strong>Requires Node 12+</strong>. Please install this before attempting to run. The easiest way to install and
-manage node versions is by using the <a href="https://github.com/nvm-sh/nvm">Node Version Manager</a>. We define a .nvm file
-in the project to help reference this minimum node version.</p><p>Use <code>nvm use 12</code> to switch node versions after installing a new Node version. <strong>Then you should install all
+        <div data-ice="card"><h1>Setup</h1><p><strong>Requires Node 12+ to build</strong>. Please install this before attempting to build. The easiest way to install and
+manage node versions is by using the <a href="https://github.com/nvm-sh/nvm">Node Version Manager</a>. We define a
+.nvm file in the project to help reference this minimum node version.</p><p>Use <code>nvm use 12</code> to switch node versions after installing a new Node version. <strong>Then you should install all
 project dependencies</strong>(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/package.json#L30">github</a>)
 with <code>npm install -D</code>. This should install Webpack and all the libraries/plugins used in this project.</p><p>If you have cloned the master branch, then the build should compile and all tests should pass once the
 dependencies have been downloaded and installed. To only compile the html and javascript, use <code>npm run build</code>, or you can run the tests with <code>npm run test</code>. <strong>To watch the files for changes and rebuild/retest the files
 on changes, you can use</strong> <code>npm run start-watch</code>. See the package.json(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/package.json#L17">github</a>)
-for all possibe npm commands.</p><h2>Webpack</h2><h3>Meta Attributes</h3><h3>Dev Server</h3><h2>Documentation</h2></div>
+for all possibe npm commands.</p><h2>Webpack</h2><p>Webpack config file(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/webpack.config.js">github</a>)
+is used to manage our webpack build to compile the application.</p><p>In this file we:</p><ul>
+<li>Define the Entrypoint javascript files to create bundles</li>
+<li>Define where the generated files are placed</li>
+<li>Define how to import other files</li>
+<li>Setup Modules/Plugins:<ul>
+<li>Babel and ESLint Loaders</li>
+<li>Flow Integration with Webpack</li>
+<li>Reference HTML Files (source and destinations) and javascript bundles to include on pages</li>
+<li>PostCSS Loader for easy CSS files</li>
+<li>Hot Module Replacement for rebuilding on file changes</li>
+<li>Custom Script to run at end of webpack build that Lints generated HTML files</li>
+</ul>
+</li>
+<li>Setup Development Server to Host HTML/JS/CSS Files for rapid development</li>
+</ul><h3>Dev Server</h3><p>During development (while using the <code>npm run start-watch</code> command), we instantiate a Webpack Dev Server to host
+the generated WebApp files. We have to manually instantiate the Dev Server in the webpack.config.js file because
+we are actually start Karma to watch and manage the test runs, which then runs the Webpack config file to start
+the build process and this Dev Server.</p><h2>Documentation</h2><p>The <code>docs/</code> directory is created with <code>npm run doc</code>, this generates an esdoc webpage based on the modified
+template stored in <code>docs/template</code> from the README files in the repo. These docs are also synced with the Github
+wiki page via a Github Action (see Github Actions/Scripts page for more details.</p><p>The Dependency Graph is created with <a href="https://github.com/pahen/madge">Madge</a> and graphviz, you will need to
+install both in order to update the dependency graph. I didn&apos;t include these in the package.json dependencies
+because I felt this is more than is needed to develop a working app or even write basic documentation. I also split this out to a separate npm script: <code>npm run doc-image</code> so it can be run when someone actually installs
+the dependencies</p><p>Install madge with <code>npm install -g madge</code> and install graphviz with <code>brew install graphviz</code> or
+<code>port install graphviz</code> (for OSX).</p></div>
         <a data-ice="link" href="manual/README.setup.html"></a>
       </div>
     </div>
 <div class="manual-card-wrap" data-ice="cards">
       <div class="manual-card">
-        <div data-ice="card"><h1>HTML</h1><h2>Webpack</h2><h3>Templates</h3><h3>New Pages</h3><h2>HTML Linting</h2></div>
+        <div data-ice="card"><h1>HTML</h1><p>HTML files structure the layout of the web application. The final HTML files are generated by webpack and
+output to the <code>public/</code> directory when building with <code>npm run build</code>.</p><h2>Webpack</h2><p>The webpack.config.js file defines the HTML pages that will be generated by the build process. For each instance
+of the HtmlWebpackPlugin in the <code>plugins</code> section, webpack will output a new HTML file using the <code>template</code> at
+the <code>filename</code> provided (inside of <code>public/</code>).</p><h3>Page Header Meta Attributes</h3><p>TODO...</p><h3>Templating</h3><p>TODO...</p><h2>HTML Linting</h2><p>During the build process, webpack is configured to lint the final HTML files after each successful build with
+<a href="https://github.com/htmlhint/HTMLHint">htmlhint</a> to spot any errors in the HTML structure. This will cause an
+error in the build process output. You can see the rules defined in the .htmlhintrc file (<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/.htmlhintrc">github</a>).</p><p>These include:</p><ul>
+<li>Requiring Doctype</li>
+<li>Disabling Inline CSS Styles on elements</li>
+<li>Attribute naming conventions</li>
+<li>Requiring certain attributes</li>
+<li>etc.</li>
+</ul><h2>Notes/Ideas</h2><ul>
+<li>[ ] Templating</li>
+<li>[ ] Accessibility Linting</li>
+<li>[ ] UI Framework?</li>
+</ul></div>
         <a data-ice="link" href="manual/README.html.html"></a>
       </div>
     </div>
 <div class="manual-card-wrap" data-ice="cards">
       <div class="manual-card">
-        <div data-ice="card"><h1>CSS</h1><h2>Normalize</h2><h2>PostCSS</h2></div>
+        <div data-ice="card"><h1>CSS</h1><h2>Normalize</h2><h2>PostCSS</h2><h3>PreCSS</h3><h3>Stylelint</h3><h3>Autoprefixer</h3><h3>List Selectors</h3><h2>Notes/Ideas</h2><ul>
+<li>During development (<code>npm run start-watch</code>) css is included in JS bundles and slow to load</li>
+<li>[ ] Styleguide</li>
+<li>[ ] Framework Demos (Separate Repo?)</li>
+</ul></div>
         <a data-ice="link" href="manual/README.css.html"></a>
       </div>
     </div>
 <div class="manual-card-wrap" data-ice="cards">
       <div class="manual-card">
-        <div data-ice="card"><h1>Helpers</h1><h2>LocalStorage</h2><h2>TODO</h2></div>
+        <div data-ice="card"><h1>Helpers</h1><h2>LocalStorage</h2><h2>Notes/Ideas</h2><ul>
+<li>[ ] Configuration file</li>
+<li>[ ] Performance Logger</li>
+<li>[ ] API Helpers (Internal vs External?)</li>
+</ul></div>
         <a data-ice="link" href="manual/README.helpers.html"></a>
       </div>
     </div>
@@ -142,7 +195,10 @@ for all possibe npm commands.</p><h2>Webpack</h2><h3>Meta Attributes</h3><h3>Dev
     </div>
 <div class="manual-card-wrap" data-ice="cards">
       <div class="manual-card">
-        <div data-ice="card"><h1>Testing</h1><h2>Mocha</h2><h2>Karma</h2></div>
+        <div data-ice="card"><h1>Testing</h1><h2>Mocha</h2><h2>Karma</h2><h2>Notes/Ideas</h2><ul>
+<li>[ ] Cypress UI</li>
+<li>[ ] Mock API requests?</li>
+</ul></div>
         <a data-ice="link" href="manual/README.test.html"></a>
       </div>
     </div>

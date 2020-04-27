@@ -1,8 +1,8 @@
 # Setup
 
-**Requires Node 12+**. Please install this before attempting to run. The easiest way to install and
-manage node versions is by using the [Node Version Manager](https://github.com/nvm-sh/nvm). We define a .nvm file
-in the project to help reference this minimum node version.
+**Requires Node 12+ to build**. Please install this before attempting to build. The easiest way to install and
+manage node versions is by using the [Node Version Manager](https://github.com/nvm-sh/nvm). We define a
+.nvm file in the project to help reference this minimum node version.
 
 Use `nvm use 12` to switch node versions after installing a new Node version. **Then you should install all
 project dependencies**([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/package.json#L30))
@@ -14,12 +14,38 @@ on changes, you can use** `npm run start-watch`. See the package.json([github](h
 for all possibe npm commands.
 
 ## Webpack
+Webpack config file([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/webpack.config.js))
+is used to manage our webpack build to compile the application.
 
-
-### Page Meta Attributes
-
+In this file we:
+  - Define the Entrypoint javascript files to create bundles
+  - Define where the generated files are placed
+  - Define how to import other files
+  - Setup Modules/Plugins:
+    - Babel and ESLint Loaders
+    - Flow Integration with Webpack
+    - Reference HTML Files (source and destinations) and javascript bundles to include on pages
+    - PostCSS Loader for easy CSS files
+    - Hot Module Replacement for rebuilding on file changes
+    - Custom Script to run at end of webpack build that Lints generated HTML files
+  - Setup Development Server to Host HTML/JS/CSS Files for rapid development
 
 ### Dev Server
-
+During development (while using the `npm run start-watch` command), we instantiate a Webpack Dev Server to host
+the generated WebApp files. We have to manually instantiate the Dev Server in the webpack.config.js file because
+we are actually start Karma to watch and manage the test runs, which then runs the Webpack config file to start
+the build process and this Dev Server.
 
 ## Documentation
+
+The `docs/` directory is created with `npm run doc`, this generates an esdoc webpage based on the modified
+template stored in `docs/template` from the README files in the repo. These docs are also synced with the Github
+wiki page via a Github Action (see Github Actions/Scripts page for more details.
+
+The Dependency Graph is created with [Madge](https://github.com/pahen/madge) and graphviz, you will need to
+install both in order to update the dependency graph. I didn't include these in the package.json dependencies
+because I felt this is more than is needed to develop a working app or even write basic documentation. I also split this out to a separate npm script: `npm run doc-image` so it can be run when someone actually installs
+the dependencies
+
+Install madge with `npm install -g madge` and install graphviz with `brew install graphviz` or
+`port install graphviz` (for OSX).
