@@ -18,6 +18,9 @@ See [package.json](https://github.com/devlinjunker/template.webpack.fend/blob/ma
  - Mocha, Chai, Sinon
  - Karma
  - EsDoc
+ - PostCSS
+ - HTMLHint
+ - NormalizeCSS
 
 
 ## Development
@@ -26,12 +29,14 @@ How to use this template to create a basic Frontend Application:
 
 1. Download template and update dependencies
 2. Create HTML files in `src/`
-3. Add javascript files and reference in `src/entry.js` to run up your application
+    - add HtmlWebpackPlugin instances for each new output page in webpack.config.js
+3. Add javascript files and reference in `src/entry.js`  (for up your application
     - add additional javascript entry points in webpack.config.js
-4. Add to `src/index.html` to define your html structure
-   - add more html files and reference them in webpack.config.js
+4. Add CSS files to `src` and import in javascript
+   - or install CSS libraries with npm and import
+   - or reference in HTML template?
 5. Use `npm run start-watch` to compile and run dev server + tests in watch mode
-6. Navigate http://localhost:3030/ to see a development version of your web app
+6. Navigate http://localhost:3030/ to see a development version of your web app with Hot reloading
    - or http://localhost:3030/docs/ to see the documentation
 
 
@@ -52,6 +57,8 @@ How to use this template to create a basic Frontend Application:
 `npm run build` compile application to public directory
 
 `npm run doc` to generate static documentation in the doc folder
+
+`npm run doc-image` to update sourcemap image and static documentation in the doc folder
 
 **TODO**
 
@@ -104,8 +111,8 @@ How to use this template to create a basic Frontend Application:
       - https://github.com/jonathantneal/precss
     - autoprefixer for making css look cleaner (browser prefixes don't need to be added)
     - list all selectors used: https://github.com/davidtheclark/list-selectors
- - [ ] (^) Madge?
- - [ ] (^) Manual in Docs
+ - [..] (^) Madge?
+ - [..] (^) Manual in Docs
  - [ ] HTML template example
    - webpack/lodash style? https://github.com/emaphp/underscore-template-loader
  - [..] (^) Base CSS Style for all apps:

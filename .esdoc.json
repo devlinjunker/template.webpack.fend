@@ -12,7 +12,18 @@
       },
 			"brand": {
 				"repository": "https://github.com/devlinjunker/template.webpack.fend"
-			}
+			},
+      "manual": {
+        "index": "./index.md",
+        "files": [
+          "./README.setup.md",
+          "./src/README.html.md",
+          "./src/README.css.md",
+          "./src/helpers/README.helpers.md",
+          "./scripts/README.scripts.md",
+          "./test/README.test.md"
+        ]
+      }
     }
   }, {
     "name": "esdoc-flow-plugin"

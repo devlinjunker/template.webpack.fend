@@ -27,6 +27,7 @@
     "build": "./node_modules/.bin/webpack",
     "lint": "./node_modules/.bin/eslint ./src",
     "doc": "npm run build && (./node_modules/.bin/esdoc; rm -rf docs/demo/; mv -f public/ docs/demo/)",
+    "doc-image": "madge ./src -i docs/image/dependency.png && npm run doc",
     "clean": " ## TODO: clean up project files"
   },
   "dependencies": {
@@ -76,6 +77,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^3.0.5",
     "list-selectors": "^2.0.0",
+    "madge": "^3.8.0",
     "mocha": "^6.2.3",
     "normalize.css": "^8.0.1",
     "postcss-exclude-files": "^1.0.15",
