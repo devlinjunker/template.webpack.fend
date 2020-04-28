@@ -3,11 +3,17 @@
 These files should updated whenever we merge to master, and be in sync between:
  - The README files in the repo,
  - The [Github Wiki](https://github.com/devlinjunker/template.webpack.fend/wiki), and
- - The [generated doc site](https://devlinjunker.github.io/template.webpack.fend/manual/index.html) served when running the server and on github pages
+ - The [generated doc site](https://devlinjunker.github.io/template.webpack.fend/manual/index.html) served
+    when running the server and on github pages
 
-This project uses a Github Action to accomplish this. The action is executed on merge to the `master` branch and defined inside of the `./.github/workflows/` directory([github](https://github.com/devlinjunker/template.webpack.fend/tree/master/.github/workflows)) (along with all other github actions) that creates a commit to update the docs directory on github and then calls a script in the `scripts/actions` directory([github](https://github.com/devlinjunker/template.webpack.fend/tree/master/scripts/actions)).
+This project uses a Github Action to accomplish this. The action is executed on merge to the `master` branch
+and defined inside of the `./.github/workflows/` directory([github](https://github.com/devlinjunker/template.webpack.fend/tree/master/.github/workflows))
+(along with all other github actions) that creates a commit to update the docs directory on github and then
+calls a script in the `scripts/actions` directory([github](https://github.com/devlinjunker/template.webpack.fend/tree/master/scripts/actions)).
 
-The script retrieves the following markdown files (defined in `./.esdoc.json`) and copies them to a temporary directory, then uses the [wiki-page-creator-action](https://github.com/marketplace/actions/wiki-page-creator-action) to update the wiki.
+The script retrieves the following markdown files (defined in `./.esdoc.json`) and copies them to a temporary
+directory, then uses the [wiki-page-creator-action](https://github.com/marketplace/actions/wiki-page-creator-action)
+to update the wiki.
 
 ### Table of Contents
 

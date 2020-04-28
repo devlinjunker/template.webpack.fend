@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
   "name": "Template-WebpackFEND",
-  "description": "Template using Webpack to create a html/javascript/css page with multiple routes",
+  "description": "Template using Webpack to create a html/javascript/css pages with multiple files",
   "keywords": [
     "template",
     "webpack",

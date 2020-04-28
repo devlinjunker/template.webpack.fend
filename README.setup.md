@@ -31,7 +31,7 @@ This file:
   - Sets up Development Server to Host HTML/JS/CSS Files for rapid development
 
 ### Dev Server
-During development (while using the `npm run start-watch` command), we instantiate a Webpack Dev Server to host
+During development (while using the `npm run start-watch` command), a Webpack Dev Server is instantiated to host
 the generated WebApp files. The Dev Server is manually instantiated in the webpack.config.js file because
 the scripts actually start Karma to watch and manage the test runs, which then runs the Webpack config file to
 start the build process and this Dev Server.
@@ -44,8 +44,8 @@ wiki page via a Github Action (see Github Actions/Scripts page for more details.
 
 The Dependency Graph is created with [Madge](https://github.com/pahen/madge) and graphviz, you will need to
 install both in order to update the dependency graph. Didn't include these in the package.json dependencies
-because this is more than is needed to develop a working app or even write basic documentation. Split this out
-to a separate npm script: `npm run doc-image` so it can be run when someone actually installs the dependencies
+because this is more than is needed to develop a working app or even write basic documentation. This is split
+out to a separate npm script: `npm run doc-image` so it can be run when someone actually installs the dependencies
 
 Install madge with `npm install -g madge` and install graphviz with `brew install graphviz` or
 `port install graphviz` (for OSX).
