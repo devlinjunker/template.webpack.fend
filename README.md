@@ -1,6 +1,6 @@
-# Basic Webpack App
+# Template Webpack FEND App
 
-Example Browser application using webpack build.
+Template and Example using Webpack to build a FEND Browser App (with HTML/CSS/JS and Image files).
 
 **Demo:**
  - Simple web interface for storing values in the Browser Local Storage.
