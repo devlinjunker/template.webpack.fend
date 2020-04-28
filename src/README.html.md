@@ -24,11 +24,10 @@ These include:
  - Requiring Doctype
  - Disabling Inline CSS Styles on elements
  - Attribute naming conventions
- - Requiring certain attributes
- - etc.
+ - Requiring some accessibility attributes
 
 
-## Notes/Ideas
+## HTML Notes/Ideas
  - [ ] Templating
  - [ ] Accessibility Linting
  - [ ] UI Framework?

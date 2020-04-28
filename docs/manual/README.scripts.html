@@ -36,6 +36,8 @@
     <ul class="manual-toc">
       
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.entry.html"><a href="manual/README.entry.html" data-ice="link">Javascript Entry Points</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.entry.html"><a href="manual/README.entry.html#importing-files" data-ice="link">Importing Files</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.entry.html"><a href="manual/README.entry.html#entry-notes-ideas" data-ice="link">Entry Notes/Ideas</a></li>
 </ul>
   </div>
 <div data-ice="manual">
@@ -46,7 +48,7 @@
 <li data-ice="manualNav" class="indent-h3" data-link="manual/README.html.html"><a href="manual/README.html.html#page-header-meta-attributes" data-ice="link">Page Header Meta Attributes</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/README.html.html"><a href="manual/README.html.html#templating" data-ice="link">Templating</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.html.html"><a href="manual/README.html.html#html-linting" data-ice="link">HTML Linting</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/README.html.html"><a href="manual/README.html.html#notes-ideas" data-ice="link">Notes/Ideas</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.html.html"><a href="manual/README.html.html#html-notes-ideas" data-ice="link">HTML Notes/Ideas</a></li>
 </ul>
   </div>
 <div data-ice="manual">
@@ -60,7 +62,7 @@
 <li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#autoprefixer" data-ice="link">Autoprefixer</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#list-selectors" data-ice="link">List Selectors</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#framework" data-ice="link">Framework</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#notes-ideas" data-ice="link">Notes/Ideas</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#css-notes-ideas" data-ice="link">CSS Notes/Ideas</a></li>
 </ul>
   </div>
 <div data-ice="manual">
@@ -83,15 +85,16 @@
     <ul class="manual-toc">
       
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.test.html"><a href="manual/README.test.html" data-ice="link">Testing</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#notes-ideas" data-ice="link">Notes/Ideas</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#bootstrap-file" data-ice="link">Bootstrap File</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#test-notes-ideas" data-ice="link">Test Notes/Ideas</a></li>
 </ul>
   </div>
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="actions-and-githooks">Actions and Githooks</h1><p>We setup github actions on this project so we can enforce actions/checks and workflow processes on github.</p>
-<h3 id="on-merge-to-master">On Merge to Master</h3><p>Whenever we merge a PR to master, we want to update the documentation based on the changes the user made in
-the commits. We run a git action to handle this as well:</p>
+<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="actions-and-githooks">Actions and Githooks</h1><p>This project uses github actions to enforce actions/checks and workflow processes on github.</p>
+<h3 id="on-merge-to-master">On Merge to Master</h3><p>Whenever a PR is merged master, we want to update the documentation based on the changes the user made in
+the commits. We run a git action to handle this:</p>
 <ul>
 <li>Collect README files and update wiki</li>
 <li>Fix/remove links in Wiki</li>

@@ -8,7 +8,7 @@ contains methods for saving/retrieving values with the browser localstorage API.
 stored on the clients browser and can be retreived when they return to the web application (until they clear
 their browser localstorage/data).
 
-## Notes/Ideas
+## Helper Notes/Ideas
  - [ ] Configuration file
  - [ ] Performance Logger
  - [ ] API Helpers (Internal vs External?)

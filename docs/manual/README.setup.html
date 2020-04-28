@@ -36,6 +36,8 @@
     <ul class="manual-toc">
       
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.entry.html"><a href="manual/README.entry.html" data-ice="link">Javascript Entry Points</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.entry.html"><a href="manual/README.entry.html#importing-files" data-ice="link">Importing Files</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.entry.html"><a href="manual/README.entry.html#entry-notes-ideas" data-ice="link">Entry Notes/Ideas</a></li>
 </ul>
   </div>
 <div data-ice="manual">
@@ -46,7 +48,7 @@
 <li data-ice="manualNav" class="indent-h3" data-link="manual/README.html.html"><a href="manual/README.html.html#page-header-meta-attributes" data-ice="link">Page Header Meta Attributes</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/README.html.html"><a href="manual/README.html.html#templating" data-ice="link">Templating</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.html.html"><a href="manual/README.html.html#html-linting" data-ice="link">HTML Linting</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/README.html.html"><a href="manual/README.html.html#notes-ideas" data-ice="link">Notes/Ideas</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.html.html"><a href="manual/README.html.html#html-notes-ideas" data-ice="link">HTML Notes/Ideas</a></li>
 </ul>
   </div>
 <div data-ice="manual">
@@ -60,7 +62,7 @@
 <li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#autoprefixer" data-ice="link">Autoprefixer</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#list-selectors" data-ice="link">List Selectors</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#framework" data-ice="link">Framework</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#notes-ideas" data-ice="link">Notes/Ideas</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#css-notes-ideas" data-ice="link">CSS Notes/Ideas</a></li>
 </ul>
   </div>
 <div data-ice="manual">
@@ -83,7 +85,8 @@
     <ul class="manual-toc">
       
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.test.html"><a href="manual/README.test.html" data-ice="link">Testing</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#notes-ideas" data-ice="link">Notes/Ideas</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#bootstrap-file" data-ice="link">Bootstrap File</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#test-notes-ideas" data-ice="link">Test Notes/Ideas</a></li>
 </ul>
   </div>
 </div>
@@ -100,13 +103,13 @@ dependencies have been downloaded and installed. To only compile the html and ja
 on changes, you can use</strong> <code>npm run start-watch</code>. See the package.json(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/package.json#L17">github</a>)
 for all possibe npm commands.</p>
 <h2 id="webpack">Webpack</h2><p>Webpack config file(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/webpack.config.js">github</a>)
-is used to manage our webpack build to compile the application.</p>
-<p>In this file we:</p>
+is used to manage webpack build to compile the application.</p>
+<p>This file:</p>
 <ul>
-<li>Define the Entrypoint javascript files to create bundles</li>
-<li>Define where the generated files are placed</li>
-<li>Define how to import other files</li>
-<li>Setup Modules/Plugins:<ul>
+<li>Defines the Entrypoint javascript files to create bundles</li>
+<li>Defines where the generated files are placed</li>
+<li>Defines how to import other files</li>
+<li>Sets up Modules/Plugins:<ul>
 <li>Babel and ESLint Loaders</li>
 <li>Flow Integration with Webpack</li>
 <li>Reference HTML Files (source and destinations) and javascript bundles to include on pages</li>
@@ -115,19 +118,19 @@ is used to manage our webpack build to compile the application.</p>
 <li>Custom Script to run at end of webpack build that Lints generated HTML files</li>
 </ul>
 </li>
-<li>Setup Development Server to Host HTML/JS/CSS Files for rapid development</li>
+<li>Sets up Development Server to Host HTML/JS/CSS Files for rapid development</li>
 </ul>
 <h3 id="dev-server">Dev Server</h3><p>During development (while using the <code>npm run start-watch</code> command), we instantiate a Webpack Dev Server to host
-the generated WebApp files. We have to manually instantiate the Dev Server in the webpack.config.js file because
-we are actually start Karma to watch and manage the test runs, which then runs the Webpack config file to start
-the build process and this Dev Server.</p>
+the generated WebApp files. The Dev Server is manually instantiated in the webpack.config.js file because
+the scripts actually start Karma to watch and manage the test runs, which then runs the Webpack config file to
+start the build process and this Dev Server.</p>
 <h2 id="documentation">Documentation</h2><p>The <code>docs/</code> directory is created with <code>npm run doc</code>, this generates an esdoc webpage based on the modified
 template stored in <code>docs/template</code> from the README files in the repo. These docs are also synced with the Github
 wiki page via a Github Action (see Github Actions/Scripts page for more details.</p>
 <p>The Dependency Graph is created with <a href="https://github.com/pahen/madge">Madge</a> and graphviz, you will need to
-install both in order to update the dependency graph. I didn&apos;t include these in the package.json dependencies
-because I felt this is more than is needed to develop a working app or even write basic documentation. I also split this out to a separate npm script: <code>npm run doc-image</code> so it can be run when someone actually installs
-the dependencies</p>
+install both in order to update the dependency graph. Didn&apos;t include these in the package.json dependencies
+because this is more than is needed to develop a working app or even write basic documentation. Split this out
+to a separate npm script: <code>npm run doc-image</code> so it can be run when someone actually installs the dependencies</p>
 <p>Install madge with <code>npm install -g madge</code> and install graphviz with <code>brew install graphviz</code> or
 <code>port install graphviz</code> (for OSX).</p>
 </div>

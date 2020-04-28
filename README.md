@@ -116,7 +116,8 @@ How to use this template to create a basic Frontend Application:
  - [ ] HTML template example
    - webpack/lodash style? https://github.com/emaphp/underscore-template-loader
    - handlebars?
- - [ ] (^) Base CSS Style for all apps:
+ - [ ] (^) Githooks
+ - [ ] (^) Base CSS Style for all apps
  - [ ] Styleguide
     - Page in docsite
     - Examples: http://styleguides.io/examples.html
@@ -130,7 +131,6 @@ How to use this template to create a basic Frontend Application:
      - [ ] Foundation?
      - [ ] Material Design?
  - [ ] (^) Configuration File
- - [ ] (^) Githooks
  - [ ] (^) If running in development -> console errors/warnings appear in UI bubble
  - [..] Helpers
    - ~~Localstorage~~

@@ -40,7 +40,7 @@ json file containing the css selectors that are processed by PostCSS.
 ## Framework
 TODO...
 
-## Notes/Ideas
+## CSS Notes/Ideas
  - Guidelines: https://cssguidelin.es/
  - During development (`npm run start-watch`) css is included in JS bundles and slow to load
  - [ ] BEM Linting?

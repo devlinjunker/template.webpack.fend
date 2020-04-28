@@ -15,26 +15,26 @@ for all possibe npm commands.
 
 ## Webpack
 Webpack config file([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/webpack.config.js))
-is used to manage our webpack build to compile the application.
+is used to manage webpack build to compile the application.
 
-In this file we:
-  - Define the Entrypoint javascript files to create bundles
-  - Define where the generated files are placed
-  - Define how to import other files
-  - Setup Modules/Plugins:
+This file:
+  - Defines the Entrypoint javascript files to create bundles
+  - Defines where the generated files are placed
+  - Defines how to import other files
+  - Sets up Modules/Plugins:
     - Babel and ESLint Loaders
     - Flow Integration with Webpack
     - Reference HTML Files (source and destinations) and javascript bundles to include on pages
     - PostCSS Loader for easy CSS files
     - Hot Module Replacement for rebuilding on file changes
     - Custom Script to run at end of webpack build that Lints generated HTML files
-  - Setup Development Server to Host HTML/JS/CSS Files for rapid development
+  - Sets up Development Server to Host HTML/JS/CSS Files for rapid development
 
 ### Dev Server
 During development (while using the `npm run start-watch` command), we instantiate a Webpack Dev Server to host
-the generated WebApp files. We have to manually instantiate the Dev Server in the webpack.config.js file because
-we are actually start Karma to watch and manage the test runs, which then runs the Webpack config file to start
-the build process and this Dev Server.
+the generated WebApp files. The Dev Server is manually instantiated in the webpack.config.js file because
+the scripts actually start Karma to watch and manage the test runs, which then runs the Webpack config file to
+start the build process and this Dev Server.
 
 ## Documentation
 
@@ -43,9 +43,9 @@ template stored in `docs/template` from the README files in the repo. These docs
 wiki page via a Github Action (see Github Actions/Scripts page for more details.
 
 The Dependency Graph is created with [Madge](https://github.com/pahen/madge) and graphviz, you will need to
-install both in order to update the dependency graph. I didn't include these in the package.json dependencies
-because I felt this is more than is needed to develop a working app or even write basic documentation. I also split this out to a separate npm script: `npm run doc-image` so it can be run when someone actually installs
-the dependencies
+install both in order to update the dependency graph. Didn't include these in the package.json dependencies
+because this is more than is needed to develop a working app or even write basic documentation. Split this out
+to a separate npm script: `npm run doc-image` so it can be run when someone actually installs the dependencies
 
 Install madge with `npm install -g madge` and install graphviz with `brew install graphviz` or
 `port install graphviz` (for OSX).
