@@ -134,7 +134,13 @@ module.exports = (env) => {
         {
           test: /\.(png|svg|jpg|jpeg|gif)$/,
           use: ['file-loader']
-        }
+        },
+
+        // Process HTML Files as Underscore templates and enable importing
+        {
+          test: /\.html$/,
+          loader: 'underscore-template-loader'
+        },
       ]
     }
   };
