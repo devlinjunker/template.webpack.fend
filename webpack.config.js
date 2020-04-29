@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FlowWebpackPlugin = require('flow-webpack-plugin');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
 const WriteFilePlugin = require('write-file-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
@@ -61,6 +62,8 @@ module.exports = (env) => {
         chunks: ['storage']
       }),
 
+      new MiniCssExtractPlugin(),
+
       // Run Flow on Webpack Compile
       new FlowWebpackPlugin({
         failOnError: false,
@@ -115,8 +118,11 @@ module.exports = (env) => {
         {
           test: /\.css$/,
           use: [
+            // {
+            //   loader: 'style-loader',
+            // },
             {
-              loader: 'style-loader',
+              loader: MiniCssExtractPlugin.loader
             },
             {
               loader: 'css-loader',
@@ -126,7 +132,7 @@ module.exports = (env) => {
             },
             {
               loader: 'postcss-loader'
-            }
+            },
           ]
         },
 
@@ -169,6 +175,8 @@ module.exports = (env) => {
       }
     });
   }
+
+  console.log('TEST1');
 
   return config;
 };
