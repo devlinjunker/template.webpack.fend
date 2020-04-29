@@ -7,8 +7,14 @@ chai.use(sinonChai);
 global.expect = chai.expect;
 global.sandbox = sinon.createSandbox();
 
+console.log('TEST');
+
 // $FlowFixMe
 const testsContext = require.context('../src', true, /.spec$/);
+
+console.log('TEST');
+console.log(testsContext);
+console.log('\n\n\n TESTING');
 
 testsContext.keys().forEach(testsContext);
 
