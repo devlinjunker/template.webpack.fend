@@ -9,7 +9,8 @@ Template and Example using Webpack to build a FEND Browser App (with HTML/CSS/JS
 ## Dependencies
 Node v12+ and npm
 
-See [package.json](https://github.com/devlinjunker/template.webpack.fend/blob/master/package.json) for full list of current dependencies
+See package.json([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/package.json))
+for full list of current dependencies
  - [Webpack](https://webpack.js.org/) + [Loaders ](https://webpack.js.org/concepts/loaders/)-- managing the build process
  - [Babel](https://babeljs.io/) -- compiling newer ECMA2016+ into browser-capable javascript
  - [FlowJS](https://flow.org/) -- adding types to javascript
