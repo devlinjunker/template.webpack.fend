@@ -10,17 +10,17 @@ Template and Example using Webpack to build a FEND Browser App (with HTML/CSS/JS
 Node v12+ and npm
 
 See [package.json](https://github.com/devlinjunker/template.webpack.fend/blob/master/package.json) for full list of current dependencies
- - Webpack + Loaders
- - Babel
- - FlowJS
- - ESLint
- - Webpack Dev Server
- - Mocha, Chai, Sinon
- - Karma
- - EsDoc
- - PostCSS
- - HTMLHint
- - NormalizeCSS
+ - [Webpack](https://webpack.js.org/) + [Loaders ](https://webpack.js.org/concepts/loaders/)-- managing the build process
+ - [Babel](https://babeljs.io/) -- compiling newer ECMA2016+ into browser-capable javascript
+ - [FlowJS](https://flow.org/) -- adding types to javascript
+ - [ESLint](http://eslint.org/) -- enforcing javascript code style
+ - [Webpack Dev Server](https://github.com/webpack/webpack-dev-server)-- rapid development with hot reloading
+ - [Mocha](https://mochajs.org/), [Chai](https://www.chaijs.com/), and [Sinon](https://sinonjs.org/) -- unit testing
+ - [Karma](https://karma-runner.github.io/) -- managing tests in different browsers
+ - [EsDoc](https://esdoc.org/) -- creating easy javascript documentation
+ - [PostCSS](https://postcss.org/) -- parsing and compiling css files
+ - [HTMLHint](https://github.com/htmlhint/HTMLHint) -- parsing and enforcing HTML standards
+ - [NormalizeCSS](http://necolas.github.io/normalize.css/) -- standardizing and cleaning up css differences between browsers
 
 
 ## Development
