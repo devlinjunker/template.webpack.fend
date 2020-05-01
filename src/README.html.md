@@ -15,7 +15,7 @@ The `<meta>` webpage attributes are passed into the instance of the HtmlWebpackP
 ### Templating
 Simple HTML Templating can be done with the [underscore-lodash-loader](https://github.com/emaphp/underscore-template-loader).
 This loader allows partial HTML files to be imported using `@require` or `@import` in the HTML files, and
-also enables template variables that can be replaced when the HTML is generated (e.g. `<%= greet(name) %>`).
+also enables template variables that can be replaced when the HTML is generated (e.g. `<%= name %>`).
 
 
 ## HTML Linting
@@ -32,6 +32,6 @@ These include:
 
 
 ## HTML Notes/Ideas
- - [ ] Templating
+ - [x] Templating
  - [ ] Accessibility Linting
  - [ ] UI Framework?
