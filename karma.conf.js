@@ -9,8 +9,6 @@ const env = {
 const webpack = buildWebpack(env);
 webpack.watch = true;
 
-console.log('TEST');
-
 const karmaConfig = function(config) {
   config.set({
 
