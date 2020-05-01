@@ -114,23 +114,19 @@ How to use this template to create a basic Frontend Application:
     - list all selectors used: https://github.com/davidtheclark/list-selectors
  - [x] (^) Madge?
  - [x] (^) Manual in Docs
- - [ ] HTML template example
+ - [..] (^) HTML template example
    - webpack/lodash style? https://github.com/emaphp/underscore-template-loader
    - handlebars?
- - [ ] (^) Githooks
- - [ ] (^) Base CSS Style for all apps
- - [ ] Styleguide
+   - [ ] Components (javascript methods that return compiled html, has params for template variables)
+ - [ ] (^) Styleguide
     - Page in docsite
     - Examples: http://styleguides.io/examples.html
       - http://codeforamerica.clearleft.com/#
     - Fractal? https://github.com/adamlindqvist/fractal-webpack-plugin
- - [ ] CSS Frameworks
+ - [ ] (^) Base CSS Style for all apps
+ - [ ] (^) CSS Framework
    - [ ] Tailwind - integrates with javascript
-   - Fork of this Repo with different directories for each?
-     - [ ] bulma https://bulma.io/documentation/overview/start/
-     - [ ] Bootstrap?
-     - [ ] Foundation?
-     - [ ] Material Design?
+ - [ ] (^) Githooks
  - [ ] (^) Configuration File
  - [ ] (^) If running in development -> console errors/warnings appear in UI bubble
  - [..] Helpers
@@ -142,11 +138,16 @@ How to use this template to create a basic Frontend Application:
     - https://github.com/pa11y/pa11y
     - ASLint
     - https://www.24a11y.com/2017/reacts-accessibility-code-linter/
- - [ ] (^) Basic UI Framework (other repos?)
+ - [ ] Basic UI Framework (other repos?)
     - [ ] Backbone?
     - [ ] Vue?
     - [ ] React?
     - [ ] Aurelia
+  - [ ] Fork of this Repo with different directories for each css framework?
+    - [ ] bulma https://bulma.io/documentation/overview/start/
+    - [ ] Bootstrap?
+    - [ ] Foundation?
+    - [ ] Material Design?
  - [ ] (-) Mock API requests on localhost
     - Contract testing? https://docs.pact.io/
     - OpenAPI validation of mocks? https://bitbucket.org/atlassian/swagger-mock-validator/src/master/
