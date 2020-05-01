@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../">
-  <title data-ice="title">Manual | WebpackFEND</title>
+  <title data-ice="title">Manual | Template-WebpackFEND</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
   <script src="script/matomo.js"></script>
-<meta name="description" content="Template using Webpack to create a html/javascript/css page with multiple routes"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="WebpackFEND"><meta property="twitter:description" content="Template using Webpack to create a html/javascript/css page with multiple routes"></head>
+<meta name="description" content="Template using Webpack to create a html/javascript/css pages with multiple files"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="Template-WebpackFEND"><meta property="twitter:description" content="Template using Webpack to create a html/javascript/css pages with multiple files"></head>
 <body class="layout-container manual-root manual-index" data-ice="rootContainer">
 
 <header>
@@ -70,7 +70,7 @@
       
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html" data-ice="link">Helpers</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#localstorage" data-ice="link">LocalStorage</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#notes-ideas" data-ice="link">Notes/Ideas</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#helper-notes-ideas" data-ice="link">Helper Notes/Ideas</a></li>
 </ul>
   </div>
 <div data-ice="manual">
@@ -79,6 +79,7 @@
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html" data-ice="link">Actions and Githooks</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#on-merge-to-master" data-ice="link">On Merge to Master</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#githooks" data-ice="link">Githooks</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#github-specific" data-ice="link">Github Specific</a></li>
 </ul>
   </div>
 <div data-ice="manual">
@@ -98,10 +99,16 @@
 <ul>
 <li>The README files in the repo,</li>
 <li>The <a href="https://github.com/devlinjunker/template.webpack.fend/wiki">Github Wiki</a>, and</li>
-<li>The <a href="https://devlinjunker.github.io/template.webpack.fend/manual/index.html">generated doc site</a> served when running the server and on github pages</li>
+<li>The <a href="https://devlinjunker.github.io/template.webpack.fend/manual/index.html">generated doc site</a> served
+ when running the server and on github pages</li>
 </ul>
-<p>This project uses a Github Action to accomplish this. The action is executed on merge to the <code>master</code> branch and defined inside of the <code>./.github/workflows/</code> directory(<a href="https://github.com/devlinjunker/template.webpack.fend/tree/master/.github/workflows">github</a>) (along with all other github actions) that creates a commit to update the docs directory on github and then calls a script in the <code>scripts/actions</code> directory(<a href="https://github.com/devlinjunker/template.webpack.fend/tree/master/scripts/actions">github</a>).</p>
-<p>The script retrieves the following markdown files (defined in <code>./.esdoc.json</code>) and copies them to a temporary directory, then uses the <a href="https://github.com/marketplace/actions/wiki-page-creator-action">wiki-page-creator-action</a> to update the wiki.</p>
+<p>This project uses a Github Action to accomplish this. The action is executed on merge to the <code>master</code> branch
+and defined inside of the <code>./.github/workflows/</code> directory(<a href="https://github.com/devlinjunker/template.webpack.fend/tree/master/.github/workflows">github</a>)
+(along with all other github actions) that creates a commit to update the docs directory on github and then
+calls a script in the <code>scripts/actions</code> directory(<a href="https://github.com/devlinjunker/template.webpack.fend/tree/master/scripts/actions">github</a>).</p>
+<p>The script retrieves the following markdown files (defined in <code>./.esdoc.json</code>) and copies them to a temporary
+directory, then uses the <a href="https://github.com/marketplace/actions/wiki-page-creator-action">wiki-page-creator-action</a>
+to update the wiki.</p>
 <h3 id="table-of-contents">Table of Contents</h3><ul>
 <li><a href="manual/README.setup.html">Setup</a> - dependencies and how to install and start development (eventually production?)</li>
 <li><a href="manual/README.entry.html">Entry</a> - How Javascript Bundles are defined and files that can be included</li>
@@ -142,15 +149,15 @@ is used to manage webpack build to compile the application.</p><p>This file:</p>
 </ul>
 </li>
 <li>Sets up Development Server to Host HTML/JS/CSS Files for rapid development</li>
-</ul><h3>Dev Server</h3><p>During development (while using the <code>npm run start-watch</code> command), we instantiate a Webpack Dev Server to host
+</ul><h3>Dev Server</h3><p>During development (while using the <code>npm run start-watch</code> command), a Webpack Dev Server is instantiated to host
 the generated WebApp files. The Dev Server is manually instantiated in the webpack.config.js file because
 the scripts actually start Karma to watch and manage the test runs, which then runs the Webpack config file to
 start the build process and this Dev Server.</p><h2>Documentation</h2><p>The <code>docs/</code> directory is created with <code>npm run doc</code>, this generates an esdoc webpage based on the modified
 template stored in <code>docs/template</code> from the README files in the repo. These docs are also synced with the Github
 wiki page via a Github Action (see Github Actions/Scripts page for more details.</p><p>The Dependency Graph is created with <a href="https://github.com/pahen/madge">Madge</a> and graphviz, you will need to
 install both in order to update the dependency graph. Didn&apos;t include these in the package.json dependencies
-because this is more than is needed to develop a working app or even write basic documentation. Split this out
-to a separate npm script: <code>npm run doc-image</code> so it can be run when someone actually installs the dependencies</p><p>Install madge with <code>npm install -g madge</code> and install graphviz with <code>brew install graphviz</code> or
+because this is more than is needed to develop a working app or even write basic documentation. This is split
+out to a separate npm script: <code>npm run doc-image</code> so it can be run when someone actually installs the dependencies</p><p>Install madge with <code>npm install -g madge</code> and install graphviz with <code>brew install graphviz</code> or
 <code>port install graphviz</code> (for OSX).</p></div>
         <a data-ice="link" href="manual/README.setup.html"></a>
       </div>
@@ -159,8 +166,13 @@ to a separate npm script: <code>npm run doc-image</code> so it can be run when s
       <div class="manual-card">
         <div data-ice="card"><h1>Javascript Entry Points</h1><p>The <code>webpack.config.js</code>(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/webpack.config.js">github</a>)
 defines entry points for javascript bundles that can be created for each page, or can be optimized to bundle
-code that can be cached separately, loaded asynchronously or lazy loaded, after the page has loaded and rendered.</p><h2>Importing Files</h2><p>The javascript files can import other files and/or libraries using either CommonJS Module syntax (e.g. <code>const
-package = require(&apos;module&apos;)</code>) or using ECMA6(ES2015) syntax (e.g. <code>import package from &apos;lib&apos;</code>).</p><p>The file types available are defined in the <code>rules</code> section of the Webpack config:</p><ul>
+code that can be cached separately, loaded asynchronously or lazy loaded, after the page has loaded and rendered.</p><p>These bundles are separately included on each HTML page (defined with the <code>HTMLWebpackPlugin</code> in the Webpack
+config) and will execute in the order they are included on the webpage. The files in these bundles are separate
+modules and self-contained, so any variables will only be available within that module context. However, any
+items declared at the global level in a bundle  (<code>e.g.global.property = &apos;value&apos;;</code>) will be available in any other
+bundle that is on that HTML page, as well..</p><h2>Importing Files</h2><p>The javascript file that is referenced as an entry point, can import other files and/or libraries using either
+CommonJS Module syntax (e.g. <code>const package = require(&apos;module&apos;)</code>) or using ECMA6(ES2015) syntax (e.g. <code>import
+package from &apos;lib&apos;</code>). These files will then be included in the generated bundle for that entry point.</p><p>The file types available to import are defined in the <code>rules</code> section of the Webpack config:</p><ul>
 <li>Javascript (.js) Files</li>
 <li>CSS (.css) Files</li>
 <li>Images (.png/.svg/.jp(e)g/gif) Files</li>
@@ -173,11 +185,13 @@ package = require(&apos;module&apos;)</code>) or using ECMA6(ES2015) syntax (e.g
 <div class="manual-card-wrap" data-ice="cards">
       <div class="manual-card">
         <div data-ice="card"><h1>HTML</h1><p>HTML files structure the layout of the web application. The final HTML files are generated by webpack and
-output to the <code>public/</code> directory when building with <code>npm run build</code>.</p><h2>Webpack</h2><p>The webpack.config.js file defines the HTML pages that will be generated by the build process. For each instance
-of the HtmlWebpackPlugin in the <code>plugins</code> section, webpack will output a new HTML file using the <code>template</code> at
-the <code>filename</code> provided (inside of <code>public/</code>).</p><h3>Page Header Meta Attributes</h3><p>TODO...</p><h3>Templating</h3><p>TODO...</p><h2>HTML Linting</h2><p>During the build process, webpack is configured to lint the final HTML files after each successful build with
+output to the <code>public/</code> directory when building with <code>npm run build</code> and define the pages that can be accessed via browser in the final application.</p><h2>Webpack</h2><p>The webpack.config.js file(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/webpack.config.js">github</a>)
+defines the HTML pages that will be generated by the build process. For each instance of the HtmlWebpackPlugin
+in the <code>plugins</code> section, webpack will output a new HTML file using the <code>template</code> at the <code>filename</code> provided
+(inside of <code>public/</code>).</p><h3>Page Header Meta Attributes</h3><p>The <code>&lt;meta&gt;</code> webpage attributes are passed into the instance of the HtmlWebpackPlugin for each page defined in the webpack config file. These attributes could be dynamically set for each page if desired, or can be the same for each html page.</p><h3>Templating</h3><p>TODO...</p><h2>HTML Linting</h2><p>During the build process, webpack is configured to lint the final HTML files after each successful build with
 <a href="https://github.com/htmlhint/HTMLHint">htmlhint</a> to spot any errors in the HTML structure. This will cause an
-error in the build process output. You can see the rules defined in the .htmlhintrc file (<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/.htmlhintrc">github</a>).</p><p>These include:</p><ul>
+error in the build process output. You can see the rules defined in the .htmlhintrc file
+(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/.htmlhintrc">github</a>).</p><p>These include:</p><ul>
 <li>Requiring Doctype</li>
 <li>Disabling Inline CSS Styles on elements</li>
 <li>Attribute naming conventions</li>
@@ -224,11 +238,12 @@ json file containing the css selectors that are processed by PostCSS.</p><ul>
     </div>
 <div class="manual-card-wrap" data-ice="cards">
       <div class="manual-card">
-        <div data-ice="card"><h1>Helpers</h1><p>This project contains a <code>helpers/</code> directory that holds Javascript classes that can be used across multiple
-projects with utility methods for useful functionality.</p><h2>LocalStorage</h2><p>The localstorage helper (<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/src/helpers/localStorage.helper.js">github</a>)
+        <div data-ice="card"><h1>Helpers</h1><p>This project contains a <code>helpers/</code> directory(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/src/helpers">github</a>)
+that holds Javascript classes that can be used across multiple projects with utility methods for useful
+functionality.</p><h2>LocalStorage</h2><p>The localstorage helper (<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/src/helpers/localStorage.helper.js">github</a>)
 contains methods for saving/retrieving values with the browser localstorage API. Values saved with this will be
 stored on the clients browser and can be retreived when they return to the web application (until they clear
-their browser localstorage/data).</p><h2>Notes/Ideas</h2><ul>
+their browser localstorage/data).</p><h2>Helper Notes/Ideas</h2><ul>
 <li>[ ] Configuration file</li>
 <li>[ ] Performance Logger</li>
 <li>[ ] API Helpers (Internal vs External?)</li>
@@ -238,18 +253,20 @@ their browser localstorage/data).</p><h2>Notes/Ideas</h2><ul>
     </div>
 <div class="manual-card-wrap" data-ice="cards">
       <div class="manual-card">
-        <div data-ice="card"><h1>Actions and Githooks</h1><p>This project uses github actions to enforce actions/checks and workflow processes on github.</p><h3>On Merge to Master</h3><p>Whenever a PR is merged master, we want to update the documentation based on the changes the user made in
+        <div data-ice="card"><h1>Actions and Githooks</h1><p>This project uses github actions(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/.github/workflows">github</a>)
+to enforce actions/checks and workflow processes on github.</p><h3>On Merge to Master</h3><p>Whenever a PR is merged master, the documentation is updated based on the changes the user made in
 the commits. We run a git action to handle this:</p><ul>
 <li>Collect README files and update wiki</li>
 <li>Fix/remove links in Wiki</li>
 <li>Build documentation and generate commit</li>
-</ul><h2>Githooks</h2><p>TODO...</p></div>
+</ul><h2>Githooks</h2><p>TODO...</p><h2>Github Specific</h2><p>Whenever a PR is made on Github, the body/description will be pre-populated with the contents in
+<code>.github/PULL_REQUEST_TEMPLATE.md</code></p></div>
         <a data-ice="link" href="manual/README.scripts.html"></a>
       </div>
     </div>
 <div class="manual-card-wrap" data-ice="cards">
       <div class="manual-card">
-        <div data-ice="card"><h1>Testing</h1><p>We can run a single run of all unit tests in the application with <code>npm run test</code>. Or the tests will be run
+        <div data-ice="card"><h1>Testing</h1><p>You can run a single run of all unit tests in the application with <code>npm run test</code>. Or the tests will be run
 after the compilation has finished when running <code>npm run start-watch</code>. The testing is managed by
 <a href="https://karma-runner.github.io/latest/index.html">Karma</a> and configured using the <code>karma.conf.js</code> file(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/karma.conf.js">github</a>)</p><p>This config file defines:</p><ul>
 <li>the testing framework we use (<a href="https://mochajs.org/">mocha</a>)</li>
@@ -257,7 +274,10 @@ after the compilation has finished when running <code>npm run start-watch</code>
 <li>The browser launchers that we use to run the Unit Tests (chrome)</li>
 <li>The log level to display</li>
 <li>Imports webpack config so we can also run the test and dev server if we use <code>npm run start-watch</code></li>
-</ul><h2>Bootstrap File</h2><p>The testing bootstrap file finds all of the test files and imports global objects that can be used in all tests to simplify each test file. It also creates a sinon Sandbox that is reset before each test for mocking/stubbing services and non-tested functions in the test context.</p><p>Global Imports (available in all <code>.spec</code> files):</p><ul>
+</ul><h2>Bootstrap File</h2><p>The testing bootstrap file(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/test/test.bootstrag.js">github</a>)
+finds all of the test files and imports global objects that can be used in all tests to simplify each test file.
+It also creates a sinon Sandbox that is reset before each test for mocking/stubbing services and non-tested
+functions in the test context.</p><p>Global Variables (available in all <code>.spec</code> files):</p><ul>
 <li><code>sinonSandbox</code> from <a href="https://sinonjs.org/">Sinon</a></li>
 <li><code>expect</code> from <a href="https://www.chaijs.com/">Chai</a></li>
 <li>TODO: <code>describe</code>/<code>it</code>/<code>beforeEach</code> from <a href="https://mochajs.org/">Mocha</a></li>

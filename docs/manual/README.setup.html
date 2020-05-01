@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../">
-  <title data-ice="title">Manual | WebpackFEND</title>
+  <title data-ice="title">Manual | Template-WebpackFEND</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
   <script src="script/matomo.js"></script>
-<meta name="description" content="Template using Webpack to create a html/javascript/css page with multiple routes"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="WebpackFEND"><meta property="twitter:description" content="Template using Webpack to create a html/javascript/css page with multiple routes"></head>
+<meta name="description" content="Template using Webpack to create a html/javascript/css pages with multiple files"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="Template-WebpackFEND"><meta property="twitter:description" content="Template using Webpack to create a html/javascript/css pages with multiple files"></head>
 <body class="layout-container manual-root" data-ice="rootContainer">
 
 <header>
@@ -70,7 +70,7 @@
       
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html" data-ice="link">Helpers</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#localstorage" data-ice="link">LocalStorage</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#notes-ideas" data-ice="link">Notes/Ideas</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#helper-notes-ideas" data-ice="link">Helper Notes/Ideas</a></li>
 </ul>
   </div>
 <div data-ice="manual">
@@ -79,6 +79,7 @@
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html" data-ice="link">Actions and Githooks</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#on-merge-to-master" data-ice="link">On Merge to Master</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#githooks" data-ice="link">Githooks</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#github-specific" data-ice="link">Github Specific</a></li>
 </ul>
   </div>
 <div data-ice="manual">
@@ -120,7 +121,7 @@ is used to manage webpack build to compile the application.</p>
 </li>
 <li>Sets up Development Server to Host HTML/JS/CSS Files for rapid development</li>
 </ul>
-<h3 id="dev-server">Dev Server</h3><p>During development (while using the <code>npm run start-watch</code> command), we instantiate a Webpack Dev Server to host
+<h3 id="dev-server">Dev Server</h3><p>During development (while using the <code>npm run start-watch</code> command), a Webpack Dev Server is instantiated to host
 the generated WebApp files. The Dev Server is manually instantiated in the webpack.config.js file because
 the scripts actually start Karma to watch and manage the test runs, which then runs the Webpack config file to
 start the build process and this Dev Server.</p>
@@ -129,8 +130,8 @@ template stored in <code>docs/template</code> from the README files in the repo.
 wiki page via a Github Action (see Github Actions/Scripts page for more details.</p>
 <p>The Dependency Graph is created with <a href="https://github.com/pahen/madge">Madge</a> and graphviz, you will need to
 install both in order to update the dependency graph. Didn&apos;t include these in the package.json dependencies
-because this is more than is needed to develop a working app or even write basic documentation. Split this out
-to a separate npm script: <code>npm run doc-image</code> so it can be run when someone actually installs the dependencies</p>
+because this is more than is needed to develop a working app or even write basic documentation. This is split
+out to a separate npm script: <code>npm run doc-image</code> so it can be run when someone actually installs the dependencies</p>
 <p>Install madge with <code>npm install -g madge</code> and install graphviz with <code>brew install graphviz</code> or
 <code>port install graphviz</code> (for OSX).</p>
 </div>

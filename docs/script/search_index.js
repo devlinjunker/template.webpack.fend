@@ -1,14 +1,14 @@
 window.esdocSearchIndex = [
   [
-    "webpackfend/src/helpers/localstorage.helper.js~localstoragehelper",
+    "template-webpackfend/src/helpers/localstorage.helper.js~localstoragehelper",
     "class/src/helpers/localStorage.helper.js~LocalStorageHelper.html",
-    "<span>LocalStorageHelper</span> <span class=\"search-result-import-path\">WebpackFEND/src/helpers/localStorage.helper.js</span>",
+    "<span>LocalStorageHelper</span> <span class=\"search-result-import-path\">Template-WebpackFEND/src/helpers/localStorage.helper.js</span>",
     "class"
   ],
   [
-    "webpackfend/src/storage/app.controller.js~storageappcontroller",
+    "template-webpackfend/src/storage/app.controller.js~storageappcontroller",
     "class/src/storage/app.controller.js~StorageAppController.html",
-    "<span>StorageAppController</span> <span class=\"search-result-import-path\">WebpackFEND/src/storage/app.controller.js</span>",
+    "<span>StorageAppController</span> <span class=\"search-result-import-path\">Template-WebpackFEND/src/storage/app.controller.js</span>",
     "class"
   ],
   [

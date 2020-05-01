@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../">
-  <title data-ice="title">Manual | WebpackFEND</title>
+  <title data-ice="title">Manual | Template-WebpackFEND</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
   <script src="script/matomo.js"></script>
-<meta name="description" content="Template using Webpack to create a html/javascript/css page with multiple routes"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="WebpackFEND"><meta property="twitter:description" content="Template using Webpack to create a html/javascript/css page with multiple routes"></head>
+<meta name="description" content="Template using Webpack to create a html/javascript/css pages with multiple files"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="Template-WebpackFEND"><meta property="twitter:description" content="Template using Webpack to create a html/javascript/css pages with multiple files"></head>
 <body class="layout-container manual-root" data-ice="rootContainer">
 
 <header>
@@ -70,7 +70,7 @@
       
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html" data-ice="link">Helpers</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#localstorage" data-ice="link">LocalStorage</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#notes-ideas" data-ice="link">Notes/Ideas</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#helper-notes-ideas" data-ice="link">Helper Notes/Ideas</a></li>
 </ul>
   </div>
 <div data-ice="manual">
@@ -79,6 +79,7 @@
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html" data-ice="link">Actions and Githooks</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#on-merge-to-master" data-ice="link">On Merge to Master</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#githooks" data-ice="link">Githooks</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#github-specific" data-ice="link">Github Specific</a></li>
 </ul>
   </div>
 <div data-ice="manual">
@@ -92,7 +93,7 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="testing">Testing</h1><p>We can run a single run of all unit tests in the application with <code>npm run test</code>. Or the tests will be run
+<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="testing">Testing</h1><p>You can run a single run of all unit tests in the application with <code>npm run test</code>. Or the tests will be run
 after the compilation has finished when running <code>npm run start-watch</code>. The testing is managed by
 <a href="https://karma-runner.github.io/latest/index.html">Karma</a> and configured using the <code>karma.conf.js</code> file(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/karma.conf.js">github</a>)</p>
 <p>This config file defines:</p>
@@ -103,8 +104,11 @@ after the compilation has finished when running <code>npm run start-watch</code>
 <li>The log level to display</li>
 <li>Imports webpack config so we can also run the test and dev server if we use <code>npm run start-watch</code></li>
 </ul>
-<h2 id="bootstrap-file">Bootstrap File</h2><p>The testing bootstrap file finds all of the test files and imports global objects that can be used in all tests to simplify each test file. It also creates a sinon Sandbox that is reset before each test for mocking/stubbing services and non-tested functions in the test context.</p>
-<p>Global Imports (available in all <code>.spec</code> files):</p>
+<h2 id="bootstrap-file">Bootstrap File</h2><p>The testing bootstrap file(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/test/test.bootstrag.js">github</a>)
+finds all of the test files and imports global objects that can be used in all tests to simplify each test file.
+It also creates a sinon Sandbox that is reset before each test for mocking/stubbing services and non-tested
+functions in the test context.</p>
+<p>Global Variables (available in all <code>.spec</code> files):</p>
 <ul>
 <li><code>sinonSandbox</code> from <a href="https://sinonjs.org/">Sinon</a></li>
 <li><code>expect</code> from <a href="https://www.chaijs.com/">Chai</a></li>
