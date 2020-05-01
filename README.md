@@ -151,6 +151,8 @@ How to use this template to create a basic Frontend Application:
     - Contract testing? https://docs.pact.io/
     - OpenAPI validation of mocks? https://bitbucket.org/atlassian/swagger-mock-validator/src/master/
  - [ ] (-) production configuration for webpack
+    - Improve build speed in develop https://webpack.js.org/guides/build-performance/
+    - Build caching https://webpack.js.org/guides/caching/
     - Minimize?
     - No Warnings? No output in tests?
     - CSS Generated to File and included at top of HTML
