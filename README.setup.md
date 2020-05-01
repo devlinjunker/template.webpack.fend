@@ -48,4 +48,5 @@ because this is more than is needed to develop a working app or even write basic
 out to a separate npm script: `npm run doc-image` so it can be run when someone actually installs the dependencies
 
 Install madge with `npm install -g madge` and install graphviz with `brew install graphviz` or
-`port install graphviz` (for OSX).
+`port install graphviz` (for OSX). Then run `npm run doc-image` in the repo and add the created image from
+`docs/image/dependency.png` and commit to update the docsite.
