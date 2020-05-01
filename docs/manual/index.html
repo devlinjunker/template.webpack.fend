@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../">
+  <title data-ice="title">Manual | WebpackFEND</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+  <script src="script/matomo.js"></script>
+<meta name="description" content="Template using Webpack to create a html/javascript/css page with multiple routes"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="WebpackFEND"><meta property="twitter:description" content="Template using Webpack to create a html/javascript/css page with multiple routes"></head>
+<body class="layout-container manual-root manual-index" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <a href="demo/index.html">Demo</a>
+<a style="position:relative; top:3px;" href="https://github.com/devlinjunker/template.webpack.fend"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div class="manual-toc-root">
+  
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.setup.html"><a href="manual/README.setup.html" data-ice="link">Setup</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.setup.html"><a href="manual/README.setup.html#webpack" data-ice="link">Webpack</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.setup.html"><a href="manual/README.setup.html#dev-server" data-ice="link">Dev Server</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.setup.html"><a href="manual/README.setup.html#documentation" data-ice="link">Documentation</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.entry.html"><a href="manual/README.entry.html" data-ice="link">Javascript Entry Points</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.entry.html"><a href="manual/README.entry.html#importing-files" data-ice="link">Importing Files</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.entry.html"><a href="manual/README.entry.html#entry-notes-ideas" data-ice="link">Entry Notes/Ideas</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.html.html"><a href="manual/README.html.html" data-ice="link">HTML</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.html.html"><a href="manual/README.html.html#webpack" data-ice="link">Webpack</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.html.html"><a href="manual/README.html.html#page-header-meta-attributes" data-ice="link">Page Header Meta Attributes</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.html.html"><a href="manual/README.html.html#templating" data-ice="link">Templating</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.html.html"><a href="manual/README.html.html#html-linting" data-ice="link">HTML Linting</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.html.html"><a href="manual/README.html.html#html-notes-ideas" data-ice="link">HTML Notes/Ideas</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.css.html"><a href="manual/README.css.html" data-ice="link">CSS</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#normalize" data-ice="link">Normalize</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#postcss" data-ice="link">PostCSS</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#precss-and-postcss-preset-env" data-ice="link">PreCSS and PostCSS-Preset-Env</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#stylelint" data-ice="link">Stylelint</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#autoprefixer" data-ice="link">Autoprefixer</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#list-selectors" data-ice="link">List Selectors</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#framework" data-ice="link">Framework</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#css-notes-ideas" data-ice="link">CSS Notes/Ideas</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html" data-ice="link">Helpers</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#localstorage" data-ice="link">LocalStorage</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#notes-ideas" data-ice="link">Notes/Ideas</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html" data-ice="link">Actions and Githooks</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#on-merge-to-master" data-ice="link">On Merge to Master</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#githooks" data-ice="link">Githooks</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.test.html"><a href="manual/README.test.html" data-ice="link">Testing</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#bootstrap-file" data-ice="link">Bootstrap File</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#test-notes-ideas" data-ice="link">Test Notes/Ideas</a></li>
+</ul>
+  </div>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div class="github-markdown">
+  <div class="manual-user-index" data-ice="manualUserIndex"><p><strong>NOTE: Any manual changes to Github Wiki will be overwritten by push (PR merged) to <code>master</code> branch</strong></p>
+<p>These files should updated whenever we merge to master, and be in sync between:</p>
+<ul>
+<li>The README files in the repo,</li>
+<li>The <a href="https://github.com/devlinjunker/template.webpack.fend/wiki">Github Wiki</a>, and</li>
+<li>The <a href="https://devlinjunker.github.io/template.webpack.fend/manual/index.html">generated doc site</a> served when running the server and on github pages</li>
+</ul>
+<p>This project uses a Github Action to accomplish this. The action is executed on merge to the <code>master</code> branch and defined inside of the <code>./.github/workflows/</code> directory(<a href="https://github.com/devlinjunker/template.webpack.fend/tree/master/.github/workflows">github</a>) (along with all other github actions) that creates a commit to update the docs directory on github and then calls a script in the <code>scripts/actions</code> directory(<a href="https://github.com/devlinjunker/template.webpack.fend/tree/master/scripts/actions">github</a>).</p>
+<p>The script retrieves the following markdown files (defined in <code>./.esdoc.json</code>) and copies them to a temporary directory, then uses the <a href="https://github.com/marketplace/actions/wiki-page-creator-action">wiki-page-creator-action</a> to update the wiki.</p>
+<h3 id="table-of-contents">Table of Contents</h3><ul>
+<li><a href="manual/README.setup.html">Setup</a> - dependencies and how to install and start development (eventually production?)</li>
+<li><a href="manual/README.entry.html">Entry</a> - How Javascript Bundles are defined and files that can be included</li>
+<li><a href="manual/README.html.html">HTML</a> - How HTML files are created and the processes we use to ensure quality</li>
+<li><a href="manual/README.css.html">CSS</a> - CSS Normalization, Processing and Frameworks</li>
+<li><a href="manual/README.helpers.html">Helpers</a> - Javascript Helper Classes and Code that can be used</li>
+<li><a href="manual/README.scripts.html">Github Actions</a> - Notes about Actions run on to ensure quality</li>
+<li><a href="manual/README.test.md">Test</a> - How testing is configured and how to run tests</li>
+</ul>
+<p>.</p>
+</div>
+
+  
+
+  <div class="manual-cards">
+    
+  <div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Setup</h1><p><strong>Requires Node 12+ to build</strong>. Please install this before attempting to build. The easiest way to install and
+manage node versions is by using the <a href="https://github.com/nvm-sh/nvm">Node Version Manager</a>. We define a
+.nvm file in the project to help reference this minimum node version.</p><p>Use <code>nvm use 12</code> to switch node versions after installing a new Node version. <strong>Then you should install all
+project dependencies</strong>(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/package.json#L30">github</a>)
+with <code>npm install -D</code>. This should install Webpack and all the libraries/plugins used in this project.</p><p>If you have cloned the master branch, then the build should compile and all tests should pass once the
+dependencies have been downloaded and installed. To only compile the html and javascript, use <code>npm run build</code>, or you can run the tests with <code>npm run test</code>. <strong>To watch the files for changes and rebuild/retest the files
+on changes, you can use</strong> <code>npm run start-watch</code>. See the package.json(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/package.json#L17">github</a>)
+for all possibe npm commands.</p><h2>Webpack</h2><p>Webpack config file(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/webpack.config.js">github</a>)
+is used to manage webpack build to compile the application.</p><p>This file:</p><ul>
+<li>Defines the Entrypoint javascript files to create bundles</li>
+<li>Defines where the generated files are placed</li>
+<li>Defines how to import other files</li>
+<li>Sets up Modules/Plugins:<ul>
+<li>Babel and ESLint Loaders</li>
+<li>Flow Integration with Webpack</li>
+<li>Reference HTML Files (source and destinations) and javascript bundles to include on pages</li>
+<li>PostCSS Loader for easy CSS files</li>
+<li>Hot Module Replacement for rebuilding on file changes</li>
+<li>Custom Script to run at end of webpack build that Lints generated HTML files</li>
+</ul>
+</li>
+<li>Sets up Development Server to Host HTML/JS/CSS Files for rapid development</li>
+</ul><h3>Dev Server</h3><p>During development (while using the <code>npm run start-watch</code> command), we instantiate a Webpack Dev Server to host
+the generated WebApp files. The Dev Server is manually instantiated in the webpack.config.js file because
+the scripts actually start Karma to watch and manage the test runs, which then runs the Webpack config file to
+start the build process and this Dev Server.</p><h2>Documentation</h2><p>The <code>docs/</code> directory is created with <code>npm run doc</code>, this generates an esdoc webpage based on the modified
+template stored in <code>docs/template</code> from the README files in the repo. These docs are also synced with the Github
+wiki page via a Github Action (see Github Actions/Scripts page for more details.</p><p>The Dependency Graph is created with <a href="https://github.com/pahen/madge">Madge</a> and graphviz, you will need to
+install both in order to update the dependency graph. Didn&apos;t include these in the package.json dependencies
+because this is more than is needed to develop a working app or even write basic documentation. Split this out
+to a separate npm script: <code>npm run doc-image</code> so it can be run when someone actually installs the dependencies</p><p>Install madge with <code>npm install -g madge</code> and install graphviz with <code>brew install graphviz</code> or
+<code>port install graphviz</code> (for OSX).</p></div>
+        <a data-ice="link" href="manual/README.setup.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Javascript Entry Points</h1><p>The <code>webpack.config.js</code>(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/webpack.config.js">github</a>)
+defines entry points for javascript bundles that can be created for each page, or can be optimized to bundle
+code that can be cached separately, loaded asynchronously or lazy loaded, after the page has loaded and rendered.</p><h2>Importing Files</h2><p>The javascript files can import other files and/or libraries using either CommonJS Module syntax (e.g. <code>const
+package = require(&apos;module&apos;)</code>) or using ECMA6(ES2015) syntax (e.g. <code>import package from &apos;lib&apos;</code>).</p><p>The file types available are defined in the <code>rules</code> section of the Webpack config:</p><ul>
+<li>Javascript (.js) Files</li>
+<li>CSS (.css) Files</li>
+<li>Images (.png/.svg/.jp(e)g/gif) Files</li>
+</ul><h2>Entry Notes/Ideas</h2><ul>
+<li>[ ] Fonts</li>
+</ul></div>
+        <a data-ice="link" href="manual/README.entry.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>HTML</h1><p>HTML files structure the layout of the web application. The final HTML files are generated by webpack and
+output to the <code>public/</code> directory when building with <code>npm run build</code>.</p><h2>Webpack</h2><p>The webpack.config.js file defines the HTML pages that will be generated by the build process. For each instance
+of the HtmlWebpackPlugin in the <code>plugins</code> section, webpack will output a new HTML file using the <code>template</code> at
+the <code>filename</code> provided (inside of <code>public/</code>).</p><h3>Page Header Meta Attributes</h3><p>TODO...</p><h3>Templating</h3><p>TODO...</p><h2>HTML Linting</h2><p>During the build process, webpack is configured to lint the final HTML files after each successful build with
+<a href="https://github.com/htmlhint/HTMLHint">htmlhint</a> to spot any errors in the HTML structure. This will cause an
+error in the build process output. You can see the rules defined in the .htmlhintrc file (<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/.htmlhintrc">github</a>).</p><p>These include:</p><ul>
+<li>Requiring Doctype</li>
+<li>Disabling Inline CSS Styles on elements</li>
+<li>Attribute naming conventions</li>
+<li>Requiring some accessibility attributes</li>
+</ul><h2>HTML Notes/Ideas</h2><ul>
+<li>[ ] Templating</li>
+<li>[ ] Accessibility Linting</li>
+<li>[ ] UI Framework?</li>
+</ul></div>
+        <a data-ice="link" href="manual/README.html.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>CSS</h1><p>CSS defines the look and feel of the application, giving style to the HTML elements on the page. This project
+uses a couple of tools during the build process to ensure quality CSS code with some of the most recent improvements to the CSS ecosystem.</p><h2>Normalize</h2><p>The project includes a dependency on <a href="http://necolas.github.io/normalize.css/">normalize.css</a> so we can include
+this on each page to standardize the look and feel of the application across multiple browsers.</p><h2>PostCSS</h2><p><a href="https://postcss.org/">PostCSS</a> is a javascript tool that parses and transforms the CSS files. The webpack
+config contains a reference to the <code>postcss-loader</code> so that css files can be generated during the
+build process from css files that are referenced in the codebase. The postcss.config.js file(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/postcss.config.js">github</a>)
+defines the plugins that we use during the PostCSS parsing and generation process.</p><h3>PreCSS and PostCSS-Preset-Env</h3><p><a href="https://github.com/jonathantneal/precss">PreCSS</a> enables SASS like features in the css files including variables
+and nesting selectors generating the proper definition in the final CSS file.
+The <a href="https://preset-env.cssdb.org/features">PostCSS-Preset-Env</a> plugin enables many new CSS features listed at
+the link provided.</p><h3>Stylelint</h3><p><a href="https://stylelint.io">Stylelint</a> is used to validate the css file uses proper syntax. The rules for this project
+are defined in the <code>.stylelintrc</code> file (<a href>github</a>). The rules extend the
+<a href="https://github.com/stylelint/stylelint-config-standard">Standard Stylelint Config</a>,
+and additional rules can be added to this config file.</p><p>See list of all rules: <a href="https://stylelint.io/user-guide/rules/list">here</a><br>See list of suggested Additions: <a href="https://github.com/stylelint/stylelint-config-standard#suggested-additions">here</a></p><h3>Autoprefixer</h3><p><a href="https://github.com/postcss/autoprefixer">Autoprefixer</a> is used to help keep the css files clean by automatically
+adding browser/vendor prefixes to css rules.</p><h3>List Selectors</h3><p><a href="https://github.com/davidtheclark/list-selectors">List Selectors</a> is a plugin that we use to generate a
+json file containing the css selectors that are processed by PostCSS.</p><ul>
+<li>[ ] Show output selectors, not input</li>
+<li>[ ] Map of selectors to css rules?</li>
+</ul><h2>Framework</h2><p>TODO...</p><h2>CSS Notes/Ideas</h2><ul>
+<li>Guidelines: <a href="https://cssguidelin.es/">https://cssguidelin.es/</a></li>
+<li>During development (<code>npm run start-watch</code>) css is included in JS bundles and slow to load</li>
+<li>[ ] BEM Linting?</li>
+<li>[ ] Styleguide</li>
+<li>[ ] Framework Demos (Separate Repo?)</li>
+<li>MVP (Product/Business) Style: <a href="https://andybrewer.github.io/mvp/">https://andybrewer.github.io/mvp/</a><ul>
+<li>remember this for the future if need a splash screen for company/product/webapp</li>
+</ul>
+</li>
+</ul></div>
+        <a data-ice="link" href="manual/README.css.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Helpers</h1><p>This project contains a <code>helpers/</code> directory that holds Javascript classes that can be used across multiple
+projects with utility methods for useful functionality.</p><h2>LocalStorage</h2><p>The localstorage helper (<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/src/helpers/localStorage.helper.js">github</a>)
+contains methods for saving/retrieving values with the browser localstorage API. Values saved with this will be
+stored on the clients browser and can be retreived when they return to the web application (until they clear
+their browser localstorage/data).</p><h2>Notes/Ideas</h2><ul>
+<li>[ ] Configuration file</li>
+<li>[ ] Performance Logger</li>
+<li>[ ] API Helpers (Internal vs External?)</li>
+</ul></div>
+        <a data-ice="link" href="manual/README.helpers.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Actions and Githooks</h1><p>This project uses github actions to enforce actions/checks and workflow processes on github.</p><h3>On Merge to Master</h3><p>Whenever a PR is merged master, we want to update the documentation based on the changes the user made in
+the commits. We run a git action to handle this:</p><ul>
+<li>Collect README files and update wiki</li>
+<li>Fix/remove links in Wiki</li>
+<li>Build documentation and generate commit</li>
+</ul><h2>Githooks</h2><p>TODO...</p></div>
+        <a data-ice="link" href="manual/README.scripts.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Testing</h1><p>We can run a single run of all unit tests in the application with <code>npm run test</code>. Or the tests will be run
+after the compilation has finished when running <code>npm run start-watch</code>. The testing is managed by
+<a href="https://karma-runner.github.io/latest/index.html">Karma</a> and configured using the <code>karma.conf.js</code> file(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/karma.conf.js">github</a>)</p><p>This config file defines:</p><ul>
+<li>the testing framework we use (<a href="https://mochajs.org/">mocha</a>)</li>
+<li>the test bootstrap entry point(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/test/test.bootstrap.js">github</a>)</li>
+<li>The browser launchers that we use to run the Unit Tests (chrome)</li>
+<li>The log level to display</li>
+<li>Imports webpack config so we can also run the test and dev server if we use <code>npm run start-watch</code></li>
+</ul><h2>Bootstrap File</h2><p>The testing bootstrap file finds all of the test files and imports global objects that can be used in all tests to simplify each test file. It also creates a sinon Sandbox that is reset before each test for mocking/stubbing services and non-tested functions in the test context.</p><p>Global Imports (available in all <code>.spec</code> files):</p><ul>
+<li><code>sinonSandbox</code> from <a href="https://sinonjs.org/">Sinon</a></li>
+<li><code>expect</code> from <a href="https://www.chaijs.com/">Chai</a></li>
+<li>TODO: <code>describe</code>/<code>it</code>/<code>beforeEach</code> from <a href="https://mochajs.org/">Mocha</a></li>
+</ul><h2>Test Notes/Ideas</h2><ul>
+<li>[ ] Cypress UI</li>
+<li>[ ] Mock API requests?</li>
+</ul></div>
+        <a data-ice="link" href="manual/README.test.html"></a>
+      </div>
+    </div>
+</div>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+
+<script src="script/github-link.js"></script>
+</body>
+</html>

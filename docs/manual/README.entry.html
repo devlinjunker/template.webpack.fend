@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../">
+  <title data-ice="title">Manual | WebpackFEND</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+  <script src="script/matomo.js"></script>
+<meta name="description" content="Template using Webpack to create a html/javascript/css page with multiple routes"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="WebpackFEND"><meta property="twitter:description" content="Template using Webpack to create a html/javascript/css page with multiple routes"></head>
+<body class="layout-container manual-root" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <a href="demo/index.html">Demo</a>
+<a style="position:relative; top:3px;" href="https://github.com/devlinjunker/template.webpack.fend"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div class="manual-toc-root">
+  
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.setup.html"><a href="manual/README.setup.html" data-ice="link">Setup</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.setup.html"><a href="manual/README.setup.html#webpack" data-ice="link">Webpack</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.setup.html"><a href="manual/README.setup.html#dev-server" data-ice="link">Dev Server</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.setup.html"><a href="manual/README.setup.html#documentation" data-ice="link">Documentation</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.entry.html"><a href="manual/README.entry.html" data-ice="link">Javascript Entry Points</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.entry.html"><a href="manual/README.entry.html#importing-files" data-ice="link">Importing Files</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.entry.html"><a href="manual/README.entry.html#entry-notes-ideas" data-ice="link">Entry Notes/Ideas</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.html.html"><a href="manual/README.html.html" data-ice="link">HTML</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.html.html"><a href="manual/README.html.html#webpack" data-ice="link">Webpack</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.html.html"><a href="manual/README.html.html#page-header-meta-attributes" data-ice="link">Page Header Meta Attributes</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.html.html"><a href="manual/README.html.html#templating" data-ice="link">Templating</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.html.html"><a href="manual/README.html.html#html-linting" data-ice="link">HTML Linting</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.html.html"><a href="manual/README.html.html#html-notes-ideas" data-ice="link">HTML Notes/Ideas</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.css.html"><a href="manual/README.css.html" data-ice="link">CSS</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#normalize" data-ice="link">Normalize</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#postcss" data-ice="link">PostCSS</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#precss-and-postcss-preset-env" data-ice="link">PreCSS and PostCSS-Preset-Env</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#stylelint" data-ice="link">Stylelint</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#autoprefixer" data-ice="link">Autoprefixer</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#list-selectors" data-ice="link">List Selectors</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#framework" data-ice="link">Framework</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#css-notes-ideas" data-ice="link">CSS Notes/Ideas</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html" data-ice="link">Helpers</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#localstorage" data-ice="link">LocalStorage</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#notes-ideas" data-ice="link">Notes/Ideas</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html" data-ice="link">Actions and Githooks</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#on-merge-to-master" data-ice="link">On Merge to Master</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#githooks" data-ice="link">Githooks</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.test.html"><a href="manual/README.test.html" data-ice="link">Testing</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#bootstrap-file" data-ice="link">Bootstrap File</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#test-notes-ideas" data-ice="link">Test Notes/Ideas</a></li>
+</ul>
+  </div>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="javascript-entry-points">Javascript Entry Points</h1><p>The <code>webpack.config.js</code>(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/webpack.config.js">github</a>)
+defines entry points for javascript bundles that can be created for each page, or can be optimized to bundle
+code that can be cached separately, loaded asynchronously or lazy loaded, after the page has loaded and rendered.</p>
+<h2 id="importing-files">Importing Files</h2><p>The javascript files can import other files and/or libraries using either CommonJS Module syntax (e.g. <code>const
+package = require(&apos;module&apos;)</code>) or using ECMA6(ES2015) syntax (e.g. <code>import package from &apos;lib&apos;</code>).</p>
+<p>The file types available are defined in the <code>rules</code> section of the Webpack config:</p>
+<ul>
+<li>Javascript (.js) Files</li>
+<li>CSS (.css) Files</li>
+<li>Images (.png/.svg/.jp(e)g/gif) Files</li>
+</ul>
+<h2 id="entry-notes-ideas">Entry Notes/Ideas</h2><ul>
+<li>[ ] Fonts</li>
+</ul>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+
+<script src="script/github-link.js"></script>
+</body>
+</html>

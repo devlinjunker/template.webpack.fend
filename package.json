@@ -1,7 +1,7 @@
 {
   "version": "0.1.0",
-  "name": "WebpackFEND",
-  "description": "Template using Webpack to create a html/javascript/css page with multiple routes",
+  "name": "Template-WebpackFEND",
+  "description": "Template using Webpack to create a html/javascript/css pages with multiple files",
   "keywords": [
     "template",
     "webpack",
@@ -27,10 +27,12 @@
     "build": "./node_modules/.bin/webpack",
     "lint": "./node_modules/.bin/eslint ./src",
     "doc": "npm run build && (./node_modules/.bin/esdoc; rm -rf docs/demo/; mv -f public/ docs/demo/)",
+    "doc-image": "madge ./src -i docs/image/dependency.png && npm run doc",
     "clean": " ## TODO: clean up project files"
   },
   "dependencies": {
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "normalize.css": "^8.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -76,8 +78,8 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^3.0.5",
     "list-selectors": "^2.0.0",
+    "madge": "^3.8.0",
     "mocha": "^6.2.3",
-    "normalize.css": "^8.0.1",
     "postcss-exclude-files": "^1.0.15",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",

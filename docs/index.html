@@ -14,7 +14,7 @@
 
 <header>
   <a href="./">Home</a>
-  
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
   <a href="identifiers.html">Reference</a>
   <a href="source.html">Source</a>
   <a href="test.html" data-ice="testLink">Test</a>
@@ -46,21 +46,28 @@
 <li>Mocha, Chai, Sinon</li>
 <li>Karma</li>
 <li>EsDoc</li>
+<li>PostCSS</li>
+<li>HTMLHint</li>
+<li>NormalizeCSS</li>
 </ul>
 <h2 id="development">Development</h2><p>How to use this template to create a basic Frontend Application:</p>
 <ol>
 <li>Download template and update dependencies</li>
-<li>Create HTML files in <code>src/</code></li>
-<li>Add javascript files and reference in <code>src/entry.js</code> to run up your application<ul>
+<li>Create HTML files in <code>src/</code><ul>
+<li>add HtmlWebpackPlugin instances for each new output page in webpack.config.js</li>
+</ul>
+</li>
+<li>Add javascript files and reference in <code>src/entry.js</code>  (for up your application<ul>
 <li>add additional javascript entry points in webpack.config.js</li>
 </ul>
 </li>
-<li>Add to <code>src/index.html</code> to define your html structure<ul>
-<li>add more html files and reference them in webpack.config.js</li>
+<li>Add CSS files to <code>src</code> and import in javascript<ul>
+<li>or install CSS libraries with npm and import</li>
+<li>or reference in HTML template?</li>
 </ul>
 </li>
 <li>Use <code>npm run start-watch</code> to compile and run dev server + tests in watch mode</li>
-<li>Navigate <a href="http://localhost:3030/">http://localhost:3030/</a> to see a development version of your web app<ul>
+<li>Navigate <a href="http://localhost:3030/">http://localhost:3030/</a> to see a development version of your web app with Hot reloading<ul>
 <li>or <a href="http://localhost:3030/docs/">http://localhost:3030/docs/</a> to see the documentation</li>
 </ul>
 </li>
@@ -73,6 +80,7 @@
 <p><code>npm run lint</code> to run the linter on src directory</p>
 <p><code>npm run build</code> compile application to public directory</p>
 <p><code>npm run doc</code> to generate static documentation in the doc folder</p>
+<p><code>npm run doc-image</code> to update sourcemap image and static documentation in the doc folder</p>
 <p><strong>TODO</strong></p>
 <p><code>npm run build-prod</code> ... TODO: create prod config</p>
 <p><code>npm run clean</code> ... TODO: clean the workspace</p>
@@ -141,23 +149,27 @@
 </li>
 </ul>
 </li>
-<li>[ ] (^) Madge?</li>
-<li>[ ] (^) Manual in Docs</li>
+<li>[x] (^) Madge?</li>
+<li>[x] (^) Manual in Docs</li>
 <li>[ ] HTML template example<ul>
 <li>webpack/lodash style? <a href="https://github.com/emaphp/underscore-template-loader">https://github.com/emaphp/underscore-template-loader</a></li>
+<li>handlebars?</li>
 </ul>
 </li>
-<li>[..] (^) Base CSS Style for all apps:<ul>
-<li><del><a href="https://andybrewer.github.io/mvp/">https://andybrewer.github.io/mvp/</a></del><ul>
-<li>just remember this one for the future if need a splash screen for company/product/webapp</li>
-<li>want a more flexible framework for future</li>
+<li>[ ] (^) Githooks</li>
+<li>[ ] (^) Base CSS Style for all apps</li>
+<li>[ ] Styleguide<ul>
+<li>Page in docsite</li>
+<li>Examples: <a href="http://styleguides.io/examples.html">http://styleguides.io/examples.html</a><ul>
+<li><a href="http://codeforamerica.clearleft.com/#">http://codeforamerica.clearleft.com/#</a></li>
 </ul>
 </li>
+<li>Fractal? <a href="https://github.com/adamlindqvist/fractal-webpack-plugin">https://github.com/adamlindqvist/fractal-webpack-plugin</a></li>
 </ul>
 </li>
 <li>[ ] CSS Frameworks<ul>
 <li>[ ] Tailwind - integrates with javascript</li>
-<li>Separate Demos for each in this repo?<ul>
+<li>Fork of this Repo with different directories for each?<ul>
 <li>[ ] bulma <a href="https://bulma.io/documentation/overview/start/">https://bulma.io/documentation/overview/start/</a></li>
 <li>[ ] Bootstrap?</li>
 <li>[ ] Foundation?</li>
@@ -167,13 +179,18 @@
 </ul>
 </li>
 <li>[ ] (^) Configuration File</li>
-<li>[ ] (^) Githooks</li>
 <li>[ ] (^) If running in development -&gt; console errors/warnings appear in UI bubble</li>
 <li>[..] Helpers<ul>
 <li><del>Localstorage</del></li>
 <li>Performance Loggers (start/end/post to api? file?)</li>
 <li>Internal API Helper</li>
 <li>External API Helper?</li>
+</ul>
+</li>
+<li>[ ] Accessibility Linting<ul>
+<li><a href="https://github.com/pa11y/pa11y">https://github.com/pa11y/pa11y</a></li>
+<li>ASLint</li>
+<li><a href="https://www.24a11y.com/2017/reacts-accessibility-code-linter/">https://www.24a11y.com/2017/reacts-accessibility-code-linter/</a></li>
 </ul>
 </li>
 <li>[ ] (^) Basic UI Framework (other repos?)<ul>
@@ -191,6 +208,8 @@
 <li>[ ] (-) production configuration for webpack<ul>
 <li>Minimize?</li>
 <li>No Warnings? No output in tests?</li>
+<li>CSS Generated to File and included at top of HTML</li>
+<li>Accessibility validation?</li>
 </ul>
 </li>
 <li>[ ] (-) cleaner output from watch script?</li>

@@ -1,6 +1,6 @@
-# Basic Webpack App
+# Template Webpack FEND App
 
-Example Browser application using webpack build.
+Template and Example using Webpack to build a FEND Browser App (with HTML/CSS/JS and Image files).
 
 **Demo:**
  - Simple web interface for storing values in the Browser Local Storage.
@@ -9,15 +9,19 @@ Example Browser application using webpack build.
 ## Dependencies
 Node v12+ and npm
 
-See [package.json](https://github.com/devlinjunker/template.webpack.fend/blob/master/package.json) for full list of current dependencies
- - Webpack + Loaders
- - Babel
- - FlowJS
- - ESLint
- - Webpack Dev Server
- - Mocha, Chai, Sinon
- - Karma
- - EsDoc
+See package.json([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/package.json))
+for full list of current dependencies
+ - [Webpack](https://webpack.js.org/) + [Loaders ](https://webpack.js.org/concepts/loaders/)-- managing the build process
+ - [Babel](https://babeljs.io/) -- compiling newer ECMA2016+ into browser-capable javascript
+ - [FlowJS](https://flow.org/) -- adding types to javascript
+ - [ESLint](http://eslint.org/) -- enforcing javascript code style
+ - [Webpack Dev Server](https://github.com/webpack/webpack-dev-server)-- rapid development with hot reloading
+ - [Mocha](https://mochajs.org/), [Chai](https://www.chaijs.com/), and [Sinon](https://sinonjs.org/) -- unit testing
+ - [Karma](https://karma-runner.github.io/) -- managing tests in different browsers
+ - [EsDoc](https://esdoc.org/) -- creating easy javascript documentation
+ - [PostCSS](https://postcss.org/) -- parsing and compiling css files
+ - [HTMLHint](https://github.com/htmlhint/HTMLHint) -- parsing and enforcing HTML standards
+ - [NormalizeCSS](http://necolas.github.io/normalize.css/) -- standardizing and cleaning up css differences between browsers
 
 
 ## Development
@@ -26,12 +30,14 @@ How to use this template to create a basic Frontend Application:
 
 1. Download template and update dependencies
 2. Create HTML files in `src/`
-3. Add javascript files and reference in `src/entry.js` to run up your application
+    - add HtmlWebpackPlugin instances for each new output page in webpack.config.js
+3. Add javascript files and reference in `src/entry.js`  (for up your application
     - add additional javascript entry points in webpack.config.js
-4. Add to `src/index.html` to define your html structure
-   - add more html files and reference them in webpack.config.js
+4. Add CSS files to `src` and import in javascript
+   - or install CSS libraries with npm and import
+   - or reference in HTML template?
 5. Use `npm run start-watch` to compile and run dev server + tests in watch mode
-6. Navigate http://localhost:3030/ to see a development version of your web app
+6. Navigate http://localhost:3030/ to see a development version of your web app with Hot reloading
    - or http://localhost:3030/docs/ to see the documentation
 
 
@@ -52,6 +58,8 @@ How to use this template to create a basic Frontend Application:
 `npm run build` compile application to public directory
 
 `npm run doc` to generate static documentation in the doc folder
+
+`npm run doc-image` to update sourcemap image and static documentation in the doc folder
 
 **TODO**
 
@@ -104,29 +112,36 @@ How to use this template to create a basic Frontend Application:
       - https://github.com/jonathantneal/precss
     - autoprefixer for making css look cleaner (browser prefixes don't need to be added)
     - list all selectors used: https://github.com/davidtheclark/list-selectors
- - [ ] (^) Madge?
- - [ ] (^) Manual in Docs
+ - [x] (^) Madge?
+ - [x] (^) Manual in Docs
  - [ ] HTML template example
    - webpack/lodash style? https://github.com/emaphp/underscore-template-loader
- - [..] (^) Base CSS Style for all apps:
-   - ~~https://andybrewer.github.io/mvp/~~
-     - just remember this one for the future if need a splash screen for company/product/webapp
-     - want a more flexible framework for future
+   - handlebars?
+ - [ ] (^) Githooks
+ - [ ] (^) Base CSS Style for all apps
+ - [ ] Styleguide
+    - Page in docsite
+    - Examples: http://styleguides.io/examples.html
+      - http://codeforamerica.clearleft.com/#
+    - Fractal? https://github.com/adamlindqvist/fractal-webpack-plugin
  - [ ] CSS Frameworks
    - [ ] Tailwind - integrates with javascript
-   - Separate Demos for each in this repo?
+   - Fork of this Repo with different directories for each?
      - [ ] bulma https://bulma.io/documentation/overview/start/
      - [ ] Bootstrap?
      - [ ] Foundation?
      - [ ] Material Design?
  - [ ] (^) Configuration File
- - [ ] (^) Githooks
  - [ ] (^) If running in development -> console errors/warnings appear in UI bubble
  - [..] Helpers
    - ~~Localstorage~~
    - Performance Loggers (start/end/post to api? file?)
    - Internal API Helper
    - External API Helper?
+ - [ ] Accessibility Linting
+    - https://github.com/pa11y/pa11y
+    - ASLint
+    - https://www.24a11y.com/2017/reacts-accessibility-code-linter/
  - [ ] (^) Basic UI Framework (other repos?)
     - [ ] Backbone?
     - [ ] Vue?
@@ -138,6 +153,8 @@ How to use this template to create a basic Frontend Application:
  - [ ] (-) production configuration for webpack
     - Minimize?
     - No Warnings? No output in tests?
+    - CSS Generated to File and included at top of HTML
+    - Accessibility validation?
  - [ ] (-) cleaner output from watch script?
  - [ ] (v) Cypress UI Testing?
  - [ ] (v) Serve docs with small script and `npm run doc-serve`

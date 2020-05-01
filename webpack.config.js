@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 const path = require('path');
 const { exec } = require('child_process');
-// const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FlowWebpackPlugin = require('flow-webpack-plugin');
 const CircularDependencyPlugin = require('circular-dependency-plugin');
@@ -34,9 +33,6 @@ module.exports = (env) => {
     },
     // Turn off for production (see https://webpack.js.org/guides/production)
     devtool: 'inline-source-map',
-    devServer: {
-      writeToDisk: true
-    },
 
     resolve: {
       extensions: ['.js'],
@@ -144,13 +140,6 @@ module.exports = (env) => {
   };
 
   if (env && env.dev_server) {
-    // not useful when running `npm run build` to generate `public` directory
-    // index.html file doesn't seem to be placed `public` when these exists
-
-    // const cleanPublicPlugin = new CleanWebpackPlugin(['public']);
-    // config.plugins.push(cleanPublicPlugin);
-
-    // Q: Why are we doing this again? I think it has to do with Karma
     // Start Webpack Dev Server Manually
     const host = '0.0.0.0';
     const port = 3030;
