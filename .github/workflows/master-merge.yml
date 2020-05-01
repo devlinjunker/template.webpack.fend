@@ -50,5 +50,5 @@ jobs:
         GH_PAT: ${{ secrets.GH_PAT }}
         MD_FOLDER: ./wiki
         OWNER: devlinjunker
-        REPO_NAME: template.hapi.rest
+        REPO_NAME: template.webpack.fend
         SKIP_MD: README.md
