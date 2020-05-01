@@ -25,19 +25,6 @@ jobs:
         npm install -D
         npm run doc
 
-    - name: Commit Demo and Docs
-      run: |
-        git config --local user.email "devlinjunker@gmail.com"
-        git config --local user.name "GitHub Action"
-        git commit -m "Docsite and Demo Build on Push to Master" -a
-
-    - name: Push changes to Docs
-      uses: ad-m/github-push-action@master
-      with:
-        # Have to do this trickery because action requires GITHUB_TOKEN (I've been using GH_PAT on my account)
-        github_token: ${{ secrets.GITHUB_TOKEN }}${{ secrets.GH_PAT }}
-        force: true
-
     - name: Collect READMEs for Wiki
       run: node ./scripts/actions/collect-wiki.js
 
@@ -52,3 +39,17 @@ jobs:
         OWNER: devlinjunker
         REPO_NAME: template.webpack.fend
         SKIP_MD: README.md
+
+
+    - name: Commit Demo and Docs
+      run: |
+        git config --local user.email "devlinjunker@gmail.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "Docsite and Demo Build on Push to Master" -a
+
+    - name: Push changes to Docs
+      uses: ad-m/github-push-action@master
+      with:
+        # Have to do this trickery because action requires GITHUB_TOKEN (I've been using GH_PAT on my account)
+        github_token: ${{ secrets.GITHUB_TOKEN }}${{ secrets.GH_PAT }}
+        force: true
