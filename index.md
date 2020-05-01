@@ -23,6 +23,6 @@ to update the wiki.
 - [CSS](manual/README.css.html) - CSS Normalization, Processing and Frameworks
 - [Helpers](manual/README.helpers.html) - Javascript Helper Classes and Code that can be used
 - [Github Actions](manual/README.scripts.html) - Notes about Actions run on to ensure quality
-- [Test](manual/README.test.md) - How testing is configured and how to run tests
+- [Test](manual/README.test.html) - How testing is configured and how to run tests
 
 .
