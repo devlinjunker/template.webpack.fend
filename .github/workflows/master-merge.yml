@@ -36,6 +36,7 @@ jobs:
       with:
         # Have to do this trickery because action requires GITHUB_TOKEN (I've been using GH_PAT on my account)
         github_token: ${{ secrets.GITHUB_TOKEN }}${{ secrets.GH_PAT }}
+        force: true
 
     - name: Collect READMEs for Wiki
       run: node ./scripts/actions/collect-wiki.js
