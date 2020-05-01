@@ -118,6 +118,8 @@ module.exports = (env) => {
         {
           test: /\.css$/,
           use: [
+            // Q: Should we do this during development and then use mini-css-extract-plugin
+            // during production?
             // {
             //   loader: 'style-loader',
             // },
@@ -175,8 +177,6 @@ module.exports = (env) => {
       }
     });
   }
-
-  console.log('TEST1');
 
   return config;
 };
