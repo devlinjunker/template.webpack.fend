@@ -6,6 +6,13 @@ uses a couple of tools during the build process to ensure quality CSS code with 
 The project includes a dependency on [normalize.css](http://necolas.github.io/normalize.css/) so we can include
 this on each page to standardize the look and feel of the application across multiple browsers.
 
+## Mini CSS Extract Plugin
+The webpack config file([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/webpack.config.js))
+imports the `mini-css-extract-plugin` and loader to extract all css styles that have been imported into the
+javascript bundles created by webpack. This enables the stylesheets to be referenced in the HTML file
+separately, so they can be linked at the top of the page and loaded first and also so they can be cached in
+the browser to speed up page load.
+
 ## PostCSS
 [PostCSS](https://postcss.org/) is a javascript tool that parses and transforms the CSS files. The webpack
 config contains a reference to the `postcss-loader` so that css files can be generated during the

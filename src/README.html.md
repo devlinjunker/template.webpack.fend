@@ -13,7 +13,9 @@ in the `plugins` section, webpack will output a new HTML file using the `templat
 The `<meta>` webpage attributes are passed into the instance of the HtmlWebpackPlugin for each page defined in the webpack config file. These attributes could be dynamically set for each page if desired, or can be the same for each html page.
 
 ### Templating
-TODO...
+Simple HTML Templating can be done with the [underscore-lodash-loader](https://github.com/emaphp/underscore-template-loader).
+This loader allows partial HTML files to be imported using `@require` or `@import` in the HTML files, and
+also enables template variables that can be replaced when the HTML is generated (e.g. `<%= greet(name) %>`).
 
 
 ## HTML Linting
