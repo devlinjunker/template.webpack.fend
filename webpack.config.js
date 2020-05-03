@@ -25,7 +25,8 @@ module.exports = (env) => {
     // Each entry will be loaded into webpage via <script> tags
     entry: {
       app: './src/entry.js',
-      storage: './src/storage/entry.js'
+      storage: './src/storage/entry.js',
+      todo: './src/todo/entry.js'
     },
     output: {
       filename: '[name].bundle.js',
@@ -50,7 +51,7 @@ module.exports = (env) => {
         template: 'src/index.html',
         // Set the webpage title
         title: 'Test with Webpack Plugin',
-        excludeChunks: ['storage']
+        excludeChunks: ['storage', 'todo']
       }),
 
       // Create new HtmlWebpackPlugin for each HTML page
@@ -60,6 +61,13 @@ module.exports = (env) => {
         template: 'src/storage/index.html',
         title: 'LocalStorage Example',
         chunks: ['storage']
+      }),
+      new HtmlWebpackPlugin({
+        meta,
+        filename: 'todo/index.html',
+        template: 'src/todo/index.html',
+        title: 'TODO Example',
+        chunks: ['todo']
       }),
 
       new MiniCssExtractPlugin(),
