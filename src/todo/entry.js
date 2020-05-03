@@ -1,8 +1,7 @@
 /**
  * @flow
  */
-import 'normalize.css';
-import '../base.css';
+import '../base.scss';
 import TodoAppController from './app.controller.js';
 
 new TodoAppController();
