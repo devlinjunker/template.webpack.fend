@@ -21,7 +21,8 @@ for full list of current dependencies
  - [EsDoc](https://esdoc.org/) -- creating easy javascript documentation
  - [PostCSS](https://postcss.org/) -- parsing and compiling css files
  - [HTMLHint](https://github.com/htmlhint/HTMLHint) -- parsing and enforcing HTML standards
- - [NormalizeCSS](http://necolas.github.io/normalize.css/) -- standardizing and cleaning up css differences between browsers
+ - [Tailwind](https://tailwindcss.com/) - Utility-first CSS Framework
+ - [Zondicons](http://www.zondicons.com) - Free SVG Icon Library
 
 
 ## Development
