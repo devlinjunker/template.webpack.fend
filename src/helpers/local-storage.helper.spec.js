@@ -1,9 +1,9 @@
 /**
  * @flow
  */
-import LocalStorageHelper from './localStorage.helper';
+import LocalStorageHelper from './local-storage.helper';
 
-describe('LocalStorageService', function() {
+describe('local-storage.helper', function() {
 
   describe('#save', function() {
 
