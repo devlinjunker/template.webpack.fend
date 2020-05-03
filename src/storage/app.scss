@@ -1,0 +1,20 @@
+.btn {
+   @apply font-bold py-1 px-2 m-1 rounded;
+}
+
+.btn-outline {
+  @apply bg-transparent font-semibold py-1 px-2 mt-1 mb-1 rounded border;
+}
+
+.btn-green {
+  @apply bg-green-600 text-white;
+}
+
+.btn-green:hover {
+  @apply bg-green-800;
+}
+
+
+textarea {
+  min-width: 8rem;
+}

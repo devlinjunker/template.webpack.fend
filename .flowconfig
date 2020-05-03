@@ -8,5 +8,9 @@
 [lints]
 
 [options]
+module.file_ext=.scss
+module.name_mapper.extension='scss' -> 'empty/object'
+module.file_ext=.html
+module.name_mapper.extension='html' -> 'empty/object'
 
 [strict]
