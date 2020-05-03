@@ -71,7 +71,7 @@ describe(&apos;App Controller&apos;, function() {
       };
 
       controller.valInput = {
-        innerText: &apos;val&apos;
+        value: &apos;val&apos;
       };
 
       controller.save();
@@ -102,12 +102,12 @@ describe(&apos;App Controller&apos;, function() {
   describe(&apos;#clearValue&apos;, function() {
     it(&apos;should clear the input value&apos;, function() {
       controller.valInput = {
-        innerText: &apos;abc&apos;
+        value: &apos;abc&apos;
       };
 
       controller.clearValue();
 
-      expect(controller.valInput.innerText).to.equal(&apos;&apos;);
+      expect(controller.valInput.value).to.equal(&apos;&apos;);
     });
   });
 });

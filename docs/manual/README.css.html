@@ -55,14 +55,13 @@
     <ul class="manual-toc">
       
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.css.html"><a href="manual/README.css.html" data-ice="link">CSS</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#normalize" data-ice="link">Normalize</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#tailwind-css-framework--utility-first-" data-ice="link">Tailwind CSS Framework (Utility First)</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#mini-css-extract-plugin" data-ice="link">Mini CSS Extract Plugin</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#postcss" data-ice="link">PostCSS</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#precss-and-postcss-preset-env" data-ice="link">PreCSS and PostCSS-Preset-Env</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#stylelint" data-ice="link">Stylelint</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#autoprefixer" data-ice="link">Autoprefixer</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#list-selectors" data-ice="link">List Selectors</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#framework" data-ice="link">Framework</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#css-notes-ideas" data-ice="link">CSS Notes/Ideas</a></li>
 </ul>
   </div>
@@ -96,8 +95,20 @@
 
 <div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="css">CSS</h1><p>CSS defines the look and feel of the application, giving style to the HTML elements on the page. This project
 uses a couple of tools during the build process to ensure quality CSS code with some of the most recent improvements to the CSS ecosystem.</p>
-<h2 id="normalize">Normalize</h2><p>The project includes a dependency on <a href="http://necolas.github.io/normalize.css/">normalize.css</a> so we can include
-this on each page to standardize the look and feel of the application across multiple browsers.</p>
+<p>The project can parse and import either <code>.scss</code> or <code>.css</code> files via javascript module imports, the <code>.scss</code>
+file ending is used so IDEs have an easier time with syntax highlighting.</p>
+<h2 id="tailwind-css-framework--utility-first-">Tailwind CSS Framework (Utility First)</h2><p><a href="https://tailwindcss.com">Tailwind</a> is included in this project to style the application. Tailwind is a
+composable, <a href="https://tailwindcss.com/docs/utility-first/">utility-first</a> css framework. This is a shift from
+the &quot;semantic&quot; based css conventions where classes/styles are defined around a name that has meaning in the
+application domain. In this way of thinking, css classes define a consistent look and feel of the application.
+These utility classes are then applied to the elements in each html file to create a consistent style across the application that is not predefined.</p>
+<p>Tailwind is built on top of <a href="http://necolas.github.io/normalize.css/">normalize.css</a> to standardize the look and feel of the application across multiple browsers and clear any default styles.</p>
+<p>Tailwind&apos;s <a href="https://tailwindcss.com/docs/customizing-colors/#default-color-palette">colors</a>/padding/etc is
+customizable via the <a href="https://tailwindcss.com/docs/theme/">theme</a> in the
+<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/tailwind.config.js">tailwind.config.js</a></p>
+<p>Review <a href="https://tailwindcss.com/screencasts/">these screencasts</a> and other <a href="https://tailwindcss.com/resources">resources</a>
+for more information. Visit the docs for <a href="https://tailwindcss.com/docs/configuration">configuration</a> and notes
+on <a href="https://tailwindcss.com/docs/container">each rule</a> as well as some <a href="https://tailwindcss.com/components">example components</a></p>
 <h2 id="mini-css-extract-plugin">Mini CSS Extract Plugin</h2><p>The webpack config file(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/webpack.config.js">github</a>)
 imports the <code>mini-css-extract-plugin</code> and loader to extract all css styles that have been imported into the
 javascript bundles created by webpack. This enables the stylesheets to be referenced in the HTML file
@@ -124,10 +135,12 @@ json file containing the css selectors that are processed by PostCSS.</p>
 <li>[ ] Show output selectors, not input</li>
 <li>[ ] Map of selectors to css rules?</li>
 </ul>
-<h2 id="framework">Framework</h2><p>TODO...</p>
 <h2 id="css-notes-ideas">CSS Notes/Ideas</h2><ul>
 <li>Guidelines: <a href="https://cssguidelin.es/">https://cssguidelin.es/</a></li>
-<li>During development (<code>npm run start-watch</code>) css is included in JS bundles and slow to load</li>
+<li>IDEA: During development (<code>npm run start-watch</code>) css is included in JS bundles for faster build<ul>
+<li>only extract during production to improve the look and feel of app loading</li>
+</ul>
+</li>
 <li>[ ] BEM Linting?</li>
 <li>[ ] Styleguide</li>
 <li>[ ] Framework Demos (Separate Repo?)</li>

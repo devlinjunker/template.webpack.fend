@@ -1,1 +1,1 @@
-{"selectors":["#value-input"],"simpleSelectors":{"all":["#value-input"],"ids":["#value-input"],"classes":[],"attributes":[],"types":[]}}
+{"selectors":[".btn",".btn-green",".btn-green:hover",".btn-outline",".btn-outline-green",".btn-outline-green:hover","textarea"],"simpleSelectors":{"all":[".btn",".btn-green",".btn-outline",".btn-outline-green","textarea"],"ids":[],"classes":[".btn",".btn-green",".btn-outline",".btn-outline-green"],"attributes":[],"types":["textarea"]}}

@@ -6,29 +6,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Template Webpack Application"><meta name="subject" content="Webpack Software Website Template"><meta name="robots" content="index,follow"><meta name="googlebot" content="index,follow"><link href="../storage.css" rel="stylesheet"></head>
 <body>
   <header>
-  <nav>
-    <a href="/storage">Local Storage Demo</a>
+  <nav class="bg-gray-800 text-gray-300 px-3 py-1">
+    <a class="hover:text-gray-500" href="/storage">Local Storage Demo</a>
   </nav>
 
 </header>
 
 
-  <div class="input">
-    <span> Key: </span>
+  <div class="px-2 py-1">
+    <div class="input">
+      <label for="key-input" class="font-bold md:text-right text-gray-700"> Key:</label>
 
-    <input id="key-input" type="text"/>
-  </div>
-
-  <div class="actions">
-    <button class="btn save-btn"> Save </button>
-    <button class="btn get-btn"> Retrieve </button>
-  </div>
-
-  <div class="display">
-    <p> Value: </p>
-    <div id="value-input" contenteditable="true">
-
+      <input id="key-input" type="text" class="m-1 border border-gray-600"/>
     </div>
-    <button class="clear-value-btn"> Clear </button>
+
+    <div class="actions">
+      <button class="btn btn-green save-btn">Save</button>
+      <button class="btn btn-green get-btn">Retrieve</button>
+    </div>
+
+    <div class="display">
+      <label for="value-input" class="font-bold md:text-right text-gray-700"> Value: </label>
+      <textarea id="value-input" class="block h-12 border border-black">
+
+      </textarea>
+      <button class="clear-value-btn btn btn-outline btn-outline-green">Clear</button>
+    </div>
   </div>
 <script type="text/javascript" src="../storage.bundle.js"></script></body>
