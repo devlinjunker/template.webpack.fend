@@ -14,6 +14,10 @@ These utility classes are then applied to the elements in each html file to crea
 
 Tailwind is built on top of [normalize.css](http://necolas.github.io/normalize.css/) to standardize the look and feel of the application across multiple browsers and clear any default styles.
 
+Tailwind's [colors](https://tailwindcss.com/docs/customizing-colors/#default-color-palette)/padding/etc is
+customizable via the [theme](https://tailwindcss.com/docs/theme/) in the
+[tailwind.config.js](https://github.com/devlinjunker/template.webpack.fend/blob/master/tailwind.config.js)
+
 Review [these screencasts](https://tailwindcss.com/screencasts/) and other [resources](https://tailwindcss.com/resources)
 for more information. Visit the docs for [configuration](https://tailwindcss.com/docs/configuration) and notes
 on [each rule](https://tailwindcss.com/docs/container) as well as some [example components](https://tailwindcss.com/components)
