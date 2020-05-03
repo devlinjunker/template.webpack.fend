@@ -56,6 +56,7 @@
       
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.css.html"><a href="manual/README.css.html" data-ice="link">CSS</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#normalize" data-ice="link">Normalize</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#mini-css-extract-plugin" data-ice="link">Mini CSS Extract Plugin</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#postcss" data-ice="link">PostCSS</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#precss-and-postcss-preset-env" data-ice="link">PreCSS and PostCSS-Preset-Env</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#stylelint" data-ice="link">Stylelint</a></li>
@@ -97,6 +98,11 @@
 uses a couple of tools during the build process to ensure quality CSS code with some of the most recent improvements to the CSS ecosystem.</p>
 <h2 id="normalize">Normalize</h2><p>The project includes a dependency on <a href="http://necolas.github.io/normalize.css/">normalize.css</a> so we can include
 this on each page to standardize the look and feel of the application across multiple browsers.</p>
+<h2 id="mini-css-extract-plugin">Mini CSS Extract Plugin</h2><p>The webpack config file(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/webpack.config.js">github</a>)
+imports the <code>mini-css-extract-plugin</code> and loader to extract all css styles that have been imported into the
+javascript bundles created by webpack. This enables the stylesheets to be referenced in the HTML file
+separately, so they can be linked at the top of the page and loaded first and also so they can be cached in
+the browser to speed up page load.</p>
 <h2 id="postcss">PostCSS</h2><p><a href="https://postcss.org/">PostCSS</a> is a javascript tool that parses and transforms the CSS files. The webpack
 config contains a reference to the <code>postcss-loader</code> so that css files can be generated during the
 build process from css files that are referenced in the codebase. The postcss.config.js file(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/postcss.config.js">github</a>)
