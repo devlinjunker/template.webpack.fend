@@ -3,6 +3,7 @@
  */
 import Todo from './models/todo.model.js';
 import todoComponent from './components/todo';
+import addInputComponent from './components/add-input';
 import LocalStorageHelper from '../helpers/localStorage.helper.js';
 
 /**
@@ -25,14 +26,16 @@ export default class TodoAppController {
       console.error('Error Loading List');
     }
 
+    this.addInput = addInputComponent(this.handleAddTodo.bind(this));
+    (document.getElementById('add-container'): any).appendChild(this.addInput);
 
-    this.addInput = (document.getElementById('add-input'): any);
-    this.addInput.onkeypress = (event) => {
-      if (event.keyCode === 13) {
-        this.handleAddTodo();
-      }
-    };
-    (document.getElementById('add-button'): any).onclick = this.handleAddTodo.bind(this);
+    // this.addInput = (document.getElementById('add-input'): any);
+    // this.addInput.onkeypress = (event) => {
+    //   if (event.keyCode === 13) {
+    //     this.handleAddTodo();
+    //   }
+    // };
+    // (document.getElementById('add-button'): any).onclick = this.handleAddTodo.bind(this);
     this.renderList();
   }
 
@@ -62,10 +65,9 @@ export default class TodoAppController {
    * @return {void}
    */
   handleAddTodo() {
-    this.add(this.addInput.value);
+    this.add(this.addInput.getValue());
     this.renderList();
-    this.addInput.value = '';
-    this.addInput.focus();
+    this.addInput.focusClear();
   }
 
   /**
