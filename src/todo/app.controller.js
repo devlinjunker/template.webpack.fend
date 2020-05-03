@@ -4,7 +4,7 @@
 import Todo from './models/todo.model.js';
 import todoComponent from './components/todo';
 import addInputComponent from './components/add-input';
-import LocalStorageHelper from '../helpers/localStorage.helper.js';
+import LocalStorageHelper from '../helpers/local-storage.helper.js';
 
 /**
  * Todo App Controller
@@ -82,6 +82,17 @@ export default class TodoAppController {
   }
 
   /**
+   * Handler when todo completion toggle is checked
+   * @param  {Todo} todo todo object that has been completed
+   * @return {void}
+   */
+  handleToggleTodo(todo: Todo) {
+    const idx = this.list.indexOf(todo);
+    this.list[idx].toggleComplete.call(this.list[idx]);
+    this.saveList();
+  }
+
+  /**
    * Method to Load the List from LocalStorage on App setup
    * @return {void}
    */
@@ -89,7 +100,7 @@ export default class TodoAppController {
     const saved: Array<Todo> = (LocalStorageHelper.get({ key: 'todos' }): any);
 
     saved.forEach((todo: Todo) => {
-      this.list.push(new Todo(todo.description));
+      this.list.push(new Todo(todo));
     });
   }
 
@@ -113,7 +124,9 @@ export default class TodoAppController {
     listContainer.innerHTML = '';
 
     this.list.forEach((todo: Todo, index: number) => {
-      listContainer.appendChild(todoComponent(todo, this.handleRemoveTodo.bind(this, index)));
+      listContainer.appendChild(
+        todoComponent(todo, this.handleRemoveTodo.bind(this, index), this.handleToggleTodo.bind(this))
+      );
     });
   }
 };
