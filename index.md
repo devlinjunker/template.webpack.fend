@@ -21,6 +21,7 @@ to update the wiki.
 - [Entry](manual/README.entry.html) - How Javascript Bundles are defined and files that can be included
 - [HTML](manual/README.html.html) - How HTML files are created and the processes we use to ensure quality
 - [CSS](manual/README.css.html) - CSS Normalization, Processing and Frameworks
+- [Images](manual/README.img.html) - Including images and SVG icons from free library
 - [Helpers](manual/README.helpers.html) - Javascript Helper Classes and Code that can be used
 - [Github Actions](manual/README.scripts.html) - Notes about Actions run on to ensure quality
 - [Test](manual/README.test.html) - How testing is configured and how to run tests

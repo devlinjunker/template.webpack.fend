@@ -140,8 +140,13 @@ module.exports = (env) => {
 
         // Load images imported
         {
-          test: /\.(png|svg|jpg|jpeg|gif)$/,
+          test: /\.(png|jpg|jpeg|gif)$/,
           use: ['file-loader']
+        },
+
+        {
+          test: /\.svg$/,
+          use: ['svg-inline-loader']
         },
 
         // Process HTML Files as Underscore templates and enable importing

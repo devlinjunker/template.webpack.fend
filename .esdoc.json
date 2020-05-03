@@ -20,6 +20,7 @@
           "./src/README.entry.md",
           "./src/README.html.md",
           "./src/README.css.md",
+          "./img/README.img.md",
           "./src/helpers/README.helpers.md",
           "./scripts/README.scripts.md",
           "./test/README.test.md"
