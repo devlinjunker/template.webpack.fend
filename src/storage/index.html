@@ -15,8 +15,14 @@
     </div>
 
     <div class="actions">
-      <button class="btn btn-green save-btn">Save</button>
-      <button class="btn btn-green get-btn">Retrieve</button>
+      <button class="btn btn-green save-btn">
+        Save
+        <span class="icon icon-sm">@include('../../img/zondicons/save-disk.svg')</span>
+      </button>
+      <button class="btn btn-green get-btn">
+        Retrieve
+        <span class="icon icon-sm">@include('../../img/zondicons/reply.svg')</span>
+      </button>
     </div>
 
     <div class="display">
@@ -24,7 +30,10 @@
       <textarea id="value-input" class="block h-12 border border-black">
 
       </textarea>
-      <button class="clear-value-btn btn btn-outline btn-outline-green">Clear</button>
+      <button class="clear-value-btn btn btn-outline btn-outline-green">
+        Clear
+        <span class="icon icon-sm">@include('../../img/zondicons/close.svg')</span>
+      </button>
     </div>
   </div>
 </body>
