@@ -32,7 +32,8 @@
   },
   "dependencies": {
     "lodash": "^4.17.15",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "tailwindcss": "^1.4.4"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -82,6 +83,7 @@
     "mini-css-extract-plugin": "^0.9.0",
     "mocha": "^6.2.3",
     "postcss-exclude-files": "^1.0.15",
+    "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
     "postcss-reporter": "^6.0.1",
