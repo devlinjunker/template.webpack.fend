@@ -7,6 +7,7 @@
 <body>
   <header>
   <nav class="bg-gray-800 text-gray-300 px-3 py-1">
+    <a class="icon hover:text-gray-500" href="/"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20"><path d="M8 20H3V10H0L10 0l10 10h-3v10h-5v-6H8v6z"></path></svg></a>
     <a class="hover:text-gray-500" href="/storage">Local Storage Demo</a>
   </nav>
 
@@ -21,8 +22,14 @@
     </div>
 
     <div class="actions">
-      <button class="btn btn-green save-btn">Save</button>
-      <button class="btn btn-green get-btn">Retrieve</button>
+      <button class="btn btn-green save-btn">
+        Save
+        <span class="icon icon-sm"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20"><path d="M0 2C0 .9.9 0 2 0h14l4 4v14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5 0v6h10V2H5zm6 1h3v4h-3V3z"></path></svg></span>
+      </button>
+      <button class="btn btn-green get-btn">
+        Retrieve
+        <span class="icon icon-sm"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20"><path d="M15 17v-2.99A4 4 0 0 0 11 10H8v5L2 9l6-6v5h3a6 6 0 0 1 6 6v3h-2z"></path></svg></span>
+      </button>
     </div>
 
     <div class="display">
@@ -30,7 +37,10 @@
       <textarea id="value-input" class="block h-12 border border-black">
 
       </textarea>
-      <button class="clear-value-btn btn btn-outline btn-outline-green">Clear</button>
+      <button class="clear-value-btn btn btn-outline btn-outline-green">
+        Clear
+        <span class="icon icon-sm"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20"><path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"></path></svg></span>
+      </button>
     </div>
   </div>
 <script type="text/javascript" src="../storage.bundle.js"></script></body>

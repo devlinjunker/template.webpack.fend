@@ -68,6 +68,13 @@
 <div data-ice="manual">
     <ul class="manual-toc">
       
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.img.html"><a href="manual/README.img.html" data-ice="link">Images</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.img.html"><a href="manual/README.img.html#icons" data-ice="link">Icons</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html" data-ice="link">Helpers</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#localstorage" data-ice="link">LocalStorage</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#helper-notes-ideas" data-ice="link">Helper Notes/Ideas</a></li>
@@ -114,6 +121,7 @@ to update the wiki.</p>
 <li><a href="manual/README.entry.html">Entry</a> - How Javascript Bundles are defined and files that can be included</li>
 <li><a href="manual/README.html.html">HTML</a> - How HTML files are created and the processes we use to ensure quality</li>
 <li><a href="manual/README.css.html">CSS</a> - CSS Normalization, Processing and Frameworks</li>
+<li><a href="manual/README.img.html">Images</a> - Including images and SVG icons from free library</li>
 <li><a href="manual/README.helpers.html">Helpers</a> - Javascript Helper Classes and Code that can be used</li>
 <li><a href="manual/README.scripts.html">Github Actions</a> - Notes about Actions run on to ensure quality</li>
 <li><a href="manual/README.test.html">Test</a> - How testing is configured and how to run tests</li>
@@ -252,6 +260,15 @@ json file containing the css selectors that are processed by PostCSS.</p><ul>
 </li>
 </ul></div>
         <a data-ice="link" href="manual/README.css.html"></a>
+      </div>
+    </div>
+<div class="manual-card-wrap" data-ice="cards">
+      <div class="manual-card">
+        <div data-ice="card"><h1>Images</h1><p>All images for the web application should be stored in the <code>img/</code> directory.</p><h2>Icons</h2><p>This template includes <a href="http://www.zondicons.com/icons.html">Zondicons</a>, a free SVG icon library with 270 icons.
+These can be included in the HTML template files with <code>@include(&lt;relative_path_to_svg&gt;)</code> and it the svg file
+will be included inline so standard utility classes from Tailwind can be applied. It is best to wrap the icons
+in a wrapper containing the <code>icon</code> class, as this will default to the icon being the size and color of the font.</p></div>
+        <a data-ice="link" href="manual/README.img.html"></a>
       </div>
     </div>
 <div class="manual-card-wrap" data-ice="cards">
