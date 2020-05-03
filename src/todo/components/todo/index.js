@@ -7,13 +7,25 @@ import './partial.css';
 import Todo from '../../models/todo.model';
 
 /**
- * Renders the Todo Item from the template file
+ * Todo Component type
+ * @type {TodoComponent}
+ */
+export type TodoComponent = {
+};
+
+/**
+ * Todo Component Factory that creates DOM element and binds handlers
  * @param  {Todo} todo todo item to be rendered
  * @param {Function} removeHandler handler method for when remove icon is clicked on todo
  * @param {Function} toggleCompleteHandler handler method for when completion toggle is clicked
- * @return {html}      html rendered with data from todo item
+ * @return {TodoComponent}      DOM element with data rendered from todo item
  */
-export default function(todo: Todo, removeHandler: Function, toggleCompleteHandler: Function) {
+function todoComponentFactory(
+  todo: Todo,
+  removeHandler: Function,
+  toggleCompleteHandler: Function
+): TodoComponent
+{
   const temp = document.createElement('div');
   temp.innerHTML = template(todo);
 
@@ -24,3 +36,5 @@ export default function(todo: Todo, removeHandler: Function, toggleCompleteHandl
 
   return temp.firstChild;
 }
+
+export default todoComponentFactory;

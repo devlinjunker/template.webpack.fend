@@ -1,10 +1,23 @@
 /**
  * @flow
  */
-// $FlowFixMe  (Flow doesn't like importing html files)
 import template from './partial.html';
 
-const component = function(addHandler: Function) {
+/**
+ * Add Input Component Type
+ * @type {AddInputComponent}
+ */
+export type AddInputComponent = {
+  getValue: Function;
+  focusClear: Function
+};
+
+/**
+ * AddInput Component Factory that creates DOM element and binds handlers
+ * @param {Function} addHandler handler when 'add' button is pressed
+ * @return {AddInputComponent} Add input component
+ */
+function addInputComponentFactory(addHandler: Function): AddInputComponent {
   const temp = document.createElement('div');
   temp.innerHTML = template();
 
@@ -30,4 +43,4 @@ const component = function(addHandler: Function) {
 };
 
 
-export default component;
+export default addInputComponentFactory;

@@ -12,8 +12,9 @@ export default class Todo {
   /**
    * Creates the Todo Model
    * @param {string} description of the todo to be completed
+   * @param {boolean} complete completion status of todo
    */
-  constructor({ description = 'Example Todo', complete = false }: { description: string; complete: boolean }) {
+  constructor(description: string, complete: ?boolean = false) {
     this.description = description;
     this.complete = complete;
   }

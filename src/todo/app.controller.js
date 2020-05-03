@@ -2,15 +2,15 @@
  * @flow
  */
 import Todo from './models/todo.model.js';
-import todoComponent from './components/todo';
-import addInputComponent from './components/add-input';
+import todoComponentFactory from './components/todo';
+import addInputComponent, { AddInputComponent } from './components/add-input';
 import LocalStorageHelper from '../helpers/local-storage.helper.js';
 
 /**
  * Todo App Controller
  */
 export default class TodoAppController {
-  addInput: any;
+  addInput: AddInputComponent;
   list: Array<Todo>;
 
   /**
@@ -29,13 +29,6 @@ export default class TodoAppController {
     this.addInput = addInputComponent(this.handleAddTodo.bind(this));
     (document.getElementById('add-container'): any).appendChild(this.addInput);
 
-    // this.addInput = (document.getElementById('add-input'): any);
-    // this.addInput.onkeypress = (event) => {
-    //   if (event.keyCode === 13) {
-    //     this.handleAddTodo();
-    //   }
-    // };
-    // (document.getElementById('add-button'): any).onclick = this.handleAddTodo.bind(this);
     this.renderList();
   }
 
@@ -100,7 +93,7 @@ export default class TodoAppController {
     const saved: Array<Todo> = (LocalStorageHelper.get({ key: 'todos' }): any);
 
     saved.forEach((todo: Todo) => {
-      this.list.push(new Todo(todo));
+      this.list.push(new Todo(todo.description, todo.complete));
     });
   }
 
@@ -125,7 +118,7 @@ export default class TodoAppController {
 
     this.list.forEach((todo: Todo, index: number) => {
       listContainer.appendChild(
-        todoComponent(todo, this.handleRemoveTodo.bind(this, index), this.handleToggleTodo.bind(this))
+        todoComponentFactory(todo, this.handleRemoveTodo.bind(this, index), this.handleToggleTodo.bind(this))
       );
     });
   }
