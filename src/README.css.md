@@ -44,8 +44,15 @@ json file containing the css selectors that are processed by PostCSS.
  - [ ] Show output selectors, not input
  - [ ] Map of selectors to css rules?
 
-## Framework
-TODO...
+## Tailwind
+[Tailwind](https://tailwindcss.com) is a composable, [utility-first](https://tailwindcss.com/docs/utility-first/)
+css framework. This is a shift from the "semantic" based css conventions where classes/styles are
+defined around a name that has meaning in the application domain. In this way of thinking, css classes
+define a consistent look and feel of the application. These utility classes are then applied to the
+elements in each html file to create a consistent style across the application that is not predefined.
+
+Review [these screencasts](https://tailwindcss.com/screencasts/) and other [resources](https://tailwindcss.com/resources)
+for more information.
 
 ## CSS Notes/Ideas
  - Guidelines: https://cssguidelin.es/

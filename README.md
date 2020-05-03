@@ -118,14 +118,14 @@ How to use this template to create a basic Frontend Application:
    - webpack/lodash style? https://github.com/emaphp/underscore-template-loader
    - handlebars?
    - [ ] Components (javascript methods that return compiled html, has params for template variables)
+ - [..] (^) Base CSS Style for all apps
+ - [..] (^) CSS Framework
+   - [x] Tailwind - integrates with javascript
  - [ ] (^) Styleguide
     - Page in docsite
     - Examples: http://styleguides.io/examples.html
       - http://codeforamerica.clearleft.com/#
     - Fractal? https://github.com/adamlindqvist/fractal-webpack-plugin
- - [ ] (^) Base CSS Style for all apps
- - [ ] (^) CSS Framework
-   - [ ] Tailwind - integrates with javascript
  - [ ] (^) Githooks
  - [ ] (^) Configuration File
  - [ ] (^) If running in development -> console errors/warnings appear in UI bubble
