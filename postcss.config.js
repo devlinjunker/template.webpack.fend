@@ -17,7 +17,7 @@ module.exports = {
     // TODO: this works for now, although it doesn't list the selectors after precss has processed the
     //  files, so it isn't quite correct
     listSelectors(
-      ['src/**/*.css'],
+      ['src/**/*.scss'],
       {},
       (list) => {
         fs.writeFileSync(path.join('docs', 'css-selectors.json'), JSON.stringify(list));

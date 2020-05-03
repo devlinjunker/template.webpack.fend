@@ -2,7 +2,7 @@
  * @flow
  */
 import LocalStorageHelper from '../helpers/localStorage.helper';
-import './app.css';
+import './app.scss';
 /**
  * Controller for the application
  */
@@ -31,7 +31,7 @@ class StorageAppController {
   save() {
     // Get key and value from ui
     const key = this.keyInput.value;
-    const val = this.valInput.innerText;
+    const val = this.valInput.value;
 
     // save with local storage
     LocalStorageHelper.save({ key, val });
@@ -51,7 +51,7 @@ class StorageAppController {
     const val = LocalStorageHelper.get({ key });
 
     // display value to user
-    this.valInput.innerText = val;
+    this.valInput.value = val;
   }
 
   /**
@@ -59,7 +59,7 @@ class StorageAppController {
    * @return {void}
    */
   clearValue() {
-    this.valInput.innerText = '';
+    this.valInput.value = '';
   }
 }
 

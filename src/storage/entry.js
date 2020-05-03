@@ -3,8 +3,7 @@
  */
 import LocalStorageHelper from '../helpers/localStorage.helper';
 import StorageAppController from './app.controller';
-import 'normalize.css';
-import '../base.css';
+import '../base.scss';
 
 LocalStorageHelper.save({ key: 'test', val: 'abc' });
 

@@ -1,5 +1,4 @@
 /**
  * @flow
  */
-import 'normalize.css';
-import './base.css';
+import './base.scss';

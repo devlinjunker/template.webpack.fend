@@ -116,7 +116,7 @@ module.exports = (env) => {
 
         // Load css files imported
         {
-          test: /\.css$/,
+          test: /\.s?css$/,
           use: [
             // Q: Should we do this during development and then use mini-css-extract-plugin
             // during production?

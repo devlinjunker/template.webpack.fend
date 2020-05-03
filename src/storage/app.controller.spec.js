@@ -38,7 +38,7 @@ describe('App Controller', function() {
       };
 
       controller.valInput = {
-        innerText: 'val'
+        value: 'val'
       };
 
       controller.save();
@@ -69,12 +69,12 @@ describe('App Controller', function() {
   describe('#clearValue', function() {
     it('should clear the input value', function() {
       controller.valInput = {
-        innerText: 'abc'
+        value: 'abc'
       };
 
       controller.clearValue();
 
-      expect(controller.valInput.innerText).to.equal('');
+      expect(controller.valInput.value).to.equal('');
     });
   });
 });
