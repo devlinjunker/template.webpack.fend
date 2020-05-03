@@ -1,7 +1,7 @@
 /**
  * @flow
  */
-import LocalStorageHelper from '../helpers/localStorage.helper';
+import LocalStorageHelper from '../helpers/local-storage.helper';
 import './app.scss';
 /**
  * Controller for the application

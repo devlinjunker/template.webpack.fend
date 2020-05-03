@@ -2,7 +2,7 @@
  * @flow
  */
 import AppController from './app.controller';
-import LocalStorageHelper from '../helpers/localStorage.helper';
+import LocalStorageHelper from '../helpers/local-storage.helper';
 
 describe('App Controller', function() {
   let controller;
