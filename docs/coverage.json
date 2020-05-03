@@ -3,7 +3,7 @@
   "expectCount": 10,
   "actualCount": 8,
   "files": {
-    "src/helpers/localStorage.helper.js": {
+    "src/helpers/local-storage.helper.js": {
       "expectCount": 3,
       "actualCount": 3,
       "undocumentLines": []

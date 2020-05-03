@@ -566,10 +566,10 @@
   {
     "__docId__": 48,
     "kind": "file",
-    "name": "src/helpers/localStorage.helper.js",
+    "name": "src/helpers/local-storage.helper.js",
     "content": "/**\n * @flow\n */\nimport _ from 'lodash';\n\n/**\n * DataService Class for Storing Values in the LocalStorage in the browser\n */\nexport default class LocalStorageHelper {\n\n  /**\n   * Saves the value at the key provided in the browser localStorage\n   *\n   * @returns {undefined} undefined\n   */\n  static save({ key, val }: { key: string, val: any }) {\n    if (!_.isString(val)) {\n      val = JSON.stringify(val);\n    }\n\n    localStorage.setItem(key, val);\n  }\n\n  /**\n   * Retrieves a value stored at the key in browser LocalStorage\n\n   * @returns {string | object} the value stored at the key in the LocalStorage\n   */\n  static get({ key }: { key: string }): string | Object {\n    const val = localStorage.getItem(key);\n\n    if (val === undefined || val === null) {\n      throw new Error();\n    }\n\n    try {\n      const parsed = JSON.parse(val);\n      return parsed;\n    } catch (e) {} // eslint-disable-line\n\n    return val;\n  }\n}\n",
     "static": true,
-    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/helpers/localStorage.helper.js",
+    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/helpers/local-storage.helper.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -578,12 +578,12 @@
     "__docId__": 49,
     "kind": "class",
     "name": "LocalStorageHelper",
-    "memberof": "src/helpers/localStorage.helper.js",
+    "memberof": "src/helpers/local-storage.helper.js",
     "static": true,
-    "longname": "src/helpers/localStorage.helper.js~LocalStorageHelper",
+    "longname": "src/helpers/local-storage.helper.js~LocalStorageHelper",
     "access": "public",
     "export": true,
-    "importPath": "Template-WebpackFEND/src/helpers/localStorage.helper.js",
+    "importPath": "Template-WebpackFEND/src/helpers/local-storage.helper.js",
     "importStyle": "LocalStorageHelper",
     "description": "DataService Class for Storing Values in the LocalStorage in the browser",
     "lineNumber": 6,
@@ -593,11 +593,11 @@
     "__docId__": 50,
     "kind": "method",
     "name": "save",
-    "memberof": "src/helpers/localStorage.helper.js~LocalStorageHelper",
+    "memberof": "src/helpers/local-storage.helper.js~LocalStorageHelper",
     "generator": false,
     "async": false,
     "static": true,
-    "longname": "src/helpers/localStorage.helper.js~LocalStorageHelper.save",
+    "longname": "src/helpers/local-storage.helper.js~LocalStorageHelper.save",
     "access": "public",
     "description": "Saves the value at the key provided in the browser localStorage",
     "lineNumber": 13,
@@ -633,11 +633,11 @@
     "__docId__": 51,
     "kind": "method",
     "name": "get",
-    "memberof": "src/helpers/localStorage.helper.js~LocalStorageHelper",
+    "memberof": "src/helpers/local-storage.helper.js~LocalStorageHelper",
     "generator": false,
     "async": false,
     "static": true,
-    "longname": "src/helpers/localStorage.helper.js~LocalStorageHelper.get",
+    "longname": "src/helpers/local-storage.helper.js~LocalStorageHelper.get",
     "access": "public",
     "description": "Retrieves a value stored at the key in browser LocalStorage",
     "lineNumber": 25,
@@ -672,8 +672,19 @@
   {
     "__docId__": 52,
     "kind": "file",
+    "name": "src/helpers/relative-href.helper.js",
+    "content": "/**\n * @flow\n */\n\n/**\n * <a> `href` linking helper method.\n * sets the `<base>` tag in the header so links can remain relative to the root of the app. This also helps\n * with the demo app in `docs/` because it sets the links relative to that url rather than just the host.\n *\n * @return {void}\n */\n(function() {\n  // Get url\n  const href = window.location.href;\n  let newHref = '';\n\n  // if found location of `demo`, set base tag as url to that point\n  if (/demo\\//.test(href) === true) {\n    newHref = href.slice(0, href.indexOf('demo') + 5);\n  // otherwise set to host\n  // (we're assuming that the webapp is hosted at root of domain, otherwise this could be an issue)\n  } else {\n    newHref = window.origin;\n  }\n\n  const base = document.createElement('base');\n  base.setAttribute('href', newHref);\n  document.getElementsByTagName('head')[0].prepend(base);\n})();\n",
+    "static": true,
+    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/helpers/relative-href.helper.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 53,
+    "kind": "file",
     "name": "src/storage/app.controller.js",
-    "content": "/**\n * @flow\n */\nimport LocalStorageHelper from '../helpers/localStorage.helper';\nimport './app.scss';\n/**\n * Controller for the application\n */\nclass StorageAppController {\n  keyInput: any;\n  valInput: any;\n\n  /**\n   * Set up the app, generate html and set up event handlers\n   */\n  constructor() {\n    // TODO: Set up HTML from Template?\n    this.keyInput = document.getElementById('key-input');\n    this.valInput = document.getElementById('value-input');\n\n    document.getElementsByClassName('save-btn')[0].onclick = this.save.bind(this);\n    document.getElementsByClassName('get-btn')[0].onclick = this.view.bind(this);\n\n    document.getElementsByClassName('clear-value-btn')[0].onclick = this.clearValue.bind(this);\n  }\n\n  /**\n   * saves the value at the provided key\n   * @return {void}\n   */\n  save() {\n    // Get key and value from ui\n    const key = this.keyInput.value;\n    const val = this.valInput.value;\n\n    // save with local storage\n    LocalStorageHelper.save({ key, val });\n\n    // TODO: display message to user\n  }\n\n  /**\n   * retrieves a value using the provided key\n   * @return {String} value retrieved from local storage with key\n   */\n  view() {\n    // get key from ui\n    const key = this.keyInput.value;\n\n    // get from local storage\n    const val = LocalStorageHelper.get({ key });\n\n    // display value to user\n    this.valInput.value = val;\n  }\n\n  /**\n   * Clear the value input element of text\n   * @return {void}\n   */\n  clearValue() {\n    this.valInput.value = '';\n  }\n}\n\nexport default StorageAppController;\n",
+    "content": "/**\n * @flow\n */\nimport LocalStorageHelper from '../helpers/local-storage.helper';\nimport './app.scss';\n/**\n * Controller for the application\n */\nclass StorageAppController {\n  keyInput: any;\n  valInput: any;\n\n  /**\n   * Set up the app, generate html and set up event handlers\n   */\n  constructor() {\n    // TODO: Set up HTML from Template?\n    this.keyInput = document.getElementById('key-input');\n    this.valInput = document.getElementById('value-input');\n\n    document.getElementsByClassName('save-btn')[0].onclick = this.save.bind(this);\n    document.getElementsByClassName('get-btn')[0].onclick = this.view.bind(this);\n\n    document.getElementsByClassName('clear-value-btn')[0].onclick = this.clearValue.bind(this);\n  }\n\n  /**\n   * saves the value at the provided key\n   * @return {void}\n   */\n  save() {\n    // Get key and value from ui\n    const key = this.keyInput.value;\n    const val = this.valInput.value;\n\n    // save with local storage\n    LocalStorageHelper.save({ key, val });\n\n    // TODO: display message to user\n  }\n\n  /**\n   * retrieves a value using the provided key\n   * @return {String} value retrieved from local storage with key\n   */\n  view() {\n    // get key from ui\n    const key = this.keyInput.value;\n\n    // get from local storage\n    const val = LocalStorageHelper.get({ key });\n\n    // display value to user\n    this.valInput.value = val;\n  }\n\n  /**\n   * Clear the value input element of text\n   * @return {void}\n   */\n  clearValue() {\n    this.valInput.value = '';\n  }\n}\n\nexport default StorageAppController;\n",
     "static": true,
     "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/storage/app.controller.js",
     "access": "public",
@@ -681,7 +692,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 53,
+    "__docId__": 54,
     "kind": "class",
     "name": "StorageAppController",
     "memberof": "src/storage/app.controller.js",
@@ -696,7 +707,7 @@
     "interface": false
   },
   {
-    "__docId__": 54,
+    "__docId__": 55,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/storage/app.controller.js~StorageAppController",
@@ -709,7 +720,7 @@
     "lineNumber": 11
   },
   {
-    "__docId__": 55,
+    "__docId__": 56,
     "kind": "member",
     "name": "keyInput",
     "memberof": "src/storage/app.controller.js~StorageAppController",
@@ -726,7 +737,7 @@
     }
   },
   {
-    "__docId__": 56,
+    "__docId__": 57,
     "kind": "member",
     "name": "valInput",
     "memberof": "src/storage/app.controller.js~StorageAppController",
@@ -743,7 +754,7 @@
     }
   },
   {
-    "__docId__": 57,
+    "__docId__": 58,
     "kind": "method",
     "name": "save",
     "memberof": "src/storage/app.controller.js~StorageAppController",
@@ -765,7 +776,7 @@
     "params": []
   },
   {
-    "__docId__": 58,
+    "__docId__": 59,
     "kind": "method",
     "name": "view",
     "memberof": "src/storage/app.controller.js~StorageAppController",
@@ -787,7 +798,7 @@
     "params": []
   },
   {
-    "__docId__": 59,
+    "__docId__": 60,
     "kind": "method",
     "name": "clearValue",
     "memberof": "src/storage/app.controller.js~StorageAppController",
@@ -876,7 +887,7 @@
     "kind": "manual",
     "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/helpers/README.helpers.md",
     "name": "./src/helpers/README.helpers.md",
-    "content": "# Helpers\nThis project contains a `helpers/` directory([github](https://github.com/devlinjunker/template.webpack.fend/blob/src/helpers))\nthat holds Javascript classes that can be used across multiple projects with utility methods for useful\nfunctionality.\n\n## LocalStorage\nThe localstorage helper ([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/src/helpers/localStorage.helper.js))\ncontains methods for saving/retrieving values with the browser localstorage API. Values saved with this will be\nstored on the clients browser and can be retreived when they return to the web application (until they clear\ntheir browser localstorage/data).\n\n## Helper Notes/Ideas\n - [ ] Configuration file\n - [ ] Performance Logger\n - [ ] API Helpers (Internal vs External?)\n",
+    "content": "# Helpers\nThis project contains a `helpers/` directory([github](https://github.com/devlinjunker/template.webpack.fend/blob/src/helpers))\nthat holds Javascript classes and methods that can be used across multiple projects and entry points with\nreusable methods and commonly used logic.\n\n## LocalStorage\nThe localstorage helper ([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/src/helpers/local-storage.helper.js))\ncontains methods for saving/retrieving values with the browser localstorage API. Values saved with this will be\nstored on the clients browser and can be retreived when they return to the web application (until they clear\ntheir browser localstorage/data).\n\n## Relative Href\nThe Relative Href helper([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/src/helpers/relative-href.helper.js))\ncontains a small snippet of code that must be included in each javascript entry point. This code sets the\n`<base>` tag inside of the `<head>` element in the HTML page to tell relative links on the page the `href` that\nthey should be relative to.\n\ni.e. if `<base href='http://test.com/'>` exists at the top of the page, all relative\nlinks (e.g. `<a href=\"example\">...</a>`) will direct to `http://test.com/example` (where example is any relative\n`href` value). This is compared to the regular relative link behavior where the link is relative to the current\npage (value in the browser url bar).\n\n## Helper Notes/Ideas\n - [ ] Configuration file\n - [ ] Performance Logger\n - [ ] API Helpers (Internal vs External?)\n",
     "static": true,
     "access": "public"
   },
@@ -897,138 +908,138 @@
     "access": "public"
   },
   {
-    "__docId__": 60,
+    "__docId__": 61,
     "kind": "testFile",
-    "name": "src/helpers/localStorage.helper.spec.js",
-    "content": "/**\n * @flow\n */\nimport LocalStorageHelper from './localStorage.helper';\n\ndescribe('LocalStorageService', function() {\n\n  describe('#save', function() {\n\n    it('should use local storage to save value with key', function() {\n      sandbox.spy(localStorage, 'setItem');\n      const key = 'test';\n      const val = 'val';\n\n      LocalStorageHelper.save({\n        key: 'test',\n        val: 'val',\n      });\n\n      expect(localStorage.setItem).to.be.called;\n      expect(localStorage.setItem.args[0][0]).to.equal(key);\n      expect(localStorage.setItem.args[0][1]).to.equal(val);\n    });\n\n    it('should stringify objects before saving them', function() {\n      sandbox.spy(localStorage, 'setItem');\n\n      const val = {\n        test: 123\n      };\n      LocalStorageHelper.save({\n        key: 'abc',\n        val\n      });\n\n      const stringified = JSON.stringify(val);\n      expect(localStorage.setItem.args[0]).to.include(stringified);\n    });\n\n    it('should be able to retrieve value using key with #get', function() {\n      const val = 'test';\n      const key = 'abc';\n\n      LocalStorageHelper.save({\n        key,\n        val\n      });\n\n      const saved = LocalStorageHelper.get({\n        key\n      });\n\n      expect(saved).to.equal(val);\n    });\n  });\n\n  describe('#get', function() {\n\n    it('should retrieve value from local storage using key', function() {\n      sandbox.stub(localStorage, 'getItem').returns('abc');\n      const key = 'test';\n\n      LocalStorageHelper.get({\n        key\n      });\n\n      expect(localStorage.getItem).to.be.called;\n      expect(localStorage.getItem.args[0][0]).to.equal(key);\n    });\n\n    it('should return object if object stored', function() {\n      const key = 'abc';\n      const val = {\n        test: 123\n      };\n      LocalStorageHelper.save({\n        key,\n        val\n      });\n\n      const returned = LocalStorageHelper.get({ key });\n      expect(returned).to.deep.equal(val);\n    });\n\n    it('should throw error if requesting key with no value assigned', function() {\n      const key = 'unused_123_abc';\n\n      expect(() => {\n        LocalStorageHelper.get({ key });\n      }).to.throw();\n    });\n  });\n});\n",
+    "name": "src/helpers/local-storage.helper.spec.js",
+    "content": "/**\n * @flow\n */\nimport LocalStorageHelper from './local-storage.helper';\n\ndescribe('local-storage.helper', function() {\n\n  describe('#save', function() {\n\n    it('should use local storage to save value with key', function() {\n      sandbox.spy(localStorage, 'setItem');\n      const key = 'test';\n      const val = 'val';\n\n      LocalStorageHelper.save({\n        key: 'test',\n        val: 'val',\n      });\n\n      expect(localStorage.setItem).to.be.called;\n      expect(localStorage.setItem.args[0][0]).to.equal(key);\n      expect(localStorage.setItem.args[0][1]).to.equal(val);\n    });\n\n    it('should stringify objects before saving them', function() {\n      sandbox.spy(localStorage, 'setItem');\n\n      const val = {\n        test: 123\n      };\n      LocalStorageHelper.save({\n        key: 'abc',\n        val\n      });\n\n      const stringified = JSON.stringify(val);\n      expect(localStorage.setItem.args[0]).to.include(stringified);\n    });\n\n    it('should be able to retrieve value using key with #get', function() {\n      const val = 'test';\n      const key = 'abc';\n\n      LocalStorageHelper.save({\n        key,\n        val\n      });\n\n      const saved = LocalStorageHelper.get({\n        key\n      });\n\n      expect(saved).to.equal(val);\n    });\n  });\n\n  describe('#get', function() {\n\n    it('should retrieve value from local storage using key', function() {\n      sandbox.stub(localStorage, 'getItem').returns('abc');\n      const key = 'test';\n\n      LocalStorageHelper.get({\n        key\n      });\n\n      expect(localStorage.getItem).to.be.called;\n      expect(localStorage.getItem.args[0][0]).to.equal(key);\n    });\n\n    it('should return object if object stored', function() {\n      const key = 'abc';\n      const val = {\n        test: 123\n      };\n      LocalStorageHelper.save({\n        key,\n        val\n      });\n\n      const returned = LocalStorageHelper.get({ key });\n      expect(returned).to.deep.equal(val);\n    });\n\n    it('should throw error if requesting key with no value assigned', function() {\n      const key = 'unused_123_abc';\n\n      expect(() => {\n        LocalStorageHelper.get({ key });\n      }).to.throw();\n    });\n  });\n});\n",
     "static": true,
-    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/helpers/localStorage.helper.spec.js",
+    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/helpers/local-storage.helper.spec.js",
     "access": null,
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 61,
+    "__docId__": 62,
     "kind": "test",
     "name": "describe0",
     "testId": 0,
-    "memberof": "src/helpers/localStorage.helper.spec.js",
+    "memberof": "src/helpers/local-storage.helper.spec.js",
     "testDepth": 0,
     "static": true,
-    "longname": "src/helpers/localStorage.helper.spec.js~describe0",
+    "longname": "src/helpers/local-storage.helper.spec.js~describe0",
     "access": null,
-    "description": "LocalStorageService",
+    "description": "local-storage.helper",
     "lineNumber": 3
   },
   {
-    "__docId__": 62,
+    "__docId__": 63,
     "kind": "test",
     "name": "describe1",
     "testId": 1,
-    "memberof": "src/helpers/localStorage.helper.spec.js~describe0",
+    "memberof": "src/helpers/local-storage.helper.spec.js~describe0",
     "testDepth": 1,
     "static": true,
-    "longname": "src/helpers/localStorage.helper.spec.js~describe0.describe1",
+    "longname": "src/helpers/local-storage.helper.spec.js~describe0.describe1",
     "access": null,
     "description": "#save",
     "lineNumber": 5
   },
   {
-    "__docId__": 63,
+    "__docId__": 64,
     "kind": "test",
     "name": "it2",
     "testId": 2,
-    "memberof": "src/helpers/localStorage.helper.spec.js~describe0.describe1",
+    "memberof": "src/helpers/local-storage.helper.spec.js~describe0.describe1",
     "testDepth": 2,
     "static": true,
-    "longname": "src/helpers/localStorage.helper.spec.js~describe0.describe1.it2",
+    "longname": "src/helpers/local-storage.helper.spec.js~describe0.describe1.it2",
     "access": null,
     "description": "should use local storage to save value with key",
     "lineNumber": 7
   },
   {
-    "__docId__": 64,
+    "__docId__": 65,
     "kind": "test",
     "name": "it3",
     "testId": 3,
-    "memberof": "src/helpers/localStorage.helper.spec.js~describe0.describe1",
+    "memberof": "src/helpers/local-storage.helper.spec.js~describe0.describe1",
     "testDepth": 2,
     "static": true,
-    "longname": "src/helpers/localStorage.helper.spec.js~describe0.describe1.it3",
+    "longname": "src/helpers/local-storage.helper.spec.js~describe0.describe1.it3",
     "access": null,
     "description": "should stringify objects before saving them",
     "lineNumber": 22
   },
   {
-    "__docId__": 65,
+    "__docId__": 66,
     "kind": "test",
     "name": "it4",
     "testId": 4,
-    "memberof": "src/helpers/localStorage.helper.spec.js~describe0.describe1",
+    "memberof": "src/helpers/local-storage.helper.spec.js~describe0.describe1",
     "testDepth": 2,
     "static": true,
-    "longname": "src/helpers/localStorage.helper.spec.js~describe0.describe1.it4",
+    "longname": "src/helpers/local-storage.helper.spec.js~describe0.describe1.it4",
     "access": null,
     "description": "should be able to retrieve value using key with #get",
     "lineNumber": 37
   },
   {
-    "__docId__": 66,
+    "__docId__": 67,
     "kind": "test",
     "name": "describe5",
     "testId": 5,
-    "memberof": "src/helpers/localStorage.helper.spec.js~describe0",
+    "memberof": "src/helpers/local-storage.helper.spec.js~describe0",
     "testDepth": 1,
     "static": true,
-    "longname": "src/helpers/localStorage.helper.spec.js~describe0.describe5",
+    "longname": "src/helpers/local-storage.helper.spec.js~describe0.describe5",
     "access": null,
     "description": "#get",
     "lineNumber": 54
   },
   {
-    "__docId__": 67,
+    "__docId__": 68,
     "kind": "test",
     "name": "it6",
     "testId": 6,
-    "memberof": "src/helpers/localStorage.helper.spec.js~describe0.describe5",
+    "memberof": "src/helpers/local-storage.helper.spec.js~describe0.describe5",
     "testDepth": 2,
     "static": true,
-    "longname": "src/helpers/localStorage.helper.spec.js~describe0.describe5.it6",
+    "longname": "src/helpers/local-storage.helper.spec.js~describe0.describe5.it6",
     "access": null,
     "description": "should retrieve value from local storage using key",
     "lineNumber": 56
   },
   {
-    "__docId__": 68,
+    "__docId__": 69,
     "kind": "test",
     "name": "it7",
     "testId": 7,
-    "memberof": "src/helpers/localStorage.helper.spec.js~describe0.describe5",
+    "memberof": "src/helpers/local-storage.helper.spec.js~describe0.describe5",
     "testDepth": 2,
     "static": true,
-    "longname": "src/helpers/localStorage.helper.spec.js~describe0.describe5.it7",
+    "longname": "src/helpers/local-storage.helper.spec.js~describe0.describe5.it7",
     "access": null,
     "description": "should return object if object stored",
     "lineNumber": 68
   },
   {
-    "__docId__": 69,
+    "__docId__": 70,
     "kind": "test",
     "name": "it8",
     "testId": 8,
-    "memberof": "src/helpers/localStorage.helper.spec.js~describe0.describe5",
+    "memberof": "src/helpers/local-storage.helper.spec.js~describe0.describe5",
     "testDepth": 2,
     "static": true,
-    "longname": "src/helpers/localStorage.helper.spec.js~describe0.describe5.it8",
+    "longname": "src/helpers/local-storage.helper.spec.js~describe0.describe5.it8",
     "access": null,
     "description": "should throw error if requesting key with no value assigned",
     "lineNumber": 82
   },
   {
-    "__docId__": 70,
+    "__docId__": 71,
     "kind": "testFile",
     "name": "src/storage/app.controller.spec.js",
-    "content": "/**\n * @flow\n */\nimport AppController from './app.controller';\nimport LocalStorageHelper from '../helpers/localStorage.helper';\n\ndescribe('App Controller', function() {\n  let controller;\n  const saveBtn = {};\n  const getBtn = {};\n  const clearBtn = {};\n\n  describe('#constructor', function() {\n    it('should set up handlers', function() {\n      sandbox.stub(document, 'getElementsByClassName').callsFake((param): any => {\n        if (param === 'save-btn') {\n          return [saveBtn];\n        } else if (param === 'get-btn') {\n          return [getBtn];\n        } else {\n          return [clearBtn];\n        }\n      });\n\n      controller = new AppController();\n\n      expect(saveBtn.onclick).to.not.be.undefined;\n      expect(getBtn.onclick).to.not.be.undefined;\n      expect(clearBtn.onclick).to.not.be.undefined;\n    });\n  });\n\n  describe('#save', function() {\n    it('should save values with localStorage service', function() {\n      const saveStub = sandbox.stub(LocalStorageHelper, 'save');\n      controller.keyInput = {\n        value: 'abc'\n      };\n\n      controller.valInput = {\n        value: 'val'\n      };\n\n      controller.save();\n\n      expect(saveStub).to.be.calledWith({ key: 'abc', val: 'val' });\n    });\n\n    // TODO: finish spec\n    it('should display message to user when saving');\n  });\n\n  describe('#view', function() {\n    it('should retrieve values from localStorage service and display', function() {\n      const getStub = sandbox.stub(LocalStorageHelper, 'get');\n      controller.keyInput = {\n        value: 'abc'\n      };\n\n      controller.view();\n\n      expect(getStub).to.be.calledWith({ key: 'abc' });\n    });\n\n    // TODO: finish spec\n    it('should display message if error retrieving value');\n  });\n\n  describe('#clearValue', function() {\n    it('should clear the input value', function() {\n      controller.valInput = {\n        value: 'abc'\n      };\n\n      controller.clearValue();\n\n      expect(controller.valInput.value).to.equal('');\n    });\n  });\n});\n",
+    "content": "/**\n * @flow\n */\nimport AppController from './app.controller';\nimport LocalStorageHelper from '../helpers/local-storage.helper';\n\ndescribe('App Controller', function() {\n  let controller;\n  const saveBtn = {};\n  const getBtn = {};\n  const clearBtn = {};\n\n  describe('#constructor', function() {\n    it('should set up handlers', function() {\n      sandbox.stub(document, 'getElementsByClassName').callsFake((param): any => {\n        if (param === 'save-btn') {\n          return [saveBtn];\n        } else if (param === 'get-btn') {\n          return [getBtn];\n        } else {\n          return [clearBtn];\n        }\n      });\n\n      controller = new AppController();\n\n      expect(saveBtn.onclick).to.not.be.undefined;\n      expect(getBtn.onclick).to.not.be.undefined;\n      expect(clearBtn.onclick).to.not.be.undefined;\n    });\n  });\n\n  describe('#save', function() {\n    it('should save values with localStorage service', function() {\n      const saveStub = sandbox.stub(LocalStorageHelper, 'save');\n      controller.keyInput = {\n        value: 'abc'\n      };\n\n      controller.valInput = {\n        value: 'val'\n      };\n\n      controller.save();\n\n      expect(saveStub).to.be.calledWith({ key: 'abc', val: 'val' });\n    });\n\n    // TODO: finish spec\n    it('should display message to user when saving');\n  });\n\n  describe('#view', function() {\n    it('should retrieve values from localStorage service and display', function() {\n      const getStub = sandbox.stub(LocalStorageHelper, 'get');\n      controller.keyInput = {\n        value: 'abc'\n      };\n\n      controller.view();\n\n      expect(getStub).to.be.calledWith({ key: 'abc' });\n    });\n\n    // TODO: finish spec\n    it('should display message if error retrieving value');\n  });\n\n  describe('#clearValue', function() {\n    it('should clear the input value', function() {\n      controller.valInput = {\n        value: 'abc'\n      };\n\n      controller.clearValue();\n\n      expect(controller.valInput.value).to.equal('');\n    });\n  });\n});\n",
     "static": true,
     "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/storage/app.controller.spec.js",
     "access": null,
@@ -1036,7 +1047,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 71,
+    "__docId__": 72,
     "kind": "test",
     "name": "describe9",
     "testId": 9,
@@ -1049,7 +1060,7 @@
     "lineNumber": 4
   },
   {
-    "__docId__": 72,
+    "__docId__": 73,
     "kind": "test",
     "name": "describe10",
     "testId": 10,
@@ -1062,7 +1073,7 @@
     "lineNumber": 10
   },
   {
-    "__docId__": 73,
+    "__docId__": 74,
     "kind": "test",
     "name": "it11",
     "testId": 11,
@@ -1075,7 +1086,7 @@
     "lineNumber": 11
   },
   {
-    "__docId__": 74,
+    "__docId__": 75,
     "kind": "test",
     "name": "describe12",
     "testId": 12,
@@ -1088,7 +1099,7 @@
     "lineNumber": 30
   },
   {
-    "__docId__": 75,
+    "__docId__": 76,
     "kind": "test",
     "name": "it13",
     "testId": 13,
@@ -1101,7 +1112,7 @@
     "lineNumber": 31
   },
   {
-    "__docId__": 76,
+    "__docId__": 77,
     "kind": "test",
     "name": "it14",
     "testId": 14,
@@ -1114,7 +1125,7 @@
     "lineNumber": 47
   },
   {
-    "__docId__": 77,
+    "__docId__": 78,
     "kind": "test",
     "name": "describe15",
     "testId": 15,
@@ -1127,7 +1138,7 @@
     "lineNumber": 50
   },
   {
-    "__docId__": 78,
+    "__docId__": 79,
     "kind": "test",
     "name": "it16",
     "testId": 16,
@@ -1140,7 +1151,7 @@
     "lineNumber": 51
   },
   {
-    "__docId__": 79,
+    "__docId__": 80,
     "kind": "test",
     "name": "it17",
     "testId": 17,
@@ -1153,7 +1164,7 @@
     "lineNumber": 63
   },
   {
-    "__docId__": 80,
+    "__docId__": 81,
     "kind": "test",
     "name": "describe18",
     "testId": 18,
@@ -1166,7 +1177,7 @@
     "lineNumber": 66
   },
   {
-    "__docId__": 81,
+    "__docId__": 82,
     "kind": "test",
     "name": "it19",
     "testId": 19,

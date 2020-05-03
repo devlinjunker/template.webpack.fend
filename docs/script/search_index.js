@@ -1,8 +1,8 @@
 window.esdocSearchIndex = [
   [
-    "template-webpackfend/src/helpers/localstorage.helper.js~localstoragehelper",
-    "class/src/helpers/localStorage.helper.js~LocalStorageHelper.html",
-    "<span>LocalStorageHelper</span> <span class=\"search-result-import-path\">Template-WebpackFEND/src/helpers/localStorage.helper.js</span>",
+    "template-webpackfend/src/helpers/local-storage.helper.js~localstoragehelper",
+    "class/src/helpers/local-storage.helper.js~LocalStorageHelper.html",
+    "<span>LocalStorageHelper</span> <span class=\"search-result-import-path\">Template-WebpackFEND/src/helpers/local-storage.helper.js</span>",
     "class"
   ],
   [
@@ -79,56 +79,56 @@ window.esdocSearchIndex = [
   ],
   [
     "",
-    "test-file/src/helpers/localStorage.helper.spec.js.html#lineNumber3",
-    "LocalStorageService",
+    "test-file/src/helpers/local-storage.helper.spec.js.html#lineNumber3",
+    "local-storage.helper",
     "test"
   ],
   [
     "",
-    "test-file/src/helpers/localStorage.helper.spec.js.html#lineNumber54",
-    "LocalStorageService #get",
+    "test-file/src/helpers/local-storage.helper.spec.js.html#lineNumber54",
+    "local-storage.helper #get",
     "test"
   ],
   [
     "",
-    "test-file/src/helpers/localStorage.helper.spec.js.html#lineNumber56",
-    "LocalStorageService #get should retrieve value from local storage using key",
+    "test-file/src/helpers/local-storage.helper.spec.js.html#lineNumber56",
+    "local-storage.helper #get should retrieve value from local storage using key",
     "test"
   ],
   [
     "",
-    "test-file/src/helpers/localStorage.helper.spec.js.html#lineNumber68",
-    "LocalStorageService #get should return object if object stored",
+    "test-file/src/helpers/local-storage.helper.spec.js.html#lineNumber68",
+    "local-storage.helper #get should return object if object stored",
     "test"
   ],
   [
     "",
-    "test-file/src/helpers/localStorage.helper.spec.js.html#lineNumber82",
-    "LocalStorageService #get should throw error if requesting key with no value assigned",
+    "test-file/src/helpers/local-storage.helper.spec.js.html#lineNumber82",
+    "local-storage.helper #get should throw error if requesting key with no value assigned",
     "test"
   ],
   [
     "",
-    "test-file/src/helpers/localStorage.helper.spec.js.html#lineNumber5",
-    "LocalStorageService #save",
+    "test-file/src/helpers/local-storage.helper.spec.js.html#lineNumber5",
+    "local-storage.helper #save",
     "test"
   ],
   [
     "",
-    "test-file/src/helpers/localStorage.helper.spec.js.html#lineNumber37",
-    "LocalStorageService #save should be able to retrieve value using key with #get",
+    "test-file/src/helpers/local-storage.helper.spec.js.html#lineNumber37",
+    "local-storage.helper #save should be able to retrieve value using key with #get",
     "test"
   ],
   [
     "",
-    "test-file/src/helpers/localStorage.helper.spec.js.html#lineNumber22",
-    "LocalStorageService #save should stringify objects before saving them",
+    "test-file/src/helpers/local-storage.helper.spec.js.html#lineNumber22",
+    "local-storage.helper #save should stringify objects before saving them",
     "test"
   ],
   [
     "",
-    "test-file/src/helpers/localStorage.helper.spec.js.html#lineNumber7",
-    "LocalStorageService #save should use local storage to save value with key",
+    "test-file/src/helpers/local-storage.helper.spec.js.html#lineNumber7",
+    "local-storage.helper #save should use local storage to save value with key",
     "test"
   ],
   [
@@ -414,28 +414,34 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
-    "src/helpers/localstorage.helper.js",
-    "file/src/helpers/localStorage.helper.js.html",
-    "src/helpers/localStorage.helper.js",
+    "src/helpers/local-storage.helper.js",
+    "file/src/helpers/local-storage.helper.js.html",
+    "src/helpers/local-storage.helper.js",
     "file"
   ],
   [
-    "src/helpers/localstorage.helper.js~localstoragehelper.get",
-    "class/src/helpers/localStorage.helper.js~LocalStorageHelper.html#static-method-get",
-    "src/helpers/localStorage.helper.js~LocalStorageHelper.get",
+    "src/helpers/local-storage.helper.js~localstoragehelper.get",
+    "class/src/helpers/local-storage.helper.js~LocalStorageHelper.html#static-method-get",
+    "src/helpers/local-storage.helper.js~LocalStorageHelper.get",
     "method"
   ],
   [
-    "src/helpers/localstorage.helper.js~localstoragehelper.save",
-    "class/src/helpers/localStorage.helper.js~LocalStorageHelper.html#static-method-save",
-    "src/helpers/localStorage.helper.js~LocalStorageHelper.save",
+    "src/helpers/local-storage.helper.js~localstoragehelper.save",
+    "class/src/helpers/local-storage.helper.js~LocalStorageHelper.html#static-method-save",
+    "src/helpers/local-storage.helper.js~LocalStorageHelper.save",
     "method"
   ],
   [
-    "src/helpers/localstorage.helper.spec.js",
-    "test-file/src/helpers/localStorage.helper.spec.js.html",
-    "src/helpers/localStorage.helper.spec.js",
+    "src/helpers/local-storage.helper.spec.js",
+    "test-file/src/helpers/local-storage.helper.spec.js.html",
+    "src/helpers/local-storage.helper.spec.js",
     "testFile"
+  ],
+  [
+    "src/helpers/relative-href.helper.js",
+    "file/src/helpers/relative-href.helper.js.html",
+    "src/helpers/relative-href.helper.js",
+    "file"
   ],
   [
     "src/storage/app.controller.js",
