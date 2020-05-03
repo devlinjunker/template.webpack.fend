@@ -1,1 +1,1 @@
-{"selectors":["body","header","#value-input"],"simpleSelectors":{"all":["body","header","#value-input"],"ids":["#value-input"],"classes":[],"attributes":[],"types":["body","header"]}}
+{"selectors":["#value-input"],"simpleSelectors":{"all":["#value-input"],"ids":["#value-input"],"classes":[],"attributes":[],"types":[]}}

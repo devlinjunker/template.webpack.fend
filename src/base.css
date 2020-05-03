@@ -3,12 +3,3 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
-
-body {
-  font-family: arial;
-  padding: 2px;
-
-  header {
-    background-color: lightblue;
-  }
-}
