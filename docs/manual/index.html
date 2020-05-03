@@ -77,7 +77,6 @@
       
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html" data-ice="link">Helpers</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#localstorage" data-ice="link">LocalStorage</a></li>
-<li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#relative-href" data-ice="link">Relative Href</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#helper-notes-ideas" data-ice="link">Helper Notes/Ideas</a></li>
 </ul>
   </div>
@@ -275,17 +274,11 @@ in a wrapper containing the <code>icon</code> class, as this will default to the
 <div class="manual-card-wrap" data-ice="cards">
       <div class="manual-card">
         <div data-ice="card"><h1>Helpers</h1><p>This project contains a <code>helpers/</code> directory(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/src/helpers">github</a>)
-that holds Javascript classes and methods that can be used across multiple projects and entry points with
-reusable methods and commonly used logic.</p><h2>LocalStorage</h2><p>The localstorage helper (<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/src/helpers/local-storage.helper.js">github</a>)
+that holds Javascript classes that can be used across multiple projects with utility methods for useful
+functionality.</p><h2>LocalStorage</h2><p>The localstorage helper (<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/src/helpers/localStorage.helper.js">github</a>)
 contains methods for saving/retrieving values with the browser localstorage API. Values saved with this will be
 stored on the clients browser and can be retreived when they return to the web application (until they clear
-their browser localstorage/data).</p><h2>Relative Href</h2><p>The Relative Href helper(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/src/helpers/relative-href.helper.js">github</a>)
-contains a small snippet of code that must be included in each javascript entry point. This code sets the
-<code>&lt;base&gt;</code> tag inside of the <code>&lt;head&gt;</code> element in the HTML page to tell relative links on the page the <code>href</code> that
-they should be relative to.</p><p>i.e. if <code>&lt;base href=&apos;http://test.com/&apos;&gt;</code> exists at the top of the page, all relative
-links (e.g. <code>&lt;a href=&quot;example&quot;&gt;...&lt;/a&gt;</code>) will direct to <code>http://test.com/example</code> (where example is any relative
-<code>href</code> value). This is compared to the regular relative link behavior where the link is relative to the current
-page (value in the browser url bar).</p><h2>Helper Notes/Ideas</h2><ul>
+their browser localstorage/data).</p><h2>Helper Notes/Ideas</h2><ul>
 <li>[ ] Configuration file</li>
 <li>[ ] Performance Logger</li>
 <li>[ ] API Helpers (Internal vs External?)</li>
