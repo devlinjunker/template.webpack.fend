@@ -1,7 +1,7 @@
 /**
  * @flow
  */
-import template from './partial.html';
+import template from './partial.hbs';
 
 /**
  * Add Input Component Type

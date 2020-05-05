@@ -7,3 +7,7 @@
 @import "tailwindcss/utilities";
 
 @import "./.utilities.scss";
+
+header nav a.active {
+  @apply text-gray-500;
+}

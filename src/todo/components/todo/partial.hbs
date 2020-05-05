@@ -1,7 +1,7 @@
 <div class="todo-container">
-  <input type="checkbox" <%= complete ? 'checked' : '' %> />
+  <input type="checkbox" {{#if complete }} checked {{/if}} />
   <span>
-    <%= description %>
+    {{ description }}
   </span>
   &nbsp;
   <span class="remove-icon">x</span>

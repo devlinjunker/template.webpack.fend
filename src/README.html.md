@@ -13,10 +13,18 @@ in the `plugins` section, webpack will output a new HTML file using the `templat
 The `<meta>` webpage attributes are passed into the instance of the HtmlWebpackPlugin for each page defined in the webpack config file. These attributes could be dynamically set for each page if desired, or can be the same for each html page.
 
 ### Templating
-Simple HTML Templating can be done with the [underscore-lodash-loader](https://github.com/emaphp/underscore-template-loader).
-This loader allows partial HTML files to be imported using `@require` or `@import` in the HTML files, and
-also enables template variables that can be replaced when the HTML is generated (e.g. `<%= name %>`).
 
+#### Static
+Simple Static HTML Templating can be done with the [underscore-lodash-loader](https://github.com/emaphp/underscore-template-loader).
+This loader allow HTML files to be imported during the compilation process using `@require` or `@import`
+in the HTML files, and also enables variables that can be replaced when the HTML is generated (e.g. `<%=
+name %>`) will be replaced if we use `@import(<file_name>, { name: "Devlin Junker" })` with `Devlin Junker`.
+
+#### Basic Javascript Components (Handlebars)
+More complicated HTML components (especially those that require javascript or looping/conditional statements
+should be written with handlebars in the `components/` directory. Each component should have a `.hbs` file
+and an `index.js` file containing a function, that imports the `.hbs` file and compiles it with the
+parameters and handlers passed in.
 
 ## HTML Linting
 During the build process, webpack is configured to lint the final HTML files after each successful build with

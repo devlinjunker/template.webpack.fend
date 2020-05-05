@@ -10,15 +10,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 
-module.exports = (env) => {
+const meta = require('./src/meta.json');
 
-  const meta = {
-    viewport: 'width=device-width, initial-scale=1',
-    description: 'Template Webpack Application',
-    subject: 'Webpack Software Website Template',
-    robots: 'index,follow',
-    googlebot: 'index,follow'
-  };
+module.exports = (env) => {
 
   const config =  {
     mode: 'development',
@@ -33,7 +27,8 @@ module.exports = (env) => {
       // Need to do this because path must be absolute
       path: path.resolve(__dirname, 'public')
     },
-    // Turn off for production (see https://webpack.js.org/guides/production)
+
+    // TODO: Turn off for production (see https://webpack.js.org/guides/production)
     devtool: 'inline-source-map',
 
     resolve: {
@@ -70,6 +65,12 @@ module.exports = (env) => {
         chunks: ['todo']
       }),
 
+      // Force the html files to be generated to disk so they can be linted with htmlhint
+      new WriteFilePlugin({
+        test: /\.(html|hbs)$/,
+        useHashIndex: true
+      }),
+
       new MiniCssExtractPlugin(),
 
       // Run Flow on Webpack Compile
@@ -85,12 +86,6 @@ module.exports = (env) => {
         exclude: /node_modules/,
         failOnError: false,
         cwd: process.cwd()
-      }),
-
-      // Force the html files to be generated to disk so they can be linted with htmlhint
-      new WriteFilePlugin({
-        test: /\.html$/,
-        useHashIndex: true
       }),
 
       // Custom Script on end of Build process (this works in watch mode too)
@@ -157,11 +152,16 @@ module.exports = (env) => {
           use: ['svg-inline-loader']
         },
 
-        // Process HTML Files as Underscore templates and enable importing
         {
           test: /\.html$/,
-          loader: 'underscore-template-loader'
+          use: ['underscore-template-loader']
         },
+
+        // Process HBS files properly when imported to javascript files
+        {
+          test: /\.hbs$/,
+          loader: 'handlebars-loader'
+        }
       ]
     }
   };
