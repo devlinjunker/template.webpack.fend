@@ -118,7 +118,9 @@ How to use this template to create a basic Frontend Application:
  - [..] (^) HTML template example
    - webpack/lodash style? https://github.com/emaphp/underscore-template-loader
    - handlebars?
-   - [ ] Components (javascript methods that return compiled html, has params for template variables)
+      - seems like this isn't the best for javascript components, although it will work for this basic repo
+      - problems with handlebar-webpack-plugin and webpack-dev-server
+   - [..] Components (javascript methods that return compiled html, has params for template variables)
  - [x] (^) Base CSS Style for all apps
  - [x] (^) CSS Framework
    - [x] Tailwind - integrates with javascript
