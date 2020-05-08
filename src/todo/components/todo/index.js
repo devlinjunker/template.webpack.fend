@@ -1,9 +1,8 @@
 /**
  * @flow
  */
-// $FlowFixMe  (Flow doesn't like importing html files)
-import template from './partial.hbs';
-import './partial.css';
+import template from './todo.partial.hbs';
+import './todo.css';
 import Todo from '../../models/todo.model';
 
 /**

@@ -35,11 +35,13 @@ module.exports = (env) => {
       extensions: ['.js'],
       modules: ['node_modules'],
       alias: {
+        img: path.resolve(__dirname, 'img')
         // TODO: Do we want these?
         // App: path.resolve(__dirname,'src/app'),
         // Images: path.resolve(__dirname, "src/img")
       }
     },
+
     plugins: [
       new HtmlWebpackPlugin({
         meta,
@@ -153,14 +155,21 @@ module.exports = (env) => {
         },
 
         {
-          test: /\.html$/,
+          test: /\.(html)$/,
           use: ['underscore-template-loader']
         },
 
         // Process HBS files properly when imported to javascript files
         {
-          test: /\.hbs$/,
-          loader: 'handlebars-loader'
+          test: /\.(hbs)$/,
+          // Loaders are weird and process in bottom-to-top order (last-to-first)
+          // we want to inline svg icons with @include() so we should use underscore first here
+          use: [
+            { loader: 'handlebars-loader' },
+            // Custom loader to inline svgs during the build after underscore-template-loader
+            { loader: path.resolve(__dirname, '.webpack', 'svg-icon-loader') },
+            { loader: 'underscore-template-loader' },
+          ]
         }
       ]
     }

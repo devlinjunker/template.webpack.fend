@@ -1,0 +1,10 @@
+<div class="todo-container px-4 py-2 hover-show">
+  <input type="checkbox" class="p-1" {{#if complete }} checked {{/if}} />
+  <span>
+    {{ description }}
+  </span>
+  &nbsp;
+  <span class="icon icon-sm text-red-700 remove-icon hover-target">
+    @include("~img/zondicons/trash.svg")
+  </span>
+</div>

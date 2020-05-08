@@ -1,7 +1,7 @@
 /**
  * @flow
  */
-import template from './partial.hbs';
+import template from './add-input.partial.hbs';
 
 /**
  * Add Input Component Type
@@ -19,6 +19,7 @@ export type AddInputComponent = {
  */
 function addInputComponentFactory(addHandler: Function): AddInputComponent {
   const temp = document.createElement('div');
+
   temp.innerHTML = template();
 
   const input = (temp.querySelector('.add-input'): any);
