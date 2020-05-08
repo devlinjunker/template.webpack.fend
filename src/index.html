@@ -4,10 +4,12 @@
   <title><%= htmlWebpackPlugin.options.title %></title>
 
 </head>
-<body>
-  @require("static/header/header.html", { "page": "home" })
+<body class="flex flex-col min-h-screen">
+  @require("./static/header/header.html", { "page": "home" })
 
-  <div class="px-3 py-5">
+  <div class="flex-grow px-3 py-5">
     <p>Welcome to the Demo FEND Application using Webpack to compile the HTML/JS/CSS files.</p>
   </div>
+
+  @require("./static/footer/footer.html")
 </body>
