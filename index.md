@@ -25,5 +25,6 @@ to update the wiki.
 - [Helpers](manual/README.helpers.html) - Javascript Helper Classes and Code that can be used
 - [Github Actions](manual/README.scripts.html) - Notes about Actions run on to ensure quality
 - [Test](manual/README.test.html) - How testing is configured and how to run tests
+- [Custom Webpack Loaders](manual/README.loaders.html) - Explaining how we configure webpack loaders to generate the application
 
 .

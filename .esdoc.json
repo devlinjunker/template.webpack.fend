@@ -23,7 +23,8 @@
           "./img/README.img.md",
           "./src/helpers/README.helpers.md",
           "./scripts/README.scripts.md",
-          "./test/README.test.md"
+          "./test/README.test.md",
+          "./.loaders/README.loaders.md"
         ]
       }
     }
