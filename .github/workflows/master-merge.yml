@@ -45,7 +45,8 @@ jobs:
       run: |
         git config --local user.email "devlinjunker@gmail.com"
         git config --local user.name "GitHub Action"
-        git commit -m "Docsite and Demo Build on Push to Master" -A
+        git add docs
+        git commit -m "Docsite and Demo Build on Push to Master"
 
     - name: Push changes to Docs
       uses: ad-m/github-push-action@master
