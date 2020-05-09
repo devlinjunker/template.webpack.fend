@@ -8,7 +8,7 @@ import LocalStorageHelper from '../helpers/local-storage.helper.js';
 
 /**
  * Todo App Controller
- * * @type {TodoAppController}
+ * @type {TodoAppController}
  */
 export default class TodoAppController {
   addInput: AddInputComponent;
@@ -23,8 +23,8 @@ export default class TodoAppController {
     this.list = [];
     try {
       this.loadList();
-    } catch {
-      console.error('Error Loading List');
+    } catch (exc) {
+      console.error(exc, 'Error Loading List');
     }
 
     this.addInput = addInputComponent(this.handleAddTodo.bind(this));

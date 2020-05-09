@@ -19,3 +19,6 @@ The build details and repository information are generated using custom macros t
 webpack.config.js([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/webpack.config.js))
 configurations for the underscore-template-loader. These macros are given names in the config file and then
 accessed using the `@` symbol (e.g. `@year()`).
+
+## Static Partial Notes/Ideas
+ - [ ] Move macros out of webpack.config.js into their own file (in src/static/ ?)
