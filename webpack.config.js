@@ -14,6 +14,61 @@ const WebpackDevServer = require('webpack-dev-server');
 const pack = require('./package.json');
 const meta = require('./src/meta.json');
 
+/**
+ * Macros for underscore-template-loader (see src/static/README.static.md)
+ * @type {Object}
+ */
+const macros = {
+  year: () => {
+    const year = new Date().getFullYear();
+
+    return `'${ year }'`;
+  },
+  datetime: () => {
+    const datetime = new Date().toString();
+
+    return `'${ datetime }'`;
+  },
+  commit: () => {
+    const branch = 'footer';
+    let commit = fs.readFileSync(
+      path.join(__dirname, `.git/refs/heads/${branch}`),
+      { encoding: 'UTF-8' }
+    );
+    commit = commit.replace(/\n/g, '');
+
+    return `'${ commit }'`;
+  },
+
+  branch: () => {
+    const HEAD = fs.readFileSync(
+      path.join(__dirname, '.git/HEAD'),
+      { encoding: 'UTF-8' }
+    );
+    const split = HEAD.split('/');
+    const branch = split[split.length - 1].replace(/\n/g, '');
+
+    return `'${ branch }'`;
+  },
+
+  githubImg: () => {
+    let repo;
+    if (pack.repository && pack.repository.url) {
+      repo = pack.repository.url;
+    }
+    if (repo === undefined) {
+      return '""';
+    }
+    // eslint-disable-next-line max-len
+    return `'<a href="${ repo }"><img width="20px" src="' + require('img/github.png') + '"/></a>'`;
+  }
+};
+
+/**
+ * Builds the webpack config and enables the dev server if `env.dev_server` is set (TODO: change to node env?)
+ * @param  {[type]} env env property contianing build info (from karma.conf.js)
+ * @return {WebpackConfig}     Webpack Config object
+ */
 module.exports = (env) => {
 
   const config =  {
@@ -162,51 +217,7 @@ module.exports = (env) => {
             {
               loader: 'underscore-template-loader',
               options: {
-                macros: {
-                  year: () => {
-                    const year = new Date().getFullYear();
-
-                    return `'${ year }'`;
-                  },
-                  datetime: () => {
-                    const datetime = new Date().toString();
-
-                    return `'${ datetime }'`;
-                  },
-                  commit: () => {
-                    const branch = 'footer';
-                    let commit = fs.readFileSync(
-                      path.join(__dirname, `.git/refs/heads/${branch}`),
-                      { encoding: 'UTF-8' }
-                    );
-                    commit = commit.replace(/\n/g, '');
-
-                    return `'${ commit }'`;
-                  },
-
-                  branch: () => {
-                    const HEAD = fs.readFileSync(
-                      path.join(__dirname, '.git/HEAD'),
-                      { encoding: 'UTF-8' }
-                    );
-                    const split = HEAD.split('/');
-                    const branch = split[split.length - 1].replace(/\n/g, '');
-
-                    return `'${ branch }'`;
-                  },
-
-                  githubImg: () => {
-                    let repo;
-                    if (pack.repository && pack.repository.url) {
-                      repo = pack.repository.url;
-                    }
-                    if (repo === undefined) {
-                      return '""';
-                    }
-                    // eslint-disable-next-line max-len
-                    return `'<a href="${ repo }"><img width="20px" src="' + require('img/github.png') + '"/></a>'`;
-                  }
-                },
+                macros
               }
             }
           ]
@@ -221,7 +232,12 @@ module.exports = (env) => {
             { loader: 'handlebars-loader' },
             // Custom loader to inline svgs during the build after underscore-template-loader
             { loader: path.resolve(__dirname, '.webpack', 'svg-icon-loader') },
-            { loader: 'underscore-template-loader' },
+            {
+              loader: 'underscore-template-loader',
+              options: {
+                macros
+              }
+            },
           ]
         }
       ]
