@@ -8,6 +8,7 @@ import LocalStorageHelper from '../helpers/local-storage.helper.js';
 
 /**
  * Todo App Controller
+ * * @type {TodoAppController}
  */
 export default class TodoAppController {
   addInput: AddInputComponent;
