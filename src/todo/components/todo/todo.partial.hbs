@@ -1,10 +1,10 @@
-<div class="todo-container px-4 py-2 hover-show">
-  <input type="checkbox" class="p-1" {{#if complete }} checked {{/if}} />
-  <span>
+<div class="todo-container px-4 py-2 hover-show flex hover:bg-gray-200">
+  <input type="checkbox" class="m-1 mr-3" {{#if complete }} checked {{/if}} />
+  <span class="flex-grow">
     {{ description }}
   </span>
-  &nbsp;
-  <span class="icon icon-sm text-red-500 remove-icon hover-target">
+
+  <span class="icon icon-sm text-red-500 remove-icon hover-target justify-end">
     @svg("img/zondicons/trash.svg")
   </span>
 </div>
