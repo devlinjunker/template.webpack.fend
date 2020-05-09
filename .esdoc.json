@@ -24,7 +24,8 @@
           "./src/helpers/README.helpers.md",
           "./scripts/README.scripts.md",
           "./test/README.test.md",
-          "./.loaders/README.loaders.md"
+          "./.webpack/README.loaders.md",
+          "./src/static/README.static.md"
         ]
       }
     }

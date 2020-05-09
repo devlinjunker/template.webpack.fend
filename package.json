@@ -2,6 +2,10 @@
   "version": "0.1.0",
   "name": "Template-WebpackFEND",
   "description": "Template using Webpack to create a html/javascript/css pages with multiple files",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devlinjunker/template.webpack.fend"
+  },
   "keywords": [
     "template",
     "webpack",
@@ -97,7 +101,7 @@
     "stylelint": "^13.3.3",
     "stylelint-config-standard": "^20.0.0",
     "svg-inline-loader": "^0.8.2",
-    "underscore-template-loader": "^1.0.0",
+    "underscore-template-loader": "^1.1.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",

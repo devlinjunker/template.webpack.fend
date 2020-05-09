@@ -4,6 +4,7 @@
 
 /**
  * Todo Model that stores the fields related to a Todo
+ * @type {Todo}
  */
 export default class Todo {
   description: string;

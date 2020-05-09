@@ -4,10 +4,10 @@
   <title><%= htmlWebpackPlugin.options.title %></title>
 
 </head>
-<body>
-  @require("../static/header/header.html", { "page": "storage" })
+<body class="flex flex-col min-h-screen">
+  @require("../static/header.html", { "page": "storage" })
 
-  <div class="px-2 py-1">
+  <div class="flex-grow px-2 py-1">
     <div class="input">
       <label for="key-input" class="font-bold md:text-right text-gray-700"> Key:</label>
 
@@ -36,4 +36,6 @@
       </button>
     </div>
   </div>
+
+  @require("../static/footer.html")
 </body>

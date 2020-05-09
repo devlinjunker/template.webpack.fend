@@ -1,0 +1,20 @@
+<footer class="font-thin text-sm px-2 flex justify-between bg-opacity-50 bg-gray-300">
+  <div class="pt-1 pb-1 justify-start">
+    @githubImg()
+  </div>
+
+  <!--nav>
+    TODO: Should we add nav in footer?
+  </nav-->
+
+  <div class="copyright-build justify-end flex flex-col">
+    <span class="justify-center pb-1" onclick="document.querySelector('.copyright-build .hidden').classList.remove('hidden'); this.classList.add('hidden');">
+      &copy <span class="text-xs">@year()</span>
+    </span>
+
+    <span class="text-xxs hidden" onclick="document.querySelector('.copyright-build .hidden').classList.remove('hidden'); this.classList.add('hidden');">
+      <p>@branch() - @commit()</p>
+      <p> @ @datetime() </p>
+    </span> 
+  </div>
+</footer>

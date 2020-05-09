@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../">
+  <title data-ice="title">Manual | Template-WebpackFEND</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+  <script src="script/matomo.js"></script>
+<meta name="description" content="Template using Webpack to create a html/javascript/css pages with multiple files"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="Template-WebpackFEND"><meta property="twitter:description" content="Template using Webpack to create a html/javascript/css pages with multiple files"></head>
+<body class="layout-container manual-root" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <a href="demo/index.html">Demo</a>
+<a style="position:relative; top:3px;" href="https://github.com/devlinjunker/template.webpack.fend"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div class="manual-toc-root">
+  
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.setup.html"><a href="manual/README.setup.html" data-ice="link">Setup</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.setup.html"><a href="manual/README.setup.html#webpack" data-ice="link">Webpack</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.setup.html"><a href="manual/README.setup.html#dev-server" data-ice="link">Dev Server</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.setup.html"><a href="manual/README.setup.html#documentation" data-ice="link">Documentation</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.entry.html"><a href="manual/README.entry.html" data-ice="link">Javascript Entry Points</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.entry.html"><a href="manual/README.entry.html#importing-files" data-ice="link">Importing Files</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.entry.html"><a href="manual/README.entry.html#entry-notes-ideas" data-ice="link">Entry Notes/Ideas</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.html.html"><a href="manual/README.html.html" data-ice="link">HTML</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.html.html"><a href="manual/README.html.html#webpack" data-ice="link">Webpack</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.html.html"><a href="manual/README.html.html#page-header-meta-attributes" data-ice="link">Page Header Meta Attributes</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.html.html"><a href="manual/README.html.html#templating" data-ice="link">Templating</a></li>
+<li data-ice="manualNav" class="indent-h4" data-link="manual/README.html.html"><a href="manual/README.html.html#static" data-ice="link">Static</a></li>
+<li data-ice="manualNav" class="indent-h4" data-link="manual/README.html.html"><a href="manual/README.html.html#basic-javascript-components--handlebars-" data-ice="link">Basic Javascript Components (Handlebars)</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.html.html"><a href="manual/README.html.html#html-linting" data-ice="link">HTML Linting</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.html.html"><a href="manual/README.html.html#html-notes-ideas" data-ice="link">HTML Notes/Ideas</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.css.html"><a href="manual/README.css.html" data-ice="link">CSS</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#tailwind-css-framework--utility-first-" data-ice="link">Tailwind CSS Framework (Utility First)</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#mini-css-extract-plugin" data-ice="link">Mini CSS Extract Plugin</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#postcss" data-ice="link">PostCSS</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#precss-and-postcss-preset-env" data-ice="link">PreCSS and PostCSS-Preset-Env</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#stylelint" data-ice="link">Stylelint</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#autoprefixer" data-ice="link">Autoprefixer</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.css.html"><a href="manual/README.css.html#list-selectors" data-ice="link">List Selectors</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.css.html"><a href="manual/README.css.html#css-notes-ideas" data-ice="link">CSS Notes/Ideas</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.img.html"><a href="manual/README.img.html" data-ice="link">Images</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.img.html"><a href="manual/README.img.html#icons" data-ice="link">Icons</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html" data-ice="link">Helpers</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#localstorage" data-ice="link">LocalStorage</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#relative-href" data-ice="link">Relative Href</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.helpers.html"><a href="manual/README.helpers.html#helper-notes-ideas" data-ice="link">Helper Notes/Ideas</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html" data-ice="link">Actions and Githooks</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#on-merge-to-master" data-ice="link">On Merge to Master</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#githooks" data-ice="link">Githooks</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#github-specific" data-ice="link">Github Specific</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.test.html"><a href="manual/README.test.html" data-ice="link">Testing</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#bootstrap-file" data-ice="link">Bootstrap File</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.test.html"><a href="manual/README.test.html#test-notes-ideas" data-ice="link">Test Notes/Ideas</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.loaders.html"><a href="manual/README.loaders.html" data-ice="link">Webpack Loaders</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.loaders.html"><a href="manual/README.loaders.html#standard-loaders" data-ice="link">Standard Loaders</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.loaders.html"><a href="manual/README.loaders.html#custom-loaders" data-ice="link">Custom Loaders</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.loaders.html"><a href="manual/README.loaders.html#notes-ideas" data-ice="link">Notes/Ideas</a></li>
+</ul>
+  </div>
+<div data-ice="manual">
+    <ul class="manual-toc">
+      
+    <li data-ice="manualNav" class="indent-h1" data-link="manual/README.static.html"><a href="manual/README.static.html" data-ice="link">Static HTML Components</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.static.html"><a href="manual/README.static.html#header" data-ice="link">Header</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.static.html"><a href="manual/README.static.html#footer" data-ice="link">Footer</a></li>
+<li data-ice="manualNav" class="indent-h2" data-link="manual/README.static.html"><a href="manual/README.static.html#custom-macros" data-ice="link">Custom Macros</a></li>
+</ul>
+  </div>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div class="github-markdown" data-ice="content"><h1 id="static-html-components">Static HTML Components</h1><p>Some parts of the interface can be generated during the build process to reduce processing on the client side
+and speed up page generation if the assets are not dynamic in relation to the user. The header and footer are
+good examples of this type of component. These components are generated using
+<a href="https://github.com/emaphp/underscore-template-loader">underscore-template-loader</a> and can be included in
+the entry <code>.html</code> pages or <code>.hbs</code> files with <code>@require(&lt;path_to_static_file&gt;, args)</code> with optional arguments</p>
+<h2 id="header">Header</h2><p>Contains links to the different part of the application, this is a good example of being dynamic (but not
+relative to the user) but still being able to be compiled during the build process.</p>
+<h2 id="footer">Footer</h2><p>Contains reference to the project details and build details for developers. This could also include contact
+information, donation links or even another navigation component or site tree.</p>
+<h2 id="custom-macros">Custom Macros</h2><p>The build details and repository information are generated using custom macros that are included in the
+webpack.config.js(<a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/webpack.config.js">github</a>)
+configurations for the underscore-template-loader. These macros are given names in the config file and then
+accessed using the <code>@</code> symbol (e.g. <code>@year()</code>).</p>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+
+<script src="script/github-link.js"></script>
+</body>
+</html>

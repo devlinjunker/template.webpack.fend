@@ -4,10 +4,14 @@
   <title><%= htmlWebpackPlugin.options.title %></title>
 
 </head>
-<body>
-  @require("../static/header/header.html", { "page": "todo" })
+<body class="flex flex-col min-h-screen">
+  @require("../static/header.html", { "page": "todo" })
 
-  <div id="add-container"></div>
+  <div class="flex-grow">
+    <div id="add-container"></div>
 
-  <div id="list-container"></div>
+    <div id="list-container"></div>
+  </div>
+
+  @require("../static/footer.html")
 </body>

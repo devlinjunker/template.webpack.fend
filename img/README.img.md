@@ -1,6 +1,9 @@
 # Images
 
-All images for the web application should be stored in the `img/` directory.
+All images for the web application should be stored in the `img/` directory. An alias is configured in the 
+webpack.config.js file ([github]())
+to enable requiring images with `require("img/<path_in_img_dir")` or referencing in .html or .hbs files <img>
+`src` property.
 
 ## Icons
 This template includes [Zondicons](http://www.zondicons.com/icons.html), a free SVG icon library with 270 icons.

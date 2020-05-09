@@ -24,7 +24,10 @@ to update the wiki.
 - [Images](manual/README.img.html) - Including images and SVG icons from free library
 - [Helpers](manual/README.helpers.html) - Javascript Helper Classes and Code that can be used
 - [Github Actions](manual/README.scripts.html) - Notes about Actions run on to ensure quality
-- [Test](manual/README.test.html) - How testing is configured and how to run tests
+- [Testing](manual/README.test.html) - How testing is configured and how to run tests
 - [Custom Webpack Loaders](manual/README.loaders.html) - Explaining how we configure webpack loaders to generate the application
+- [Static HTML Components](manual/README.loaders.html) - Components that are generated during the build process
+
+
 
 .
