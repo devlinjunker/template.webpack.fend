@@ -1,15 +1,15 @@
-<footer class="font-thin text-sm">
+<footer class="font-thin text-sm px-2">
   <nav>
-  <a>docs</a>
   <a>github</a>
-  <a>api?</a>
   <a>contact info?</a>
-  <a class="copyright">
-    <span onclick="document.querySelector('.copyright .hidden').className=''; this.className='hidden';">
+  <a class="copyright-build float-right">
+    <span onclick="document.querySelector('.copyright-build .hidden').className=''; this.className='hidden';">
       &copy;
-      <span class="copyright-year">2020</span>
+      <span class="copyright-year">
+        @year()
+      </span>
     </span>
-    <span class="hidden" onclick="document.querySelector('.copyright .hidden').className='';this.className='hidden'">
+    <span class="hidden" onclick="document.querySelector('.copyright-build .hidden').className='';this.className='hidden'">
       build/version info (hidden)
         branch
         commit?

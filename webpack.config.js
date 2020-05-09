@@ -156,7 +156,18 @@ module.exports = (env) => {
 
         {
           test: /\.(html)$/,
-          use: ['underscore-template-loader']
+          use: [
+            {
+              loader: 'underscore-template-loader',
+              options: {
+                macros: {
+                  year: () => {
+                    return new Date().getFullYear();
+                  }
+                }
+              }
+            }
+          ]
         },
 
         // Process HBS files properly when imported to javascript files
@@ -172,7 +183,7 @@ module.exports = (env) => {
           ]
         }
       ]
-    }
+    },
   };
 
   if (env && env.dev_server) {
