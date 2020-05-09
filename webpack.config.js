@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 const path = require('path');
+const fs = require('fs');
 const { exec } = require('child_process');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const FlowWebpackPlugin = require('flow-webpack-plugin');
@@ -10,6 +11,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 
+const pack = require('./package.json');
 const meta = require('./src/meta.json');
 
 module.exports = (env) => {
@@ -162,9 +164,49 @@ module.exports = (env) => {
               options: {
                 macros: {
                   year: () => {
-                    return new Date().getFullYear();
+                    const year = new Date().getFullYear();
+
+                    return `'${ year }'`;
+                  },
+                  datetime: () => {
+                    const datetime = new Date().toString();
+
+                    return `'${ datetime }'`;
+                  },
+                  commit: () => {
+                    const branch = 'footer';
+                    let commit = fs.readFileSync(
+                      path.join(__dirname, `.git/refs/heads/${branch}`),
+                      { encoding: 'UTF-8' }
+                    );
+                    commit = commit.replace(/\n/g, '');
+
+                    return `'${ commit }'`;
+                  },
+
+                  branch: () => {
+                    const HEAD = fs.readFileSync(
+                      path.join(__dirname, '.git/HEAD'),
+                      { encoding: 'UTF-8' }
+                    );
+                    const split = HEAD.split('/');
+                    const branch = split[split.length - 1].replace(/\n/g, '');
+
+                    return `'${ branch }'`;
+                  },
+
+                  githubImg: () => {
+                    let repo;
+                    if (pack.repository && pack.repository.url) {
+                      repo = pack.repository.url;
+                    }
+                    if (repo === undefined) {
+                      return '""';
+                    }
+                    // eslint-disable-next-line max-len
+                    return `'<a href="${ repo }"><img width="20px" src="' + require('img/github.png') + '"/></a>'`;
                   }
-                }
+                },
               }
             }
           ]
