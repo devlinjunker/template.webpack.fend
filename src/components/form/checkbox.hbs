@@ -1,0 +1,16 @@
+{{!
+  Checkbox Partial for rendering a prettier version of the standard Checkbox
+  If standard checkbox is desired, just go with `<input type="checkbox" {#if <complete_var> } checked {/if} />`
+
+  @param {Boolean} complete - sets checked status of checkbox
+  @param {String} label - clickable label text (toggles checkbox)
+  @param {String} color - color of the checkmark in the checkbox
+  @param {String} background - background color of the checkbox
+}}
+<label class="checkbox-label flex">
+      <div class="bg-{{default-val background 'white'}} shadow w-6 h-6 p-1 flex justify-center items-center mr-2">
+        <input type="checkbox" class="hidden" {{#if complete }} checked {{/if}}>
+        <i class="hidden icon text-{{default-val color 'black'}} pointer-events-none">@svg("img/zondicons/checkmark.svg")</i>
+      </div>
+      <span class="select-none"> {{ label }}</span>
+</label>

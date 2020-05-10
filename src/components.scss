@@ -21,3 +21,7 @@
 .btn-outline-green:hover {
   @apply bg-green-700 text-gray-100;
 }
+
+.checkbox-label input:checked + i {
+  display: block !important;
+}
