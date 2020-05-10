@@ -34,6 +34,10 @@ extends:
 globals:
   expect: readonly
   sandbox: readonly
+  require: readonly
+  __dirname: readonly
+  process: readonly
+  module: readonly
 
 # Rules for only some file locations/paths (globs)
 overrides:

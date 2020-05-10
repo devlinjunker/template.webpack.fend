@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const path = require('path');
 const fs = require('fs');
 const { exec } = require('child_process');
@@ -219,7 +218,9 @@ module.exports = (env) => {
               options: {
                 macros
               }
-            }
+            },
+            // Custom loader to inline svgs during the build after underscore-template-loader
+            { loader: path.resolve(__dirname, '.webpack', 'svg-pre-loader') },
           ]
         },
 
@@ -231,13 +232,13 @@ module.exports = (env) => {
           use: [
             { loader: 'handlebars-loader' },
             // Custom loader to inline svgs during the build after underscore-template-loader
-            { loader: path.resolve(__dirname, '.webpack', 'svg-icon-loader') },
-            {
-              loader: 'underscore-template-loader',
-              options: {
-                macros
-              }
-            },
+            { loader: path.resolve(__dirname, '.webpack', 'svg-pre-loader') },
+            // {
+            //   loader: 'underscore-template-loader',
+            //   options: {
+            //     macros
+            //   }
+            // },
           ]
         }
       ]
