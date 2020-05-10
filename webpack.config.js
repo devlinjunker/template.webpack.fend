@@ -225,15 +225,15 @@ module.exports = (env) => {
           // Loaders are weird and process in bottom-to-top order (last-to-first)
           // we want to inline svg icons with @include() so we should use underscore first here
           use: [
-            { loader: 'handlebars-loader' },
-            // Custom loader to inline svgs during the build after underscore-template-loader
+            { loader: 'handlebars-loader',
+              options: {
+                helperDirs: [path.resolve(__dirname, 'src', 'helpers', 'handlebars')],
+                knownHelpers: ['default-val'],
+                partialDirs: [path.resolve(__dirname, 'src', 'components')]
+              } },
+            // Custom loader to inline svgs during the build
+            /* eslint-disable-line array-element-newline */
             { loader: path.resolve(__dirname, '.webpack', 'svg-pre-loader') },
-            // {
-            //   loader: 'underscore-template-loader',
-            //   options: {
-            //     macros
-            //   }
-            // },
           ]
         }
       ]
