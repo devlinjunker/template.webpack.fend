@@ -19,8 +19,6 @@ module.exports = function(source) {
   const after = source.replace(/@svg\("(.*\.svg)"\)/g, (req, reqPath) => {
     // Read the svg file contents, assumes that the paths are relative to root
     const iconPath = path.resolve(cwd, reqPath);
-
-    console.log(iconPath);
     if (fs.existsSync(iconPath)) {
       let icon = fs.readFileSync(iconPath, 'utf-8');
       icon = icon.replace('\n', '');
