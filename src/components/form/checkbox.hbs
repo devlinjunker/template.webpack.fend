@@ -1,16 +1,18 @@
 {{!
-  Checkbox Partial for rendering a prettier version of the standard Checkbox
+  Checkbox Partial for rendering a styled version of a checkbox
   If standard checkbox is desired, just go with `<input type="checkbox" {#if <complete_var> } checked {/if} />`
 
-  @param {Boolean} complete - sets checked status of checkbox
-  @param {String} label - clickable label text (toggles checkbox)
-  @param {String} color - color of the checkmark in the checkbox
-  @param {String} background - background color of the checkbox
+  @param {Boolean} checked - (def: false) sets checked status of checkbox
+  @param {String} label - (def: '') clickable label text (toggles checkbox)
+  @param {String} color - (def: 'black') color of the checkmark in the checkbox
+  @param {String} bg - (def: 'white') background color of the checkbox
+  @param {String} bg-checked - (def: bg || 'white') background color of the checkbox after checked
 }}
 <label class="checkbox-label flex">
-      <div class="bg-{{default-val background 'white'}} shadow w-6 h-6 p-1 flex justify-center items-center mr-2">
-        <input type="checkbox" class="hidden" {{#if complete }} checked {{/if}}>
-        <i class="hidden icon text-{{default-val color 'black'}} pointer-events-none">@svg("img/zondicons/checkmark.svg")</i>
-      </div>
-      <span class="select-none"> {{ label }}</span>
+  <div class="bg-{{default-val bg 'white'}} relative shadow w-6 h-6 p-1 flex justify-center items-center mr-2">
+    <input type="checkbox" class="hidden" {{#if checked }} checked {{/if}}>
+    <div class="hidden complete-bg absolute z-0 w-full h-full bg-{{default-val bg-checked background}}"></div>
+    <i class="hidden icon z-10 text-{{default-val color 'black'}} pointer-events-none">@svg("img/zondicons/checkmark.svg")</i>
+  </div>
+  <span class="select-none"> {{ label }}</span>
 </label>
