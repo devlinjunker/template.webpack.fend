@@ -233,7 +233,9 @@ module.exports = (env) => {
             { loader: 'handlebars-loader',
               options: {
                 helperDirs: [path.resolve(__dirname, 'src', 'helpers', 'handlebars')],
-                knownHelpers: ['default-val'],
+                precompileOptions: {
+                  knownHelpersOnly: false,
+                }, 
                 partialDirs: [path.resolve(__dirname, 'src', 'components')]
               } },
             // Custom loader to inline svgs during the build
