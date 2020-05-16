@@ -14,13 +14,10 @@ This project uses basic loaders for most file types:
 ## Custom Loaders
 This project also includes one custom loader([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/.loader/))
 to help generate handlebars template files. This is part of processing `.hbs` files.
- - First we run the `.hbs` file through the underscore-template-loader to transform `@import` statements to
- `require()` statements, then
- - The custom `svg-icon-loader` takes the output from this loader (a function that returns a html string) and
- inlines the contents from svg files, replacing any `require(.svg)` statements.
- - The function is then run in the loader to return the handlebars template that is finally passed to the
- handlebars-loader to create the `template()` function that is imported when you require a `.hbs` file in the
- javascript code.
+ - First we run the `.hbs` file through the custom `svg-icon-loader` which replaces `@svg` imports with the
+ contents of the svg file referenced (inlining the contents from svg files)
+ - The function is then run in the handlebars-loader to return the handlebars template that is used to create
+ the `template()` function that is imported when you require a `.hbs` file in the javascript code.
 
 
 ## Notes/Ideas
