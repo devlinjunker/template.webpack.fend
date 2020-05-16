@@ -27,7 +27,8 @@ module.exports = (env) => {
     entry: {
       app: './src/entry.js',
       storage: './src/storage/entry.js',
-      todo: './src/todo/entry.js'
+      todo: './src/todo/entry.js',
+      list: './src/list/entry.js'
     },
     output: {
       filename: '[name].bundle.js',
@@ -72,6 +73,13 @@ module.exports = (env) => {
         template: 'src/todo/index.html',
         title: 'TODO Example',
         chunks: ['todo']
+      }),
+      new HtmlWebpackPlugin({
+        meta,
+        filename: 'list/index.html',
+        template: 'src/list/index.html',
+        title: 'List Partials Example',
+        chunks: ['list']
       }),
 
       // Force the html files to be generated to disk so they can be linted with htmlhint
