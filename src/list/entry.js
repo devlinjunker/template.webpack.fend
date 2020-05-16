@@ -6,10 +6,15 @@ import '../helpers/relative-href.helper';
 import listObjectTemplate from '../components/list/list-object.hbs';
 import listItemTemplate from './components/my-list-item.hbs';
 
-const items = [
-  { name: 'abc', done: true },
-  { name: 123, done: false },
-  { name: 'help', done: false }
+const items: Array<{
+  first: string;
+  last: string;
+  location?: string;
+  status: 'SUCCESS' | 'FAIL' | 'IN_PROGRESS' | 'NEW';
+}> = [
+  { first: 'Devlin', last: 'Junker', location: 'OR', status: 'SUCCESS' },
+  { first: 'Bob', last: 'Smith', location: 'CA', status: 'IN PROGRESS' },
+  { first: 'Alfred', last: 'P', status: 'NEW' },
 ];
 
 
