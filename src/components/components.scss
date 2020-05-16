@@ -22,9 +22,21 @@
   @apply bg-green-700 text-gray-100;
 }
 
-.checkbox-label input:checked ~ .complete-bg {
-  display: block !important;
-}
-.checkbox-label input:checked ~ i {
-  display: block !important;
+/*
+  Checkbox Component styles
+ */
+.checkbox-label {
+  .checkbox-style {
+    @apply w-5 h-5;
+  }
+
+  input:checked {
+    ~ .complete-bg {
+      display: block !important;
+    }
+
+    ~ i {
+      display: block !important;
+    }
+  }
 }

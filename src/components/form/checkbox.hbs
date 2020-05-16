@@ -9,10 +9,12 @@
   @param {String} bg-checked - (def: bg || 'white') background color of the checkbox after checked
 }}
 <label class="checkbox-label flex">
-  <div class="bg-{{default-val bg 'white'}} relative shadow w-6 h-6 p-1 flex justify-center items-center mr-2">
+  <div class="checkbox-style bg-{{default-val bg 'white'}} relative shadow p-1 flex justify-center items-center mr-2">
     <input type="checkbox" class="hidden" {{#if checked }} checked {{/if}}>
     <div class="hidden complete-bg absolute z-0 w-full h-full bg-{{default-val bg-checked background}}"></div>
-    <i class="hidden icon z-10 text-{{default-val color 'black'}} pointer-events-none">@svg("img/zondicons/checkmark.svg")</i>
+    <i class="hidden icon z-10 text-{{default-val color 'black'}} pointer-events-none">
+      @svg("img/zondicons/checkmark.svg")
+    </i>
   </div>
   <span class="select-none"> {{ label }}</span>
 </label>
