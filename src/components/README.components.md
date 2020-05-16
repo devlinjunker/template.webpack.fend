@@ -16,6 +16,26 @@ To attach event handlers to the HTML created by handlebars, you'll need to add t
 by Handlebars (i.e. `const strTemp = template()`) to the DOM. and then attach event handlers to the elements
 created
 
+## Examples
+A couple of notes on the simple examples in this project.
+
+### Checkbox
+Partial component with svg checkmark inside of checkbox. This can be used to add a stylized checkbox to the page
+rather than the standard checkbox created by the browser.
+
+  - checked - (default: false) sets checked status of checkbox
+  - label - (default: '') clickable label text (toggles checkbox)
+  - color - (default: 'black') color of the checkmark in the checkbox
+  - bg - (default: 'white') background color of the checkbox
+  - bg-checked - (default: bg || 'white') background color of the checkbox after checked
+  - size - (default: '') size of checkmark (available values = `sm`, `lg`)
+
+e.g.
+```
+{{> form/checkbox checked=complete color='white' bg='black' bg-checked='gray-200' label='Check Me' size='sm'}}
+```
+
+
 
 ## Components Notes/Ideas
 - Seems like handlbars isn't great by itself for interactive applications

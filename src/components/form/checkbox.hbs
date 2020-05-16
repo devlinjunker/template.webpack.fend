@@ -7,15 +7,15 @@
   @param {String} color - (def: 'black') color of the checkmark in the checkbox
   @param {String} bg - (def: 'white') background color of the checkbox
   @param {String} bg-checked - (def: bg || 'white') background color of the checkbox after checked
-  @param {String} size - (def: '') size of checkmark (available values = `sm`)
+  @param {String} size - (def: '') size of checkmark (available values = `sm`, `lg`)
 }}
 <label class="checkbox-label flex {{#if size }} checkbox-{{size}} {{/if}}">
   <div class="checkbox-style bg-{{default-val bg 'white'}} relative shadow p-1 flex justify-center items-center mr-2">
     <input type="checkbox" class="hidden" {{#if checked }} checked {{/if}}>
     <div class="hidden complete-bg absolute z-0 w-full h-full bg-{{default-val bg-checked background}}"></div>
-    <i class="hidden icon{{#if size}}-{{size}} {{/if}} z-10 text-{{default-val color 'black'}} pointer-events-none">
+    <i class="hidden icon {{#if size}} icon-{{size}} {{/if}} z-10 text-{{default-val color 'black'}} pointer-events-none">
       @svg("img/zondicons/checkmark.svg")
     </i>
   </div>
-  <span class="select-none"> {{ label }}</span>
+  <span class="select-none">{{ label }}</span>
 </label>
