@@ -179,7 +179,12 @@ module.exports = (env) => {
                     return `'${ datetime }'`;
                   },
                   commit: () => {
-                    const branch = 'footer';
+                    const HEAD = fs.readFileSync(
+                      path.join(__dirname, '.git/HEAD'),
+                      { encoding: 'UTF-8' }
+                    );
+                    const split = HEAD.split('/');
+                    const branch = split[split.length - 1].replace(/\n/g, '');
                     let commit = fs.readFileSync(
                       path.join(__dirname, `.git/refs/heads/${branch}`),
                       { encoding: 'UTF-8' }
@@ -228,7 +233,9 @@ module.exports = (env) => {
             { loader: 'handlebars-loader',
               options: {
                 helperDirs: [path.resolve(__dirname, 'src', 'helpers', 'handlebars')],
-                knownHelpers: ['default-val'],
+                precompileOptions: {
+                  knownHelpersOnly: false,
+                },
                 partialDirs: [path.resolve(__dirname, 'src', 'components')]
               } },
             // Custom loader to inline svgs during the build
