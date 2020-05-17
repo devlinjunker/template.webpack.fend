@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+
+</head>
+<body class="flex flex-col min-h-screen">
+  @require("../static/header.html", { "page": "list" })
+
+  <div id="page" class="flex-grow max-w-lg m-auto w-4/5">
+  </div>
+
+  @require("../static/footer.html")
+</body>

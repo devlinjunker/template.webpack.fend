@@ -1,0 +1,8 @@
+<div class="list-container">
+
+  {{#each items as |item|}}
+    <div class="list-item-wrapper">
+      {{> list/list-item item=item template=../template}}
+    </div>
+  {{/each}}
+</div>

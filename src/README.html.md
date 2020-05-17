@@ -22,11 +22,15 @@ This loader allow HTML files to be imported during the compilation process using
 in the HTML files, and also enables variables that can be replaced when the HTML is generated (e.g. `<%=
 name %>`) will be replaced if we use `@import(<file_name>, { name: "Devlin Junker" })` with `Devlin Junker`.
 
-#### Basic Javascript Components (Handlebars)
-More complicated HTML components (especially those that require javascript or looping/conditional statements
-should be written with handlebars in the `components/` directory. Each component should have a `.hbs` file
+#### Dynamic Javascript Components (Handlebars)
+More complicated components (especially those that require javascript or looping/conditional statements
+should be written with handlebars in the `components/` directory.
+
+If the component should respond to user interactions and events, the component should have a `.hbs` file
 and an `index.js` file containing a function, that imports the `.hbs` file and compiles it with the
 parameters and handlers passed in.
+
+Other, less complex components can be written purely in `.hbs` files with helpers and partials.
 
 ## HTML Linting
 During the build process, webpack is configured to lint the final HTML files after each successful build with

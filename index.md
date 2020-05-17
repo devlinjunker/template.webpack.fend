@@ -26,7 +26,9 @@ to update the wiki.
 - [Github Actions](manual/README.scripts.html) - Notes about Actions run on to ensure quality
 - [Testing](manual/README.test.html) - How testing is configured and how to run tests
 - [Custom Webpack Loaders](manual/README.loaders.html) - Explaining how we configure webpack loaders to generate the application
-- [Static HTML Components](manual/README.loaders.html) - Components that are generated during the build process
+- [Static HTML Components](manual/README.static.html) - Components that are generated during the build process
+- [Dynamic HTML Components](manual/README.components.html) - Components that are generated using Handlebars dynamically
+- [Handlebars Helpers](manual/README.handlebars-helpers.html) - Custom Handlebars Helpers for extra functionality in `.hbs` files
 
 
 

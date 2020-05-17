@@ -13,16 +13,18 @@ in the webpack.config.js([github](https://github.com/devlinjunker/template.webpa
 configurations for the underscore-template-loader. These macros are given names in the webpack config file and
 then accessed using the `@` symbol (e.g. `@year()`).
 
-## Examples
-A couple notes on examples included in this project:
+## Static Component Examples
+A couple of notes on static component examples included in this project:
 
 ### Header
 Contains links to the different part of the application, this is a good example of being dynamic (but not
 relative to the user) but still being able to be compiled during the build process.
 
 ### Footer
-Contains reference to the project details and build details for developers. This could also include contact
-information, donation links or even another navigation component or site tree.
+Contains reference to the project details and build details for developers. This could also include:
+ - contact information
+ - donation links
+ - other navigation component or site tree.
 
 ## Static Partial Notes/Ideas
  - [ ] Move macros out of webpack.config.js into their own file (in src/static/ ?)

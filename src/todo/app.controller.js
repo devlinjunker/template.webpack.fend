@@ -2,7 +2,8 @@
  * @flow
  */
 import Todo from './models/todo.model.js';
-import todoComponentFactory from './components/todo';
+import listObjectTemplate from '../components/list/list-object.hbs';
+import todoTemplate from './components/todo.hbs';
 import addInputComponent, { AddInputComponent } from './components/add-input';
 import LocalStorageHelper from '../helpers/local-storage.helper.js';
 
@@ -27,7 +28,10 @@ export default class TodoAppController {
       console.error(exc, 'Error Loading List');
     }
 
+    // This is a function that wraps a handlebars template in a DOM element, with event handler parameters to
+    // assign to the html elements created
     this.addInput = addInputComponent(this.handleAddTodo.bind(this));
+    // Add element to page after creating it
     (document.getElementById('add-container'): any).appendChild(this.addInput);
 
     this.renderList();
@@ -77,12 +81,11 @@ export default class TodoAppController {
 
   /**
    * Handler when todo completion toggle is checked
-   * @param  {Todo} todo todo object that has been completed
+   * @param  {number} index index of todo to toggle in list
    * @return {void}
    */
-  handleToggleTodo(todo: Todo) {
-    const idx = this.list.indexOf(todo);
-    this.list[idx].toggleComplete.call(this.list[idx]);
+  handleToggleTodo(index) {
+    this.list[index].toggleComplete.call(this.list[index]);
     this.saveList();
   }
 
@@ -117,10 +120,23 @@ export default class TodoAppController {
     const listContainer: any = document.getElementById('list-container');
     listContainer.innerHTML = '';
 
-    this.list.forEach((todo: Todo, index: number) => {
-      listContainer.appendChild(
-        todoComponentFactory(todo, this.handleRemoveTodo.bind(this, index), this.handleToggleTodo.bind(this))
-      );
+    // Create list HTML with List Object Partial and local template file
+    listContainer.innerHTML = listObjectTemplate({ items: this.list, template: 'todo-item-template' }, {
+      partials: {
+        'todo-item-template': todoTemplate
+      }
+    });
+
+    // Add Handlers afterwards (because handlebars wont)
+    listContainer.querySelectorAll('.todo-container input[type="checkbox"]').forEach((elm, index) => {
+      elm.onchange = () => {
+        this.handleToggleTodo(index);
+      };
+    });
+    listContainer.querySelectorAll('.todo-container .trash-icon').forEach((elm, index) => {
+      elm.onclick = () => {
+        this.handleRemoveTodo(index);
+      };
     });
   }
 };
