@@ -23,6 +23,8 @@ A couple of notes on the Dynamic Component examples in this project.
 Partial component with svg checkmark inside of checkbox. This can be used to add a stylized checkbox to the page
 rather than the standard checkbox created by the browser.
 
+  - id - (default: undefined) only if set will add `id` and `name` attributes to <input> with this value
+  - val - (default: true) sets the value of the <input> checkbox
   - checked - (default: false) sets checked status of checkbox
   - label - (default: '') clickable label text (toggles checkbox)
   - color - (default: 'black') color of the checkmark in the checkbox
@@ -38,7 +40,7 @@ e.g.
 </span>
 
 /* `.js` file */
-document.getElementById('checkbox-1').onchange = () => { // Do stuff }
+document.querySelector('checkbox-1 input').onchange = () => { // Do stuff }
 ```
 
 **Note:** Event handlers are attached in the javascript file to trigger this actually doing anything on the page
