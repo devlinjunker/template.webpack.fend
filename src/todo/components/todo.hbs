@@ -1,5 +1,5 @@
 <div class="todo-container px-4 py-2 hover-show flex hover:bg-gray-200">
-  {{> form/checkbox checked=complete color='green-500' bg='white' bg-checked='gray-200'}}
+  {{> form/checkbox id='complete' val=@index checked=complete color='green-500' bg='white' bg-checked='gray-200'}}
 
   <span class="flex-grow">
     {{ description }}

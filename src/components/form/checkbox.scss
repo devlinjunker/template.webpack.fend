@@ -1,0 +1,23 @@
+.checkbox-label {
+  .checkbox-style {
+    @apply w-5 h-5;
+  }
+
+  &.checkbox-sm .checkbox-style {
+    @apply w-3 h-3 my-1;
+  }
+
+  &.checkbox-lg .checkbox-style {
+    @apply w-6 h-6;
+  }
+
+  input:checked {
+    ~ .complete-bg {
+      display: block !important;
+    }
+
+    ~ i {
+      display: block !important;
+    }
+  }
+}
