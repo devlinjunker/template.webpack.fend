@@ -201,6 +201,7 @@ module.exports = (env) => {
                       );
                       commit = commit.replace(/\n/g, '');
                     } catch (ex) {
+                      // Github Action just checks out the commit hash, so we can use that instead
                       commit = branch;
                     }
 
