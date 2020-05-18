@@ -8,8 +8,27 @@
 
 .icon-sm {
   svg {
-    @apply w-3 h-3;
+    @apply w-3 h-3 fill-current;
 
     vertical-align: inherit;
   }
+}
+
+.icon-lg {
+  svg {
+    @apply w-5 h-5 fill-current;
+  }
+}
+
+/* Hover (Display Ancestor) */
+.hover-show .hover-target {
+  display: none;
+}
+
+.hover-show:hover .hover-target {
+  display: inline-block;
+}
+
+.text-xxs {
+  font-size: 0.55rem;
 }

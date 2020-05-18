@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+
+</head>
+<body class="flex flex-col min-h-screen">
+  @require("../static/header.html", { "page": "todo" })
+
+  <div class="flex-grow max-w-lg m-auto w-4/5">
+    <div id="add-container" class="border-b border-gray-500 px-2 py-1"></div>
+
+    <form target="./" method="GET">
+      <div id="list-container"></div>
+      <input type="submit"/>
+    </form>
+  </div>
+
+  @require("../static/footer.html")
+</body>

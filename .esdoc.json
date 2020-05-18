@@ -22,8 +22,11 @@
           "./src/README.css.md",
           "./img/README.img.md",
           "./src/helpers/README.helpers.md",
+          "./src/static/README.static.md",
+          "./src/components/README.components.md",
           "./scripts/README.scripts.md",
-          "./test/README.test.md"
+          "./test/README.test.md",
+          "./.webpack/README.loaders.md"
         ]
       }
     }

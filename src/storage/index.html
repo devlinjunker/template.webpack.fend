@@ -4,10 +4,10 @@
   <title><%= htmlWebpackPlugin.options.title %></title>
 
 </head>
-<body>
-  @require('../components/header/header.html')
+<body class="flex flex-col min-h-screen">
+  @require("../static/header.html", { "page": "storage" })
 
-  <div class="px-2 py-1">
+  <div class="flex-grow px-2 py-1">
     <div class="input">
       <label for="key-input" class="font-bold md:text-right text-gray-700"> Key:</label>
 
@@ -17,11 +17,11 @@
     <div class="actions">
       <button class="btn btn-green save-btn">
         Save
-        <span class="icon icon-sm">@include('../../img/zondicons/save-disk.svg')</span>
+        <span class="icon icon-sm">@svg("img/zondicons/save-disk.svg")</span>
       </button>
       <button class="btn btn-green get-btn">
         Retrieve
-        <span class="icon icon-sm">@include('../../img/zondicons/reply.svg')</span>
+        <span class="icon icon-sm">@svg("img/zondicons/reply.svg")</span>
       </button>
     </div>
 
@@ -32,8 +32,10 @@
       </textarea>
       <button class="clear-value-btn btn btn-outline btn-outline-green">
         Clear
-        <span class="icon icon-sm">@include('../../img/zondicons/close.svg')</span>
+        <span class="icon icon-sm">@svg("img/zondicons/close.svg")</span>
       </button>
     </div>
   </div>
+
+  @require("../static/footer.html")
 </body>

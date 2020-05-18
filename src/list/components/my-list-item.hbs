@@ -1,0 +1,23 @@
+<div class="list-template flex">
+  <div class="flex-shrinks">
+    {{ first }} {{ last }}
+  </div>
+
+  <div class="flex-grow mx-2">
+    {{#if location }}(from {{ location }}){{/if}}
+  </div>
+
+  <div class="flex-shrink">
+    <span class="icon">
+      {{#if (eq status 'NEW')}}
+        <span class="text-blue-500">@svg("img/zondicons/exclamation-outline.svg")</span>
+      {{/if}}
+      {{#if (eq status 'IN PROGRESS')}}
+        <span class="text-orange-400">@svg("img/zondicons/navigation-more.svg") </span>
+      {{/if}}
+      {{#if (eq status 'SUCCESS')}}
+        <span class="text-green-500">@svg("img/zondicons/checkmark.svg") </span>
+      {{/if}}
+    </span>
+  </div>
+</div>

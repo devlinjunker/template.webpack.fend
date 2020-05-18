@@ -22,8 +22,13 @@ to update the wiki.
 - [HTML](manual/README.html.html) - How HTML files are created and the processes we use to ensure quality
 - [CSS](manual/README.css.html) - CSS Normalization, Processing and Frameworks
 - [Images](manual/README.img.html) - Including images and SVG icons from free library
-- [Helpers](manual/README.helpers.html) - Javascript Helper Classes and Code that can be used
+- [Helpers](manual/README.helpers.html) - Javascript Helper Classes and Code that is used in the project
+- [Static HTML Components](manual/README.static.html) - HTML Components that are generated during the build process
+- [Dynamic HTML Components](manual/README.components.html) - HTML/JS Components that are created with Handlebars dynamically during runtimes
 - [Github Actions](manual/README.scripts.html) - Notes about Actions run on to ensure quality
-- [Test](manual/README.test.html) - How testing is configured and how to run tests
+- [Testing](manual/README.test.html) - How testing is configured and how to run tests
+- [Custom Webpack Loaders](manual/README.loaders.html) - Explaining how we configure webpack loaders to generate the application
+
+
 
 .

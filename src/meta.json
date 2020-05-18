@@ -1,0 +1,7 @@
+{
+  "viewport": "width=device-width, initial-scale=1",
+  "description": "Template Webpack Application",
+  "subject": "Webpack Software Website Template",
+  "robots": "index,follow",
+  "googlebot": "index,follow"
+}

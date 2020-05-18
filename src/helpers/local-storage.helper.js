@@ -26,7 +26,7 @@ export default class LocalStorageHelper {
 
    * @returns {string | object} the value stored at the key in the LocalStorage
    */
-  static get({ key }: { key: string }): string | Object {
+  static get({ key }: { key: string }): string | Object | Array<any> {
     const val = localStorage.getItem(key);
 
     if (val === undefined || val === null) {
