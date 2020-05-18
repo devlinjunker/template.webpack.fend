@@ -86,6 +86,7 @@
       
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html" data-ice="link">Actions and Githooks</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#on-merge-to-master" data-ice="link">On Merge to Master</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#master-build-status" data-ice="link">Master Build Status</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#githooks" data-ice="link">Githooks</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#github-specific" data-ice="link">Github Specific</a></li>
 </ul>
@@ -304,7 +305,13 @@ the commits. A git action(<a href>github</a>) is set up to do the following:</p>
 </ul><p>This Action requires the Git repo to have a secret configured in the Settings page named <code>GH_PAT</code> that
 contains a Github Personal Access Token from your user account: <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a>.
 There is also a reference to the repo name in the script, so you will need to ensure that this is updated if
-the repo name is different.</p><h2>Githooks</h2><p>TODO...</p><h2>Github Specific</h2><p>Whenever a PR is made on Github, the body/description will be pre-populated with the contents in
+the repo name is different.</p><h3>Master Build Status</h3><p>This action checks the build status of the project and verifies that all of the tests and style linters are
+not failing. This occurs for every commit in a Github PR against the <code>master</code> branch, and for every commit (push)
+to the <code>master</code> branch on Github.</p><p>Runs:</p><ul>
+<li>linter</li>
+<li>build (with webpack)</li>
+<li>tests (karma)</li>
+</ul><h2>Githooks</h2><p>TODO...</p><h2>Github Specific</h2><p>Whenever a PR is made on Github, the body/description will be pre-populated with the contents in
 <code>.github/PULL_REQUEST_TEMPLATE.md</code></p></div>
         <a data-ice="link" href="manual/README.scripts.html"></a>
       </div>
