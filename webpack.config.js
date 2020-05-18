@@ -193,11 +193,16 @@ module.exports = (env) => {
                     );
                     const split = HEAD.split('/');
                     const branch = split[split.length - 1].replace(/\n/g, '');
-                    let commit = fs.readFileSync(
-                      path.join(__dirname, `.git/refs/heads/${branch}`),
-                      { encoding: 'UTF-8' }
-                    );
-                    commit = commit.replace(/\n/g, '');
+                    let commit;
+                    try {
+                      commit = fs.readFileSync(
+                        path.join(__dirname, `.git/refs/heads/${branch}`),
+                        { encoding: 'UTF-8' }
+                      );
+                      commit = commit.replace(/\n/g, '');
+                    } catch (ex) {
+                      commit = branch;
+                    }
 
                     return `'${ commit }'`;
                   },
