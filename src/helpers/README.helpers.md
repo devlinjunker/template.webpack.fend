@@ -23,6 +23,48 @@ links (e.g. `<a href="example">...</a>`) will direct to `http://test.com/example
 `href` value). This is compared to the regular relative link behavior where the link is relative to the current
 page (value in the browser url bar).
 
+## Handlebars Helpers
+
+Handlebars is the simple HTML templating framework this project uses to create HTML components. Handlebars
+lets the project import it's own helpers in the `webpack.config.js`
+([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/webpack.config.js))
+that can add additional functionality and logic to the template partial files easily.
+
+### Default Value Helper
+Helper that checks a variable to see if it contains a value and returns that value if it does, or else it returns
+a  default value (2nd parameter).
+
+e.g. will output '123' unless `testVar` contains a value, in which case it will return the value in `testVar`
+```
+// .hbs
+{{default-val testVar '123'}}
+
+// Output
+123
+
+var testVar = 'abc'
+// Output after
+abc
+```
+
+### Eq Helper
+Helper that compares to variables and checks if they are equal with `===`. Returns `true` or `false`. This is
+best used inside of an expression in an `#if` block helper.
+
+e.g. (will display `Hello World!` on page if context variable `var` === 'true')
+```
+// .hbs file
+{{#if (eq var 'true')}} Hello World! {{/if}}
+
+var = true;
+// output
+Hello World!
+
+var = false;
+// Output
+
+```
+
 ## Helper Notes/Ideas
  - [ ] Configuration file
  - [ ] Performance Logger
