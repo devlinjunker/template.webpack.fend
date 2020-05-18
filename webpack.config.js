@@ -56,7 +56,11 @@ module.exports = (env) => {
         template: 'src/index.html',
         // Set the webpage title
         title: 'Test with Webpack Plugin',
-        excludeChunks: ['storage', 'todo']
+        excludeChunks: [
+          'storage',
+          'todo',
+          'list'
+        ]
       }),
 
       // Create new HtmlWebpackPlugin for each HTML page
