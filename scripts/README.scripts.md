@@ -14,6 +14,16 @@ contains a Github Personal Access Token from your user account: https://github.c
 There is also a reference to the repo name in the script, so you will need to ensure that this is updated if
 the repo name is different.
 
+### Master Build Status
+This action checks the build status of the project and verifies that all of the tests and style linters are
+not failing. This occurs for every commit in a Github PR against the `master` branch, and for every commit (push)
+to the `master` branch on Github.
+
+Runs:
+ - linter
+ - build (with webpack)
+ - tests (karma)
+
 ## Githooks
 TODO...
 
