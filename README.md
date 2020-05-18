@@ -23,6 +23,7 @@ for full list of current dependencies
  - [HTMLHint](https://github.com/htmlhint/HTMLHint) -- parsing and enforcing HTML standards
  - [Tailwind](https://tailwindcss.com/) - Utility-first CSS Framework
  - [Zondicons](http://www.zondicons.com) - Free SVG Icon Library
+ - [Handlebars](http://handlebarsjs.com/) - HTML Templating Engine
 
 
 ## Development
