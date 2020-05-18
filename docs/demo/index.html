@@ -4,17 +4,41 @@
   <title>Test with Webpack Plugin</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Template Webpack Application"><meta name="subject" content="Webpack Software Website Template"><meta name="robots" content="index,follow"><meta name="googlebot" content="index,follow"><link href="app.css" rel="stylesheet"></head>
-<body>
+<body class="flex flex-col min-h-screen">
   <header>
   <nav class="bg-gray-800 text-gray-300 px-3 py-1">
-    <a class="icon hover:text-gray-500" href=""><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20"><path d="M8 20H3V10H0L10 0l10 10h-3v10h-5v-6H8v6z"></path></svg></a>
-    <a class="hover:text-gray-500" href="storage">Local Storage Demo</a>
+    <a class="active icon hover:text-gray-500" href=""><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 20 20"><path d="M8 20H3V10H0L10 0l10 10h-3v10h-5v-6H8v6z"/></svg></a>
+    <a class=" hover:text-gray-500 ml-2 pl-3" href="storage">Local Storage</a>
+    <a class=" hover:text-gray-500 ml-2 pl-3 border-l border-gray-500" href="todo">Todo</a>
+    <a class=" hover:text-gray-500 ml-2 pl-3 border-l border-gray-500" href="list">List Partials</a>
   </nav>
 
 </header>
 
 
-  <div class="px-3 py-5">
+  <div class="flex-grow px-3 py-5">
     <p>Welcome to the Demo FEND Application using Webpack to compile the HTML/JS/CSS files.</p>
   </div>
+
+  <footer class="font-thin text-sm px-2 flex justify-between bg-opacity-50 bg-gray-300">
+  <div class="pt-1 pb-1 justify-start">
+    <a href="https://github.com/devlinjunker/template.webpack.fend"><img width="20px" src="ef7a02b69836dc8b6a732a54c4200dcb.png"/></a>
+  </div>
+
+  <!--nav>
+    TODO: Should we add nav in footer?
+  </nav-->
+
+  <div class="copyright-build justify-end flex flex-col">
+    <span class="justify-center pb-1" onclick="document.querySelector('.copyright-build .hidden').classList.remove('hidden'); this.classList.add('hidden');">
+      &copy <span class="text-xs">2020</span>
+    </span>
+
+    <span class="text-xxs hidden" onclick="document.querySelector('.copyright-build .hidden').classList.remove('hidden'); this.classList.add('hidden');">
+      <p>master - b80dafe70de9f85fce72963ed180ce8c2279161d</p>
+      <p> @ Mon May 18 2020 03:55:14 GMT+0000 (Coordinated Universal Time) </p>
+    </span> 
+  </div>
+</footer>
+
 <script type="text/javascript" src="app.bundle.js"></script></body>

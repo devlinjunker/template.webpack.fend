@@ -26,8 +26,8 @@
     
   <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helpers">helpers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helpers/local-storage.helper.js~LocalStorageHelper.html">LocalStorageHelper</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#storage">storage</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/storage/app.controller.js~StorageAppController.html">StorageAppController</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#todo-components-add-input">todo/components/add-input</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-component">component</a></span></span></li>
-<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#todo-components-todo">todo/components/todo</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-index">index</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#todo">todo</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/todo/app.controller.js~TodoAppController.html">TodoAppController</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#todo-components-add-input">todo/components/add-input</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addInputComponentFactory">addInputComponentFactory</a></span></span></li>
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#todo-models">todo/models</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/todo/models/todo.model.js~Todo.html">Todo</a></span></span></li>
 </ul>
 </div>
@@ -37,11 +37,25 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
  * @flow
  */
-// $FlowFixMe  (Flow doesn&apos;t like importing html files)
-import template from &apos;./partial.html&apos;;
+import template from &apos;./add-input.partial.hbs&apos;;
 
-const component = function(addHandler: Function) {
+/**
+ * Add Input Component Type
+ * @type {AddInputComponent}
+ */
+export type AddInputComponent = {
+  getValue: Function;
+  focusClear: Function
+};
+
+/**
+ * AddInput Component Factory that creates DOM element and binds handlers
+ * @param {Function} addHandler handler when &apos;add&apos; button is pressed
+ * @return {AddInputComponent} Add input component
+ */
+function addInputComponentFactory(addHandler: Function): AddInputComponent {
   const temp = document.createElement(&apos;div&apos;);
+
   temp.innerHTML = template();
 
   const input = (temp.querySelector(&apos;.add-input&apos;): any);
@@ -66,7 +80,7 @@ const component = function(addHandler: Function) {
 };
 
 
-export default component;
+export default addInputComponentFactory;
 </code></pre>
 
 </div>

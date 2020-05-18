@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">src/todo/app.controller.js | Template-WebpackFEND</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+  <script src="script/matomo.js"></script>
+<meta name="description" content="Template using Webpack to create a html/javascript/css pages with multiple files"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="Template-WebpackFEND"><meta property="twitter:description" content="Template using Webpack to create a html/javascript/css pages with multiple files"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <a href="demo/index.html">Demo</a>
+<a style="position:relative; top:3px;" href="https://github.com/devlinjunker/template.webpack.fend"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helpers">helpers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helpers/local-storage.helper.js~LocalStorageHelper.html">LocalStorageHelper</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#storage">storage</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/storage/app.controller.js~StorageAppController.html">StorageAppController</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#todo">todo</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/todo/app.controller.js~TodoAppController.html">TodoAppController</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#todo-components-add-input">todo/components/add-input</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addInputComponentFactory">addInputComponentFactory</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#todo-models">todo/models</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/todo/models/todo.model.js~Todo.html">Todo</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/todo/app.controller.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @flow
+ */
+import Todo from &apos;./models/todo.model.js&apos;;
+import listObjectTemplate from &apos;../components/list/list-object.hbs&apos;;
+import todoTemplate from &apos;./components/todo.hbs&apos;;
+import addInputComponent, { AddInputComponent } from &apos;./components/add-input&apos;;
+import LocalStorageHelper from &apos;../helpers/local-storage.helper.js&apos;;
+
+/**
+ * Todo App Controller
+ * @type {TodoAppController}
+ */
+export default class TodoAppController {
+  addInput: AddInputComponent;
+  list: Array&lt;Todo&gt;;
+
+  /**
+   * Sets up the Todo App
+   * @param {string} domSelector DOM Selector for app container element
+   */
+  constructor() {
+
+    this.list = [];
+    try {
+      this.loadList();
+    } catch (exc) {
+      console.error(exc, &apos;Error Loading List&apos;);
+    }
+
+    // This is a function that wraps a handlebars template in a DOM element, with event handler parameters to
+    // assign to the html elements created
+    this.addInput = addInputComponent(this.handleAddTodo.bind(this));
+    // Add element to page after creating it
+    (document.getElementById(&apos;add-container&apos;): any).appendChild(this.addInput);
+
+    this.renderList();
+  }
+
+  /**
+   * Adds a New Todo Item to the list with the description provided
+   * @param {string} description of new todo to add
+   * @returns {void}
+   */
+  add(description: string) {
+    this.list.push(new Todo(description));
+
+    this.renderList();
+    this.saveList();
+  }
+
+  /**
+   * Removes a Todo Item from the list at a given index
+   * @param  {number} index to remove todo at
+   * @return {void}
+   */
+  remove(index: number) {
+    this.list.splice(index, 1);
+  }
+
+  /**
+   * Handler method for adding Todo to list and rerendering
+   * @return {void}
+   */
+  handleAddTodo() {
+    this.add(this.addInput.getValue());
+    this.renderList();
+    this.addInput.focusClear();
+  }
+
+  /**
+   * Handler method for removing a Todo from the list and rerendering
+   * @param  {number} index of the todo to remove from the list
+   * @return {void}
+   */
+  handleRemoveTodo(index: number) {
+    this.remove(index);
+    this.renderList();
+    this.saveList();
+  }
+
+  /**
+   * Handler when todo completion toggle is checked
+   * @param  {number} index index of todo to toggle in list
+   * @return {void}
+   */
+  handleToggleTodo(index) {
+    this.list[index].toggleComplete.call(this.list[index]);
+    this.saveList();
+  }
+
+  /**
+   * Method to Load the List from LocalStorage on App setup
+   * @return {void}
+   */
+  loadList() {
+    const saved: Array&lt;Todo&gt; = (LocalStorageHelper.get({ key: &apos;todos&apos; }): any);
+
+    saved.forEach((todo: Todo) =&gt; {
+      this.list.push(new Todo(todo.description, todo.complete));
+    });
+  }
+
+  /**
+   * Method to Save the List to LocalStorage during any changes
+   * @return {void}
+   */
+  saveList() {
+    LocalStorageHelper.save({
+      key: &apos;todos&apos;,
+      val: this.list
+    });
+  }
+
+  /**
+   * Renders the HTML of the Todo App
+   * @return {void}
+   */
+  renderList() {
+    const listContainer: any = document.getElementById(&apos;list-container&apos;);
+    listContainer.innerHTML = &apos;&apos;;
+
+    // Create list HTML with List Object Partial and local template file
+    listContainer.innerHTML = listObjectTemplate({ items: this.list, template: &apos;todo-item-template&apos; }, {
+      partials: {
+        &apos;todo-item-template&apos;: todoTemplate
+      }
+    });
+
+    // Add Handlers afterwards (because handlebars wont)
+    listContainer.querySelectorAll(&apos;.todo-container input[type=&quot;checkbox&quot;]&apos;).forEach((elm, index) =&gt; {
+      elm.onchange = () =&gt; {
+        this.handleToggleTodo(index);
+      };
+    });
+    listContainer.querySelectorAll(&apos;.todo-container .trash-icon&apos;).forEach((elm, index) =&gt; {
+      elm.onclick = () =&gt; {
+        this.handleRemoveTodo(index);
+      };
+    });
+  }
+};
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+
+<script src="script/github-link.js"></script>
+</body>
+</html>

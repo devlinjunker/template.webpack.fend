@@ -566,8 +566,124 @@
   {
     "__docId__": 48,
     "kind": "file",
+    "name": "src/helpers/handlebars/default-val.js",
+    "content": "/**\n * @flow\n * @type {DefaultValueHelper}\n */\n/**\n * Custom Default Value Handlebars helper, used to check if variable has\n * @param  {any} variable   variable to check if it contains value\n * @param  {any} def default value to return if not set\n * @return {any}         [description]\n */\nmodule.exports = function(variable: any, def: any) {\n  if (variable !== undefined) {\n    return variable;\n  }\n  return def;\n};\n",
+    "static": true,
+    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/helpers/handlebars/default-val.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "function",
+    "name": "exports",
+    "memberof": "src/helpers/handlebars/default-val.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/helpers/handlebars/default-val.js~exports",
+    "access": "public",
+    "export": false,
+    "importPath": "Template-WebpackFEND/src/helpers/handlebars/default-val.js",
+    "importStyle": null,
+    "description": "Custom Default Value Handlebars helper, used to check if variable has",
+    "lineNumber": 11,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "variable",
+        "description": "variable to check if it contains value"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "def",
+        "description": "default value to return if not set"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "any"
+      ],
+      "spread": false,
+      "description": "[description]"
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 50,
+    "kind": "file",
+    "name": "src/helpers/handlebars/eq.js",
+    "content": "/**\n * @flow\n * @type {DefaultValueHelper}\n */\n/**\n * Custom Eq Handlebars helper, used to check if values are equal\n * @param  {any} var1   variable to compare against second\n * @param  {any} var2   second variable to compare against first\n * @return {any}         True/False\n */\nmodule.exports = function(var1: any, var2: any) {\n  if (var1 === var2) {\n    return true;\n  }\n  return false;\n};\n",
+    "static": true,
+    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/helpers/handlebars/eq.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 51,
+    "kind": "function",
+    "name": "exports",
+    "memberof": "src/helpers/handlebars/eq.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/helpers/handlebars/eq.js~exports",
+    "access": "public",
+    "export": false,
+    "importPath": "Template-WebpackFEND/src/helpers/handlebars/eq.js",
+    "importStyle": null,
+    "description": "Custom Eq Handlebars helper, used to check if values are equal",
+    "lineNumber": 11,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "var1",
+        "description": "variable to compare against second"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "any"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "var2",
+        "description": "second variable to compare against first"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "any"
+      ],
+      "spread": false,
+      "description": "True/False"
+    },
+    "ignore": true
+  },
+  {
+    "__docId__": 52,
+    "kind": "file",
     "name": "src/helpers/local-storage.helper.js",
-    "content": "/**\n * @flow\n */\nimport _ from 'lodash';\n\n/**\n * DataService Class for Storing Values in the LocalStorage in the browser\n */\nexport default class LocalStorageHelper {\n\n  /**\n   * Saves the value at the key provided in the browser localStorage\n   *\n   * @returns {undefined} undefined\n   */\n  static save({ key, val }: { key: string, val: any }) {\n    if (!_.isString(val)) {\n      val = JSON.stringify(val);\n    }\n\n    localStorage.setItem(key, val);\n  }\n\n  /**\n   * Retrieves a value stored at the key in browser LocalStorage\n\n   * @returns {string | object} the value stored at the key in the LocalStorage\n   */\n  static get({ key }: { key: string }): string | Object {\n    const val = localStorage.getItem(key);\n\n    if (val === undefined || val === null) {\n      throw new Error();\n    }\n\n    try {\n      const parsed = JSON.parse(val);\n      return parsed;\n    } catch (e) {} // eslint-disable-line\n\n    return val;\n  }\n}\n",
+    "content": "/**\n * @flow\n */\nimport _ from 'lodash';\n\n/**\n * DataService Class for Storing Values in the LocalStorage in the browser\n */\nexport default class LocalStorageHelper {\n\n  /**\n   * Saves the value at the key provided in the browser localStorage\n   *\n   * @returns {undefined} undefined\n   */\n  static save({ key, val }: { key: string, val: any }) {\n    if (!_.isString(val)) {\n      val = JSON.stringify(val);\n    }\n\n    localStorage.setItem(key, val);\n  }\n\n  /**\n   * Retrieves a value stored at the key in browser LocalStorage\n\n   * @returns {string | object} the value stored at the key in the LocalStorage\n   */\n  static get({ key }: { key: string }): string | Object | Array<any> {\n    const val = localStorage.getItem(key);\n\n    if (val === undefined || val === null) {\n      throw new Error();\n    }\n\n    try {\n      const parsed = JSON.parse(val);\n      return parsed;\n    } catch (e) {} // eslint-disable-line\n\n    return val;\n  }\n}\n",
     "static": true,
     "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/helpers/local-storage.helper.js",
     "access": "public",
@@ -575,7 +691,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 49,
+    "__docId__": 53,
     "kind": "class",
     "name": "LocalStorageHelper",
     "memberof": "src/helpers/local-storage.helper.js",
@@ -590,7 +706,7 @@
     "interface": false
   },
   {
-    "__docId__": 50,
+    "__docId__": 54,
     "kind": "method",
     "name": "save",
     "memberof": "src/helpers/local-storage.helper.js~LocalStorageHelper",
@@ -630,7 +746,7 @@
     ]
   },
   {
-    "__docId__": 51,
+    "__docId__": 55,
     "kind": "method",
     "name": "get",
     "memberof": "src/helpers/local-storage.helper.js~LocalStorageHelper",
@@ -670,10 +786,10 @@
     ]
   },
   {
-    "__docId__": 52,
+    "__docId__": 56,
     "kind": "file",
     "name": "src/helpers/relative-href.helper.js",
-    "content": "/**\n * @flow\n */\n\n/**\n * <a> `href` linking helper method.\n * sets the `<base>` tag in the header so links can remain relative to the root of the app. This also helps\n * with the demo app in `docs/` because it sets the links relative to that url rather than just the host.\n *\n * @return {void}\n */\n(function() {\n  // Get url\n  const href = window.location.href;\n  let newHref = '';\n\n  // if found location of `demo`, set base tag as url to that point\n  if (/demo\\//.test(href) === true) {\n    newHref = href.slice(0, href.indexOf('demo') + 5);\n  // otherwise set to host\n  // (we're assuming that the webapp is hosted at root of domain, otherwise this could be an issue)\n  } else {\n    newHref = window.origin;\n  }\n\n  const base = document.createElement('base');\n  base.setAttribute('href', newHref);\n  document.getElementsByTagName('head')[0].prepend(base);\n})();\n",
+    "content": "/**\n * @flow\n * @type {RelativeHrefHelper}\n */\n\n/**\n * <a> `href` linking helper method.\n * sets the `<base>` tag in the header so links can remain relative to the root of the app. This also helps\n * with the demo app in `docs/` because it sets the links relative to that url rather than just the host.\n * @return {void}\n */\n(function() {\n  // Get url\n  const href = window.location.href;\n  let newHref = '';\n\n  // if found location of `demo`, set base tag as url to that point\n  if (/demo\\//.test(href) === true) {\n    newHref = href.slice(0, href.indexOf('demo') + 5);\n  // otherwise set to host\n  // (we're assuming that the webapp is hosted at root of domain, otherwise this could be an issue)\n  } else {\n    newHref = window.origin;\n  }\n\n  const base = document.createElement('base');\n  base.setAttribute('href', newHref);\n  document.getElementsByTagName('head')[0].prepend(base);\n})();\n",
     "static": true,
     "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/helpers/relative-href.helper.js",
     "access": "public",
@@ -681,7 +797,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 53,
+    "__docId__": 57,
     "kind": "file",
     "name": "src/storage/app.controller.js",
     "content": "/**\n * @flow\n */\nimport LocalStorageHelper from '../helpers/local-storage.helper';\nimport './app.scss';\n/**\n * Controller for the application\n */\nclass StorageAppController {\n  keyInput: any;\n  valInput: any;\n\n  /**\n   * Set up the app, generate html and set up event handlers\n   */\n  constructor() {\n    // TODO: Set up HTML from Template?\n    this.keyInput = document.getElementById('key-input');\n    this.valInput = document.getElementById('value-input');\n\n    document.getElementsByClassName('save-btn')[0].onclick = this.save.bind(this);\n    document.getElementsByClassName('get-btn')[0].onclick = this.view.bind(this);\n\n    document.getElementsByClassName('clear-value-btn')[0].onclick = this.clearValue.bind(this);\n  }\n\n  /**\n   * saves the value at the provided key\n   * @return {void}\n   */\n  save() {\n    // Get key and value from ui\n    const key = this.keyInput.value;\n    const val = this.valInput.value;\n\n    // save with local storage\n    LocalStorageHelper.save({ key, val });\n\n    // TODO: display message to user\n  }\n\n  /**\n   * retrieves a value using the provided key\n   * @return {String} value retrieved from local storage with key\n   */\n  view() {\n    // get key from ui\n    const key = this.keyInput.value;\n\n    // get from local storage\n    const val = LocalStorageHelper.get({ key });\n\n    // display value to user\n    this.valInput.value = val;\n  }\n\n  /**\n   * Clear the value input element of text\n   * @return {void}\n   */\n  clearValue() {\n    this.valInput.value = '';\n  }\n}\n\nexport default StorageAppController;\n",
@@ -692,7 +808,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 54,
+    "__docId__": 58,
     "kind": "class",
     "name": "StorageAppController",
     "memberof": "src/storage/app.controller.js",
@@ -707,7 +823,7 @@
     "interface": false
   },
   {
-    "__docId__": 55,
+    "__docId__": 59,
     "kind": "constructor",
     "name": "constructor",
     "memberof": "src/storage/app.controller.js~StorageAppController",
@@ -720,7 +836,7 @@
     "lineNumber": 11
   },
   {
-    "__docId__": 56,
+    "__docId__": 60,
     "kind": "member",
     "name": "keyInput",
     "memberof": "src/storage/app.controller.js~StorageAppController",
@@ -737,7 +853,7 @@
     }
   },
   {
-    "__docId__": 57,
+    "__docId__": 61,
     "kind": "member",
     "name": "valInput",
     "memberof": "src/storage/app.controller.js~StorageAppController",
@@ -754,7 +870,7 @@
     }
   },
   {
-    "__docId__": 58,
+    "__docId__": 62,
     "kind": "method",
     "name": "save",
     "memberof": "src/storage/app.controller.js~StorageAppController",
@@ -776,7 +892,7 @@
     "params": []
   },
   {
-    "__docId__": 59,
+    "__docId__": 63,
     "kind": "method",
     "name": "view",
     "memberof": "src/storage/app.controller.js~StorageAppController",
@@ -798,7 +914,7 @@
     "params": []
   },
   {
-    "__docId__": 60,
+    "__docId__": 64,
     "kind": "method",
     "name": "clearValue",
     "memberof": "src/storage/app.controller.js~StorageAppController",
@@ -820,8 +936,499 @@
     "params": []
   },
   {
+    "__docId__": 65,
+    "kind": "file",
+    "name": "src/todo/app.controller.js",
+    "content": "/**\n * @flow\n */\nimport Todo from './models/todo.model.js';\nimport listObjectTemplate from '../components/list/list-object.hbs';\nimport todoTemplate from './components/todo.hbs';\nimport addInputComponent, { AddInputComponent } from './components/add-input';\nimport LocalStorageHelper from '../helpers/local-storage.helper.js';\n\n/**\n * Todo App Controller\n * @type {TodoAppController}\n */\nexport default class TodoAppController {\n  addInput: AddInputComponent;\n  list: Array<Todo>;\n\n  /**\n   * Sets up the Todo App\n   * @param {string} domSelector DOM Selector for app container element\n   */\n  constructor() {\n\n    this.list = [];\n    try {\n      this.loadList();\n    } catch (exc) {\n      console.error(exc, 'Error Loading List');\n    }\n\n    // This is a function that wraps a handlebars template in a DOM element, with event handler parameters to\n    // assign to the html elements created\n    this.addInput = addInputComponent(this.handleAddTodo.bind(this));\n    // Add element to page after creating it\n    (document.getElementById('add-container'): any).appendChild(this.addInput);\n\n    this.renderList();\n  }\n\n  /**\n   * Adds a New Todo Item to the list with the description provided\n   * @param {string} description of new todo to add\n   * @returns {void}\n   */\n  add(description: string) {\n    this.list.push(new Todo(description));\n\n    this.renderList();\n    this.saveList();\n  }\n\n  /**\n   * Removes a Todo Item from the list at a given index\n   * @param  {number} index to remove todo at\n   * @return {void}\n   */\n  remove(index: number) {\n    this.list.splice(index, 1);\n  }\n\n  /**\n   * Handler method for adding Todo to list and rerendering\n   * @return {void}\n   */\n  handleAddTodo() {\n    this.add(this.addInput.getValue());\n    this.renderList();\n    this.addInput.focusClear();\n  }\n\n  /**\n   * Handler method for removing a Todo from the list and rerendering\n   * @param  {number} index of the todo to remove from the list\n   * @return {void}\n   */\n  handleRemoveTodo(index: number) {\n    this.remove(index);\n    this.renderList();\n    this.saveList();\n  }\n\n  /**\n   * Handler when todo completion toggle is checked\n   * @param  {number} index index of todo to toggle in list\n   * @return {void}\n   */\n  handleToggleTodo(index) {\n    this.list[index].toggleComplete.call(this.list[index]);\n    this.saveList();\n  }\n\n  /**\n   * Method to Load the List from LocalStorage on App setup\n   * @return {void}\n   */\n  loadList() {\n    const saved: Array<Todo> = (LocalStorageHelper.get({ key: 'todos' }): any);\n\n    saved.forEach((todo: Todo) => {\n      this.list.push(new Todo(todo.description, todo.complete));\n    });\n  }\n\n  /**\n   * Method to Save the List to LocalStorage during any changes\n   * @return {void}\n   */\n  saveList() {\n    LocalStorageHelper.save({\n      key: 'todos',\n      val: this.list\n    });\n  }\n\n  /**\n   * Renders the HTML of the Todo App\n   * @return {void}\n   */\n  renderList() {\n    const listContainer: any = document.getElementById('list-container');\n    listContainer.innerHTML = '';\n\n    // Create list HTML with List Object Partial and local template file\n    listContainer.innerHTML = listObjectTemplate({ items: this.list, template: 'todo-item-template' }, {\n      partials: {\n        'todo-item-template': todoTemplate\n      }\n    });\n\n    // Add Handlers afterwards (because handlebars wont)\n    listContainer.querySelectorAll('.todo-container input[type=\"checkbox\"]').forEach((elm, index) => {\n      elm.onchange = () => {\n        this.handleToggleTodo(index);\n      };\n    });\n    listContainer.querySelectorAll('.todo-container .trash-icon').forEach((elm, index) => {\n      elm.onclick = () => {\n        this.handleRemoveTodo(index);\n      };\n    });\n  }\n};\n",
+    "static": true,
+    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/todo/app.controller.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 66,
+    "kind": "class",
+    "name": "TodoAppController",
+    "memberof": "src/todo/app.controller.js",
+    "static": true,
+    "longname": "src/todo/app.controller.js~TodoAppController",
+    "access": "public",
+    "export": true,
+    "importPath": "Template-WebpackFEND/src/todo/app.controller.js",
+    "importStyle": "TodoAppController",
+    "description": "Todo App Controller",
+    "lineNumber": 11,
+    "type": {
+      "nullable": null,
+      "types": [
+        "TodoAppController"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "interface": false
+  },
+  {
+    "__docId__": 67,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/todo/app.controller.js~TodoAppController",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/todo/app.controller.js~TodoAppController#constructor",
+    "access": "public",
+    "description": "Sets up the Todo App",
+    "lineNumber": 17,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "domSelector",
+        "description": "DOM Selector for app container element"
+      }
+    ]
+  },
+  {
+    "__docId__": 68,
+    "kind": "member",
+    "name": "list",
+    "memberof": "src/todo/app.controller.js~TodoAppController",
+    "static": false,
+    "longname": "src/todo/app.controller.js~TodoAppController#list",
+    "access": "public",
+    "description": null,
+    "lineNumber": 19,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 69,
+    "kind": "member",
+    "name": "addInput",
+    "memberof": "src/todo/app.controller.js~TodoAppController",
+    "static": false,
+    "longname": "src/todo/app.controller.js~TodoAppController#addInput",
+    "access": "public",
+    "description": null,
+    "lineNumber": 28,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 70,
+    "kind": "method",
+    "name": "add",
+    "memberof": "src/todo/app.controller.js~TodoAppController",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/todo/app.controller.js~TodoAppController#add",
+    "access": "public",
+    "description": "Adds a New Todo Item to the list with the description provided",
+    "lineNumber": 40,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{void}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "description",
+        "description": "of new todo to add"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 71,
+    "kind": "method",
+    "name": "remove",
+    "memberof": "src/todo/app.controller.js~TodoAppController",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/todo/app.controller.js~TodoAppController#remove",
+    "access": "public",
+    "description": "Removes a Todo Item from the list at a given index",
+    "lineNumber": 52,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "index",
+        "description": "to remove todo at"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 72,
+    "kind": "method",
+    "name": "handleAddTodo",
+    "memberof": "src/todo/app.controller.js~TodoAppController",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/todo/app.controller.js~TodoAppController#handleAddTodo",
+    "access": "public",
+    "description": "Handler method for adding Todo to list and rerendering",
+    "lineNumber": 60,
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 73,
+    "kind": "method",
+    "name": "handleRemoveTodo",
+    "memberof": "src/todo/app.controller.js~TodoAppController",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/todo/app.controller.js~TodoAppController#handleRemoveTodo",
+    "access": "public",
+    "description": "Handler method for removing a Todo from the list and rerendering",
+    "lineNumber": 71,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "index",
+        "description": "of the todo to remove from the list"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 74,
+    "kind": "method",
+    "name": "handleToggleTodo",
+    "memberof": "src/todo/app.controller.js~TodoAppController",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/todo/app.controller.js~TodoAppController#handleToggleTodo",
+    "access": "public",
+    "description": "Handler when todo completion toggle is checked",
+    "lineNumber": 82,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "index",
+        "description": "index of todo to toggle in list"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 75,
+    "kind": "method",
+    "name": "loadList",
+    "memberof": "src/todo/app.controller.js~TodoAppController",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/todo/app.controller.js~TodoAppController#loadList",
+    "access": "public",
+    "description": "Method to Load the List from LocalStorage on App setup",
+    "lineNumber": 91,
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 76,
+    "kind": "method",
+    "name": "saveList",
+    "memberof": "src/todo/app.controller.js~TodoAppController",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/todo/app.controller.js~TodoAppController#saveList",
+    "access": "public",
+    "description": "Method to Save the List to LocalStorage during any changes",
+    "lineNumber": 103,
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 77,
+    "kind": "method",
+    "name": "renderList",
+    "memberof": "src/todo/app.controller.js~TodoAppController",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/todo/app.controller.js~TodoAppController#renderList",
+    "access": "public",
+    "description": "Renders the HTML of the Todo App",
+    "lineNumber": 114,
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 78,
+    "kind": "file",
+    "name": "src/todo/components/add-input/index.js",
+    "content": "/**\n * @flow\n */\nimport template from './add-input.partial.hbs';\n\n/**\n * Add Input Component Type\n * @type {AddInputComponent}\n */\nexport type AddInputComponent = {\n  getValue: Function;\n  focusClear: Function\n};\n\n/**\n * AddInput Component Factory that creates DOM element and binds handlers\n * @param {Function} addHandler handler when 'add' button is pressed\n * @return {AddInputComponent} Add input component\n */\nfunction addInputComponentFactory(addHandler: Function): AddInputComponent {\n  const temp = document.createElement('div');\n\n  temp.innerHTML = template();\n\n  const input = (temp.querySelector('.add-input'): any);\n  input.onkeypress = (event) => {\n    if (event.keyCode === 13) {\n      addHandler();\n    }\n  };\n  (temp.querySelector('.add-button'): any).onclick = addHandler;\n\n  const ret: any = temp.firstChild;\n  ret.getValue = () => {\n    return input.value;\n  };\n\n  ret.focusClear = () => {\n    input.value = '';\n    input.focus();\n  };\n\n  return ret;\n};\n\n\nexport default addInputComponentFactory;\n",
+    "static": true,
+    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/todo/components/add-input/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 79,
+    "kind": "function",
+    "name": "addInputComponentFactory",
+    "memberof": "src/todo/components/add-input/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/todo/components/add-input/index.js~addInputComponentFactory",
+    "access": "public",
+    "export": true,
+    "importPath": "Template-WebpackFEND/src/todo/components/add-input/index.js",
+    "importStyle": "addInputComponentFactory",
+    "description": "AddInput Component Factory that creates DOM element and binds handlers",
+    "lineNumber": 14,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "addHandler",
+        "description": "handler when 'add' button is pressed"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "AddInputComponent"
+      ],
+      "spread": false,
+      "description": "Add input component"
+    }
+  },
+  {
+    "__docId__": 80,
+    "kind": "file",
+    "name": "src/todo/models/todo.model.js",
+    "content": "/**\n * @flow\n */\n\n/**\n * Todo Model that stores the fields related to a Todo\n * @type {Todo}\n */\nexport default class Todo {\n  description: string;\n  complete: boolean;\n\n  /**\n   * Creates the Todo Model\n   * @param {string} description of the todo to be completed\n   * @param {boolean} complete completion status of todo\n   */\n  constructor(description: string, complete: ?boolean = false) {\n    this.description = description;\n    this.complete = complete;\n  }\n\n  /**\n   * Toggles the completion status of the Todo\n   * @return {void}\n   */\n  toggleComplete() {\n    this.complete = !this.complete;\n  }\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/todo/models/todo.model.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 81,
+    "kind": "class",
+    "name": "Todo",
+    "memberof": "src/todo/models/todo.model.js",
+    "static": true,
+    "longname": "src/todo/models/todo.model.js~Todo",
+    "access": "public",
+    "export": true,
+    "importPath": "Template-WebpackFEND/src/todo/models/todo.model.js",
+    "importStyle": "Todo",
+    "description": "Todo Model that stores the fields related to a Todo",
+    "lineNumber": 7,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Todo"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "interface": false
+  },
+  {
+    "__docId__": 82,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/todo/models/todo.model.js~Todo",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/todo/models/todo.model.js~Todo#constructor",
+    "access": "public",
+    "description": "Creates the Todo Model",
+    "lineNumber": 14,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "description",
+        "description": "of the todo to be completed"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "complete",
+        "description": "completion status of todo"
+      }
+    ]
+  },
+  {
+    "__docId__": 83,
+    "kind": "member",
+    "name": "description",
+    "memberof": "src/todo/models/todo.model.js~Todo",
+    "static": false,
+    "longname": "src/todo/models/todo.model.js~Todo#description",
+    "access": "public",
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 84,
+    "kind": "member",
+    "name": "complete",
+    "memberof": "src/todo/models/todo.model.js~Todo",
+    "static": false,
+    "longname": "src/todo/models/todo.model.js~Todo#complete",
+    "access": "public",
+    "description": null,
+    "lineNumber": 16,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 85,
+    "kind": "method",
+    "name": "toggleComplete",
+    "memberof": "src/todo/models/todo.model.js~Todo",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/todo/models/todo.model.js~Todo#toggleComplete",
+    "access": "public",
+    "description": "Toggles the completion status of the Todo",
+    "lineNumber": 23,
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
     "kind": "index",
-    "content": "# Template Webpack FEND App\n\nTemplate and Example using Webpack to build a FEND Browser App (with HTML/CSS/JS and Image files).\n\n**Demo:**\n - Simple web interface for storing values in the Browser Local Storage.\n\n\n## Dependencies\nNode v12+ and npm\n\nSee package.json([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/package.json))\nfor full list of current dependencies\n - [Webpack](https://webpack.js.org/) + [Loaders ](https://webpack.js.org/concepts/loaders/)-- managing the build process\n - [Babel](https://babeljs.io/) -- compiling newer ECMA2016+ into browser-capable javascript\n - [FlowJS](https://flow.org/) -- adding types to javascript\n - [ESLint](http://eslint.org/) -- enforcing javascript code style\n - [Webpack Dev Server](https://github.com/webpack/webpack-dev-server)-- rapid development with hot reloading\n - [Mocha](https://mochajs.org/), [Chai](https://www.chaijs.com/), and [Sinon](https://sinonjs.org/) -- unit testing\n - [Karma](https://karma-runner.github.io/) -- managing tests in different browsers\n - [EsDoc](https://esdoc.org/) -- creating easy javascript documentation\n - [PostCSS](https://postcss.org/) -- parsing and compiling css files\n - [HTMLHint](https://github.com/htmlhint/HTMLHint) -- parsing and enforcing HTML standards\n - [Tailwind](https://tailwindcss.com/) - Utility-first CSS Framework\n - [Zondicons](http://www.zondicons.com) - Free SVG Icon Library\n\n\n## Development\n\nHow to use this template to create a basic Frontend Application:\n\n1. Download template and update dependencies\n2. Create HTML files in `src/`\n    - add HtmlWebpackPlugin instances for each new output page in webpack.config.js\n3. Add javascript files and reference in `src/entry.js`  (for up your application\n    - add additional javascript entry points in webpack.config.js\n4. Add CSS files to `src` and import in javascript\n   - or install CSS libraries with npm and import\n   - or reference in HTML template?\n5. Use `npm run start-watch` to compile and run dev server + tests in watch mode\n6. Navigate http://localhost:3030/ to see a development version of your web app with Hot reloading\n   - or http://localhost:3030/docs/ to see the documentation\n\n\n### Tests/Running\n\n`npm run start-watch` to run Karma + Mocha and watch for changes while also opening the Webpack dev server that will recompile the project and reload the webpage on file changes on http://localhost:3030\n\n`npm run test-watch` to run Karma + Mocha and all of the tests associated with the project and watch for changes on the files to re-run the tests\n\n`npm run dev-watch` to run the only webpack development server and watch for changes on the files to reload\n\n`npm run test-dev` to start the unit test runner for debugging unit tests in the browser\n\n`npm run test` to run all of the unit tests for the application one time\n\n`npm run lint` to run the linter on src directory\n\n`npm run build` compile application to public directory\n\n`npm run doc` to generate static documentation in the doc folder\n\n`npm run doc-image` to update sourcemap image and static documentation in the doc folder\n\n**TODO**\n\n`npm run build-prod` ... TODO: create prod config\n\n`npm run clean` ... TODO: clean the workspace\n\n\n\n### TODO\n - [x] Install Dev Dependencies\n - [x] (^) Webpack config\n - [x] (^) Karma\n - [x] (^) Include eslint in test-watch?\n - [x] (^) Combined build and test watch\n - [x] (^) Setup Mocha\n    - [x] (-) Setup global test objects\n - [x] (^) Karma webpack integration (for tests in browser)\n    - [x] (^) Use rebuilt bundle when running tests\n - [x] (^) Flowtype eslint plugin\n - [x] (-) Setup EsDoc\n    - [ ] (v) run doc before commit?\n - [x] ~~(-) Prettier for autofix~~ (just use eslint atom plugin with fix)\n - [x] (^) karma/mocha unit test debugging ~~(with atom?)~~ in browser\n - [x] (^) Demo app in docs\n - [x] (^) Move js to `src/app`\n - [x] (^) Fix single build process (args/if statement in webpack)\n - [x] (^) Update linting rules\n      - with descturing/filenames/naming conventions? https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration\n      - testing rules\n      - naming conventions?\n - [ ] ~~(^) Absolute Paths~~\n - [x] (^) Update Node Version to v10\n - [x] (^) Update Dependencies\n - [x] (^) Different Folders for examples\n - [x] (^) HTML Page with important stuff\n   - header/tags\n - [x] (^) Github Actions ----->> Build doc on commit to master <<-----\n - [x] (^) HTML Linting?\n   - https://github.com/htmlhint/HTMLHint\n   - Took some finagling to get this to work during watch process\n - [x] Clearing/standardizing browser css\n   - Normalize CSS http://nicolasgallagher.com/about-normalize-css/\n - [..] PostCSS?\n   - ecosystem of parsing css files\n   - [..] (^) CSS Linting\n      - stylelint\n      - bem linting? https://github.com/postcss/postcss-bem-linter#stylelint-plugin\n   - [x] css variables/hierarchy?\n      - https://github.com/jonathantneal/precss\n    - autoprefixer for making css look cleaner (browser prefixes don't need to be added)\n    - list all selectors used: https://github.com/davidtheclark/list-selectors\n - [x] (^) Madge?\n - [x] (^) Manual in Docs\n - [..] (^) HTML template example\n   - webpack/lodash style? https://github.com/emaphp/underscore-template-loader\n   - handlebars?\n   - [ ] Components (javascript methods that return compiled html, has params for template variables)\n - [x] (^) Base CSS Style for all apps\n - [x] (^) CSS Framework\n   - [x] Tailwind - integrates with javascript\n - [ ] (^) Styleguide\n    - Page in docsite\n    - Examples: http://styleguides.io/examples.html\n      - http://codeforamerica.clearleft.com/#\n    - Fractal? https://github.com/adamlindqvist/fractal-webpack-plugin\n - [ ] (^) Githooks\n - [ ] (^) Configuration File\n - [ ] (^) If running in development -> console errors/warnings appear in UI bubble\n - [..] Helpers\n   - ~~Localstorage~~\n   - Performance Loggers (start/end/post to api? file?)\n   - Internal API Helper\n   - External API Helper?\n - [ ] Accessibility Linting\n    - https://github.com/pa11y/pa11y\n    - ASLint\n    - https://www.24a11y.com/2017/reacts-accessibility-code-linter/\n - [ ] Basic UI Framework (other repos?)\n    - [ ] Backbone?\n    - [ ] Vue?\n    - [ ] React?\n    - [ ] Aurelia\n  - [ ] Fork of this Repo with different directories for each css framework?\n    - [ ] bulma https://bulma.io/documentation/overview/start/\n    - [ ] Bootstrap?\n    - [ ] Foundation?\n    - [ ] Material Design?\n - [ ] (-) Mock API requests on localhost\n    - Contract testing? https://docs.pact.io/\n    - OpenAPI validation of mocks? https://bitbucket.org/atlassian/swagger-mock-validator/src/master/\n - [ ] (-) production configuration for webpack\n    - Improve build speed in develop https://webpack.js.org/guides/build-performance/\n    - Build caching https://webpack.js.org/guides/caching/\n    - Minimize?\n    - No Warnings? No output in tests?\n    - CSS Generated to File and included at top of HTML\n    - Accessibility validation?\n - [ ] (-) cleaner output from watch script?\n - [ ] (v) Cypress UI Testing?\n - [ ] (v) Serve docs with small script and `npm run doc-serve`\n - [ ] (v) package.json main script\n    - (install/run application and open browser? or just point to entry or AppController?)\n - [ ] (v) parameterize directories in package.json scripts?\n    - better npm script?\n\n**Application**\n - [x] Local Storage DataService\n - [x] Controller/Component for saving/retrieving stored vals\n - [x] Interface for displaying vals\n - [ ] Weather/Other Free API\n - [ ] Redux Example (w/o React)\n - [ ] React Example\n   - [ ] Notebook App\n     - [ ] Daily Scratchpad\n     - [ ] Save/Read Github Gists\n       - https://developer.github.com/v3/gists/#list-gists-for-the-authenticated-user\n     - [ ] Github Readmes in my repos and save with commit\n     - [ ] Sorting Notes\n       - A-Z\n       - Date Created?\n       - Date Modified\n       - Custom (with dragging)\n     - [ ] Font Size\n     - [ ] Tagging\n       - drag to tag\n       - multiple tags per note\n       - shift+click on tags section to filter notes\n - [ ] GraphQL Example\n - [ ] Websocket?\n\n## Notes/Ideas\n - PostCSS vs CSS-Loader?\n - Why hold much state/data in UI rather than display from server on page load?\n    - Pros:\n      - Speed for user (when results can be preloaded)\n      - Saves money in server computation costs to create UI/remember state\n    - Cons:\n      - Lots of bandwidth to deliver Single Page App\n      - Can be slower when building large UI after data call\n    - Overall: Save state/preload data in client to improve user experience. Use server for speed\n      - Use client when small objects can be stored/edited and returned\n      - Use server for displayed only data\n    - Redux for sharing state between client/server\n    - When should we vs static webpages? React/React Static?\n - Backbone for UI? Seems simpler than react? Doesn't rely/revolve around instant response to interaction\n - [ ] GraphQL\n",
+    "content": "# Template Webpack FEND App\n\nTemplate and Example using Webpack to build a FEND Browser App (with HTML/CSS/JS and Image files).\n\n**Demo:**\n - Simple web interface for storing values in the Browser Local Storage.\n\n\n## Dependencies\nNode v12+ and npm\n\nSee package.json([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/package.json))\nfor full list of current dependencies\n - [Webpack](https://webpack.js.org/) + [Loaders ](https://webpack.js.org/concepts/loaders/)-- managing the build process\n - [Babel](https://babeljs.io/) -- compiling newer ECMA2016+ into browser-capable javascript\n - [FlowJS](https://flow.org/) -- adding types to javascript\n - [ESLint](http://eslint.org/) -- enforcing javascript code style\n - [Webpack Dev Server](https://github.com/webpack/webpack-dev-server)-- rapid development with hot reloading\n - [Mocha](https://mochajs.org/), [Chai](https://www.chaijs.com/), and [Sinon](https://sinonjs.org/) -- unit testing\n - [Karma](https://karma-runner.github.io/) -- managing tests in different browsers\n - [EsDoc](https://esdoc.org/) -- creating easy javascript documentation\n - [PostCSS](https://postcss.org/) -- parsing and compiling css files\n - [HTMLHint](https://github.com/htmlhint/HTMLHint) -- parsing and enforcing HTML standards\n - [Tailwind](https://tailwindcss.com/) - Utility-first CSS Framework\n - [Zondicons](http://www.zondicons.com) - Free SVG Icon Library\n\n\n## Development\n\nHow to use this template to create a basic Frontend Application:\n\n1. Download template and update dependencies\n2. Create HTML files in `src/`\n    - add HtmlWebpackPlugin instances for each new output page in webpack.config.js\n3. Add javascript files and reference in `src/entry.js`  (for up your application\n    - add additional javascript entry points in webpack.config.js\n4. Add CSS files to `src` and import in javascript\n   - or install CSS libraries with npm and import\n   - or reference in HTML template?\n5. Use `npm run start-watch` to compile and run dev server + tests in watch mode\n6. Navigate http://localhost:3030/ to see a development version of your web app with Hot reloading\n   - or http://localhost:3030/docs/ to see the documentation\n\n\n### Tests/Running\n\n`npm run start-watch` to run Karma + Mocha and watch for changes while also opening the Webpack dev server that will recompile the project and reload the webpage on file changes on http://localhost:3030\n\n`npm run test-watch` to run Karma + Mocha and all of the tests associated with the project and watch for changes on the files to re-run the tests\n\n`npm run dev-watch` to run the only webpack development server and watch for changes on the files to reload\n\n`npm run test-dev` to start the unit test runner for debugging unit tests in the browser\n\n`npm run test` to run all of the unit tests for the application one time\n\n`npm run lint` to run the linter on src directory\n\n`npm run build` compile application to public directory\n\n`npm run doc` to generate static documentation in the doc folder\n\n`npm run doc-image` to update sourcemap image and static documentation in the doc folder\n\n**TODO**\n\n`npm run build-prod` ... TODO: create prod config\n\n`npm run clean` ... TODO: clean the workspace\n\n\n\n### TODO\n - [x] Install Dev Dependencies\n - [x] (^) Webpack config\n - [x] (^) Karma\n - [x] (^) Include eslint in test-watch?\n - [x] (^) Combined build and test watch\n - [x] (^) Setup Mocha\n    - [x] (-) Setup global test objects\n - [x] (^) Karma webpack integration (for tests in browser)\n    - [x] (^) Use rebuilt bundle when running tests\n - [x] (^) Flowtype eslint plugin\n - [x] (-) Setup EsDoc\n    - [ ] (v) run doc before commit?\n - [x] ~~(-) Prettier for autofix~~ (just use eslint atom plugin with fix)\n - [x] (^) karma/mocha unit test debugging ~~(with atom?)~~ in browser\n - [x] (^) Demo app in docs\n - [x] (^) Move js to `src/app`\n - [x] (^) Fix single build process (args/if statement in webpack)\n - [x] (^) Update linting rules\n      - with descturing/filenames/naming conventions? https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration\n      - testing rules\n      - naming conventions?\n - [ ] ~~(^) Absolute Paths~~\n - [x] (^) Update Node Version to v10\n - [x] (^) Update Dependencies\n - [x] (^) Different Folders for examples\n - [x] (^) HTML Page with important stuff\n   - header/tags\n - [x] (^) Github Actions ----->> Build doc on commit to master <<-----\n - [x] (^) HTML Linting?\n   - https://github.com/htmlhint/HTMLHint\n   - Took some finagling to get this to work during watch process\n - [x] Clearing/standardizing browser css\n   - Normalize CSS http://nicolasgallagher.com/about-normalize-css/\n - [..] PostCSS?\n   - ecosystem of parsing css files\n   - [..] (^) CSS Linting\n      - stylelint\n      - bem linting? https://github.com/postcss/postcss-bem-linter#stylelint-plugin\n   - [x] css variables/hierarchy?\n      - https://github.com/jonathantneal/precss\n    - autoprefixer for making css look cleaner (browser prefixes don't need to be added)\n    - list all selectors used: https://github.com/davidtheclark/list-selectors\n - [x] (^) Madge?\n - [x] (^) Manual in Docs\n - [x] (^) HTML template example\n   - webpack/lodash style? https://github.com/emaphp/underscore-template-loader\n   - handlebars?\n      - seems like this isn't the best for javascript components, although it will work for this basic repo\n      - problems with handlebar-webpack-plugin and webpack-dev-server\n   - [x] Components (javascript methods that return compiled html, has params for template variables)\n - [x] (^) Base CSS Style for all apps\n - [x] (^) CSS Framework\n   - [x] Tailwind - integrates with javascript\n - [ ] (^) Styleguide\n    - Page in docsite\n    - Examples: http://styleguides.io/examples.html\n      - http://codeforamerica.clearleft.com/#\n    - Fractal? https://github.com/adamlindqvist/fractal-webpack-plugin\n - [ ] (^) Githooks\n - [ ] (^) Configuration File\n - [ ] (^) If running in development -> console errors/warnings appear in UI bubble\n - [..] Helpers\n   - ~~Localstorage~~\n   - Performance Loggers (start/end/post to api? file?)\n   - Internal API Helper\n   - External API Helper?\n - [ ] Accessibility Linting\n    - https://github.com/pa11y/pa11y\n    - ASLint\n    - https://www.24a11y.com/2017/reacts-accessibility-code-linter/\n - [ ] Basic UI Framework (other repos?)\n    - [ ] Backbone?\n    - [ ] Vue?\n    - [ ] React?\n    - [ ] Aurelia\n  - [ ] Fork of this Repo with different directories for each css framework?\n    - [ ] bulma https://bulma.io/documentation/overview/start/\n    - [ ] Bootstrap?\n    - [ ] Foundation?\n    - [ ] Material Design?\n - [ ] (-) Mock API requests on localhost\n    - Contract testing? https://docs.pact.io/\n    - OpenAPI validation of mocks? https://bitbucket.org/atlassian/swagger-mock-validator/src/master/\n - [ ] (-) production configuration for webpack\n    - Improve build speed in develop https://webpack.js.org/guides/build-performance/\n    - Build caching https://webpack.js.org/guides/caching/\n    - Minimize?\n    - No Warnings? No output in tests?\n    - CSS Generated to File and included at top of HTML\n    - Accessibility validation?\n - [ ] (-) cleaner output from watch script?\n - [ ] (v) Cypress UI Testing?\n - [ ] (v) Serve docs with small script and `npm run doc-serve`\n - [ ] (v) package.json main script\n    - (install/run application and open browser? or just point to entry or AppController?)\n - [ ] (v) parameterize directories in package.json scripts?\n    - better npm script?\n\n**Application**\n - [x] Local Storage DataService\n - [x] Controller/Component for saving/retrieving stored vals\n - [x] Interface for displaying vals\n - [ ] Weather/Other Free API\n - [ ] Redux Example (w/o React)\n - [ ] React Example\n   - [ ] Notebook App\n     - [ ] Daily Scratchpad\n     - [ ] Save/Read Github Gists\n       - https://developer.github.com/v3/gists/#list-gists-for-the-authenticated-user\n     - [ ] Github Readmes in my repos and save with commit\n     - [ ] Sorting Notes\n       - A-Z\n       - Date Created?\n       - Date Modified\n       - Custom (with dragging)\n     - [ ] Font Size\n     - [ ] Tagging\n       - drag to tag\n       - multiple tags per note\n       - shift+click on tags section to filter notes\n - [ ] GraphQL Example\n - [ ] Websocket?\n\n## Notes/Ideas\n - PostCSS vs CSS-Loader?\n - Why hold much state/data in UI rather than display from server on page load?\n    - Pros:\n      - Speed for user (when results can be preloaded)\n      - Saves money in server computation costs to create UI/remember state\n    - Cons:\n      - Lots of bandwidth to deliver Single Page App\n      - Can be slower when building large UI after data call\n    - Overall: Save state/preload data in client to improve user experience. Use server for speed\n      - Use client when small objects can be stored/edited and returned\n      - Use server for displayed only data\n    - Redux for sharing state between client/server\n    - When should we vs static webpages? React/React Static?\n - Backbone for UI? Seems simpler than react? Doesn't rely/revolve around instant response to interaction\n - [ ] GraphQL\n",
     "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/README.md",
     "name": "./README.md",
     "static": true,
@@ -829,7 +1436,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"version\": \"0.1.0\",\n  \"name\": \"Template-WebpackFEND\",\n  \"description\": \"Template using Webpack to create a html/javascript/css pages with multiple files\",\n  \"keywords\": [\n    \"template\",\n    \"webpack\",\n    \"fend\",\n    \"babel\",\n    \"flow\",\n    \"eslint\",\n    \"esdoc\",\n    \"browser\",\n    \"html\",\n    \"css\",\n    \"javascript\"\n  ],\n  \"author\": \"devlin.junker@gmail.com\",\n  \"license\": \"MIT\",\n  \"main\": \"target/app.bundle.js\",\n  \"scripts\": {\n    \"start-watch\": \"node_modules/karma/bin/karma start --env.dev_server\",\n    \"dev-watch\": \"./node_modules/.bin/webpack --env.dev_server\",\n    \"test-watch\": \"node_modules/karma/bin/karma start\",\n    \"test-dev\": \"node_modules/karma/bin/karma start --single-run=false --browser=Chrome --auto-watch\",\n    \"test\": \"node_modules/karma/bin/karma start --single-run\",\n    \"build\": \"./node_modules/.bin/webpack\",\n    \"lint\": \"./node_modules/.bin/eslint ./src\",\n    \"doc\": \"npm run build && (./node_modules/.bin/esdoc; rm -rf docs/demo/; mv -f public/ docs/demo/)\",\n    \"doc-image\": \"madge ./src -i docs/image/dependency.png && npm run doc\",\n    \"clean\": \" ## TODO: clean up project files\"\n  },\n  \"dependencies\": {\n    \"lodash\": \"^4.17.15\",\n    \"normalize.css\": \"^8.0.1\",\n    \"tailwindcss\": \"^1.4.4\"\n  },\n  \"devDependencies\": {\n    \"@babel/core\": \"^7.9.0\",\n    \"@babel/polyfill\": \"^7.8.7\",\n    \"@babel/preset-env\": \"^7.9.5\",\n    \"@babel/preset-flow\": \"^7.9.0\",\n    \"@babel/register\": \"^7.9.0\",\n    \"autoprefixer\": \"^9.7.6\",\n    \"babel-eslint\": \"^10.1.0\",\n    \"babel-loader\": \"^8.1.0\",\n    \"chai\": \"^4.2.0\",\n    \"chai-as-promised\": \"^7.1.1\",\n    \"circular-dependency-plugin\": \"^5.2.0\",\n    \"clean-webpack-plugin\": \"^1.0.1\",\n    \"css-loader\": \"^2.1.0\",\n    \"electron-rebuild\": \"^1.10.1\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-flow-plugin\": \"^1.0.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^5.15.1\",\n    \"eslint-config-prettier\": \"^4.1.0\",\n    \"eslint-import-resolver-webpack\": \"^0.11.0\",\n    \"eslint-loader\": \"^2.1.2\",\n    \"eslint-plugin-filenames\": \"^1.3.2\",\n    \"eslint-plugin-flowtype\": \"^3.4.2\",\n    \"eslint-plugin-flowtype-errors\": \"^4.2.0\",\n    \"eslint-plugin-header\": \"^3.0.0\",\n    \"eslint-plugin-import\": \"^2.20.2\",\n    \"eslint-plugin-mocha\": \"^6.3.0\",\n    \"eslint-plugin-prettier\": \"^3.1.3\",\n    \"file-loader\": \"^3.0.1\",\n    \"flow-bin\": \"^0.93.0\",\n    \"flow-typed\": \"^2.6.2\",\n    \"flow-webpack-plugin\": \"^1.2.0\",\n    \"html-webpack-plugin\": \"^3.2.0\",\n    \"htmlhint\": \"^0.11.0\",\n    \"ignore-styles\": \"^5.0.1\",\n    \"karma\": \"^3.1.4\",\n    \"karma-chrome-launcher\": \"^2.2.0\",\n    \"karma-eslint\": \"^2.2.0\",\n    \"karma-firefox-launcher\": \"^1.3.0\",\n    \"karma-mocha\": \"^1.3.0\",\n    \"karma-sourcemap-loader\": \"^0.3.7\",\n    \"karma-webpack\": \"^4.0.2\",\n    \"list-selectors\": \"^2.0.0\",\n    \"madge\": \"^3.8.0\",\n    \"mini-css-extract-plugin\": \"^0.9.0\",\n    \"mocha\": \"^6.2.3\",\n    \"postcss-exclude-files\": \"^1.0.15\",\n    \"postcss-import\": \"^12.0.1\",\n    \"postcss-loader\": \"^3.0.0\",\n    \"postcss-preset-env\": \"^6.7.0\",\n    \"postcss-reporter\": \"^6.0.1\",\n    \"precss\": \"^4.0.0\",\n    \"prettier\": \"^1.19.1\",\n    \"sinon\": \"^7.2.7\",\n    \"sinon-chai\": \"^3.5.0\",\n    \"style-loader\": \"^0.23.1\",\n    \"stylelint\": \"^13.3.3\",\n    \"stylelint-config-standard\": \"^20.0.0\",\n    \"svg-inline-loader\": \"^0.8.2\",\n    \"underscore-template-loader\": \"^1.0.0\",\n    \"webpack\": \"^4.43.0\",\n    \"webpack-cli\": \"^3.3.11\",\n    \"webpack-dev-server\": \"^3.10.3\",\n    \"write-file-webpack-plugin\": \"^4.5.1\"\n  }\n}\n",
+    "content": "{\n  \"version\": \"0.1.0\",\n  \"name\": \"Template-WebpackFEND\",\n  \"description\": \"Template using Webpack to create a html/javascript/css pages with multiple files\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/devlinjunker/template.webpack.fend\"\n  },\n  \"keywords\": [\n    \"template\",\n    \"webpack\",\n    \"fend\",\n    \"babel\",\n    \"flow\",\n    \"eslint\",\n    \"esdoc\",\n    \"browser\",\n    \"html\",\n    \"css\",\n    \"javascript\"\n  ],\n  \"author\": \"devlin.junker@gmail.com\",\n  \"license\": \"MIT\",\n  \"main\": \"target/app.bundle.js\",\n  \"scripts\": {\n    \"start-watch\": \"node_modules/karma/bin/karma start --env.dev_server\",\n    \"dev-watch\": \"./node_modules/.bin/webpack --env.dev_server\",\n    \"test-watch\": \"node_modules/karma/bin/karma start\",\n    \"test-dev\": \"node_modules/karma/bin/karma start --single-run=false --browser=Chrome --auto-watch\",\n    \"test\": \"node_modules/karma/bin/karma start --single-run\",\n    \"build\": \"./node_modules/.bin/webpack\",\n    \"lint\": \"./node_modules/.bin/eslint ./src\",\n    \"doc\": \"npm run build && (./node_modules/.bin/esdoc; rm -rf docs/demo/; mv -f public/ docs/demo/)\",\n    \"doc-image\": \"madge ./src -i docs/image/dependency.png && npm run doc\",\n    \"clean\": \" ## TODO: clean up project files\"\n  },\n  \"dependencies\": {\n    \"lodash\": \"^4.17.15\",\n    \"normalize.css\": \"^8.0.1\",\n    \"tailwindcss\": \"^1.4.4\"\n  },\n  \"devDependencies\": {\n    \"@babel/core\": \"^7.9.0\",\n    \"@babel/polyfill\": \"^7.8.7\",\n    \"@babel/preset-env\": \"^7.9.5\",\n    \"@babel/preset-flow\": \"^7.9.0\",\n    \"@babel/register\": \"^7.9.0\",\n    \"autoprefixer\": \"^9.7.6\",\n    \"babel-eslint\": \"^10.1.0\",\n    \"babel-loader\": \"^8.1.0\",\n    \"chai\": \"^4.2.0\",\n    \"chai-as-promised\": \"^7.1.1\",\n    \"circular-dependency-plugin\": \"^5.2.0\",\n    \"clean-webpack-plugin\": \"^1.0.1\",\n    \"css-loader\": \"^2.1.0\",\n    \"electron-rebuild\": \"^1.10.1\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-flow-plugin\": \"^1.0.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^5.15.1\",\n    \"eslint-config-prettier\": \"^4.1.0\",\n    \"eslint-import-resolver-webpack\": \"^0.11.0\",\n    \"eslint-loader\": \"^2.1.2\",\n    \"eslint-plugin-filenames\": \"^1.3.2\",\n    \"eslint-plugin-flowtype\": \"^3.4.2\",\n    \"eslint-plugin-flowtype-errors\": \"^4.2.0\",\n    \"eslint-plugin-header\": \"^3.0.0\",\n    \"eslint-plugin-import\": \"^2.20.2\",\n    \"eslint-plugin-mocha\": \"^6.3.0\",\n    \"eslint-plugin-prettier\": \"^3.1.3\",\n    \"file-loader\": \"^3.0.1\",\n    \"flow-bin\": \"^0.93.0\",\n    \"flow-typed\": \"^2.6.2\",\n    \"flow-webpack-plugin\": \"^1.2.0\",\n    \"handlebars\": \"^4.7.6\",\n    \"handlebars-loader\": \"^1.7.1\",\n    \"html-webpack-plugin\": \"^3.2.0\",\n    \"htmlhint\": \"^0.11.0\",\n    \"ignore-styles\": \"^5.0.1\",\n    \"karma\": \"^3.1.4\",\n    \"karma-chrome-launcher\": \"^2.2.0\",\n    \"karma-eslint\": \"^2.2.0\",\n    \"karma-firefox-launcher\": \"^1.3.0\",\n    \"karma-mocha\": \"^1.3.0\",\n    \"karma-sourcemap-loader\": \"^0.3.7\",\n    \"karma-webpack\": \"^4.0.2\",\n    \"list-selectors\": \"^2.0.0\",\n    \"madge\": \"^3.8.0\",\n    \"mini-css-extract-plugin\": \"^0.9.0\",\n    \"mocha\": \"^6.2.3\",\n    \"postcss-exclude-files\": \"^1.0.15\",\n    \"postcss-import\": \"^12.0.1\",\n    \"postcss-loader\": \"^3.0.0\",\n    \"postcss-preset-env\": \"^6.7.0\",\n    \"postcss-reporter\": \"^6.0.1\",\n    \"precss\": \"^4.0.0\",\n    \"prettier\": \"^1.19.1\",\n    \"sinon\": \"^7.2.7\",\n    \"sinon-chai\": \"^3.5.0\",\n    \"style-loader\": \"^0.23.1\",\n    \"stylelint\": \"^13.3.3\",\n    \"stylelint-config-standard\": \"^20.0.0\",\n    \"svg-inline-loader\": \"^0.8.2\",\n    \"underscore-template-loader\": \"^1.1.0\",\n    \"webpack\": \"^4.43.0\",\n    \"webpack-cli\": \"^3.3.11\",\n    \"webpack-dev-server\": \"^3.10.3\",\n    \"write-file-webpack-plugin\": \"^4.5.1\"\n  }\n}\n",
     "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/package.json",
     "name": "package.json",
     "static": true,
@@ -837,7 +1444,7 @@
   },
   {
     "kind": "manualIndex",
-    "content": "**NOTE: Any manual changes to Github Wiki will be overwritten by push (PR merged) to `master` branch**\n\nThese files should updated whenever we merge to master, and be in sync between:\n - The README files in the repo,\n - The [Github Wiki](https://github.com/devlinjunker/template.webpack.fend/wiki), and\n - The [generated doc site](https://devlinjunker.github.io/template.webpack.fend/manual/index.html) served\n    when running the server and on github pages\n\nThis project uses a Github Action to accomplish this. The action is executed on merge to the `master` branch\nand defined inside of the `./.github/workflows/` directory([github](https://github.com/devlinjunker/template.webpack.fend/tree/master/.github/workflows))\n(along with all other github actions) that creates a commit to update the docs directory on github and then\ncalls a script in the `scripts/actions` directory([github](https://github.com/devlinjunker/template.webpack.fend/tree/master/scripts/actions)).\n\nThe script retrieves the following markdown files (defined in `./.esdoc.json`) and copies them to a temporary\ndirectory, then uses the [wiki-page-creator-action](https://github.com/marketplace/actions/wiki-page-creator-action)\nto update the wiki.\n\n### Table of Contents\n\n- [Setup](manual/README.setup.html) - dependencies and how to install and start development (eventually production?)\n- [Entry](manual/README.entry.html) - How Javascript Bundles are defined and files that can be included\n- [HTML](manual/README.html.html) - How HTML files are created and the processes we use to ensure quality\n- [CSS](manual/README.css.html) - CSS Normalization, Processing and Frameworks\n- [Images](manual/README.img.html) - Including images and SVG icons from free library\n- [Helpers](manual/README.helpers.html) - Javascript Helper Classes and Code that can be used\n- [Github Actions](manual/README.scripts.html) - Notes about Actions run on to ensure quality\n- [Test](manual/README.test.html) - How testing is configured and how to run tests\n\n.\n",
+    "content": "**NOTE: Any manual changes to Github Wiki will be overwritten by push (PR merged) to `master` branch**\n\nThese files should updated whenever we merge to master, and be in sync between:\n - The README files in the repo,\n - The [Github Wiki](https://github.com/devlinjunker/template.webpack.fend/wiki), and\n - The [generated doc site](https://devlinjunker.github.io/template.webpack.fend/manual/index.html) served\n    when running the server and on github pages\n\nThis project uses a Github Action to accomplish this. The action is executed on merge to the `master` branch\nand defined inside of the `./.github/workflows/` directory([github](https://github.com/devlinjunker/template.webpack.fend/tree/master/.github/workflows))\n(along with all other github actions) that creates a commit to update the docs directory on github and then\ncalls a script in the `scripts/actions` directory([github](https://github.com/devlinjunker/template.webpack.fend/tree/master/scripts/actions)).\n\nThe script retrieves the following markdown files (defined in `./.esdoc.json`) and copies them to a temporary\ndirectory, then uses the [wiki-page-creator-action](https://github.com/marketplace/actions/wiki-page-creator-action)\nto update the wiki.\n\n### Table of Contents\n\n- [Setup](manual/README.setup.html) - dependencies and how to install and start development (eventually production?)\n- [Entry](manual/README.entry.html) - How Javascript Bundles are defined and files that can be included\n- [HTML](manual/README.html.html) - How HTML files are created and the processes we use to ensure quality\n- [CSS](manual/README.css.html) - CSS Normalization, Processing and Frameworks\n- [Images](manual/README.img.html) - Including images and SVG icons from free library\n- [Helpers](manual/README.helpers.html) - Javascript Helper Classes and Code that is used in the project\n- [Static HTML Components](manual/README.static.html) - HTML Components that are generated during the build process\n- [Dynamic HTML Components](manual/README.components.html) - HTML/JS Components that are created with Handlebars dynamically during runtimes\n- [Github Actions](manual/README.scripts.html) - Notes about Actions run on to ensure quality\n- [Testing](manual/README.test.html) - How testing is configured and how to run tests\n- [Custom Webpack Loaders](manual/README.loaders.html) - Explaining how we configure webpack loaders to generate the application\n\n\n\n.\n",
     "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/index.md",
     "name": "./index.md",
     "static": true,
@@ -863,7 +1470,7 @@
     "kind": "manual",
     "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/README.html.md",
     "name": "./src/README.html.md",
-    "content": "# HTML\nHTML files structure the layout of the web application. The final HTML files are generated by webpack and\noutput to the `public/` directory when building with `npm run build` and define the pages that can be accessed via browser in the final application.\n\n\n## Webpack\nThe webpack.config.js file([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/webpack.config.js))\ndefines the HTML pages that will be generated by the build process. For each instance of the HtmlWebpackPlugin\nin the `plugins` section, webpack will output a new HTML file using the `template` at the `filename` provided\n(inside of `public/`).\n\n### Page Header Meta Attributes\nThe `<meta>` webpage attributes are passed into the instance of the HtmlWebpackPlugin for each page defined in the webpack config file. These attributes could be dynamically set for each page if desired, or can be the same for each html page.\n\n### Templating\nSimple HTML Templating can be done with the [underscore-lodash-loader](https://github.com/emaphp/underscore-template-loader).\nThis loader allows partial HTML files to be imported using `@require` or `@import` in the HTML files, and\nalso enables template variables that can be replaced when the HTML is generated (e.g. `<%= name %>`).\n\n\n## HTML Linting\nDuring the build process, webpack is configured to lint the final HTML files after each successful build with\n[htmlhint](https://github.com/htmlhint/HTMLHint) to spot any errors in the HTML structure. This will cause an\nerror in the build process output. You can see the rules defined in the .htmlhintrc file\n([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/.htmlhintrc)).\n\nThese include:\n - Requiring Doctype\n - Disabling Inline CSS Styles on elements\n - Attribute naming conventions\n - Requiring some accessibility attributes\n\n\n## HTML Notes/Ideas\n - [x] Templating\n - [ ] Accessibility Linting\n - [ ] UI Framework?\n",
+    "content": "# HTML\nHTML files structure the layout of the web application. The final HTML files are generated by webpack and\noutput to the `public/` directory when building with `npm run build` and define the pages that can be accessed via browser in the final application.\n\n\n## Webpack\nThe webpack.config.js file([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/webpack.config.js))\ndefines the HTML pages that will be generated by the build process. For each instance of the HtmlWebpackPlugin\nin the `plugins` section, webpack will output a new HTML file using the `template` at the `filename` provided\n(inside of `public/`).\n\n### Page Header Meta Attributes\nThe `<meta>` webpage attributes are passed into the instance of the HtmlWebpackPlugin for each page defined in\nthe webpack config file. These attributes could be dynamically set for each page if desired, or can be the same\nfor each html page (as they are currently) and imported from a json file([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/src/meta.json))\n\n### Templating\n\n#### Static\nSimple Static HTML Templating can be done with the [underscore-lodash-loader](https://github.com/emaphp/underscore-template-loader).\nThis loader allow HTML files to be imported during the compilation process using `@require` or `@import`\nin the HTML files, and also enables variables that can be replaced when the HTML is generated (e.g. `<%=\nname %>`) will be replaced if we use `@import(<file_name>, { name: \"Devlin Junker\" })` with `Devlin Junker`.\n\n#### Dynamic Javascript Components (Handlebars)\nMore complicated components (especially those that require javascript or looping/conditional statements\nshould be written with handlebars in the `components/` directory.\n\nIf the component should respond to user interactions and events, the component should have a `.hbs` file\nand an `index.js` file containing a function, that imports the `.hbs` file and compiles it with the\nparameters and handlers passed in.\n\nOther, less complex components can be written purely in `.hbs` files with helpers and partials.\n\n## HTML Linting\nDuring the build process, webpack is configured to lint the final HTML files after each successful build with\n[htmlhint](https://github.com/htmlhint/HTMLHint) to spot any errors in the HTML structure. This will cause an\nerror in the build process output. You can see the rules defined in the .htmlhintrc file\n([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/.htmlhintrc)).\n\nThese include:\n - Requiring Doctype\n - Disabling Inline CSS Styles on elements\n - Attribute naming conventions\n - Requiring some accessibility attributes\n\n\n## HTML Notes/Ideas\n - [x] Templating\n - [ ] Accessibility Linting\n - [ ] UI Framework?\n",
     "static": true,
     "access": "public"
   },
@@ -879,7 +1486,7 @@
     "kind": "manual",
     "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/img/README.img.md",
     "name": "./img/README.img.md",
-    "content": "# Images\n\nAll images for the web application should be stored in the `img/` directory.\n\n## Icons\nThis template includes [Zondicons](http://www.zondicons.com/icons.html), a free SVG icon library with 270 icons.\nThese can be included in the HTML template files with `@include(<relative_path_to_svg>)` and it the svg file\nwill be included inline so standard utility classes from Tailwind can be applied. It is best to wrap the icons\nin a wrapper containing the `icon` class, as this will default to the icon being the size and color of the font.\n",
+    "content": "# Images\n\nAll images for the web application should be stored in the `img/` directory. An alias is configured in the\nwebpack.config.js file ([github]())\nto enable requiring images with `require(\"img/<path_in_img_dir\")` or referencing in .html or .hbs files <img>\n`src` property.\n\n## Icons\nThis template includes [Zondicons](http://www.zondicons.com/icons.html), a free SVG icon library with 270 icons.\nThese can be included in the HTML template files with `@svg(<img/<path_to_svg_relative_to_img>)` and the svg file\nwill be included inline so standard utility classes from Tailwind can be applied.\n\nIt is best to wrap the icons in a wrapper containing the `icon` class, as this will default to the icon being\nthe size and color of the font.\n\n## Image Notes/Ideas\n - [ ] Icon page in docs that shows all icons and their paths for including in partials\n",
     "static": true,
     "access": "public"
   },
@@ -887,7 +1494,23 @@
     "kind": "manual",
     "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/helpers/README.helpers.md",
     "name": "./src/helpers/README.helpers.md",
-    "content": "# Helpers\nThis project contains a `helpers/` directory([github](https://github.com/devlinjunker/template.webpack.fend/blob/src/helpers))\nthat holds Javascript classes and methods that can be used across multiple projects and entry points with\nreusable methods and commonly used logic.\n\n## LocalStorage\nThe localstorage helper ([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/src/helpers/local-storage.helper.js))\ncontains methods for saving/retrieving values with the browser localstorage API. Values saved with this will be\nstored on the clients browser and can be retreived when they return to the web application (until they clear\ntheir browser localstorage/data).\n\n## Relative Href\nThe Relative Href helper([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/src/helpers/relative-href.helper.js))\ncontains a small snippet of code that must be included in each javascript entry point. This code sets the\n`<base>` tag inside of the `<head>` element in the HTML page to tell relative links on the page the `href` that\nthey should be relative to.\n\ni.e. if `<base href='http://test.com/'>` exists at the top of the page, all relative\nlinks (e.g. `<a href=\"example\">...</a>`) will direct to `http://test.com/example` (where example is any relative\n`href` value). This is compared to the regular relative link behavior where the link is relative to the current\npage (value in the browser url bar).\n\n## Helper Notes/Ideas\n - [ ] Configuration file\n - [ ] Performance Logger\n - [ ] API Helpers (Internal vs External?)\n",
+    "content": "# Helpers\nThis project contains a `helpers/` directory([github](https://github.com/devlinjunker/template.webpack.fend/blob/src/helpers))\nthat holds Javascript classes and methods that can be used across multiple projects and entry points with\nreusable methods and commonly used logic.\n\n## Helper Examples\nNotes on the Example Helper class and methods in this project:\n\n### LocalStorage Helper\nThe localstorage helper ([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/src/helpers/local-storage.helper.js))\ncontains methods for saving/retrieving values with the browser localstorage API. Values saved with this will be\nstored on the clients browser and can be retreived when they return to the web application (until they clear\ntheir browser localstorage/data).\n\n### Relative Href Helper\nThe Relative Href helper([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/src/helpers/relative-href.helper.js))\ncontains a small snippet of code that must be included in each javascript entry point. This code sets the\n`<base>` tag inside of the `<head>` element in the HTML page to tell relative links on the page the `href` that\nthey should be relative to.\n\ni.e. if `<base href='http://test.com/'>` exists at the top of the page, all relative\nlinks (e.g. `<a href=\"example\">...</a>`) will direct to `http://test.com/example` (where example is any relative\n`href` value). This is compared to the regular relative link behavior where the link is relative to the current\npage (value in the browser url bar).\n\n## Handlebars Helpers\n\nHandlebars is the simple HTML templating framework this project uses to create HTML components. Handlebars\nlets the project import it's own helpers in the `webpack.config.js`\n([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/webpack.config.js))\nthat can add additional functionality and logic to the template partial files easily.\n\n### Default Value Helper\nHelper that checks a variable to see if it contains a value and returns that value if it does, or else it returns\na  default value (2nd parameter).\n\ne.g. will output '123' unless `testVar` contains a value, in which case it will return the value in `testVar`\n```\n// .hbs\n{{default-val testVar '123'}}\n\nlet context = { }\n// Output\n123\n\nlet context = { testVar: 'abc' }\n// Output after\nabc\n```\n\n### Eq Helper\nHelper that compares to variables and checks if they are equal with `===`. Returns `true` or `false`. This is\nbest used inside of an expression in an `#if` block helper.\n\ne.g. (will display `Hello World!` on page if context variable `var` === 'true')\n```\n// .hbs file\n{{#if (eq var 'true')}} Hello World! {{/if}}\n\nlet context = { var: true };\n// Output\nHello World!\n\nlet context = { var: false };\n// Output\n\n```\n\n## Helper Notes/Ideas\n - [ ] Configuration file\n - [ ] Performance Logger\n - [ ] API Helpers (Internal vs External?)\n",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manual",
+    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/static/README.static.md",
+    "name": "./src/static/README.static.md",
+    "content": "# Static HTML Components\n\nSome parts of the interface can be generated during the build process to reduce processing on the client side\nand speed up page generation if the assets are not dynamic in relation to the user. These components are\ngenerated using [underscore-template-loader](https://github.com/emaphp/underscore-template-loader) and can be\nincluded in the entry `.html` pages or `.hbs` files with `@require(<path_to_static_file>, args)` with optional\narguments\n\n## Custom Macros\nCustom macros can be created that execute some function during the build process. This project has example custom\nmacros that include the build details and repository information in the output HTML pages. These macros are included\nin the webpack.config.js([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/webpack.config.js))\nconfigurations for the underscore-template-loader. These macros are given names in the webpack config file and\nthen accessed using the `@` symbol (e.g. `@year()`).\n\n## Static Component Examples\nA couple of notes on static component examples included in this project:\n\n### Header\nContains links to the different part of the application, this is a good example of being dynamic (but not\nrelative to the user) but still being able to be compiled during the build process.\n\n### Footer\nContains reference to the project details and build details for developers. This could also include:\n - contact information\n - donation links\n - other navigation component or site tree.\n\n## Static Partial Notes/Ideas\n - [ ] Move macros out of webpack.config.js into their own file (in src/static/ ?)\n",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "kind": "manual",
+    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/components/README.components.md",
+    "name": "./src/components/README.components.md",
+    "content": "# Dynamic HTML Components\n\nDynamic Components can be created with Handlebars partials and javascript files to add event handlers that toggle\nproperties, trigger backend calls and re-render the DOM in the browser.\n\n## Partials\nHandlebars partials are included either:\n  - in other partial files with `{{> <partial_name> (arg_name=arg_value..) }}` syntax\n  - in javascript files by:\n    - importing at top of file using relative path e.g. `import template from ./example.partial.hbs`\n    - compiling and capturing string in variable e.g. `const strTemp = template(<context>)`\n       - context is object where properties become variables in partial file template\n\n## Javascript Files\nTo attach event handlers to the HTML created by handlebars, you'll need to add the templateString generated\nby the Handlebars method to the DOM. and then attach event handlers to the elements created.\n\ne.g.\n```\nconst template = require(\"<path_to_hbs_file>\");\n\nconst context = { .. };\nconst strTemp = template(context, options?);\n\nconst container = document.getElementById(\"<container_id>\");\ncontainer.innerHTML = strTemp;\n\ncontainer.querySelector(\"<interactive_element_selector>\").onclick = () => { // Do stuff };\n```\n\n## Dynamic Component Examples\nA couple of notes on the Dynamic Component examples in this project.\n\n### Checkbox\nPartial component with svg checkmark inside of checkbox. This can be used to add a stylized checkbox to the page\nrather than the standard checkbox created by the browser.\n\n  - id - (default: undefined) only if set will add `id` and `name` attributes to <input> with this value\n  - val - (default: true) sets the value of the <input> checkbox\n  - checked - (default: false) sets checked status of checkbox\n  - label - (default: '') clickable label text (toggles checkbox)\n  - color - (default: 'black') color of the checkmark in the checkbox\n  - bg - (default: 'white') background color of the checkbox\n  - bg-checked - (default: bg || 'white') background color of the checkbox after checked\n  - size - (default: '') size of checkmark (available values = `sm`, `lg`)\n\ne.g.\n```\n/* `.hbs` file */\n<span id=\"checkbox-1\">\n  {{> form/checkbox checked=complete color='white' bg='black' bg-checked='gray-200' label='Check Me' size='sm'}}\n</span>\n\n/* `.js` file */\ndocument.querySelector('#checkbox-1 input').onchange = () => {\n  // Do stuff\n}\n```\n\n**Note:** Event handlers are attached in the javascript file to trigger this actually doing anything on the page\n\n### List Object and List item\nHandlebars partials to render lists of `items` inside of html elements. The developer can specify a template\npartial that can be used to generate the contents of the list item (this should be a .hbs file).\n\nBecause this is a more complicated object (with content template) and likely requires event handlers for user\ninteraction, it is best to create the ListObject inside of the javascript files and add it to the DOM from there.\n\ne.g.\n```\n// Import from path to component\nimport listObjectTemplate from '../components/list/list-object.hbs';\n\n// Build HTML from Template method\nconst listObject = listObjectTemplate({ items, template: 'my-list-template' }, {\n  partials: {\n    'my-list-template': listItemTemplate\n  }\n});\n\n// Append HTML to Page\ndocument.getElementById('page').innerHTML = listObject;\n\n// Add event handlers...\nlistObject.querySelectorAll(<selector_of_element_with_event>).onclick = () => {\n  // do stuff\n};\n```\n\n\n\n## Components Notes/Ideas\n- Seems like handlbars isn't great by itself for interactive applications\n  - Handlebars recommends some frameworks: https://github.com/devlinjunker/template.webpack.fend/pull/23#issuecomment-629585403\n  - Reactive-Handlebars looks interesting, but hasn't been updated in years...\n- Can we add helpers that attach event handlers via some template context variable and a property on the element?\n  - how about a class? constructor with params that associate class names with event handlers?\n    - base class that creates DOM elements (with `render` function?) using:\n```\nconst temp = document.createElement('div');\ntemp.innerHTML = template(context);\nreturn temp.innerHTML;\n```\n  - this is almost like recreating frameworks like these though (should test before we roll our own):\n    - Angular\n    - Aurelia\n    - Ember\n    - Inferno\n    - Mithril\n    - Svelte\n    - Ractive\n    - React\n    - Vue\n- Backbone?\n",
     "static": true,
     "access": "public"
   },
@@ -908,7 +1531,15 @@
     "access": "public"
   },
   {
-    "__docId__": 61,
+    "kind": "manual",
+    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/.webpack/README.loaders.md",
+    "name": "./.webpack/README.loaders.md",
+    "content": "# Webpack Loaders\n\nWebpack Loaders are used during the webpack build process to transpile the javascript and other asset types\ndefined in the webpack.config.js([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/webpack.config.js)).\n\n## Standard Loaders\nThis project uses basic loaders for most file types:\n - babel-loader and eslint-loader for javascript files\n - MiniCssExtractPlugin Loader, css-loader and postcss-loader for `.css` or `.scss` files\n - file-loader to include image files with html-webpack-plugin\n - svg-inline-loader for svg files (used in html-webpack-plugin)\n - underscore-template-loader for processing html files\n\n## Custom Loader Example\nThis project also includes one custom loader([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/.loader/))\nto help generate handlebars template files. This is part of processing `.hbs` and `.html` files.\n - First we run the `.hbs` or `.html file through the custom `svg-icon-loader` which replaces `@svg` imports\n with the contents of the svg file referenced (inlining the contents from svg files)\n - The function is then run through the next loader in the pipeline (defined in webpack.config.js)\n    - handlebars-loader to return the handlebars template that is used to create the `template()` function\n      that is imported when you require a `.hbs` file in the javascript code.\n    - underscore-template-loader to generate the html entry file\n\n\n## Notes/Ideas\n- [x] ~~Why are svg files included in output directory? they should be inlined I thought~~ not happening anymore\n",
+    "static": true,
+    "access": "public"
+  },
+  {
+    "__docId__": 87,
     "kind": "testFile",
     "name": "src/helpers/local-storage.helper.spec.js",
     "content": "/**\n * @flow\n */\nimport LocalStorageHelper from './local-storage.helper';\n\ndescribe('local-storage.helper', function() {\n\n  describe('#save', function() {\n\n    it('should use local storage to save value with key', function() {\n      sandbox.spy(localStorage, 'setItem');\n      const key = 'test';\n      const val = 'val';\n\n      LocalStorageHelper.save({\n        key: 'test',\n        val: 'val',\n      });\n\n      expect(localStorage.setItem).to.be.called;\n      expect(localStorage.setItem.args[0][0]).to.equal(key);\n      expect(localStorage.setItem.args[0][1]).to.equal(val);\n    });\n\n    it('should stringify objects before saving them', function() {\n      sandbox.spy(localStorage, 'setItem');\n\n      const val = {\n        test: 123\n      };\n      LocalStorageHelper.save({\n        key: 'abc',\n        val\n      });\n\n      const stringified = JSON.stringify(val);\n      expect(localStorage.setItem.args[0]).to.include(stringified);\n    });\n\n    it('should be able to retrieve value using key with #get', function() {\n      const val = 'test';\n      const key = 'abc';\n\n      LocalStorageHelper.save({\n        key,\n        val\n      });\n\n      const saved = LocalStorageHelper.get({\n        key\n      });\n\n      expect(saved).to.equal(val);\n    });\n  });\n\n  describe('#get', function() {\n\n    it('should retrieve value from local storage using key', function() {\n      sandbox.stub(localStorage, 'getItem').returns('abc');\n      const key = 'test';\n\n      LocalStorageHelper.get({\n        key\n      });\n\n      expect(localStorage.getItem).to.be.called;\n      expect(localStorage.getItem.args[0][0]).to.equal(key);\n    });\n\n    it('should return object if object stored', function() {\n      const key = 'abc';\n      const val = {\n        test: 123\n      };\n      LocalStorageHelper.save({\n        key,\n        val\n      });\n\n      const returned = LocalStorageHelper.get({ key });\n      expect(returned).to.deep.equal(val);\n    });\n\n    it('should throw error if requesting key with no value assigned', function() {\n      const key = 'unused_123_abc';\n\n      expect(() => {\n        LocalStorageHelper.get({ key });\n      }).to.throw();\n    });\n  });\n});\n",
@@ -919,7 +1550,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 62,
+    "__docId__": 88,
     "kind": "test",
     "name": "describe0",
     "testId": 0,
@@ -932,7 +1563,7 @@
     "lineNumber": 3
   },
   {
-    "__docId__": 63,
+    "__docId__": 89,
     "kind": "test",
     "name": "describe1",
     "testId": 1,
@@ -945,7 +1576,7 @@
     "lineNumber": 5
   },
   {
-    "__docId__": 64,
+    "__docId__": 90,
     "kind": "test",
     "name": "it2",
     "testId": 2,
@@ -958,7 +1589,7 @@
     "lineNumber": 7
   },
   {
-    "__docId__": 65,
+    "__docId__": 91,
     "kind": "test",
     "name": "it3",
     "testId": 3,
@@ -971,7 +1602,7 @@
     "lineNumber": 22
   },
   {
-    "__docId__": 66,
+    "__docId__": 92,
     "kind": "test",
     "name": "it4",
     "testId": 4,
@@ -984,7 +1615,7 @@
     "lineNumber": 37
   },
   {
-    "__docId__": 67,
+    "__docId__": 93,
     "kind": "test",
     "name": "describe5",
     "testId": 5,
@@ -997,7 +1628,7 @@
     "lineNumber": 54
   },
   {
-    "__docId__": 68,
+    "__docId__": 94,
     "kind": "test",
     "name": "it6",
     "testId": 6,
@@ -1010,7 +1641,7 @@
     "lineNumber": 56
   },
   {
-    "__docId__": 69,
+    "__docId__": 95,
     "kind": "test",
     "name": "it7",
     "testId": 7,
@@ -1023,7 +1654,7 @@
     "lineNumber": 68
   },
   {
-    "__docId__": 70,
+    "__docId__": 96,
     "kind": "test",
     "name": "it8",
     "testId": 8,
@@ -1036,7 +1667,7 @@
     "lineNumber": 82
   },
   {
-    "__docId__": 71,
+    "__docId__": 97,
     "kind": "testFile",
     "name": "src/storage/app.controller.spec.js",
     "content": "/**\n * @flow\n */\nimport AppController from './app.controller';\nimport LocalStorageHelper from '../helpers/local-storage.helper';\n\ndescribe('App Controller', function() {\n  let controller;\n  const saveBtn = {};\n  const getBtn = {};\n  const clearBtn = {};\n\n  describe('#constructor', function() {\n    it('should set up handlers', function() {\n      sandbox.stub(document, 'getElementsByClassName').callsFake((param): any => {\n        if (param === 'save-btn') {\n          return [saveBtn];\n        } else if (param === 'get-btn') {\n          return [getBtn];\n        } else {\n          return [clearBtn];\n        }\n      });\n\n      controller = new AppController();\n\n      expect(saveBtn.onclick).to.not.be.undefined;\n      expect(getBtn.onclick).to.not.be.undefined;\n      expect(clearBtn.onclick).to.not.be.undefined;\n    });\n  });\n\n  describe('#save', function() {\n    it('should save values with localStorage service', function() {\n      const saveStub = sandbox.stub(LocalStorageHelper, 'save');\n      controller.keyInput = {\n        value: 'abc'\n      };\n\n      controller.valInput = {\n        value: 'val'\n      };\n\n      controller.save();\n\n      expect(saveStub).to.be.calledWith({ key: 'abc', val: 'val' });\n    });\n\n    // TODO: finish spec\n    it('should display message to user when saving');\n  });\n\n  describe('#view', function() {\n    it('should retrieve values from localStorage service and display', function() {\n      const getStub = sandbox.stub(LocalStorageHelper, 'get');\n      controller.keyInput = {\n        value: 'abc'\n      };\n\n      controller.view();\n\n      expect(getStub).to.be.calledWith({ key: 'abc' });\n    });\n\n    // TODO: finish spec\n    it('should display message if error retrieving value');\n  });\n\n  describe('#clearValue', function() {\n    it('should clear the input value', function() {\n      controller.valInput = {\n        value: 'abc'\n      };\n\n      controller.clearValue();\n\n      expect(controller.valInput.value).to.equal('');\n    });\n  });\n});\n",
@@ -1047,7 +1678,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 72,
+    "__docId__": 98,
     "kind": "test",
     "name": "describe9",
     "testId": 9,
@@ -1060,7 +1691,7 @@
     "lineNumber": 4
   },
   {
-    "__docId__": 73,
+    "__docId__": 99,
     "kind": "test",
     "name": "describe10",
     "testId": 10,
@@ -1073,7 +1704,7 @@
     "lineNumber": 10
   },
   {
-    "__docId__": 74,
+    "__docId__": 100,
     "kind": "test",
     "name": "it11",
     "testId": 11,
@@ -1086,7 +1717,7 @@
     "lineNumber": 11
   },
   {
-    "__docId__": 75,
+    "__docId__": 101,
     "kind": "test",
     "name": "describe12",
     "testId": 12,
@@ -1099,7 +1730,7 @@
     "lineNumber": 30
   },
   {
-    "__docId__": 76,
+    "__docId__": 102,
     "kind": "test",
     "name": "it13",
     "testId": 13,
@@ -1112,7 +1743,7 @@
     "lineNumber": 31
   },
   {
-    "__docId__": 77,
+    "__docId__": 103,
     "kind": "test",
     "name": "it14",
     "testId": 14,
@@ -1125,7 +1756,7 @@
     "lineNumber": 47
   },
   {
-    "__docId__": 78,
+    "__docId__": 104,
     "kind": "test",
     "name": "describe15",
     "testId": 15,
@@ -1138,7 +1769,7 @@
     "lineNumber": 50
   },
   {
-    "__docId__": 79,
+    "__docId__": 105,
     "kind": "test",
     "name": "it16",
     "testId": 16,
@@ -1151,7 +1782,7 @@
     "lineNumber": 51
   },
   {
-    "__docId__": 80,
+    "__docId__": 106,
     "kind": "test",
     "name": "it17",
     "testId": 17,
@@ -1164,7 +1795,7 @@
     "lineNumber": 63
   },
   {
-    "__docId__": 81,
+    "__docId__": 107,
     "kind": "test",
     "name": "describe18",
     "testId": 18,
@@ -1177,7 +1808,7 @@
     "lineNumber": 66
   },
   {
-    "__docId__": 82,
+    "__docId__": 108,
     "kind": "test",
     "name": "it19",
     "testId": 19,

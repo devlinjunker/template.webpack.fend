@@ -12,6 +12,24 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "template-webpackfend/src/todo/models/todo.model.js~todo",
+    "class/src/todo/models/todo.model.js~Todo.html",
+    "<span>Todo</span> <span class=\"search-result-import-path\">Template-WebpackFEND/src/todo/models/todo.model.js</span>",
+    "class"
+  ],
+  [
+    "template-webpackfend/src/todo/app.controller.js~todoappcontroller",
+    "class/src/todo/app.controller.js~TodoAppController.html",
+    "<span>TodoAppController</span> <span class=\"search-result-import-path\">Template-WebpackFEND/src/todo/app.controller.js</span>",
+    "class"
+  ],
+  [
+    "template-webpackfend/src/todo/components/add-input/index.js~addinputcomponentfactory",
+    "function/index.html#static-function-addInputComponentFactory",
+    "<span>addInputComponentFactory</span> <span class=\"search-result-import-path\">Template-WebpackFEND/src/todo/components/add-input/index.js</span>",
+    "function"
+  ],
+  [
     "",
     "test-file/src/storage/app.controller.spec.js.html#lineNumber4",
     "App Controller",
@@ -414,6 +432,18 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "src/helpers/handlebars/default-val.js",
+    "file/src/helpers/handlebars/default-val.js.html",
+    "src/helpers/handlebars/default-val.js",
+    "file"
+  ],
+  [
+    "src/helpers/handlebars/eq.js",
+    "file/src/helpers/handlebars/eq.js.html",
+    "src/helpers/handlebars/eq.js",
+    "file"
+  ],
+  [
     "src/helpers/local-storage.helper.js",
     "file/src/helpers/local-storage.helper.js.html",
     "src/helpers/local-storage.helper.js",
@@ -490,5 +520,113 @@ window.esdocSearchIndex = [
     "test-file/src/storage/app.controller.spec.js.html",
     "src/storage/app.controller.spec.js",
     "testFile"
+  ],
+  [
+    "src/todo/app.controller.js",
+    "file/src/todo/app.controller.js.html",
+    "src/todo/app.controller.js",
+    "file"
+  ],
+  [
+    "src/todo/app.controller.js~todoappcontroller#add",
+    "class/src/todo/app.controller.js~TodoAppController.html#instance-method-add",
+    "src/todo/app.controller.js~TodoAppController#add",
+    "method"
+  ],
+  [
+    "src/todo/app.controller.js~todoappcontroller#addinput",
+    "class/src/todo/app.controller.js~TodoAppController.html#instance-member-addInput",
+    "src/todo/app.controller.js~TodoAppController#addInput",
+    "member"
+  ],
+  [
+    "src/todo/app.controller.js~todoappcontroller#constructor",
+    "class/src/todo/app.controller.js~TodoAppController.html#instance-constructor-constructor",
+    "src/todo/app.controller.js~TodoAppController#constructor",
+    "method"
+  ],
+  [
+    "src/todo/app.controller.js~todoappcontroller#handleaddtodo",
+    "class/src/todo/app.controller.js~TodoAppController.html#instance-method-handleAddTodo",
+    "src/todo/app.controller.js~TodoAppController#handleAddTodo",
+    "method"
+  ],
+  [
+    "src/todo/app.controller.js~todoappcontroller#handleremovetodo",
+    "class/src/todo/app.controller.js~TodoAppController.html#instance-method-handleRemoveTodo",
+    "src/todo/app.controller.js~TodoAppController#handleRemoveTodo",
+    "method"
+  ],
+  [
+    "src/todo/app.controller.js~todoappcontroller#handletoggletodo",
+    "class/src/todo/app.controller.js~TodoAppController.html#instance-method-handleToggleTodo",
+    "src/todo/app.controller.js~TodoAppController#handleToggleTodo",
+    "method"
+  ],
+  [
+    "src/todo/app.controller.js~todoappcontroller#list",
+    "class/src/todo/app.controller.js~TodoAppController.html#instance-member-list",
+    "src/todo/app.controller.js~TodoAppController#list",
+    "member"
+  ],
+  [
+    "src/todo/app.controller.js~todoappcontroller#loadlist",
+    "class/src/todo/app.controller.js~TodoAppController.html#instance-method-loadList",
+    "src/todo/app.controller.js~TodoAppController#loadList",
+    "method"
+  ],
+  [
+    "src/todo/app.controller.js~todoappcontroller#remove",
+    "class/src/todo/app.controller.js~TodoAppController.html#instance-method-remove",
+    "src/todo/app.controller.js~TodoAppController#remove",
+    "method"
+  ],
+  [
+    "src/todo/app.controller.js~todoappcontroller#renderlist",
+    "class/src/todo/app.controller.js~TodoAppController.html#instance-method-renderList",
+    "src/todo/app.controller.js~TodoAppController#renderList",
+    "method"
+  ],
+  [
+    "src/todo/app.controller.js~todoappcontroller#savelist",
+    "class/src/todo/app.controller.js~TodoAppController.html#instance-method-saveList",
+    "src/todo/app.controller.js~TodoAppController#saveList",
+    "method"
+  ],
+  [
+    "src/todo/components/add-input/index.js",
+    "file/src/todo/components/add-input/index.js.html",
+    "src/todo/components/add-input/index.js",
+    "file"
+  ],
+  [
+    "src/todo/models/todo.model.js",
+    "file/src/todo/models/todo.model.js.html",
+    "src/todo/models/todo.model.js",
+    "file"
+  ],
+  [
+    "src/todo/models/todo.model.js~todo#complete",
+    "class/src/todo/models/todo.model.js~Todo.html#instance-member-complete",
+    "src/todo/models/todo.model.js~Todo#complete",
+    "member"
+  ],
+  [
+    "src/todo/models/todo.model.js~todo#constructor",
+    "class/src/todo/models/todo.model.js~Todo.html#instance-constructor-constructor",
+    "src/todo/models/todo.model.js~Todo#constructor",
+    "method"
+  ],
+  [
+    "src/todo/models/todo.model.js~todo#description",
+    "class/src/todo/models/todo.model.js~Todo.html#instance-member-description",
+    "src/todo/models/todo.model.js~Todo#description",
+    "member"
+  ],
+  [
+    "src/todo/models/todo.model.js~todo#togglecomplete",
+    "class/src/todo/models/todo.model.js~Todo.html#instance-method-toggleComplete",
+    "src/todo/models/todo.model.js~Todo#toggleComplete",
+    "method"
   ]
 ]

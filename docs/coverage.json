@@ -1,8 +1,18 @@
 {
   "coverage": "80%",
-  "expectCount": 10,
-  "actualCount": 8,
+  "expectCount": 30,
+  "actualCount": 24,
   "files": {
+    "src/helpers/handlebars/default-val.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/helpers/handlebars/eq.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
     "src/helpers/local-storage.helper.js": {
       "expectCount": 3,
       "actualCount": 3,
@@ -14,6 +24,27 @@
       "undocumentLines": [
         13,
         14
+      ]
+    },
+    "src/todo/app.controller.js": {
+      "expectCount": 12,
+      "actualCount": 10,
+      "undocumentLines": [
+        19,
+        28
+      ]
+    },
+    "src/todo/components/add-input/index.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/todo/models/todo.model.js": {
+      "expectCount": 5,
+      "actualCount": 3,
+      "undocumentLines": [
+        15,
+        16
       ]
     }
   }
