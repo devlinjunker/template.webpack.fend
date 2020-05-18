@@ -17,7 +17,8 @@ for (const i in readmeFiles) {
   const fullPath = readmeFiles[i];
   const name = path.parse(fullPath).base;
 
-  const newName = `${i}-${name.substr(7, name.length - 3)}`;
+  const prefix = (i < 10) ? `0${i}` : i;
+  const newName = `${prefix}-${name.substr(7, name.length - 3)}`;
 
   map[name] = newName;
   fs.copyFileSync(path.resolve(__dirname, '../..', fullPath), path.join(tmpPath, newName));
