@@ -1,12 +1,12 @@
 /**
  * @flow
+ * @type {RelativeHrefHelper}
  */
 
 /**
  * <a> `href` linking helper method.
  * sets the `<base>` tag in the header so links can remain relative to the root of the app. This also helps
  * with the demo app in `docs/` because it sets the links relative to that url rather than just the host.
- *
  * @return {void}
  */
 (function() {
