@@ -39,10 +39,11 @@ e.g. will output '123' unless `testVar` contains a value, in which case it will 
 // .hbs
 {{default-val testVar '123'}}
 
+let context = { }
 // Output
 123
 
-var testVar = 'abc'
+let context = { testVar: 'abc' }
 // Output after
 abc
 ```
@@ -56,11 +57,11 @@ e.g. (will display `Hello World!` on page if context variable `var` === 'true')
 // .hbs file
 {{#if (eq var 'true')}} Hello World! {{/if}}
 
-var = true;
-// output
+let context = { var: true };
+// Output
 Hello World!
 
-var = false;
+let context = { var: false };
 // Output
 
 ```

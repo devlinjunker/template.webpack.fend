@@ -13,8 +13,20 @@ Handlebars partials are included either:
 
 ## Javascript Files
 To attach event handlers to the HTML created by handlebars, you'll need to add the templateString generated
-by the Handlebars method (i.e. `const strTemp = template()`) to the DOM. and then attach event handlers to
-the elements created. (This is done in the [Todo Example]())
+by the Handlebars method to the DOM. and then attach event handlers to the elements created.
+
+e.g.
+```
+const template = require("<path_to_hbs_file>");
+
+const context = { .. };
+const strTemp = template(context, options?);
+
+const container = document.getElementById("<container_id>");
+container.innerHTML = strTemp;
+
+container.querySelector("<interactive_element_selector>").onclick = () => { // Do stuff };
+```
 
 ## Dynamic Component Examples
 A couple of notes on the Dynamic Component examples in this project.
@@ -40,7 +52,9 @@ e.g.
 </span>
 
 /* `.js` file */
-document.querySelector('#checkbox-1 input').onchange = () => { // Do stuff }
+document.querySelector('#checkbox-1 input').onchange = () => {
+  // Do stuff
+}
 ```
 
 **Note:** Event handlers are attached in the javascript file to trigger this actually doing anything on the page
@@ -68,7 +82,9 @@ const listObject = listObjectTemplate({ items, template: 'my-list-template' }, {
 document.getElementById('page').innerHTML = listObject;
 
 // Add event handlers...
-listObject.querySelectorAll(<selector_of_element_with_event>).onclick = () => { // do stuff };
+listObject.querySelectorAll(<selector_of_element_with_event>).onclick = () => {
+  // do stuff
+};
 ```
 
 
