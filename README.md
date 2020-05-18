@@ -33,12 +33,14 @@ How to use this template to create a basic Frontend Application:
 1. Download template and update dependencies
 2. Create HTML files in `src/`
     - add HtmlWebpackPlugin instances for each new output page in webpack.config.js
+    - add svg icons with `@svg()` using custom svg-pre-loader
 3. Add javascript files and reference in `src/entry.js`  (for up your application
     - add additional javascript entry points in webpack.config.js
+    - create handlebars partials and import then add to DOM
 4. Add CSS files to `src` and import in javascript
    - or install CSS libraries with npm and import
-   - or reference in HTML template?
 5. Use `npm run start-watch` to compile and run dev server + tests in watch mode
+   - or `npm run start-dev` to run the dev server and reload on changes
 6. Navigate http://localhost:3030/ to see a development version of your web app with Hot reloading
    - or http://localhost:3030/docs/ to see the documentation
 
