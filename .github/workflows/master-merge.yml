@@ -25,7 +25,7 @@ jobs:
 
     # from: https://github.com/marketplace/actions/wiki-page-creator-action
     - name: Upload READMEs to Wiki
-      uses: devlinjunker/wiki-page-creator-action@patch-1
+      uses: docker://decathlon/wiki-page-creator-action:latest
       env:
         ACTION_MAIL: devlin.junker@gmail.com
         ACTION_NAME: devlinjunker
