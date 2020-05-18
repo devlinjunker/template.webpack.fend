@@ -61,18 +61,22 @@ for full list of current dependencies</p>
 <li>Download template and update dependencies</li>
 <li>Create HTML files in <code>src/</code><ul>
 <li>add HtmlWebpackPlugin instances for each new output page in webpack.config.js</li>
+<li>add svg icons with <code>@svg()</code> using custom svg-pre-loader</li>
 </ul>
 </li>
 <li>Add javascript files and reference in <code>src/entry.js</code>  (for up your application<ul>
 <li>add additional javascript entry points in webpack.config.js</li>
+<li>create handlebars partials and import then add to DOM</li>
 </ul>
 </li>
 <li>Add CSS files to <code>src</code> and import in javascript<ul>
 <li>or install CSS libraries with npm and import</li>
-<li>or reference in HTML template?</li>
 </ul>
 </li>
-<li>Use <code>npm run start-watch</code> to compile and run dev server + tests in watch mode</li>
+<li>Use <code>npm run start-watch</code> to compile and run dev server + tests in watch mode<ul>
+<li>or <code>npm run start-dev</code> to run the dev server and reload on changes</li>
+</ul>
+</li>
 <li>Navigate <a href="http://localhost:3030/">http://localhost:3030/</a> to see a development version of your web app with Hot reloading<ul>
 <li>or <a href="http://localhost:3030/docs/">http://localhost:3030/docs/</a> to see the documentation</li>
 </ul>
