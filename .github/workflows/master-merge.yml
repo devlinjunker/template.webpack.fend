@@ -20,11 +20,6 @@ jobs:
       with:
         node-version: 10.x
 
-    - name: Generate Demo and Docs
-      run: |
-        npm install -D
-        npm run doc
-
     - name: Collect READMEs for Wiki
       run: node ./scripts/actions/collect-wiki.js
 
@@ -40,6 +35,10 @@ jobs:
         REPO_NAME: template.webpack.fend
         SKIP_MD: README.md
 
+    - name: Generate Demo and Docs
+      run: |
+        npm install -D
+        npm run doc
 
     - name: Commit Demo and Docs
       run: |
