@@ -84,8 +84,8 @@ How to use this template to create a basic Frontend Application:
  - [x] (^) Karma webpack integration (for tests in browser)
     - [x] (^) Use rebuilt bundle when running tests
  - [x] (^) Flowtype eslint plugin
- - [x] (-) Setup EsDoc
-    - [ ] (v) run doc before commit?
+ - [x] (-) Setup EsDoc  
+    - [x] ~~(v) run doc before commit?~~ (run on merge to master)
  - [x] ~~(-) Prettier for autofix~~ (just use eslint atom plugin with fix)
  - [x] (^) karma/mocha unit test debugging ~~(with atom?)~~ in browser
  - [x] (^) Demo app in docs
