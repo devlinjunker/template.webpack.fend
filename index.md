@@ -13,7 +13,7 @@ calls a script in the `scripts/actions` directory([github](https://github.com/de
 
 The script retrieves the following markdown files (defined in `./.esdoc.json`) and copies them to a temporary
 directory, then uses the [wiki-page-creator-action](https://github.com/marketplace/actions/wiki-page-creator-action)
-to update the wiki.
+to update the Github wiki.
 
 ### Table of Contents
 
