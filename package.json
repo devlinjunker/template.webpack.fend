@@ -35,7 +35,7 @@
     "clean": " ## TODO: clean up project files"
   },
   "dependencies": {
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "normalize.css": "^8.0.1",
     "tailwindcss": "^1.4.4"
   },
