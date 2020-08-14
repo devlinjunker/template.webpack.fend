@@ -12,7 +12,7 @@ This project uses basic loaders for most file types:
  - underscore-template-loader for processing html files
 
 ## Custom Loader Example
-This project also includes one custom loader([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/.loader/))
+This project also includes one custom loader([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/.webpack/))
 to help generate handlebars template files. This is part of processing `.hbs` and `.html` files.
  - First we run the `.hbs` or `.html file through the custom `svg-icon-loader` which replaces `@svg` imports
  with the contents of the svg file referenced (inlining the contents from svg files)
