@@ -1,4 +1,7 @@
 
+- [ ] Review and Update [Security Policy](SECURITY.md)
+   - Provide private way of reporting vulnerabilities?
+
 ### TODO
  - [x] Install Dev Dependencies
  - [x] (^) Webpack config

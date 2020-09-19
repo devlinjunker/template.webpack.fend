@@ -1,4 +1,16 @@
+---
+version: 0.8.0-SNAPSHOT
+---
+
+[![GitHub License](https://img.shields.io/github/license/devlinjunker/template.webpack.fend)](https://github.com/devlinjunker/template.webpack.fend/blob/master/LICENSE)
+[![GitHub last commit](https://img.shields.io/github/last-commit/devlinjunker/template.webpack.fend)](https://github.com/devlinjunker/template.webpack.fend/commits/master)
+
+![![CII Best Practices Summary](https://img.shields.io/cii/summary/4287?label=core-infrastructure)](https://bestpractices.coreinfrastructure.org/en/projects/4287)
+
+
 # Template Webpack FEND App
+
+## Intro
 
 Template and Example using Webpack to build a FEND Browser App (with HTML/CSS/JS and Image files).
 
@@ -6,7 +18,7 @@ Template and Example using Webpack to build a FEND Browser App (with HTML/CSS/JS
  - Simple web interface for storing values in the Browser Local Storage.
 
 
-## Dependencies
+## Dependencies/Frameworks
 Node v12+ and npm
 
 See package.json([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/package.json))
@@ -26,7 +38,7 @@ for full list of current dependencies
  - [Handlebars](http://handlebarsjs.com/) - HTML Templating Engine
 
 
-## Development
+## Quick Setup/Run
 
 How to use this template to create a basic Frontend Application:
 
@@ -71,4 +83,20 @@ How to use this template to create a basic Frontend Application:
 
 `npm run clean` ... TODO: clean the workspace
 
+## Links
 
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [Contribute](CONTRIBUTING.md)
+- [Doc Site](https://devlinjunker.github.io/template.webpack.fend/)
+- [Wiki](https://github.com/devlinjunker/template.webpack.fend/wiki)
+- [Notes]()
+
+## Contributors
+
+- [Devlin Junker (Me!)](mailto:devlinjunker@gmail.com)
+
+
+ - [ ] Update README and Links with project specific details
+   - Badges
+   - Fix LInks
+ - [ ] Update Contributing Info File
