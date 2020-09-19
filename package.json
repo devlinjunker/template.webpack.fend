@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.8.0-SNAPSHOT",
   "name": "Template-WebpackFEND",
   "description": "Template using Webpack to create a html/javascript/css pages with multiple files",
   "repository": {
