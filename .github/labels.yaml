@@ -1,0 +1,82 @@
+## Tags
+
+- name: "-priority"
+  color: "d73a4a" # red
+  description: "Take a look at this soon!"
+- name: "good first issue"
+  color: "F4B0F5" # pink
+  description: "Good for newcomers/anyone who wants to start contributing"
+- name: "question"
+  color: "FF00BE" # fuschia 
+  description: "Further information requested"
+  
+## Types
+
+- name: "bug"
+  color: "eda15a" # orange
+  description: "Something isn't working"
+- name: "qa"
+  color: "856512" # brown
+  description: "Adding/improving testing capabalities"
+- name: "performance"
+  color: "7F54DD" # dark purple
+  description: "Performance Improvements"
+- name: "refactor"
+  color: "CDC1EA" # light purple
+  description: "Addresses Technical Debt that we should avoid"
+- name: "feature"
+  color: "0075ca" # dark blue
+  description: "New Feature"
+- name: "build"
+  color: "00A0FF" # basic blue
+  description: "Improvements to the build process"
+- name: "doc"
+  color: "3DE9F5" # teal blue
+  description: "Help improve the Documentation"
+- name: "subtask"
+  color: "C5E2FC" # light blue
+  description: "A smaller component of a larger feature/bugfix/refactor"
+- name: "poc"
+  color: "bfd4f2" # grey blue
+  description: "Proof of Concept of a Feature/Technical Design"
+- name: "example"
+  color: "FFFFFF" # white?
+  description: "Useful Example to be shared"
+- name: "dependencies"
+  color: "000000" # black?
+  description: "Updates the project dependencies"
+
+## Status
+
+- name: "status: blocked"
+  color: "F3FF15" # yellow
+  description: "Unable to work - dependent on another task"
+- name: "status: longterm"
+  color: "c2e0c6" # light green
+  description: "This task will be around a while"
+- name: "status: WIP"
+  color: "0e8a16" # basic green
+  description: "Work in progress"
+- name: "status: wontfix"
+  color: "EFF8E3" # pale green/yellow
+  description: "This will not be worked on"
+  from_name: "wontfix"
+
+## Score (Complexity/Effort)
+
+- name: "(1)"
+  color: "EEEEEE" # lightest grey
+  description: "minimal complexity - few lines modified"
+- name: "(2)"
+  color: "CCCCCC" # light grey
+  description: "a little more complex - multiple files/refactoring"
+- name: "(3)"
+  color: "999999" # medium grey
+  description: "small change/bug fix that requires little research"
+- name: "(5)"
+  color: "666666" # dark grey
+  description: "medium change/bugfix with planning/investigation"
+- name: "(8)"
+  color: "222222" # darkest grey
+  description: "research task or large change with multiple use cases"
+ 
