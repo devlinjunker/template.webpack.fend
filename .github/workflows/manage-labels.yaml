@@ -1,0 +1,32 @@
+name: Label Manager
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:  workflow_dispatch
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "manage-labels"
+  manage-labels:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    # Runs a label manager from https://github.com/marketplace/actions/github-labeler
+    - name: Run Labeler
+      if: success()
+      uses: crazy-max/ghaction-github-labeler@v2
+      with:
+        yaml_file: .github/labels.yaml
+        skip_delete: false
+        dry_run: false
+        exclude: |
+          :*
+#           help*
+#             *issue
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
