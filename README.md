@@ -89,14 +89,8 @@ How to use this template to create a basic Frontend Application:
 - [Contribute](CONTRIBUTING.md)
 - [Doc Site](https://devlinjunker.github.io/template.webpack.fend/)
 - [Wiki](https://github.com/devlinjunker/template.webpack.fend/wiki)
-- [Notes]()
+- [Notes](https://github.com/devlinjunker/template.webpack.fend/blob/master/NOTES.md)
 
 ## Contributors
 
 - [Devlin Junker (Me!)](mailto:devlinjunker@gmail.com)
-
-
- - [ ] Update README and Links with project specific details
-   - Badges
-   - Fix LInks
- - [ ] Update Contributing Info File
