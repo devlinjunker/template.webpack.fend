@@ -2,11 +2,11 @@
 version: 0.8.0-SNAPSHOT
 ---
 
-[![GitHub License](https://img.shields.io/github/license/devlinjunker/template.webpack.fend?color=blue)](https://github.com/devlinjunker/template.webpack.fend/blob/master/LICENSE)
+[![GitHub License](https://img.shields.io/github/license/devlinjunker/template.webpack.fend?color=blue)](https://github.com/devlinjunker/template.webpack.fend/blob/master/LICENSE)  
 [![GitHub last commit](https://img.shields.io/github/last-commit/devlinjunker/template.webpack.fend)](https://github.com/devlinjunker/template.webpack.fend/commits/master)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/devlinjunker/template.webpack.fend/Doc%20Build%20on%20Merge%20to%20%60master%60)](https://github.com/devlinjunker/template.webpack.fend/actions)  
 ![Dependency Check by David](https://img.shields.io/david/devlinjunker/template.webpack.fend)
-![Dev Dependency Check by David](https://img.shields.io/david/dev/devlinjunker/template.webpack.fend)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/devlinjunker/template.webpack.fend/Doc%20Build%20on%20Merge%20to%20%60master%60)](https://github.com/devlinjunker/template.webpack.fend/actions)
+![Dev Dependency Check by David](https://img.shields.io/david/dev/devlinjunker/template.webpack.fend)  
 [![ESDoc Status](https://raw.githubusercontent.com/devlinjunker/template.webpack.fend/master/docs/badge.svg)](https://devlinjunker.github.io/template.webpack.fend/source.html)
 
 
