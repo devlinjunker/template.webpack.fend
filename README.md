@@ -12,8 +12,8 @@ version: 0.8.0-SNAPSHOT
 ![Dev Dependency Check by David](https://img.shields.io/david/dev/devlinjunker/template.webpack.fend)  
 [![ESDoc Status](https://raw.githubusercontent.com/devlinjunker/template.webpack.fend/master/docs/badge.svg)](https://devlinjunker.github.io/template.webpack.fend/source.html)
 [![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/4332/badge)](https://bestpractices.coreinfrastructure.org/projects/4332)  
-![GitHub issues](https://img.shields.io/github/issues/devlinjunker/template.webpack.fend)
-![GitHub issues by-label](https://img.shields.io/github/issues/devlinjunker/template.webpack.fend/-priority?color=red&label=priority%20issues)
+[![GitHub issues](https://img.shields.io/github/issues/devlinjunker/template.webpack.fend)](https://github.com/devlinjunker/template.webpack.fend/issues)
+[![GitHub issues by-label](https://img.shields.io/github/issues/devlinjunker/template.webpack.fend/-priority?color=red&label=priority%20issues)](https://github.com/devlinjunker/template.webpack.fend/issues?q=is%3Aopen+is%3Aissue+label%3A-priority)
 
 ## Intro
 
