@@ -2,6 +2,9 @@
   "version": "0.8.0-SNAPSHOT",
   "name": "Template-WebpackFEND",
   "description": "Template using Webpack to create a html/javascript/css pages with multiple files",
+  "engines": {
+    "node": ">=10.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/devlinjunker/template.webpack.fend"
