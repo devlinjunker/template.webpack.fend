@@ -4,13 +4,16 @@ version: 0.8.0-SNAPSHOT
 
 # Template Webpack FEND App
 
-[![GitHub License](https://img.shields.io/github/license/devlinjunker/template.webpack.fend?color=blue)](https://github.com/devlinjunker/template.webpack.fend/blob/master/LICENSE)  
+[![GitHub License](https://img.shields.io/github/license/devlinjunker/template.webpack.fend?color=blue)](https://github.com/devlinjunker/template.webpack.fend/blob/master/LICENSE)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdevlinjunker%2Ftemplate.webpack.fend.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdevlinjunker%2Ftemplate.webpack.fend?ref=badge_shield)  
 [![GitHub last commit](https://img.shields.io/github/last-commit/devlinjunker/template.webpack.fend)](https://github.com/devlinjunker/template.webpack.fend/commits/master)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/devlinjunker/template.webpack.fend/Doc%20Build%20on%20Merge%20to%20%60master%60)](https://github.com/devlinjunker/template.webpack.fend/actions)  
 ![Dependency Check by David](https://img.shields.io/david/devlinjunker/template.webpack.fend)
 ![Dev Dependency Check by David](https://img.shields.io/david/dev/devlinjunker/template.webpack.fend)  
 [![ESDoc Status](https://raw.githubusercontent.com/devlinjunker/template.webpack.fend/master/docs/badge.svg)](https://devlinjunker.github.io/template.webpack.fend/source.html)
-
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/4332/badge)](https://bestpractices.coreinfrastructure.org/projects/4332)  
+![GitHub issues](https://img.shields.io/github/issues/devlinjunker/template.webpack.fend)
+![GitHub issues by-label](https://img.shields.io/github/issues/devlinjunker/template.webpack.fend/-priority?color=red&label=priority%20issues)
 
 ## Intro
 
@@ -18,7 +21,8 @@ Template and Example using Webpack to build a FEND Browser App (with HTML/CSS/JS
 
 **Demo:**
  - Simple web interface for storing values in the Browser Local Storage.
-
+ - Local Storage - Todo List 
+ - Partial Example (HTML/Javascript in modular files)
 
 ## Dependencies/Frameworks
 Node v12+ and npm
