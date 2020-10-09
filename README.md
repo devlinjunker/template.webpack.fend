@@ -1,4 +1,6 @@
 # Template Webpack FEND App
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdevlinjunker%2Ftemplate.webpack.fend.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdevlinjunker%2Ftemplate.webpack.fend?ref=badge_shield)
+
 
 Template and Example using Webpack to build a FEND Browser App (with HTML/CSS/JS and Image files).
 
@@ -213,3 +215,7 @@ How to use this template to create a basic Frontend Application:
     - When should we vs static webpages? React/React Static?
  - Backbone for UI? Seems simpler than react? Doesn't rely/revolve around instant response to interaction
  - [ ] GraphQL
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdevlinjunker%2Ftemplate.webpack.fend.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdevlinjunker%2Ftemplate.webpack.fend?ref=badge_large)
