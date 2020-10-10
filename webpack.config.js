@@ -25,10 +25,10 @@ module.exports = (env) => {
     mode: 'development',
     // Each entry will be loaded into webpage via <script> tags
     entry: {
-      app: './src/entry.js',
-      storage: './src/storage/entry.js',
-      todo: './src/todo/entry.js',
-      list: './src/list/entry.js'
+      app: './src/example/entry.js',
+      storage: './src/example/storage/entry.js',
+      todo: './src/example/todo/entry.js',
+      list: './src/example/list/entry.js'
     },
     output: {
       filename: '[name].bundle.js',
@@ -53,7 +53,7 @@ module.exports = (env) => {
     plugins: [
       new HtmlWebpackPlugin({
         meta,
-        template: 'src/index.html',
+        template: 'src/example/index.html',
         // Set the webpage title
         title: 'Test with Webpack Plugin',
         excludeChunks: [
@@ -67,21 +67,21 @@ module.exports = (env) => {
       new HtmlWebpackPlugin({
         meta,
         filename: 'storage/index.html',
-        template: 'src/storage/index.html',
+        template: 'src/example/storage/index.html',
         title: 'LocalStorage Example',
         chunks: ['storage']
       }),
       new HtmlWebpackPlugin({
         meta,
         filename: 'todo/index.html',
-        template: 'src/todo/index.html',
+        template: 'src/example/todo/index.html',
         title: 'TODO Example',
         chunks: ['todo']
       }),
       new HtmlWebpackPlugin({
         meta,
         filename: 'list/index.html',
-        template: 'src/list/index.html',
+        template: 'src/example/list/index.html',
         title: 'List Partials Example',
         chunks: ['list']
       }),

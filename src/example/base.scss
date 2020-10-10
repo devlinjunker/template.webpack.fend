@@ -2,12 +2,16 @@
 
 @import "tailwindcss/components";
 
-@import "./components/components.scss";
+@import "../components/components.scss";
 
 @import "tailwindcss/utilities";
 
-@import "./.utilities.scss";
+@import "../.utilities.scss";
 
 header nav a.active {
   @apply text-gray-500;
+}
+
+footer a[href*=github] img {
+  display: inline;
 }

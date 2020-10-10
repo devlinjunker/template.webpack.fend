@@ -2,8 +2,8 @@
  * @flow
  */
 import '../base.scss';
-import '../helpers/relative-href.helper';
-import listObjectTemplate from '../components/list/list-object.hbs';
+import '../../helpers/relative-href.helper';
+import listObjectTemplate from '../../components/list/list-object.hbs';
 import listItemTemplate from './components/my-list-item.hbs';
 
 const items: Array<{
