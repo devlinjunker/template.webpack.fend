@@ -52,10 +52,10 @@ How to use this template to create a basic Frontend Application:
 2. Create HTML files in `src/`
     - add HtmlWebpackPlugin instances for each new output page in webpack.config.js
     - add svg icons with `@svg()` using custom svg-pre-loader
-3. Add javascript files and reference in `src/entry.js`  (for up your application
-    - add additional javascript entry points in webpack.config.js
-    - create handlebars partials and import then add to DOM
-4. Add CSS files to `src` and import in javascript
+3. Add javascript files and create entry file (reference in `src/example/` directory)
+    - add javascript entry point configs in webpack.config.js
+    - create handlebars partials and import, then add to DOM
+4. Add CSS files to `src/` and import in javascript
    - or install CSS libraries with npm and import
 5. Use `npm run start-watch` to compile and run dev server + tests in watch mode
    - or `npm run start-dev` to run the dev server and reload on changes
@@ -88,6 +88,12 @@ How to use this template to create a basic Frontend Application:
 `npm run build-prod` ... TODO: create prod config
 
 `npm run clean` ... TODO: clean the workspace
+
+`npm run start` start production
+
+`npm run stop` stop production
+
+`npm run restart` (should work after start/stop setup)
 
 ## Links
 
