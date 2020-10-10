@@ -2,10 +2,10 @@
  * @flow
  */
 import Todo from './models/todo.model.js';
-import listObjectTemplate from '../components/list/list-object.hbs';
+import listObjectTemplate from '../../components/list/list-object.hbs';
 import todoTemplate from './components/todo.hbs';
 import addInputComponent, { AddInputComponent } from './components/add-input';
-import LocalStorageHelper from '../helpers/local-storage.helper.js';
+import LocalStorageHelper from '../../helpers/local-storage.helper.js';
 
 /**
  * Todo App Controller

@@ -3,3 +3,9 @@
 
 "autocomplete-tailwind":
   "": ""
+
+"core":
+  "customFileTypes":
+      "source.css.styled": [
+        "scss"
+      ]
