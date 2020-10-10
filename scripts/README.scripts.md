@@ -19,6 +19,12 @@ This action checks the build status of the project and verifies that all of the 
 not failing. This occurs for every commit in a Github PR against the `master` branch, and for every commit (push)
 to the `master` branch on Github.
 
+
+### Label Manager
+This project defines the Github Labels in a [YAML file](https://github.com/devlinjunker/template.webpack.fend/blob/master/.github/labels.yaml) that is managed by the [Github Labeler Action](https://github.com/marketplace/actions/github-labeler). 
+Any labels that are not defined in this file will be removed every time this action is run. **This does not affect PRs**
+
+
 Runs:
  - linter
  - build (with webpack)
