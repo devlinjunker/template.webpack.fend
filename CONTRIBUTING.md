@@ -12,18 +12,61 @@ This section details the steps to setup the project for development.
 ### Environment Setup and Tools
 Cloning this repo requires the use of Git, or you can use the template feature provided by Github. You can also download an archive of the repository contents using the Github "Download" link and extract this to access all of the files and create a new Git repository with them.
 
-Once you have a framework and development environment chosen for your project you should update your repo with specifics about how to install the tools and dependencies needed to run/debug/develop the application.
+This project is a node based project, so you will need to install [Node](https://nodejs.org/en/download/) and NPM to update the dependences. After you have installed the dependencies with `npm install -D`, you should be able to start the development server and watch for any changes to the files (and restart the server on changes) using `npm run start-watch`.
+
+After the development server has started, navigate to http://localhost:30303 in your browser to view the web application.
 
 ### Folder Structure
 Break down how each folder is used in the repo and how different code file types should be organized.
 
 ```
+- .atom/
+|-- (Atom Editor Configuration files)
 - .github/
 |-- ISSUE_TEMPLATE/  
 |---- (Github Issue Template Files)
 |-- workflows/
 |---- (Github workflow .yaml files)
+|-- labels.yaml (config file for label-manager action)
 |-- (other github specific files)
+- .webpack/
+|-- svg-pre-loader/
+|---- index.js (Custom webpack loader that replaces svg requires in the template string e.g. @svg() )
+|-- README.loaders.md (readme for custom webpack loaders)
+- docs/
+|-- template/
+|---- (documentation template files)
+|-- (generated documentation files)
+- flow-typed/
+|-- (flow.js files)
+- img/
+|-- zondicons/
+|---- (svg icon files)
+|-- (images and README)
+- scripts/
+|-- actions/
+|---- (github action scripts - run during actions)
+|-- hooks/
+|---- (TBD: husky githook scripts)
+- src/
+|-- components/
+|---- (Handlebar component templates and scss files)
+|-- examples/
+|---- list/
+|------ (Basic List example using Handlebar/js partials)
+|---- storage/
+|------ (Basic Local Storage Example)
+|---- todo/
+|------ (Todo List Example with Local Storage Helper)
+|-- helpers/
+|---- handlebars/
+|------ (Handlebar helper definitions)
+|---- (Helper javascript files and README)
+|-- static/
+|---- (static html template files and README)
+- test/
+|-- test.bootstrap.js (Entry file for test process)
+|-- (mocha and other test configuration files)
 - (project config files and READMEs)
 ```
 
@@ -36,6 +79,8 @@ Git Hooks can be added in the `.git/hooks` directory (I prefer to create symboli
 
 To create a hook, you'll need to add a script file to the directory with the name of the hook from [this list](https://git-scm.com/docs/githooks#_hooks). (e.g. to run a script before a commit is saved -- to verify the contents of the commit, verify the app builds, etc -- you would create `./.git/hooks/pre-commit.sh`)
 
+**TBD...**
+
 #### Workflows
 [Git Workflows/Actions](https://docs.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow) are added in `.github/workflows`. 
 These are created with YAML files that define when the workflow should run and the steps it should take. 
@@ -45,13 +90,18 @@ Github can then enforce that these workflows are successful before Pull Requests
 This project defines the Github Labels in a [YAML file](./.github/labels.yaml) that is managed by the [Github Labeler Action](https://github.com/marketplace/actions/github-labeler). 
 Any labels that are not defined in this file will be removed every time this action is run. **This does not affect PRs**
 
+**[Build Documentation](./.github/workflows/master-merge.yml)**
+This action will update the documentation files on merge to master (and after PRs are merged). This process will generate a demo application and the doc files with esdoc. It then will collect all README files defined in the esdoc "manual" section and synchronize them with the Github Wiki pages.
+
+**[Verify Build Pass](./.github/workflows/master-build.yml)**
+This action will verify that the build process succeeds on branches that are going to be merged into the `master` branch. It will also verify that the build is successful after a branch has been merged.
 
 #### Shell scripts
-Shell scripts can be created to help with deployment/installation or running the software.  
+Shell scripts can be created to help with deployment/installation or running the software.  **TBD...**
 
 
 ### Style Guide
-Make sure to only include basic documentation and Github setup files in this Template!
+This project uses ESLint to ensure consistent code style. See the [configuration file](./.eslintrc.yaml) for the rule definitions
 
 ### Branching and Pull Requests
 
