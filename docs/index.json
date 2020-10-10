@@ -566,6 +566,636 @@
   {
     "__docId__": 48,
     "kind": "file",
+    "name": "src/example/storage/app.controller.js",
+    "content": "/**\n * @flow\n */\nimport LocalStorageHelper from '../../helpers/local-storage.helper';\nimport './app.scss';\n/**\n * Controller for the application\n */\nclass StorageAppController {\n  keyInput: any;\n  valInput: any;\n\n  /**\n   * Set up the app, generate html and set up event handlers\n   */\n  constructor() {\n    // TODO: Set up HTML from Template?\n    this.keyInput = document.getElementById('key-input');\n    this.valInput = document.getElementById('value-input');\n\n    document.getElementsByClassName('save-btn')[0].onclick = this.save.bind(this);\n    document.getElementsByClassName('get-btn')[0].onclick = this.view.bind(this);\n\n    document.getElementsByClassName('clear-value-btn')[0].onclick = this.clearValue.bind(this);\n  }\n\n  /**\n   * saves the value at the provided key\n   * @return {void}\n   */\n  save() {\n    // Get key and value from ui\n    const key = this.keyInput.value;\n    const val = this.valInput.value;\n\n    // save with local storage\n    LocalStorageHelper.save({ key, val });\n\n    // TODO: display message to user\n  }\n\n  /**\n   * retrieves a value using the provided key\n   * @return {String} value retrieved from local storage with key\n   */\n  view() {\n    // get key from ui\n    const key = this.keyInput.value;\n\n    // get from local storage\n    const val = LocalStorageHelper.get({ key });\n\n    // display value to user\n    this.valInput.value = val;\n  }\n\n  /**\n   * Clear the value input element of text\n   * @return {void}\n   */\n  clearValue() {\n    this.valInput.value = '';\n  }\n}\n\nexport default StorageAppController;\n",
+    "static": true,
+    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/example/storage/app.controller.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 49,
+    "kind": "class",
+    "name": "StorageAppController",
+    "memberof": "src/example/storage/app.controller.js",
+    "static": true,
+    "longname": "src/example/storage/app.controller.js~StorageAppController",
+    "access": "public",
+    "export": true,
+    "importPath": "Template-WebpackFEND/src/example/storage/app.controller.js",
+    "importStyle": "StorageAppController",
+    "description": "Controller for the application",
+    "lineNumber": 6,
+    "interface": false
+  },
+  {
+    "__docId__": 50,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/example/storage/app.controller.js~StorageAppController",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/example/storage/app.controller.js~StorageAppController#constructor",
+    "access": "public",
+    "description": "Set up the app, generate html and set up event handlers",
+    "lineNumber": 11
+  },
+  {
+    "__docId__": 51,
+    "kind": "member",
+    "name": "keyInput",
+    "memberof": "src/example/storage/app.controller.js~StorageAppController",
+    "static": false,
+    "longname": "src/example/storage/app.controller.js~StorageAppController#keyInput",
+    "access": "public",
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 52,
+    "kind": "member",
+    "name": "valInput",
+    "memberof": "src/example/storage/app.controller.js~StorageAppController",
+    "static": false,
+    "longname": "src/example/storage/app.controller.js~StorageAppController#valInput",
+    "access": "public",
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 53,
+    "kind": "method",
+    "name": "save",
+    "memberof": "src/example/storage/app.controller.js~StorageAppController",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/example/storage/app.controller.js~StorageAppController#save",
+    "access": "public",
+    "description": "saves the value at the provided key",
+    "lineNumber": 26,
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 54,
+    "kind": "method",
+    "name": "view",
+    "memberof": "src/example/storage/app.controller.js~StorageAppController",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/example/storage/app.controller.js~StorageAppController#view",
+    "access": "public",
+    "description": "retrieves a value using the provided key",
+    "lineNumber": 41,
+    "return": {
+      "nullable": null,
+      "types": [
+        "String"
+      ],
+      "spread": false,
+      "description": "value retrieved from local storage with key"
+    },
+    "params": []
+  },
+  {
+    "__docId__": 55,
+    "kind": "method",
+    "name": "clearValue",
+    "memberof": "src/example/storage/app.controller.js~StorageAppController",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/example/storage/app.controller.js~StorageAppController#clearValue",
+    "access": "public",
+    "description": "Clear the value input element of text",
+    "lineNumber": 56,
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 56,
+    "kind": "file",
+    "name": "src/example/todo/app.controller.js",
+    "content": "/**\n * @flow\n */\nimport Todo from './models/todo.model.js';\nimport listObjectTemplate from '../../components/list/list-object.hbs';\nimport todoTemplate from './components/todo.hbs';\nimport addInputComponent, { AddInputComponent } from './components/add-input';\nimport LocalStorageHelper from '../../helpers/local-storage.helper.js';\n\n/**\n * Todo App Controller\n * @type {TodoAppController}\n */\nexport default class TodoAppController {\n  addInput: AddInputComponent;\n  list: Array<Todo>;\n\n  /**\n   * Sets up the Todo App\n   * @param {string} domSelector DOM Selector for app container element\n   */\n  constructor() {\n\n    this.list = [];\n    try {\n      this.loadList();\n    } catch (exc) {\n      console.error(exc, 'Error Loading List');\n    }\n\n    // This is a function that wraps a handlebars template in a DOM element, with event handler parameters to\n    // assign to the html elements created\n    this.addInput = addInputComponent(this.handleAddTodo.bind(this));\n    // Add element to page after creating it\n    (document.getElementById('add-container'): any).appendChild(this.addInput);\n\n    this.renderList();\n  }\n\n  /**\n   * Adds a New Todo Item to the list with the description provided\n   * @param {string} description of new todo to add\n   * @returns {void}\n   */\n  add(description: string) {\n    this.list.push(new Todo(description));\n\n    this.renderList();\n    this.saveList();\n  }\n\n  /**\n   * Removes a Todo Item from the list at a given index\n   * @param  {number} index to remove todo at\n   * @return {void}\n   */\n  remove(index: number) {\n    this.list.splice(index, 1);\n  }\n\n  /**\n   * Handler method for adding Todo to list and rerendering\n   * @return {void}\n   */\n  handleAddTodo() {\n    this.add(this.addInput.getValue());\n    this.renderList();\n    this.addInput.focusClear();\n  }\n\n  /**\n   * Handler method for removing a Todo from the list and rerendering\n   * @param  {number} index of the todo to remove from the list\n   * @return {void}\n   */\n  handleRemoveTodo(index: number) {\n    this.remove(index);\n    this.renderList();\n    this.saveList();\n  }\n\n  /**\n   * Handler when todo completion toggle is checked\n   * @param  {number} index index of todo to toggle in list\n   * @return {void}\n   */\n  handleToggleTodo(index) {\n    this.list[index].toggleComplete.call(this.list[index]);\n    this.saveList();\n  }\n\n  /**\n   * Method to Load the List from LocalStorage on App setup\n   * @return {void}\n   */\n  loadList() {\n    const saved: Array<Todo> = (LocalStorageHelper.get({ key: 'todos' }): any);\n\n    saved.forEach((todo: Todo) => {\n      this.list.push(new Todo(todo.description, todo.complete));\n    });\n  }\n\n  /**\n   * Method to Save the List to LocalStorage during any changes\n   * @return {void}\n   */\n  saveList() {\n    LocalStorageHelper.save({\n      key: 'todos',\n      val: this.list\n    });\n  }\n\n  /**\n   * Renders the HTML of the Todo App\n   * @return {void}\n   */\n  renderList() {\n    const listContainer: any = document.getElementById('list-container');\n    listContainer.innerHTML = '';\n\n    // Create list HTML with List Object Partial and local template file\n    listContainer.innerHTML = listObjectTemplate({ items: this.list, template: 'todo-item-template' }, {\n      partials: {\n        'todo-item-template': todoTemplate\n      }\n    });\n\n    // Add Handlers afterwards (because handlebars wont)\n    listContainer.querySelectorAll('.todo-container input[type=\"checkbox\"]').forEach((elm, index) => {\n      elm.onchange = () => {\n        this.handleToggleTodo(index);\n      };\n    });\n    listContainer.querySelectorAll('.todo-container .trash-icon').forEach((elm, index) => {\n      elm.onclick = () => {\n        this.handleRemoveTodo(index);\n      };\n    });\n  }\n};\n",
+    "static": true,
+    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/example/todo/app.controller.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 57,
+    "kind": "class",
+    "name": "TodoAppController",
+    "memberof": "src/example/todo/app.controller.js",
+    "static": true,
+    "longname": "src/example/todo/app.controller.js~TodoAppController",
+    "access": "public",
+    "export": true,
+    "importPath": "Template-WebpackFEND/src/example/todo/app.controller.js",
+    "importStyle": "TodoAppController",
+    "description": "Todo App Controller",
+    "lineNumber": 11,
+    "type": {
+      "nullable": null,
+      "types": [
+        "TodoAppController"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "interface": false
+  },
+  {
+    "__docId__": 58,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/example/todo/app.controller.js~TodoAppController",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/example/todo/app.controller.js~TodoAppController#constructor",
+    "access": "public",
+    "description": "Sets up the Todo App",
+    "lineNumber": 17,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "domSelector",
+        "description": "DOM Selector for app container element"
+      }
+    ]
+  },
+  {
+    "__docId__": 59,
+    "kind": "member",
+    "name": "list",
+    "memberof": "src/example/todo/app.controller.js~TodoAppController",
+    "static": false,
+    "longname": "src/example/todo/app.controller.js~TodoAppController#list",
+    "access": "public",
+    "description": null,
+    "lineNumber": 19,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*[]"
+      ]
+    }
+  },
+  {
+    "__docId__": 60,
+    "kind": "member",
+    "name": "addInput",
+    "memberof": "src/example/todo/app.controller.js~TodoAppController",
+    "static": false,
+    "longname": "src/example/todo/app.controller.js~TodoAppController#addInput",
+    "access": "public",
+    "description": null,
+    "lineNumber": 28,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 61,
+    "kind": "method",
+    "name": "add",
+    "memberof": "src/example/todo/app.controller.js~TodoAppController",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/example/todo/app.controller.js~TodoAppController#add",
+    "access": "public",
+    "description": "Adds a New Todo Item to the list with the description provided",
+    "lineNumber": 40,
+    "unknown": [
+      {
+        "tagName": "@returns",
+        "tagValue": "{void}"
+      }
+    ],
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "description",
+        "description": "of new todo to add"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 62,
+    "kind": "method",
+    "name": "remove",
+    "memberof": "src/example/todo/app.controller.js~TodoAppController",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/example/todo/app.controller.js~TodoAppController#remove",
+    "access": "public",
+    "description": "Removes a Todo Item from the list at a given index",
+    "lineNumber": 52,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "index",
+        "description": "to remove todo at"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 63,
+    "kind": "method",
+    "name": "handleAddTodo",
+    "memberof": "src/example/todo/app.controller.js~TodoAppController",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/example/todo/app.controller.js~TodoAppController#handleAddTodo",
+    "access": "public",
+    "description": "Handler method for adding Todo to list and rerendering",
+    "lineNumber": 60,
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 64,
+    "kind": "method",
+    "name": "handleRemoveTodo",
+    "memberof": "src/example/todo/app.controller.js~TodoAppController",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/example/todo/app.controller.js~TodoAppController#handleRemoveTodo",
+    "access": "public",
+    "description": "Handler method for removing a Todo from the list and rerendering",
+    "lineNumber": 71,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "index",
+        "description": "of the todo to remove from the list"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 65,
+    "kind": "method",
+    "name": "handleToggleTodo",
+    "memberof": "src/example/todo/app.controller.js~TodoAppController",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/example/todo/app.controller.js~TodoAppController#handleToggleTodo",
+    "access": "public",
+    "description": "Handler when todo completion toggle is checked",
+    "lineNumber": 82,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "number"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "index",
+        "description": "index of todo to toggle in list"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 66,
+    "kind": "method",
+    "name": "loadList",
+    "memberof": "src/example/todo/app.controller.js~TodoAppController",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/example/todo/app.controller.js~TodoAppController#loadList",
+    "access": "public",
+    "description": "Method to Load the List from LocalStorage on App setup",
+    "lineNumber": 91,
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 67,
+    "kind": "method",
+    "name": "saveList",
+    "memberof": "src/example/todo/app.controller.js~TodoAppController",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/example/todo/app.controller.js~TodoAppController#saveList",
+    "access": "public",
+    "description": "Method to Save the List to LocalStorage during any changes",
+    "lineNumber": 103,
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 68,
+    "kind": "method",
+    "name": "renderList",
+    "memberof": "src/example/todo/app.controller.js~TodoAppController",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/example/todo/app.controller.js~TodoAppController#renderList",
+    "access": "public",
+    "description": "Renders the HTML of the Todo App",
+    "lineNumber": 114,
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 69,
+    "kind": "file",
+    "name": "src/example/todo/components/add-input/index.js",
+    "content": "/**\n * @flow\n */\nimport template from './add-input.partial.hbs';\n\n/**\n * Add Input Component Type\n * @type {AddInputComponent}\n */\nexport type AddInputComponent = {\n  getValue: Function;\n  focusClear: Function\n};\n\n/**\n * AddInput Component Factory that creates DOM element and binds handlers\n * @param {Function} addHandler handler when 'add' button is pressed\n * @return {AddInputComponent} Add input component\n */\nfunction addInputComponentFactory(addHandler: Function): AddInputComponent {\n  const temp = document.createElement('div');\n\n  temp.innerHTML = template();\n\n  const input = (temp.querySelector('.add-input'): any);\n  input.onkeypress = (event) => {\n    if (event.keyCode === 13) {\n      addHandler();\n    }\n  };\n  (temp.querySelector('.add-button'): any).onclick = addHandler;\n\n  const ret: any = temp.firstChild;\n  ret.getValue = () => {\n    return input.value;\n  };\n\n  ret.focusClear = () => {\n    input.value = '';\n    input.focus();\n  };\n\n  return ret;\n};\n\n\nexport default addInputComponentFactory;\n",
+    "static": true,
+    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/example/todo/components/add-input/index.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 70,
+    "kind": "function",
+    "name": "addInputComponentFactory",
+    "memberof": "src/example/todo/components/add-input/index.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "src/example/todo/components/add-input/index.js~addInputComponentFactory",
+    "access": "public",
+    "export": true,
+    "importPath": "Template-WebpackFEND/src/example/todo/components/add-input/index.js",
+    "importStyle": "addInputComponentFactory",
+    "description": "AddInput Component Factory that creates DOM element and binds handlers",
+    "lineNumber": 14,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Function"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "addHandler",
+        "description": "handler when 'add' button is pressed"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "AddInputComponent"
+      ],
+      "spread": false,
+      "description": "Add input component"
+    }
+  },
+  {
+    "__docId__": 71,
+    "kind": "file",
+    "name": "src/example/todo/models/todo.model.js",
+    "content": "/**\n * @flow\n */\n\n/**\n * Todo Model that stores the fields related to a Todo\n * @type {Todo}\n */\nexport default class Todo {\n  description: string;\n  complete: boolean;\n\n  /**\n   * Creates the Todo Model\n   * @param {string} description of the todo to be completed\n   * @param {boolean} complete completion status of todo\n   */\n  constructor(description: string, complete: ?boolean = false) {\n    this.description = description;\n    this.complete = complete;\n  }\n\n  /**\n   * Toggles the completion status of the Todo\n   * @return {void}\n   */\n  toggleComplete() {\n    this.complete = !this.complete;\n  }\n}\n",
+    "static": true,
+    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/example/todo/models/todo.model.js",
+    "access": "public",
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 72,
+    "kind": "class",
+    "name": "Todo",
+    "memberof": "src/example/todo/models/todo.model.js",
+    "static": true,
+    "longname": "src/example/todo/models/todo.model.js~Todo",
+    "access": "public",
+    "export": true,
+    "importPath": "Template-WebpackFEND/src/example/todo/models/todo.model.js",
+    "importStyle": "Todo",
+    "description": "Todo Model that stores the fields related to a Todo",
+    "lineNumber": 7,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Todo"
+      ],
+      "spread": false,
+      "description": null
+    },
+    "interface": false
+  },
+  {
+    "__docId__": 73,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "src/example/todo/models/todo.model.js~Todo",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/example/todo/models/todo.model.js~Todo#constructor",
+    "access": "public",
+    "description": "Creates the Todo Model",
+    "lineNumber": 14,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "string"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "description",
+        "description": "of the todo to be completed"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "boolean"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "complete",
+        "description": "completion status of todo"
+      }
+    ]
+  },
+  {
+    "__docId__": 74,
+    "kind": "member",
+    "name": "description",
+    "memberof": "src/example/todo/models/todo.model.js~Todo",
+    "static": false,
+    "longname": "src/example/todo/models/todo.model.js~Todo#description",
+    "access": "public",
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 75,
+    "kind": "member",
+    "name": "complete",
+    "memberof": "src/example/todo/models/todo.model.js~Todo",
+    "static": false,
+    "longname": "src/example/todo/models/todo.model.js~Todo#complete",
+    "access": "public",
+    "description": null,
+    "lineNumber": 16,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 76,
+    "kind": "method",
+    "name": "toggleComplete",
+    "memberof": "src/example/todo/models/todo.model.js~Todo",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "src/example/todo/models/todo.model.js~Todo#toggleComplete",
+    "access": "public",
+    "description": "Toggles the completion status of the Todo",
+    "lineNumber": 23,
+    "return": {
+      "nullable": null,
+      "types": [
+        "void"
+      ],
+      "spread": false,
+      "description": ""
+    },
+    "params": []
+  },
+  {
+    "__docId__": 78,
+    "kind": "file",
     "name": "src/helpers/handlebars/default-val.js",
     "content": "/**\n * @flow\n * @type {DefaultValueHelper}\n */\n/**\n * Custom Default Value Handlebars helper, used to check if variable has\n * @param  {any} variable   variable to check if it contains value\n * @param  {any} def default value to return if not set\n * @return {any}         [description]\n */\nmodule.exports = function(variable: any, def: any) {\n  if (variable !== undefined) {\n    return variable;\n  }\n  return def;\n};\n",
     "static": true,
@@ -575,7 +1205,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 49,
+    "__docId__": 79,
     "kind": "function",
     "name": "exports",
     "memberof": "src/helpers/handlebars/default-val.js",
@@ -622,7 +1252,7 @@
     "ignore": true
   },
   {
-    "__docId__": 50,
+    "__docId__": 80,
     "kind": "file",
     "name": "src/helpers/handlebars/eq.js",
     "content": "/**\n * @flow\n * @type {DefaultValueHelper}\n */\n/**\n * Custom Eq Handlebars helper, used to check if values are equal\n * @param  {any} var1   variable to compare against second\n * @param  {any} var2   second variable to compare against first\n * @return {any}         True/False\n */\nmodule.exports = function(var1: any, var2: any) {\n  if (var1 === var2) {\n    return true;\n  }\n  return false;\n};\n",
@@ -633,7 +1263,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 51,
+    "__docId__": 81,
     "kind": "function",
     "name": "exports",
     "memberof": "src/helpers/handlebars/eq.js",
@@ -680,7 +1310,7 @@
     "ignore": true
   },
   {
-    "__docId__": 52,
+    "__docId__": 82,
     "kind": "file",
     "name": "src/helpers/local-storage.helper.js",
     "content": "/**\n * @flow\n */\nimport _ from 'lodash';\n\n/**\n * DataService Class for Storing Values in the LocalStorage in the browser\n */\nexport default class LocalStorageHelper {\n\n  /**\n   * Saves the value at the key provided in the browser localStorage\n   *\n   * @returns {undefined} undefined\n   */\n  static save({ key, val }: { key: string, val: any }) {\n    if (!_.isString(val)) {\n      val = JSON.stringify(val);\n    }\n\n    localStorage.setItem(key, val);\n  }\n\n  /**\n   * Retrieves a value stored at the key in browser LocalStorage\n\n   * @returns {string | object} the value stored at the key in the LocalStorage\n   */\n  static get({ key }: { key: string }): string | Object | Array<any> {\n    const val = localStorage.getItem(key);\n\n    if (val === undefined || val === null) {\n      throw new Error();\n    }\n\n    try {\n      const parsed = JSON.parse(val);\n      return parsed;\n    } catch (e) {} // eslint-disable-line\n\n    return val;\n  }\n}\n",
@@ -691,7 +1321,7 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 53,
+    "__docId__": 83,
     "kind": "class",
     "name": "LocalStorageHelper",
     "memberof": "src/helpers/local-storage.helper.js",
@@ -706,7 +1336,7 @@
     "interface": false
   },
   {
-    "__docId__": 54,
+    "__docId__": 84,
     "kind": "method",
     "name": "save",
     "memberof": "src/helpers/local-storage.helper.js~LocalStorageHelper",
@@ -746,7 +1376,7 @@
     ]
   },
   {
-    "__docId__": 55,
+    "__docId__": 85,
     "kind": "method",
     "name": "get",
     "memberof": "src/helpers/local-storage.helper.js~LocalStorageHelper",
@@ -786,7 +1416,7 @@
     ]
   },
   {
-    "__docId__": 56,
+    "__docId__": 86,
     "kind": "file",
     "name": "src/helpers/relative-href.helper.js",
     "content": "/**\n * @flow\n * @type {RelativeHrefHelper}\n */\n\n/**\n * <a> `href` linking helper method.\n * sets the `<base>` tag in the header so links can remain relative to the root of the app. This also helps\n * with the demo app in `docs/` because it sets the links relative to that url rather than just the host.\n * @return {void}\n */\n(function() {\n  // Get url\n  const href = window.location.href;\n  let newHref = '';\n\n  // if found location of `demo`, set base tag as url to that point\n  if (/demo\\//.test(href) === true) {\n    newHref = href.slice(0, href.indexOf('demo') + 5);\n  // otherwise set to host\n  // (we're assuming that the webapp is hosted at root of domain, otherwise this could be an issue)\n  } else {\n    newHref = window.origin;\n  }\n\n  const base = document.createElement('base');\n  base.setAttribute('href', newHref);\n  document.getElementsByTagName('head')[0].prepend(base);\n})();\n",
@@ -797,638 +1427,8 @@
     "lineNumber": 1
   },
   {
-    "__docId__": 57,
-    "kind": "file",
-    "name": "src/storage/app.controller.js",
-    "content": "/**\n * @flow\n */\nimport LocalStorageHelper from '../helpers/local-storage.helper';\nimport './app.scss';\n/**\n * Controller for the application\n */\nclass StorageAppController {\n  keyInput: any;\n  valInput: any;\n\n  /**\n   * Set up the app, generate html and set up event handlers\n   */\n  constructor() {\n    // TODO: Set up HTML from Template?\n    this.keyInput = document.getElementById('key-input');\n    this.valInput = document.getElementById('value-input');\n\n    document.getElementsByClassName('save-btn')[0].onclick = this.save.bind(this);\n    document.getElementsByClassName('get-btn')[0].onclick = this.view.bind(this);\n\n    document.getElementsByClassName('clear-value-btn')[0].onclick = this.clearValue.bind(this);\n  }\n\n  /**\n   * saves the value at the provided key\n   * @return {void}\n   */\n  save() {\n    // Get key and value from ui\n    const key = this.keyInput.value;\n    const val = this.valInput.value;\n\n    // save with local storage\n    LocalStorageHelper.save({ key, val });\n\n    // TODO: display message to user\n  }\n\n  /**\n   * retrieves a value using the provided key\n   * @return {String} value retrieved from local storage with key\n   */\n  view() {\n    // get key from ui\n    const key = this.keyInput.value;\n\n    // get from local storage\n    const val = LocalStorageHelper.get({ key });\n\n    // display value to user\n    this.valInput.value = val;\n  }\n\n  /**\n   * Clear the value input element of text\n   * @return {void}\n   */\n  clearValue() {\n    this.valInput.value = '';\n  }\n}\n\nexport default StorageAppController;\n",
-    "static": true,
-    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/storage/app.controller.js",
-    "access": "public",
-    "description": null,
-    "lineNumber": 1
-  },
-  {
-    "__docId__": 58,
-    "kind": "class",
-    "name": "StorageAppController",
-    "memberof": "src/storage/app.controller.js",
-    "static": true,
-    "longname": "src/storage/app.controller.js~StorageAppController",
-    "access": "public",
-    "export": true,
-    "importPath": "Template-WebpackFEND/src/storage/app.controller.js",
-    "importStyle": "StorageAppController",
-    "description": "Controller for the application",
-    "lineNumber": 6,
-    "interface": false
-  },
-  {
-    "__docId__": 59,
-    "kind": "constructor",
-    "name": "constructor",
-    "memberof": "src/storage/app.controller.js~StorageAppController",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/storage/app.controller.js~StorageAppController#constructor",
-    "access": "public",
-    "description": "Set up the app, generate html and set up event handlers",
-    "lineNumber": 11
-  },
-  {
-    "__docId__": 60,
-    "kind": "member",
-    "name": "keyInput",
-    "memberof": "src/storage/app.controller.js~StorageAppController",
-    "static": false,
-    "longname": "src/storage/app.controller.js~StorageAppController#keyInput",
-    "access": "public",
-    "description": null,
-    "lineNumber": 13,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 61,
-    "kind": "member",
-    "name": "valInput",
-    "memberof": "src/storage/app.controller.js~StorageAppController",
-    "static": false,
-    "longname": "src/storage/app.controller.js~StorageAppController#valInput",
-    "access": "public",
-    "description": null,
-    "lineNumber": 14,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 62,
-    "kind": "method",
-    "name": "save",
-    "memberof": "src/storage/app.controller.js~StorageAppController",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/storage/app.controller.js~StorageAppController#save",
-    "access": "public",
-    "description": "saves the value at the provided key",
-    "lineNumber": 26,
-    "return": {
-      "nullable": null,
-      "types": [
-        "void"
-      ],
-      "spread": false,
-      "description": ""
-    },
-    "params": []
-  },
-  {
-    "__docId__": 63,
-    "kind": "method",
-    "name": "view",
-    "memberof": "src/storage/app.controller.js~StorageAppController",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/storage/app.controller.js~StorageAppController#view",
-    "access": "public",
-    "description": "retrieves a value using the provided key",
-    "lineNumber": 41,
-    "return": {
-      "nullable": null,
-      "types": [
-        "String"
-      ],
-      "spread": false,
-      "description": "value retrieved from local storage with key"
-    },
-    "params": []
-  },
-  {
-    "__docId__": 64,
-    "kind": "method",
-    "name": "clearValue",
-    "memberof": "src/storage/app.controller.js~StorageAppController",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/storage/app.controller.js~StorageAppController#clearValue",
-    "access": "public",
-    "description": "Clear the value input element of text",
-    "lineNumber": 56,
-    "return": {
-      "nullable": null,
-      "types": [
-        "void"
-      ],
-      "spread": false,
-      "description": ""
-    },
-    "params": []
-  },
-  {
-    "__docId__": 65,
-    "kind": "file",
-    "name": "src/todo/app.controller.js",
-    "content": "/**\n * @flow\n */\nimport Todo from './models/todo.model.js';\nimport listObjectTemplate from '../components/list/list-object.hbs';\nimport todoTemplate from './components/todo.hbs';\nimport addInputComponent, { AddInputComponent } from './components/add-input';\nimport LocalStorageHelper from '../helpers/local-storage.helper.js';\n\n/**\n * Todo App Controller\n * @type {TodoAppController}\n */\nexport default class TodoAppController {\n  addInput: AddInputComponent;\n  list: Array<Todo>;\n\n  /**\n   * Sets up the Todo App\n   * @param {string} domSelector DOM Selector for app container element\n   */\n  constructor() {\n\n    this.list = [];\n    try {\n      this.loadList();\n    } catch (exc) {\n      console.error(exc, 'Error Loading List');\n    }\n\n    // This is a function that wraps a handlebars template in a DOM element, with event handler parameters to\n    // assign to the html elements created\n    this.addInput = addInputComponent(this.handleAddTodo.bind(this));\n    // Add element to page after creating it\n    (document.getElementById('add-container'): any).appendChild(this.addInput);\n\n    this.renderList();\n  }\n\n  /**\n   * Adds a New Todo Item to the list with the description provided\n   * @param {string} description of new todo to add\n   * @returns {void}\n   */\n  add(description: string) {\n    this.list.push(new Todo(description));\n\n    this.renderList();\n    this.saveList();\n  }\n\n  /**\n   * Removes a Todo Item from the list at a given index\n   * @param  {number} index to remove todo at\n   * @return {void}\n   */\n  remove(index: number) {\n    this.list.splice(index, 1);\n  }\n\n  /**\n   * Handler method for adding Todo to list and rerendering\n   * @return {void}\n   */\n  handleAddTodo() {\n    this.add(this.addInput.getValue());\n    this.renderList();\n    this.addInput.focusClear();\n  }\n\n  /**\n   * Handler method for removing a Todo from the list and rerendering\n   * @param  {number} index of the todo to remove from the list\n   * @return {void}\n   */\n  handleRemoveTodo(index: number) {\n    this.remove(index);\n    this.renderList();\n    this.saveList();\n  }\n\n  /**\n   * Handler when todo completion toggle is checked\n   * @param  {number} index index of todo to toggle in list\n   * @return {void}\n   */\n  handleToggleTodo(index) {\n    this.list[index].toggleComplete.call(this.list[index]);\n    this.saveList();\n  }\n\n  /**\n   * Method to Load the List from LocalStorage on App setup\n   * @return {void}\n   */\n  loadList() {\n    const saved: Array<Todo> = (LocalStorageHelper.get({ key: 'todos' }): any);\n\n    saved.forEach((todo: Todo) => {\n      this.list.push(new Todo(todo.description, todo.complete));\n    });\n  }\n\n  /**\n   * Method to Save the List to LocalStorage during any changes\n   * @return {void}\n   */\n  saveList() {\n    LocalStorageHelper.save({\n      key: 'todos',\n      val: this.list\n    });\n  }\n\n  /**\n   * Renders the HTML of the Todo App\n   * @return {void}\n   */\n  renderList() {\n    const listContainer: any = document.getElementById('list-container');\n    listContainer.innerHTML = '';\n\n    // Create list HTML with List Object Partial and local template file\n    listContainer.innerHTML = listObjectTemplate({ items: this.list, template: 'todo-item-template' }, {\n      partials: {\n        'todo-item-template': todoTemplate\n      }\n    });\n\n    // Add Handlers afterwards (because handlebars wont)\n    listContainer.querySelectorAll('.todo-container input[type=\"checkbox\"]').forEach((elm, index) => {\n      elm.onchange = () => {\n        this.handleToggleTodo(index);\n      };\n    });\n    listContainer.querySelectorAll('.todo-container .trash-icon').forEach((elm, index) => {\n      elm.onclick = () => {\n        this.handleRemoveTodo(index);\n      };\n    });\n  }\n};\n",
-    "static": true,
-    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/todo/app.controller.js",
-    "access": "public",
-    "description": null,
-    "lineNumber": 1
-  },
-  {
-    "__docId__": 66,
-    "kind": "class",
-    "name": "TodoAppController",
-    "memberof": "src/todo/app.controller.js",
-    "static": true,
-    "longname": "src/todo/app.controller.js~TodoAppController",
-    "access": "public",
-    "export": true,
-    "importPath": "Template-WebpackFEND/src/todo/app.controller.js",
-    "importStyle": "TodoAppController",
-    "description": "Todo App Controller",
-    "lineNumber": 11,
-    "type": {
-      "nullable": null,
-      "types": [
-        "TodoAppController"
-      ],
-      "spread": false,
-      "description": null
-    },
-    "interface": false
-  },
-  {
-    "__docId__": 67,
-    "kind": "constructor",
-    "name": "constructor",
-    "memberof": "src/todo/app.controller.js~TodoAppController",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/todo/app.controller.js~TodoAppController#constructor",
-    "access": "public",
-    "description": "Sets up the Todo App",
-    "lineNumber": 17,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "string"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "domSelector",
-        "description": "DOM Selector for app container element"
-      }
-    ]
-  },
-  {
-    "__docId__": 68,
-    "kind": "member",
-    "name": "list",
-    "memberof": "src/todo/app.controller.js~TodoAppController",
-    "static": false,
-    "longname": "src/todo/app.controller.js~TodoAppController#list",
-    "access": "public",
-    "description": null,
-    "lineNumber": 19,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*[]"
-      ]
-    }
-  },
-  {
-    "__docId__": 69,
-    "kind": "member",
-    "name": "addInput",
-    "memberof": "src/todo/app.controller.js~TodoAppController",
-    "static": false,
-    "longname": "src/todo/app.controller.js~TodoAppController#addInput",
-    "access": "public",
-    "description": null,
-    "lineNumber": 28,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 70,
-    "kind": "method",
-    "name": "add",
-    "memberof": "src/todo/app.controller.js~TodoAppController",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/todo/app.controller.js~TodoAppController#add",
-    "access": "public",
-    "description": "Adds a New Todo Item to the list with the description provided",
-    "lineNumber": 40,
-    "unknown": [
-      {
-        "tagName": "@returns",
-        "tagValue": "{void}"
-      }
-    ],
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "string"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "description",
-        "description": "of new todo to add"
-      }
-    ],
-    "return": {
-      "nullable": null,
-      "types": [
-        "void"
-      ],
-      "spread": false,
-      "description": ""
-    }
-  },
-  {
-    "__docId__": 71,
-    "kind": "method",
-    "name": "remove",
-    "memberof": "src/todo/app.controller.js~TodoAppController",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/todo/app.controller.js~TodoAppController#remove",
-    "access": "public",
-    "description": "Removes a Todo Item from the list at a given index",
-    "lineNumber": 52,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "number"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "index",
-        "description": "to remove todo at"
-      }
-    ],
-    "return": {
-      "nullable": null,
-      "types": [
-        "void"
-      ],
-      "spread": false,
-      "description": ""
-    }
-  },
-  {
-    "__docId__": 72,
-    "kind": "method",
-    "name": "handleAddTodo",
-    "memberof": "src/todo/app.controller.js~TodoAppController",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/todo/app.controller.js~TodoAppController#handleAddTodo",
-    "access": "public",
-    "description": "Handler method for adding Todo to list and rerendering",
-    "lineNumber": 60,
-    "return": {
-      "nullable": null,
-      "types": [
-        "void"
-      ],
-      "spread": false,
-      "description": ""
-    },
-    "params": []
-  },
-  {
-    "__docId__": 73,
-    "kind": "method",
-    "name": "handleRemoveTodo",
-    "memberof": "src/todo/app.controller.js~TodoAppController",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/todo/app.controller.js~TodoAppController#handleRemoveTodo",
-    "access": "public",
-    "description": "Handler method for removing a Todo from the list and rerendering",
-    "lineNumber": 71,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "number"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "index",
-        "description": "of the todo to remove from the list"
-      }
-    ],
-    "return": {
-      "nullable": null,
-      "types": [
-        "void"
-      ],
-      "spread": false,
-      "description": ""
-    }
-  },
-  {
-    "__docId__": 74,
-    "kind": "method",
-    "name": "handleToggleTodo",
-    "memberof": "src/todo/app.controller.js~TodoAppController",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/todo/app.controller.js~TodoAppController#handleToggleTodo",
-    "access": "public",
-    "description": "Handler when todo completion toggle is checked",
-    "lineNumber": 82,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "number"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "index",
-        "description": "index of todo to toggle in list"
-      }
-    ],
-    "return": {
-      "nullable": null,
-      "types": [
-        "void"
-      ],
-      "spread": false,
-      "description": ""
-    }
-  },
-  {
-    "__docId__": 75,
-    "kind": "method",
-    "name": "loadList",
-    "memberof": "src/todo/app.controller.js~TodoAppController",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/todo/app.controller.js~TodoAppController#loadList",
-    "access": "public",
-    "description": "Method to Load the List from LocalStorage on App setup",
-    "lineNumber": 91,
-    "return": {
-      "nullable": null,
-      "types": [
-        "void"
-      ],
-      "spread": false,
-      "description": ""
-    },
-    "params": []
-  },
-  {
-    "__docId__": 76,
-    "kind": "method",
-    "name": "saveList",
-    "memberof": "src/todo/app.controller.js~TodoAppController",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/todo/app.controller.js~TodoAppController#saveList",
-    "access": "public",
-    "description": "Method to Save the List to LocalStorage during any changes",
-    "lineNumber": 103,
-    "return": {
-      "nullable": null,
-      "types": [
-        "void"
-      ],
-      "spread": false,
-      "description": ""
-    },
-    "params": []
-  },
-  {
-    "__docId__": 77,
-    "kind": "method",
-    "name": "renderList",
-    "memberof": "src/todo/app.controller.js~TodoAppController",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/todo/app.controller.js~TodoAppController#renderList",
-    "access": "public",
-    "description": "Renders the HTML of the Todo App",
-    "lineNumber": 114,
-    "return": {
-      "nullable": null,
-      "types": [
-        "void"
-      ],
-      "spread": false,
-      "description": ""
-    },
-    "params": []
-  },
-  {
-    "__docId__": 78,
-    "kind": "file",
-    "name": "src/todo/components/add-input/index.js",
-    "content": "/**\n * @flow\n */\nimport template from './add-input.partial.hbs';\n\n/**\n * Add Input Component Type\n * @type {AddInputComponent}\n */\nexport type AddInputComponent = {\n  getValue: Function;\n  focusClear: Function\n};\n\n/**\n * AddInput Component Factory that creates DOM element and binds handlers\n * @param {Function} addHandler handler when 'add' button is pressed\n * @return {AddInputComponent} Add input component\n */\nfunction addInputComponentFactory(addHandler: Function): AddInputComponent {\n  const temp = document.createElement('div');\n\n  temp.innerHTML = template();\n\n  const input = (temp.querySelector('.add-input'): any);\n  input.onkeypress = (event) => {\n    if (event.keyCode === 13) {\n      addHandler();\n    }\n  };\n  (temp.querySelector('.add-button'): any).onclick = addHandler;\n\n  const ret: any = temp.firstChild;\n  ret.getValue = () => {\n    return input.value;\n  };\n\n  ret.focusClear = () => {\n    input.value = '';\n    input.focus();\n  };\n\n  return ret;\n};\n\n\nexport default addInputComponentFactory;\n",
-    "static": true,
-    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/todo/components/add-input/index.js",
-    "access": "public",
-    "description": null,
-    "lineNumber": 1
-  },
-  {
-    "__docId__": 79,
-    "kind": "function",
-    "name": "addInputComponentFactory",
-    "memberof": "src/todo/components/add-input/index.js",
-    "generator": false,
-    "async": false,
-    "static": true,
-    "longname": "src/todo/components/add-input/index.js~addInputComponentFactory",
-    "access": "public",
-    "export": true,
-    "importPath": "Template-WebpackFEND/src/todo/components/add-input/index.js",
-    "importStyle": "addInputComponentFactory",
-    "description": "AddInput Component Factory that creates DOM element and binds handlers",
-    "lineNumber": 14,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "Function"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "addHandler",
-        "description": "handler when 'add' button is pressed"
-      }
-    ],
-    "return": {
-      "nullable": null,
-      "types": [
-        "AddInputComponent"
-      ],
-      "spread": false,
-      "description": "Add input component"
-    }
-  },
-  {
-    "__docId__": 80,
-    "kind": "file",
-    "name": "src/todo/models/todo.model.js",
-    "content": "/**\n * @flow\n */\n\n/**\n * Todo Model that stores the fields related to a Todo\n * @type {Todo}\n */\nexport default class Todo {\n  description: string;\n  complete: boolean;\n\n  /**\n   * Creates the Todo Model\n   * @param {string} description of the todo to be completed\n   * @param {boolean} complete completion status of todo\n   */\n  constructor(description: string, complete: ?boolean = false) {\n    this.description = description;\n    this.complete = complete;\n  }\n\n  /**\n   * Toggles the completion status of the Todo\n   * @return {void}\n   */\n  toggleComplete() {\n    this.complete = !this.complete;\n  }\n}\n",
-    "static": true,
-    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/todo/models/todo.model.js",
-    "access": "public",
-    "description": null,
-    "lineNumber": 1
-  },
-  {
-    "__docId__": 81,
-    "kind": "class",
-    "name": "Todo",
-    "memberof": "src/todo/models/todo.model.js",
-    "static": true,
-    "longname": "src/todo/models/todo.model.js~Todo",
-    "access": "public",
-    "export": true,
-    "importPath": "Template-WebpackFEND/src/todo/models/todo.model.js",
-    "importStyle": "Todo",
-    "description": "Todo Model that stores the fields related to a Todo",
-    "lineNumber": 7,
-    "type": {
-      "nullable": null,
-      "types": [
-        "Todo"
-      ],
-      "spread": false,
-      "description": null
-    },
-    "interface": false
-  },
-  {
-    "__docId__": 82,
-    "kind": "constructor",
-    "name": "constructor",
-    "memberof": "src/todo/models/todo.model.js~Todo",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/todo/models/todo.model.js~Todo#constructor",
-    "access": "public",
-    "description": "Creates the Todo Model",
-    "lineNumber": 14,
-    "params": [
-      {
-        "nullable": null,
-        "types": [
-          "string"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "description",
-        "description": "of the todo to be completed"
-      },
-      {
-        "nullable": null,
-        "types": [
-          "boolean"
-        ],
-        "spread": false,
-        "optional": false,
-        "name": "complete",
-        "description": "completion status of todo"
-      }
-    ]
-  },
-  {
-    "__docId__": 83,
-    "kind": "member",
-    "name": "description",
-    "memberof": "src/todo/models/todo.model.js~Todo",
-    "static": false,
-    "longname": "src/todo/models/todo.model.js~Todo#description",
-    "access": "public",
-    "description": null,
-    "lineNumber": 15,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 84,
-    "kind": "member",
-    "name": "complete",
-    "memberof": "src/todo/models/todo.model.js~Todo",
-    "static": false,
-    "longname": "src/todo/models/todo.model.js~Todo#complete",
-    "access": "public",
-    "description": null,
-    "lineNumber": 16,
-    "undocument": true,
-    "type": {
-      "types": [
-        "*"
-      ]
-    }
-  },
-  {
-    "__docId__": 85,
-    "kind": "method",
-    "name": "toggleComplete",
-    "memberof": "src/todo/models/todo.model.js~Todo",
-    "generator": false,
-    "async": false,
-    "static": false,
-    "longname": "src/todo/models/todo.model.js~Todo#toggleComplete",
-    "access": "public",
-    "description": "Toggles the completion status of the Todo",
-    "lineNumber": 23,
-    "return": {
-      "nullable": null,
-      "types": [
-        "void"
-      ],
-      "spread": false,
-      "description": ""
-    },
-    "params": []
-  },
-  {
     "kind": "index",
-    "content": "# Template Webpack FEND App\n\nTemplate and Example using Webpack to build a FEND Browser App (with HTML/CSS/JS and Image files).\n\n**Demo:**\n - Simple web interface for storing values in the Browser Local Storage.\n\n\n## Dependencies\nNode v12+ and npm\n\nSee package.json([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/package.json))\nfor full list of current dependencies\n - [Webpack](https://webpack.js.org/) + [Loaders ](https://webpack.js.org/concepts/loaders/)-- managing the build process\n - [Babel](https://babeljs.io/) -- compiling newer ECMA2016+ into browser-capable javascript\n - [FlowJS](https://flow.org/) -- adding types to javascript\n - [ESLint](http://eslint.org/) -- enforcing javascript code style\n - [Webpack Dev Server](https://github.com/webpack/webpack-dev-server)-- rapid development with hot reloading\n - [Mocha](https://mochajs.org/), [Chai](https://www.chaijs.com/), and [Sinon](https://sinonjs.org/) -- unit testing\n - [Karma](https://karma-runner.github.io/) -- managing tests in different browsers\n - [EsDoc](https://esdoc.org/) -- creating easy javascript documentation\n - [PostCSS](https://postcss.org/) -- parsing and compiling css files\n - [HTMLHint](https://github.com/htmlhint/HTMLHint) -- parsing and enforcing HTML standards\n - [Tailwind](https://tailwindcss.com/) - Utility-first CSS Framework\n - [Zondicons](http://www.zondicons.com) - Free SVG Icon Library\n - [Handlebars](http://handlebarsjs.com/) - HTML Templating Engine\n\n\n## Development\n\nHow to use this template to create a basic Frontend Application:\n\n1. Download template and update dependencies\n2. Create HTML files in `src/`\n    - add HtmlWebpackPlugin instances for each new output page in webpack.config.js\n    - add svg icons with `@svg()` using custom svg-pre-loader\n3. Add javascript files and reference in `src/entry.js`  (for up your application\n    - add additional javascript entry points in webpack.config.js\n    - create handlebars partials and import then add to DOM\n4. Add CSS files to `src` and import in javascript\n   - or install CSS libraries with npm and import\n5. Use `npm run start-watch` to compile and run dev server + tests in watch mode\n   - or `npm run start-dev` to run the dev server and reload on changes\n6. Navigate http://localhost:3030/ to see a development version of your web app with Hot reloading\n   - or http://localhost:3030/docs/ to see the documentation\n\n\n### Tests/Running\n\n`npm run start-watch` to run Karma + Mocha and watch for changes while also opening the Webpack dev server that will recompile the project and reload the webpage on file changes on http://localhost:3030\n\n`npm run test-watch` to run Karma + Mocha and all of the tests associated with the project and watch for changes on the files to re-run the tests\n\n`npm run dev-watch` to run the only webpack development server and watch for changes on the files to reload\n\n`npm run test-dev` to start the unit test runner for debugging unit tests in the browser\n\n`npm run test` to run all of the unit tests for the application one time\n\n`npm run lint` to run the linter on src directory\n\n`npm run build` compile application to public directory\n\n`npm run doc` to generate static documentation in the doc folder\n\n`npm run doc-image` to update sourcemap image and static documentation in the doc folder\n\n**TODO**\n\n`npm run build-prod` ... TODO: create prod config\n\n`npm run clean` ... TODO: clean the workspace\n\n\n\n### TODO\n - [x] Install Dev Dependencies\n - [x] (^) Webpack config\n - [x] (^) Karma\n - [x] (^) Include eslint in test-watch?\n - [x] (^) Combined build and test watch\n - [x] (^) Setup Mocha\n    - [x] (-) Setup global test objects\n - [x] (^) Karma webpack integration (for tests in browser)\n    - [x] (^) Use rebuilt bundle when running tests\n - [x] (^) Flowtype eslint plugin\n - [x] (-) Setup EsDoc  \n    - [x] ~~(v) run doc before commit?~~ (run on merge to master)\n - [x] ~~(-) Prettier for autofix~~ (just use eslint atom plugin with fix)\n - [x] (^) karma/mocha unit test debugging ~~(with atom?)~~ in browser\n - [x] (^) Demo app in docs\n - [x] (^) Move js to `src/app`\n - [x] (^) Fix single build process (args/if statement in webpack)\n - [x] (^) Update linting rules\n      - with descturing/filenames/naming conventions? https://github.com/devlinjunker/JS.Fun/tree/master/play/test.eslint#eslint-exploration\n      - testing rules\n      - naming conventions?\n - [ ] ~~(^) Absolute Paths~~\n - [x] (^) Update Node Version to v10\n - [x] (^) Update Dependencies\n - [x] (^) Different Folders for examples\n - [x] (^) HTML Page with important stuff\n   - header/tags\n - [x] (^) Github Actions ----->> Build doc on commit to master <<-----\n - [x] (^) HTML Linting?\n   - https://github.com/htmlhint/HTMLHint\n   - Took some finagling to get this to work during watch process\n - [x] Clearing/standardizing browser css\n   - Normalize CSS http://nicolasgallagher.com/about-normalize-css/\n - [..] PostCSS?\n   - ecosystem of parsing css files\n   - [..] (^) CSS Linting\n      - stylelint\n      - bem linting? https://github.com/postcss/postcss-bem-linter#stylelint-plugin\n   - [x] css variables/hierarchy?\n      - https://github.com/jonathantneal/precss\n    - autoprefixer for making css look cleaner (browser prefixes don't need to be added)\n    - list all selectors used: https://github.com/davidtheclark/list-selectors\n - [x] (^) Madge?\n - [x] (^) Manual in Docs\n - [x] (^) HTML template example\n   - webpack/lodash style? https://github.com/emaphp/underscore-template-loader\n   - handlebars?\n      - seems like this isn't the best for javascript components, although it will work for this basic repo\n      - problems with handlebar-webpack-plugin and webpack-dev-server\n   - [x] Components (javascript methods that return compiled html, has params for template variables)\n - [x] (^) Base CSS Style for all apps\n - [x] (^) CSS Framework\n   - [x] Tailwind - integrates with javascript\n - [ ] (^) Styleguide\n    - Page in docsite\n    - Examples: http://styleguides.io/examples.html\n      - http://codeforamerica.clearleft.com/#\n    - Fractal? https://github.com/adamlindqvist/fractal-webpack-plugin\n - [ ] (^) Githooks\n - [ ] (^) Configuration File\n - [ ] (^) If running in development -> console errors/warnings appear in UI bubble\n - [..] Helpers\n   - ~~Localstorage~~\n   - Performance Loggers (start/end/post to api? file?)\n   - Internal API Helper\n   - External API Helper?\n - [ ] Accessibility Linting\n    - https://github.com/pa11y/pa11y\n    - ASLint\n    - https://www.24a11y.com/2017/reacts-accessibility-code-linter/\n - [ ] Basic UI Framework (other repos?)\n    - [ ] Backbone?\n    - [ ] Vue?\n    - [ ] React?\n    - [ ] Aurelia\n  - [ ] Fork of this Repo with different directories for each css framework?\n    - [ ] bulma https://bulma.io/documentation/overview/start/\n    - [ ] Bootstrap?\n    - [ ] Foundation?\n    - [ ] Material Design?\n - [ ] (-) Mock API requests on localhost\n    - Contract testing? https://docs.pact.io/\n    - OpenAPI validation of mocks? https://bitbucket.org/atlassian/swagger-mock-validator/src/master/\n - [ ] (-) production configuration for webpack\n    - Improve build speed in develop https://webpack.js.org/guides/build-performance/\n    - Build caching https://webpack.js.org/guides/caching/\n    - Minimize?\n    - No Warnings? No output in tests?\n    - CSS Generated to File and included at top of HTML\n    - Accessibility validation?\n - [ ] (-) cleaner output from watch script?\n - [ ] (v) Cypress UI Testing?\n - [ ] (v) Serve docs with small script and `npm run doc-serve`\n - [ ] (v) package.json main script\n    - (install/run application and open browser? or just point to entry or AppController?)\n - [ ] (v) parameterize directories in package.json scripts?\n    - better npm script?\n\n**Application**\n - [x] Local Storage DataService\n - [x] Controller/Component for saving/retrieving stored vals\n - [x] Interface for displaying vals\n - [ ] Weather/Other Free API\n - [ ] Redux Example (w/o React)\n - [ ] React Example\n   - [ ] Notebook App\n     - [ ] Daily Scratchpad\n     - [ ] Save/Read Github Gists\n       - https://developer.github.com/v3/gists/#list-gists-for-the-authenticated-user\n     - [ ] Github Readmes in my repos and save with commit\n     - [ ] Sorting Notes\n       - A-Z\n       - Date Created?\n       - Date Modified\n       - Custom (with dragging)\n     - [ ] Font Size\n     - [ ] Tagging\n       - drag to tag\n       - multiple tags per note\n       - shift+click on tags section to filter notes\n - [ ] GraphQL Example\n - [ ] Websocket?\n\n## Notes/Ideas\n - PostCSS vs CSS-Loader?\n - Why hold much state/data in UI rather than display from server on page load?\n    - Pros:\n      - Speed for user (when results can be preloaded)\n      - Saves money in server computation costs to create UI/remember state\n    - Cons:\n      - Lots of bandwidth to deliver Single Page App\n      - Can be slower when building large UI after data call\n    - Overall: Save state/preload data in client to improve user experience. Use server for speed\n      - Use client when small objects can be stored/edited and returned\n      - Use server for displayed only data\n    - Redux for sharing state between client/server\n    - When should we vs static webpages? React/React Static?\n - Backbone for UI? Seems simpler than react? Doesn't rely/revolve around instant response to interaction\n - [ ] GraphQL\n",
+    "content": "---\nversion: 0.8.0-SNAPSHOT\n---\n\n# Template Webpack FEND App\n\n[![GitHub License](https://img.shields.io/github/license/devlinjunker/template.webpack.fend?color=blue)](https://github.com/devlinjunker/template.webpack.fend/blob/master/LICENSE)\n[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdevlinjunker%2Ftemplate.webpack.fend.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdevlinjunker%2Ftemplate.webpack.fend?ref=badge_shield)  \n[![GitHub last commit](https://img.shields.io/github/last-commit/devlinjunker/template.webpack.fend)](https://github.com/devlinjunker/template.webpack.fend/commits/master)\n[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/devlinjunker/template.webpack.fend/Doc%20Build%20on%20Merge%20to%20%60master%60)](https://github.com/devlinjunker/template.webpack.fend/actions)  \n![Dependency Check by David](https://img.shields.io/david/devlinjunker/template.webpack.fend)\n![Dev Dependency Check by David](https://img.shields.io/david/dev/devlinjunker/template.webpack.fend)  \n[![ESDoc Status](https://raw.githubusercontent.com/devlinjunker/template.webpack.fend/master/docs/badge.svg)](https://devlinjunker.github.io/template.webpack.fend/source.html)\n[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/4332/badge)](https://bestpractices.coreinfrastructure.org/projects/4332)  \n[![GitHub issues](https://img.shields.io/github/issues/devlinjunker/template.webpack.fend)](https://github.com/devlinjunker/template.webpack.fend/issues)\n[![GitHub issues by-label](https://img.shields.io/github/issues/devlinjunker/template.webpack.fend/-priority?color=red&label=priority%20issues)](https://github.com/devlinjunker/template.webpack.fend/issues?q=is%3Aopen+is%3Aissue+label%3A-priority)\n\n## Intro\n\nTemplate and Example using Webpack to build a FEND Browser App (with HTML/CSS/JS and Image files).\n\n**Demo:**\n - Simple web interface for storing values in the Browser Local Storage.\n - Local Storage - Todo List \n - Partial Example (HTML/Javascript in modular files)\n\n## Dependencies/Frameworks\nNode v12+ and npm\n\nSee package.json([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/package.json))\nfor full list of current dependencies\n - [Webpack](https://webpack.js.org/) + [Loaders ](https://webpack.js.org/concepts/loaders/)-- managing the build process\n - [Babel](https://babeljs.io/) -- compiling newer ECMA2016+ into browser-capable javascript\n - [FlowJS](https://flow.org/) -- adding types to javascript\n - [ESLint](http://eslint.org/) -- enforcing javascript code style\n - [Webpack Dev Server](https://github.com/webpack/webpack-dev-server)-- rapid development with hot reloading\n - [Mocha](https://mochajs.org/), [Chai](https://www.chaijs.com/), and [Sinon](https://sinonjs.org/) -- unit testing\n - [Karma](https://karma-runner.github.io/) -- managing tests in different browsers\n - [EsDoc](https://esdoc.org/) -- creating easy javascript documentation\n - [PostCSS](https://postcss.org/) -- parsing and compiling css files\n - [HTMLHint](https://github.com/htmlhint/HTMLHint) -- parsing and enforcing HTML standards\n - [Tailwind](https://tailwindcss.com/) - Utility-first CSS Framework\n - [Zondicons](http://www.zondicons.com) - Free SVG Icon Library\n - [Handlebars](http://handlebarsjs.com/) - HTML Templating Engine\n\n\n## Quick Setup/Run\n\nHow to use this template to create a basic Frontend Application:\n\n1. Download template and update dependencies\n2. Create HTML files in `src/`\n    - add HtmlWebpackPlugin instances for each new output page in webpack.config.js\n    - add svg icons with `@svg()` using custom svg-pre-loader\n3. Add javascript files and create entry file (reference in `src/example/` directory)\n    - add javascript entry point configs in webpack.config.js\n    - create handlebars partials and import, then add to DOM\n4. Add CSS files to `src/` and import in javascript\n   - or install CSS libraries with npm and import\n5. Use `npm run start-watch` to compile and run dev server + tests in watch mode\n   - or `npm run start-dev` to run the dev server and reload on changes\n6. Navigate http://localhost:3030/ to see a development version of your web app with Hot reloading\n   - or http://localhost:3030/docs/ to see the documentation\n\n\n### Tests/Running\n\n`npm run start-watch` to run Karma + Mocha and watch for changes while also opening the Webpack dev server that will recompile the project and reload the webpage on file changes on http://localhost:3030\n\n`npm run test-watch` to run Karma + Mocha and all of the tests associated with the project and watch for changes on the files to re-run the tests\n\n`npm run dev-watch` to run the only webpack development server and watch for changes on the files to reload\n\n`npm run test-dev` to start the unit test runner for debugging unit tests in the browser\n\n`npm run test` to run all of the unit tests for the application one time\n\n`npm run lint` to run the linter on src directory\n\n`npm run build` compile application to public directory\n\n`npm run doc` to generate static documentation in the doc folder\n\n`npm run doc-image` to update sourcemap image and static documentation in the doc folder\n\n**TODO**\n\n`npm run build-prod` ... TODO: create prod config\n\n`npm run clean` ... TODO: clean the workspace\n\n`npm run start` start production\n\n`npm run stop` stop production\n\n`npm run restart` (should work after start/stop setup)\n\n## Links\n\n- [Code of Conduct](CODE_OF_CONDUCT.md)\n- [Contribute](CONTRIBUTING.md)\n- [Doc Site](https://devlinjunker.github.io/template.webpack.fend/)\n- [Wiki](https://github.com/devlinjunker/template.webpack.fend/wiki)\n- [Notes](https://github.com/devlinjunker/template.webpack.fend/blob/master/NOTES.md)\n\n## Contributors\n\n- [Devlin Junker (Me!)](mailto:devlinjunker@gmail.com)\n",
     "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/README.md",
     "name": "./README.md",
     "static": true,
@@ -1436,7 +1436,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"version\": \"0.1.0\",\n  \"name\": \"Template-WebpackFEND\",\n  \"description\": \"Template using Webpack to create a html/javascript/css pages with multiple files\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/devlinjunker/template.webpack.fend\"\n  },\n  \"keywords\": [\n    \"template\",\n    \"webpack\",\n    \"fend\",\n    \"babel\",\n    \"flow\",\n    \"eslint\",\n    \"esdoc\",\n    \"browser\",\n    \"html\",\n    \"css\",\n    \"javascript\"\n  ],\n  \"author\": \"devlin.junker@gmail.com\",\n  \"license\": \"MIT\",\n  \"main\": \"target/app.bundle.js\",\n  \"scripts\": {\n    \"start-watch\": \"node_modules/karma/bin/karma start --env.dev_server\",\n    \"dev-watch\": \"./node_modules/.bin/webpack --env.dev_server\",\n    \"test-watch\": \"node_modules/karma/bin/karma start\",\n    \"test-dev\": \"node_modules/karma/bin/karma start --single-run=false --browser=Chrome --auto-watch\",\n    \"test\": \"node_modules/karma/bin/karma start --single-run\",\n    \"build\": \"./node_modules/.bin/webpack\",\n    \"lint\": \"./node_modules/.bin/eslint ./src\",\n    \"doc\": \"npm run build && (./node_modules/.bin/esdoc; rm -rf docs/demo/; mv -f public/ docs/demo/)\",\n    \"doc-image\": \"madge ./src -i docs/image/dependency.png && npm run doc\",\n    \"clean\": \" ## TODO: clean up project files\"\n  },\n  \"dependencies\": {\n    \"lodash\": \"^4.17.19\",\n    \"normalize.css\": \"^8.0.1\",\n    \"tailwindcss\": \"^1.4.4\"\n  },\n  \"devDependencies\": {\n    \"@babel/core\": \"^7.9.0\",\n    \"@babel/polyfill\": \"^7.8.7\",\n    \"@babel/preset-env\": \"^7.9.5\",\n    \"@babel/preset-flow\": \"^7.9.0\",\n    \"@babel/register\": \"^7.9.0\",\n    \"autoprefixer\": \"^9.7.6\",\n    \"babel-eslint\": \"^10.1.0\",\n    \"babel-loader\": \"^8.1.0\",\n    \"chai\": \"^4.2.0\",\n    \"chai-as-promised\": \"^7.1.1\",\n    \"circular-dependency-plugin\": \"^5.2.0\",\n    \"clean-webpack-plugin\": \"^1.0.1\",\n    \"css-loader\": \"^2.1.0\",\n    \"electron-rebuild\": \"^1.10.1\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-flow-plugin\": \"^1.0.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^5.15.1\",\n    \"eslint-config-prettier\": \"^4.1.0\",\n    \"eslint-import-resolver-webpack\": \"^0.11.0\",\n    \"eslint-loader\": \"^2.1.2\",\n    \"eslint-plugin-filenames\": \"^1.3.2\",\n    \"eslint-plugin-flowtype\": \"^3.4.2\",\n    \"eslint-plugin-flowtype-errors\": \"^4.2.0\",\n    \"eslint-plugin-header\": \"^3.0.0\",\n    \"eslint-plugin-import\": \"^2.20.2\",\n    \"eslint-plugin-mocha\": \"^6.3.0\",\n    \"eslint-plugin-prettier\": \"^3.1.3\",\n    \"file-loader\": \"^3.0.1\",\n    \"flow-bin\": \"^0.93.0\",\n    \"flow-typed\": \"^2.6.2\",\n    \"flow-webpack-plugin\": \"^1.2.0\",\n    \"handlebars\": \"^4.7.6\",\n    \"handlebars-loader\": \"^1.7.1\",\n    \"html-webpack-plugin\": \"^3.2.0\",\n    \"htmlhint\": \"^0.11.0\",\n    \"ignore-styles\": \"^5.0.1\",\n    \"karma\": \"^3.1.4\",\n    \"karma-chrome-launcher\": \"^2.2.0\",\n    \"karma-eslint\": \"^2.2.0\",\n    \"karma-firefox-launcher\": \"^1.3.0\",\n    \"karma-mocha\": \"^1.3.0\",\n    \"karma-sourcemap-loader\": \"^0.3.7\",\n    \"karma-webpack\": \"^4.0.2\",\n    \"list-selectors\": \"^2.0.0\",\n    \"madge\": \"^3.8.0\",\n    \"mini-css-extract-plugin\": \"^0.9.0\",\n    \"mocha\": \"^6.2.3\",\n    \"postcss-exclude-files\": \"^1.0.15\",\n    \"postcss-import\": \"^12.0.1\",\n    \"postcss-loader\": \"^3.0.0\",\n    \"postcss-preset-env\": \"^6.7.0\",\n    \"postcss-reporter\": \"^6.0.1\",\n    \"precss\": \"^4.0.0\",\n    \"prettier\": \"^1.19.1\",\n    \"sinon\": \"^7.2.7\",\n    \"sinon-chai\": \"^3.5.0\",\n    \"style-loader\": \"^0.23.1\",\n    \"stylelint\": \"^13.3.3\",\n    \"stylelint-config-standard\": \"^20.0.0\",\n    \"svg-inline-loader\": \"^0.8.2\",\n    \"underscore-template-loader\": \"^1.1.0\",\n    \"webpack\": \"^4.43.0\",\n    \"webpack-cli\": \"^3.3.11\",\n    \"webpack-dev-server\": \"^3.10.3\",\n    \"write-file-webpack-plugin\": \"^4.5.1\"\n  }\n}\n",
+    "content": "{\n  \"version\": \"0.8.0-SNAPSHOT\",\n  \"name\": \"Template-WebpackFEND\",\n  \"description\": \"Template using Webpack to create a html/javascript/css pages with multiple files\",\n  \"engines\": {\n    \"node\": \">=10.0.0\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/devlinjunker/template.webpack.fend\"\n  },\n  \"keywords\": [\n    \"template\",\n    \"webpack\",\n    \"fend\",\n    \"babel\",\n    \"flow\",\n    \"eslint\",\n    \"esdoc\",\n    \"browser\",\n    \"html\",\n    \"css\",\n    \"javascript\"\n  ],\n  \"author\": \"devlin.junker@gmail.com\",\n  \"license\": \"MIT\",\n  \"main\": \"target/app.bundle.js\",\n  \"scripts\": {\n    \"start-watch\": \"node_modules/karma/bin/karma start --env.dev_server\",\n    \"dev-watch\": \"./node_modules/.bin/webpack --env.dev_server\",\n    \"test-watch\": \"node_modules/karma/bin/karma start\",\n    \"test-dev\": \"node_modules/karma/bin/karma start --single-run=false --browser=Chrome --auto-watch\",\n    \"test\": \"node_modules/karma/bin/karma start --single-run\",\n    \"build\": \"./node_modules/.bin/webpack\",\n    \"lint\": \"./node_modules/.bin/eslint ./src\",\n    \"doc\": \"npm run build && (./node_modules/.bin/esdoc; rm -rf docs/demo/; mv -f public/ docs/demo/)\",\n    \"doc-image\": \"madge ./src -i docs/image/dependency.png && npm run doc\",\n    \"clean\": \" ## TODO: clean up project files\"\n  },\n  \"dependencies\": {\n    \"lodash\": \"^4.17.19\",\n    \"normalize.css\": \"^8.0.1\",\n    \"tailwindcss\": \"^1.4.4\"\n  },\n  \"devDependencies\": {\n    \"@babel/core\": \"^7.9.0\",\n    \"@babel/polyfill\": \"^7.8.7\",\n    \"@babel/preset-env\": \"^7.9.5\",\n    \"@babel/preset-flow\": \"^7.9.0\",\n    \"@babel/register\": \"^7.9.0\",\n    \"autoprefixer\": \"^9.7.6\",\n    \"babel-eslint\": \"^10.1.0\",\n    \"babel-loader\": \"^8.1.0\",\n    \"chai\": \"^4.2.0\",\n    \"chai-as-promised\": \"^7.1.1\",\n    \"circular-dependency-plugin\": \"^5.2.0\",\n    \"clean-webpack-plugin\": \"^1.0.1\",\n    \"css-loader\": \"^2.1.0\",\n    \"electron-rebuild\": \"^1.10.1\",\n    \"esdoc\": \"^1.1.0\",\n    \"esdoc-flow-plugin\": \"^1.0.0\",\n    \"esdoc-standard-plugin\": \"^1.0.0\",\n    \"eslint\": \"^5.15.1\",\n    \"eslint-config-prettier\": \"^4.1.0\",\n    \"eslint-import-resolver-webpack\": \"^0.11.0\",\n    \"eslint-loader\": \"^2.1.2\",\n    \"eslint-plugin-filenames\": \"^1.3.2\",\n    \"eslint-plugin-flowtype\": \"^3.4.2\",\n    \"eslint-plugin-flowtype-errors\": \"^4.2.0\",\n    \"eslint-plugin-header\": \"^3.0.0\",\n    \"eslint-plugin-import\": \"^2.20.2\",\n    \"eslint-plugin-mocha\": \"^6.3.0\",\n    \"eslint-plugin-prettier\": \"^3.1.3\",\n    \"file-loader\": \"^3.0.1\",\n    \"flow-bin\": \"^0.93.0\",\n    \"flow-typed\": \"^2.6.2\",\n    \"flow-webpack-plugin\": \"^1.2.0\",\n    \"handlebars\": \"^4.7.6\",\n    \"handlebars-loader\": \"^1.7.1\",\n    \"html-webpack-plugin\": \"^3.2.0\",\n    \"htmlhint\": \"^0.11.0\",\n    \"ignore-styles\": \"^5.0.1\",\n    \"karma\": \"^3.1.4\",\n    \"karma-chrome-launcher\": \"^2.2.0\",\n    \"karma-eslint\": \"^2.2.0\",\n    \"karma-firefox-launcher\": \"^1.3.0\",\n    \"karma-mocha\": \"^1.3.0\",\n    \"karma-sourcemap-loader\": \"^0.3.7\",\n    \"karma-webpack\": \"^4.0.2\",\n    \"list-selectors\": \"^2.0.0\",\n    \"madge\": \"^3.8.0\",\n    \"mini-css-extract-plugin\": \"^0.9.0\",\n    \"mocha\": \"^6.2.3\",\n    \"postcss-exclude-files\": \"^1.0.15\",\n    \"postcss-import\": \"^12.0.1\",\n    \"postcss-loader\": \"^3.0.0\",\n    \"postcss-preset-env\": \"^6.7.0\",\n    \"postcss-reporter\": \"^6.0.1\",\n    \"precss\": \"^4.0.0\",\n    \"prettier\": \"^1.19.1\",\n    \"sinon\": \"^7.2.7\",\n    \"sinon-chai\": \"^3.5.0\",\n    \"style-loader\": \"^0.23.1\",\n    \"stylelint\": \"^13.3.3\",\n    \"stylelint-config-standard\": \"^20.0.0\",\n    \"svg-inline-loader\": \"^0.8.2\",\n    \"underscore-template-loader\": \"^1.1.0\",\n    \"webpack\": \"^4.43.0\",\n    \"webpack-cli\": \"^3.3.11\",\n    \"webpack-dev-server\": \"^3.10.3\",\n    \"write-file-webpack-plugin\": \"^4.5.1\"\n  }\n}\n",
     "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/package.json",
     "name": "package.json",
     "static": true,
@@ -1460,24 +1460,24 @@
   },
   {
     "kind": "manual",
-    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/README.entry.md",
-    "name": "./src/README.entry.md",
+    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/example/README.entry.md",
+    "name": "./src/example/README.entry.md",
     "content": "# Javascript Entry Points\nThe `webpack.config.js`([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/webpack.config.js))\ndefines entry points for javascript bundles that can be created for each page, or can be optimized to bundle\ncode that can be cached separately, loaded asynchronously or lazy loaded, after the page has loaded and rendered.\n\nThese bundles are separately included on each HTML page (defined with the `HTMLWebpackPlugin` in the Webpack\nconfig) and will execute in the order they are included on the webpage. The files in these bundles are separate\nmodules and self-contained, so any variables will only be available within that module context. However, any\nitems declared at the global level in a bundle  (`e.g.global.property = 'value';`) will be available in any other\nbundle that is on that HTML page, as well..\n\n\n## Importing Files\nThe javascript file that is referenced as an entry point, can import other files and/or libraries using either\nCommonJS Module syntax (e.g. `const package = require('module')`) or using ECMA6(ES2015) syntax (e.g. `import\npackage from 'lib'`). These files will then be included in the generated bundle for that entry point.\n\nThe file types available to import are defined in the `rules` section of the Webpack config:\n - Javascript (.js) Files\n - CSS (.css) Files\n - Images (.png/.svg/.jp(e)g/gif) Files\n\n## Entry Notes/Ideas\n - [ ] Fonts\n",
     "static": true,
     "access": "public"
   },
   {
     "kind": "manual",
-    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/README.html.md",
-    "name": "./src/README.html.md",
+    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/example/README.html.md",
+    "name": "./src/example/README.html.md",
     "content": "# HTML\nHTML files structure the layout of the web application. The final HTML files are generated by webpack and\noutput to the `public/` directory when building with `npm run build` and define the pages that can be accessed via browser in the final application.\n\n\n## Webpack\nThe webpack.config.js file([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/webpack.config.js))\ndefines the HTML pages that will be generated by the build process. For each instance of the HtmlWebpackPlugin\nin the `plugins` section, webpack will output a new HTML file using the `template` at the `filename` provided\n(inside of `public/`).\n\n### Page Header Meta Attributes\nThe `<meta>` webpage attributes are passed into the instance of the HtmlWebpackPlugin for each page defined in\nthe webpack config file. These attributes could be dynamically set for each page if desired, or can be the same\nfor each html page (as they are currently) and imported from a json file([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/src/meta.json))\n\n### Templating\n\n#### Static\nSimple Static HTML Templating can be done with the [underscore-lodash-loader](https://github.com/emaphp/underscore-template-loader).\nThis loader allow HTML files to be imported during the compilation process using `@require` or `@import`\nin the HTML files, and also enables variables that can be replaced when the HTML is generated (e.g. `<%=\nname %>`) will be replaced if we use `@import(<file_name>, { name: \"Devlin Junker\" })` with `Devlin Junker`.\n\n#### Dynamic Javascript Components (Handlebars)\nMore complicated components (especially those that require javascript or looping/conditional statements\nshould be written with handlebars in the `components/` directory.\n\nIf the component should respond to user interactions and events, the component should have a `.hbs` file\nand an `index.js` file containing a function, that imports the `.hbs` file and compiles it with the\nparameters and handlers passed in.\n\nOther, less complex components can be written purely in `.hbs` files with helpers and partials.\n\n## HTML Linting\nDuring the build process, webpack is configured to lint the final HTML files after each successful build with\n[htmlhint](https://github.com/htmlhint/HTMLHint) to spot any errors in the HTML structure. This will cause an\nerror in the build process output. You can see the rules defined in the .htmlhintrc file\n([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/.htmlhintrc)).\n\nThese include:\n - Requiring Doctype\n - Disabling Inline CSS Styles on elements\n - Attribute naming conventions\n - Requiring some accessibility attributes\n\n\n## HTML Notes/Ideas\n - [x] Templating\n - [ ] Accessibility Linting\n - [ ] UI Framework?\n",
     "static": true,
     "access": "public"
   },
   {
     "kind": "manual",
-    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/README.css.md",
-    "name": "./src/README.css.md",
+    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/example/README.css.md",
+    "name": "./src/example/README.css.md",
     "content": "# CSS\nCSS defines the look and feel of the application, giving style to the HTML elements on the page. This project\nuses a couple of tools during the build process to ensure quality CSS code with some of the most recent improvements to the CSS ecosystem.\n\nThe project can parse and import either `.scss` or `.css` files via javascript module imports, the `.scss`\nfile ending is used so IDEs have an easier time with syntax highlighting.\n\n## Tailwind CSS Framework (Utility First)\n[Tailwind](https://tailwindcss.com) is included in this project to style the application. Tailwind is a\ncomposable, [utility-first](https://tailwindcss.com/docs/utility-first/) css framework. This is a shift from\nthe \"semantic\" based css conventions where classes/styles are defined around a name that has meaning in the\napplication domain. In this way of thinking, css classes define a consistent look and feel of the application.\nThese utility classes are then applied to the elements in each html file to create a consistent style across the application that is not predefined.\n\nTailwind is built on top of [normalize.css](http://necolas.github.io/normalize.css/) to standardize the look and feel of the application across multiple browsers and clear any default styles.\n\nTailwind's [colors](https://tailwindcss.com/docs/customizing-colors/#default-color-palette)/padding/etc is\ncustomizable via the [theme](https://tailwindcss.com/docs/theme/) in the\n[tailwind.config.js](https://github.com/devlinjunker/template.webpack.fend/blob/master/tailwind.config.js)\n\nReview [these screencasts](https://tailwindcss.com/screencasts/) and other [resources](https://tailwindcss.com/resources)\nfor more information. Visit the docs for [configuration](https://tailwindcss.com/docs/configuration) and notes\non [each rule](https://tailwindcss.com/docs/container) as well as some [example components](https://tailwindcss.com/components)\n\n## Mini CSS Extract Plugin\nThe webpack config file([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/webpack.config.js))\nimports the `mini-css-extract-plugin` and loader to extract all css styles that have been imported into the\njavascript bundles created by webpack. This enables the stylesheets to be referenced in the HTML file\nseparately, so they can be linked at the top of the page and loaded first and also so they can be cached in\nthe browser to speed up page load.\n\n## PostCSS\n[PostCSS](https://postcss.org/) is a javascript tool that parses and transforms the CSS files. The webpack\nconfig contains a reference to the `postcss-loader` so that css files can be generated during the\nbuild process from css files that are referenced in the codebase. The postcss.config.js file([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/postcss.config.js))\ndefines the plugins that we use during the PostCSS parsing and generation process.\n\n### PreCSS and PostCSS-Preset-Env\n[PreCSS](https://github.com/jonathantneal/precss) enables SASS like features in the css files including variables\nand nesting selectors generating the proper definition in the final CSS file.\nThe [PostCSS-Preset-Env](https://preset-env.cssdb.org/features) plugin enables many new CSS features listed at\nthe link provided.\n\n### Stylelint\n[Stylelint](https://stylelint.io) is used to validate the css file uses proper syntax. The rules for this project\nare defined in the `.stylelintrc` file ([github]()). The rules extend the\n[Standard Stylelint Config](https://github.com/stylelint/stylelint-config-standard),\nand additional rules can be added to this config file.\n\nSee list of all rules: [here](https://stylelint.io/user-guide/rules/list)  \nSee list of suggested Additions: [here](https://github.com/stylelint/stylelint-config-standard#suggested-additions)\n\n### Autoprefixer\n[Autoprefixer](https://github.com/postcss/autoprefixer) is used to help keep the css files clean by automatically\nadding browser/vendor prefixes to css rules.\n\n### List Selectors\n[List Selectors](https://github.com/davidtheclark/list-selectors) is a plugin that we use to generate a\njson file containing the css selectors that are processed by PostCSS.\n - [ ] Show output selectors, not input\n - [ ] Map of selectors to css rules?\n\n## CSS Notes/Ideas\n - Guidelines: https://cssguidelin.es/\n - IDEA: During development (`npm run start-watch`) css is included in JS bundles for faster build\n      - only extract during production to improve the look and feel of app loading\n - [ ] BEM Linting?\n - [ ] Styleguide\n - [ ] Framework Demos (Separate Repo?)\n - MVP (Product/Business) Style: https://andybrewer.github.io/mvp/\n   - remember this for the future if need a splash screen for company/product/webapp\n",
     "static": true,
     "access": "public"
@@ -1518,7 +1518,7 @@
     "kind": "manual",
     "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/scripts/README.scripts.md",
     "name": "./scripts/README.scripts.md",
-    "content": "# Actions and Githooks\nThis project uses github actions([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/.github/workflows/master-merge.yml))\nto enforce actions/checks and workflow processes on github.\n\n### On Merge to Master\nWhenever a PR is merged master, the documentation is updated based on the changes the user made in\nthe commits. A git action([github]()) is set up to do the following:\n - Collect README files and update wiki\n - Fix/remove links in Wiki\n - Build documentation and generate commit\n\nThis Action requires the Git repo to have a secret configured in the Settings page named `GH_PAT` that\ncontains a Github Personal Access Token from your user account: https://github.com/settings/tokens.\nThere is also a reference to the repo name in the script, so you will need to ensure that this is updated if\nthe repo name is different.\n\n### Master Build Status\nThis action checks the build status of the project and verifies that all of the tests and style linters are\nnot failing. This occurs for every commit in a Github PR against the `master` branch, and for every commit (push)\nto the `master` branch on Github.\n\nRuns:\n - linter\n - build (with webpack)\n - tests (karma)\n\n## Githooks\nTODO...\n\n## Github Specific\nWhenever a PR is made on Github, the body/description will be pre-populated with the contents in\n`.github/PULL_REQUEST_TEMPLATE.md`\n",
+    "content": "# Actions and Githooks\nThis project uses github actions([github](https://github.com/devlinjunker/template.webpack.fend/blob/master/.github/workflows/master-merge.yml))\nto enforce actions/checks and workflow processes on github.\n\n### On Merge to Master\nWhenever a PR is merged master, the documentation is updated based on the changes the user made in\nthe commits. A git action([github]()) is set up to do the following:\n - Collect README files and update wiki\n - Fix/remove links in Wiki\n - Build documentation and generate commit\n\nThis Action requires the Git repo to have a secret configured in the Settings page named `GH_PAT` that\ncontains a Github Personal Access Token from your user account: https://github.com/settings/tokens.\nThere is also a reference to the repo name in the script, so you will need to ensure that this is updated if\nthe repo name is different.\n\n### Master Build Status\nThis action checks the build status of the project and verifies that all of the tests and style linters are\nnot failing. This occurs for every commit in a Github PR against the `master` branch, and for every commit (push)\nto the `master` branch on Github.\n\n\n### Label Manager\nThis project defines the Github Labels in a [YAML file](https://github.com/devlinjunker/template.webpack.fend/blob/master/.github/labels.yaml) that is managed by the [Github Labeler Action](https://github.com/marketplace/actions/github-labeler). \nAny labels that are not defined in this file will be removed every time this action is run. **This does not affect PRs**\n\n\nRuns:\n - linter\n - build (with webpack)\n - tests (karma)\n\n## Githooks\nTODO...\n\n## Github Specific\nWhenever a PR is made on Github, the body/description will be pre-populated with the contents in\n`.github/PULL_REQUEST_TEMPLATE.md`\n",
     "static": true,
     "access": "public"
   },
@@ -1541,10 +1541,10 @@
   {
     "__docId__": 87,
     "kind": "testFile",
-    "name": "src/helpers/local-storage.helper.spec.js",
-    "content": "/**\n * @flow\n */\nimport LocalStorageHelper from './local-storage.helper';\n\ndescribe('local-storage.helper', function() {\n\n  describe('#save', function() {\n\n    it('should use local storage to save value with key', function() {\n      sandbox.spy(localStorage, 'setItem');\n      const key = 'test';\n      const val = 'val';\n\n      LocalStorageHelper.save({\n        key: 'test',\n        val: 'val',\n      });\n\n      expect(localStorage.setItem).to.be.called;\n      expect(localStorage.setItem.args[0][0]).to.equal(key);\n      expect(localStorage.setItem.args[0][1]).to.equal(val);\n    });\n\n    it('should stringify objects before saving them', function() {\n      sandbox.spy(localStorage, 'setItem');\n\n      const val = {\n        test: 123\n      };\n      LocalStorageHelper.save({\n        key: 'abc',\n        val\n      });\n\n      const stringified = JSON.stringify(val);\n      expect(localStorage.setItem.args[0]).to.include(stringified);\n    });\n\n    it('should be able to retrieve value using key with #get', function() {\n      const val = 'test';\n      const key = 'abc';\n\n      LocalStorageHelper.save({\n        key,\n        val\n      });\n\n      const saved = LocalStorageHelper.get({\n        key\n      });\n\n      expect(saved).to.equal(val);\n    });\n  });\n\n  describe('#get', function() {\n\n    it('should retrieve value from local storage using key', function() {\n      sandbox.stub(localStorage, 'getItem').returns('abc');\n      const key = 'test';\n\n      LocalStorageHelper.get({\n        key\n      });\n\n      expect(localStorage.getItem).to.be.called;\n      expect(localStorage.getItem.args[0][0]).to.equal(key);\n    });\n\n    it('should return object if object stored', function() {\n      const key = 'abc';\n      const val = {\n        test: 123\n      };\n      LocalStorageHelper.save({\n        key,\n        val\n      });\n\n      const returned = LocalStorageHelper.get({ key });\n      expect(returned).to.deep.equal(val);\n    });\n\n    it('should throw error if requesting key with no value assigned', function() {\n      const key = 'unused_123_abc';\n\n      expect(() => {\n        LocalStorageHelper.get({ key });\n      }).to.throw();\n    });\n  });\n});\n",
+    "name": "src/example/storage/app.controller.spec.js",
+    "content": "/**\n * @flow\n */\nimport AppController from './app.controller';\nimport LocalStorageHelper from '../../helpers/local-storage.helper';\n\ndescribe('App Controller', function() {\n  let controller;\n  const saveBtn = {};\n  const getBtn = {};\n  const clearBtn = {};\n\n  describe('#constructor', function() {\n    it('should set up handlers', function() {\n      sandbox.stub(document, 'getElementsByClassName').callsFake((param): any => {\n        if (param === 'save-btn') {\n          return [saveBtn];\n        } else if (param === 'get-btn') {\n          return [getBtn];\n        } else {\n          return [clearBtn];\n        }\n      });\n\n      controller = new AppController();\n\n      expect(saveBtn.onclick).to.not.be.undefined;\n      expect(getBtn.onclick).to.not.be.undefined;\n      expect(clearBtn.onclick).to.not.be.undefined;\n    });\n  });\n\n  describe('#save', function() {\n    it('should save values with localStorage service', function() {\n      const saveStub = sandbox.stub(LocalStorageHelper, 'save');\n      controller.keyInput = {\n        value: 'abc'\n      };\n\n      controller.valInput = {\n        value: 'val'\n      };\n\n      controller.save();\n\n      expect(saveStub).to.be.calledWith({ key: 'abc', val: 'val' });\n    });\n\n    // TODO: finish spec\n    it('should display message to user when saving');\n  });\n\n  describe('#view', function() {\n    it('should retrieve values from localStorage service and display', function() {\n      const getStub = sandbox.stub(LocalStorageHelper, 'get');\n      controller.keyInput = {\n        value: 'abc'\n      };\n\n      controller.view();\n\n      expect(getStub).to.be.calledWith({ key: 'abc' });\n    });\n\n    // TODO: finish spec\n    it('should display message if error retrieving value');\n  });\n\n  describe('#clearValue', function() {\n    it('should clear the input value', function() {\n      controller.valInput = {\n        value: 'abc'\n      };\n\n      controller.clearValue();\n\n      expect(controller.valInput.value).to.equal('');\n    });\n  });\n});\n",
     "static": true,
-    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/helpers/local-storage.helper.spec.js",
+    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/example/storage/app.controller.spec.js",
     "access": null,
     "description": null,
     "lineNumber": 1
@@ -1554,270 +1554,270 @@
     "kind": "test",
     "name": "describe0",
     "testId": 0,
-    "memberof": "src/helpers/local-storage.helper.spec.js",
+    "memberof": "src/example/storage/app.controller.spec.js",
     "testDepth": 0,
     "static": true,
-    "longname": "src/helpers/local-storage.helper.spec.js~describe0",
+    "longname": "src/example/storage/app.controller.spec.js~describe0",
     "access": null,
-    "description": "local-storage.helper",
-    "lineNumber": 3
+    "description": "App Controller",
+    "lineNumber": 4
   },
   {
     "__docId__": 89,
     "kind": "test",
     "name": "describe1",
     "testId": 1,
-    "memberof": "src/helpers/local-storage.helper.spec.js~describe0",
+    "memberof": "src/example/storage/app.controller.spec.js~describe0",
     "testDepth": 1,
     "static": true,
-    "longname": "src/helpers/local-storage.helper.spec.js~describe0.describe1",
+    "longname": "src/example/storage/app.controller.spec.js~describe0.describe1",
     "access": null,
-    "description": "#save",
-    "lineNumber": 5
+    "description": "#constructor",
+    "lineNumber": 10
   },
   {
     "__docId__": 90,
     "kind": "test",
     "name": "it2",
     "testId": 2,
-    "memberof": "src/helpers/local-storage.helper.spec.js~describe0.describe1",
+    "memberof": "src/example/storage/app.controller.spec.js~describe0.describe1",
     "testDepth": 2,
     "static": true,
-    "longname": "src/helpers/local-storage.helper.spec.js~describe0.describe1.it2",
+    "longname": "src/example/storage/app.controller.spec.js~describe0.describe1.it2",
     "access": null,
-    "description": "should use local storage to save value with key",
-    "lineNumber": 7
+    "description": "should set up handlers",
+    "lineNumber": 11
   },
   {
     "__docId__": 91,
     "kind": "test",
-    "name": "it3",
+    "name": "describe3",
     "testId": 3,
-    "memberof": "src/helpers/local-storage.helper.spec.js~describe0.describe1",
-    "testDepth": 2,
+    "memberof": "src/example/storage/app.controller.spec.js~describe0",
+    "testDepth": 1,
     "static": true,
-    "longname": "src/helpers/local-storage.helper.spec.js~describe0.describe1.it3",
+    "longname": "src/example/storage/app.controller.spec.js~describe0.describe3",
     "access": null,
-    "description": "should stringify objects before saving them",
-    "lineNumber": 22
+    "description": "#save",
+    "lineNumber": 30
   },
   {
     "__docId__": 92,
     "kind": "test",
     "name": "it4",
     "testId": 4,
-    "memberof": "src/helpers/local-storage.helper.spec.js~describe0.describe1",
+    "memberof": "src/example/storage/app.controller.spec.js~describe0.describe3",
     "testDepth": 2,
     "static": true,
-    "longname": "src/helpers/local-storage.helper.spec.js~describe0.describe1.it4",
+    "longname": "src/example/storage/app.controller.spec.js~describe0.describe3.it4",
     "access": null,
-    "description": "should be able to retrieve value using key with #get",
-    "lineNumber": 37
+    "description": "should save values with localStorage service",
+    "lineNumber": 31
   },
   {
     "__docId__": 93,
     "kind": "test",
-    "name": "describe5",
+    "name": "it5",
     "testId": 5,
-    "memberof": "src/helpers/local-storage.helper.spec.js~describe0",
-    "testDepth": 1,
+    "memberof": "src/example/storage/app.controller.spec.js~describe0.describe3",
+    "testDepth": 2,
     "static": true,
-    "longname": "src/helpers/local-storage.helper.spec.js~describe0.describe5",
+    "longname": "src/example/storage/app.controller.spec.js~describe0.describe3.it5",
     "access": null,
-    "description": "#get",
-    "lineNumber": 54
+    "description": "should display message to user when saving",
+    "lineNumber": 47
   },
   {
     "__docId__": 94,
     "kind": "test",
-    "name": "it6",
+    "name": "describe6",
     "testId": 6,
-    "memberof": "src/helpers/local-storage.helper.spec.js~describe0.describe5",
-    "testDepth": 2,
+    "memberof": "src/example/storage/app.controller.spec.js~describe0",
+    "testDepth": 1,
     "static": true,
-    "longname": "src/helpers/local-storage.helper.spec.js~describe0.describe5.it6",
+    "longname": "src/example/storage/app.controller.spec.js~describe0.describe6",
     "access": null,
-    "description": "should retrieve value from local storage using key",
-    "lineNumber": 56
+    "description": "#view",
+    "lineNumber": 50
   },
   {
     "__docId__": 95,
     "kind": "test",
     "name": "it7",
     "testId": 7,
-    "memberof": "src/helpers/local-storage.helper.spec.js~describe0.describe5",
+    "memberof": "src/example/storage/app.controller.spec.js~describe0.describe6",
     "testDepth": 2,
     "static": true,
-    "longname": "src/helpers/local-storage.helper.spec.js~describe0.describe5.it7",
+    "longname": "src/example/storage/app.controller.spec.js~describe0.describe6.it7",
     "access": null,
-    "description": "should return object if object stored",
-    "lineNumber": 68
+    "description": "should retrieve values from localStorage service and display",
+    "lineNumber": 51
   },
   {
     "__docId__": 96,
     "kind": "test",
     "name": "it8",
     "testId": 8,
-    "memberof": "src/helpers/local-storage.helper.spec.js~describe0.describe5",
+    "memberof": "src/example/storage/app.controller.spec.js~describe0.describe6",
     "testDepth": 2,
     "static": true,
-    "longname": "src/helpers/local-storage.helper.spec.js~describe0.describe5.it8",
+    "longname": "src/example/storage/app.controller.spec.js~describe0.describe6.it8",
     "access": null,
-    "description": "should throw error if requesting key with no value assigned",
-    "lineNumber": 82
+    "description": "should display message if error retrieving value",
+    "lineNumber": 63
   },
   {
     "__docId__": 97,
-    "kind": "testFile",
-    "name": "src/storage/app.controller.spec.js",
-    "content": "/**\n * @flow\n */\nimport AppController from './app.controller';\nimport LocalStorageHelper from '../helpers/local-storage.helper';\n\ndescribe('App Controller', function() {\n  let controller;\n  const saveBtn = {};\n  const getBtn = {};\n  const clearBtn = {};\n\n  describe('#constructor', function() {\n    it('should set up handlers', function() {\n      sandbox.stub(document, 'getElementsByClassName').callsFake((param): any => {\n        if (param === 'save-btn') {\n          return [saveBtn];\n        } else if (param === 'get-btn') {\n          return [getBtn];\n        } else {\n          return [clearBtn];\n        }\n      });\n\n      controller = new AppController();\n\n      expect(saveBtn.onclick).to.not.be.undefined;\n      expect(getBtn.onclick).to.not.be.undefined;\n      expect(clearBtn.onclick).to.not.be.undefined;\n    });\n  });\n\n  describe('#save', function() {\n    it('should save values with localStorage service', function() {\n      const saveStub = sandbox.stub(LocalStorageHelper, 'save');\n      controller.keyInput = {\n        value: 'abc'\n      };\n\n      controller.valInput = {\n        value: 'val'\n      };\n\n      controller.save();\n\n      expect(saveStub).to.be.calledWith({ key: 'abc', val: 'val' });\n    });\n\n    // TODO: finish spec\n    it('should display message to user when saving');\n  });\n\n  describe('#view', function() {\n    it('should retrieve values from localStorage service and display', function() {\n      const getStub = sandbox.stub(LocalStorageHelper, 'get');\n      controller.keyInput = {\n        value: 'abc'\n      };\n\n      controller.view();\n\n      expect(getStub).to.be.calledWith({ key: 'abc' });\n    });\n\n    // TODO: finish spec\n    it('should display message if error retrieving value');\n  });\n\n  describe('#clearValue', function() {\n    it('should clear the input value', function() {\n      controller.valInput = {\n        value: 'abc'\n      };\n\n      controller.clearValue();\n\n      expect(controller.valInput.value).to.equal('');\n    });\n  });\n});\n",
+    "kind": "test",
+    "name": "describe9",
+    "testId": 9,
+    "memberof": "src/example/storage/app.controller.spec.js~describe0",
+    "testDepth": 1,
     "static": true,
-    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/storage/app.controller.spec.js",
+    "longname": "src/example/storage/app.controller.spec.js~describe0.describe9",
+    "access": null,
+    "description": "#clearValue",
+    "lineNumber": 66
+  },
+  {
+    "__docId__": 98,
+    "kind": "test",
+    "name": "it10",
+    "testId": 10,
+    "memberof": "src/example/storage/app.controller.spec.js~describe0.describe9",
+    "testDepth": 2,
+    "static": true,
+    "longname": "src/example/storage/app.controller.spec.js~describe0.describe9.it10",
+    "access": null,
+    "description": "should clear the input value",
+    "lineNumber": 67
+  },
+  {
+    "__docId__": 99,
+    "kind": "testFile",
+    "name": "src/helpers/local-storage.helper.spec.js",
+    "content": "/**\n * @flow\n */\nimport LocalStorageHelper from './local-storage.helper';\n\ndescribe('local-storage.helper', function() {\n\n  describe('#save', function() {\n\n    it('should use local storage to save value with key', function() {\n      sandbox.spy(localStorage, 'setItem');\n      const key = 'test';\n      const val = 'val';\n\n      LocalStorageHelper.save({\n        key: 'test',\n        val: 'val',\n      });\n\n      expect(localStorage.setItem).to.be.called;\n      expect(localStorage.setItem.args[0][0]).to.equal(key);\n      expect(localStorage.setItem.args[0][1]).to.equal(val);\n    });\n\n    it('should stringify objects before saving them', function() {\n      sandbox.spy(localStorage, 'setItem');\n\n      const val = {\n        test: 123\n      };\n      LocalStorageHelper.save({\n        key: 'abc',\n        val\n      });\n\n      const stringified = JSON.stringify(val);\n      expect(localStorage.setItem.args[0]).to.include(stringified);\n    });\n\n    it('should be able to retrieve value using key with #get', function() {\n      const val = 'test';\n      const key = 'abc';\n\n      LocalStorageHelper.save({\n        key,\n        val\n      });\n\n      const saved = LocalStorageHelper.get({\n        key\n      });\n\n      expect(saved).to.equal(val);\n    });\n  });\n\n  describe('#get', function() {\n\n    it('should retrieve value from local storage using key', function() {\n      sandbox.stub(localStorage, 'getItem').returns('abc');\n      const key = 'test';\n\n      LocalStorageHelper.get({\n        key\n      });\n\n      expect(localStorage.getItem).to.be.called;\n      expect(localStorage.getItem.args[0][0]).to.equal(key);\n    });\n\n    it('should return object if object stored', function() {\n      const key = 'abc';\n      const val = {\n        test: 123\n      };\n      LocalStorageHelper.save({\n        key,\n        val\n      });\n\n      const returned = LocalStorageHelper.get({ key });\n      expect(returned).to.deep.equal(val);\n    });\n\n    it('should throw error if requesting key with no value assigned', function() {\n      const key = 'unused_123_abc';\n\n      expect(() => {\n        LocalStorageHelper.get({ key });\n      }).to.throw();\n    });\n  });\n});\n",
+    "static": true,
+    "longname": "/home/runner/work/template.webpack.fend/template.webpack.fend/src/helpers/local-storage.helper.spec.js",
     "access": null,
     "description": null,
     "lineNumber": 1
   },
   {
-    "__docId__": 98,
-    "kind": "test",
-    "name": "describe9",
-    "testId": 9,
-    "memberof": "src/storage/app.controller.spec.js",
-    "testDepth": 0,
-    "static": true,
-    "longname": "src/storage/app.controller.spec.js~describe9",
-    "access": null,
-    "description": "App Controller",
-    "lineNumber": 4
-  },
-  {
-    "__docId__": 99,
-    "kind": "test",
-    "name": "describe10",
-    "testId": 10,
-    "memberof": "src/storage/app.controller.spec.js~describe9",
-    "testDepth": 1,
-    "static": true,
-    "longname": "src/storage/app.controller.spec.js~describe9.describe10",
-    "access": null,
-    "description": "#constructor",
-    "lineNumber": 10
-  },
-  {
     "__docId__": 100,
     "kind": "test",
-    "name": "it11",
+    "name": "describe11",
     "testId": 11,
-    "memberof": "src/storage/app.controller.spec.js~describe9.describe10",
-    "testDepth": 2,
+    "memberof": "src/helpers/local-storage.helper.spec.js",
+    "testDepth": 0,
     "static": true,
-    "longname": "src/storage/app.controller.spec.js~describe9.describe10.it11",
+    "longname": "src/helpers/local-storage.helper.spec.js~describe11",
     "access": null,
-    "description": "should set up handlers",
-    "lineNumber": 11
+    "description": "local-storage.helper",
+    "lineNumber": 3
   },
   {
     "__docId__": 101,
     "kind": "test",
     "name": "describe12",
     "testId": 12,
-    "memberof": "src/storage/app.controller.spec.js~describe9",
+    "memberof": "src/helpers/local-storage.helper.spec.js~describe11",
     "testDepth": 1,
     "static": true,
-    "longname": "src/storage/app.controller.spec.js~describe9.describe12",
+    "longname": "src/helpers/local-storage.helper.spec.js~describe11.describe12",
     "access": null,
     "description": "#save",
-    "lineNumber": 30
+    "lineNumber": 5
   },
   {
     "__docId__": 102,
     "kind": "test",
     "name": "it13",
     "testId": 13,
-    "memberof": "src/storage/app.controller.spec.js~describe9.describe12",
+    "memberof": "src/helpers/local-storage.helper.spec.js~describe11.describe12",
     "testDepth": 2,
     "static": true,
-    "longname": "src/storage/app.controller.spec.js~describe9.describe12.it13",
+    "longname": "src/helpers/local-storage.helper.spec.js~describe11.describe12.it13",
     "access": null,
-    "description": "should save values with localStorage service",
-    "lineNumber": 31
+    "description": "should use local storage to save value with key",
+    "lineNumber": 7
   },
   {
     "__docId__": 103,
     "kind": "test",
     "name": "it14",
     "testId": 14,
-    "memberof": "src/storage/app.controller.spec.js~describe9.describe12",
+    "memberof": "src/helpers/local-storage.helper.spec.js~describe11.describe12",
     "testDepth": 2,
     "static": true,
-    "longname": "src/storage/app.controller.spec.js~describe9.describe12.it14",
+    "longname": "src/helpers/local-storage.helper.spec.js~describe11.describe12.it14",
     "access": null,
-    "description": "should display message to user when saving",
-    "lineNumber": 47
+    "description": "should stringify objects before saving them",
+    "lineNumber": 22
   },
   {
     "__docId__": 104,
     "kind": "test",
-    "name": "describe15",
+    "name": "it15",
     "testId": 15,
-    "memberof": "src/storage/app.controller.spec.js~describe9",
-    "testDepth": 1,
+    "memberof": "src/helpers/local-storage.helper.spec.js~describe11.describe12",
+    "testDepth": 2,
     "static": true,
-    "longname": "src/storage/app.controller.spec.js~describe9.describe15",
+    "longname": "src/helpers/local-storage.helper.spec.js~describe11.describe12.it15",
     "access": null,
-    "description": "#view",
-    "lineNumber": 50
+    "description": "should be able to retrieve value using key with #get",
+    "lineNumber": 37
   },
   {
     "__docId__": 105,
     "kind": "test",
-    "name": "it16",
+    "name": "describe16",
     "testId": 16,
-    "memberof": "src/storage/app.controller.spec.js~describe9.describe15",
-    "testDepth": 2,
+    "memberof": "src/helpers/local-storage.helper.spec.js~describe11",
+    "testDepth": 1,
     "static": true,
-    "longname": "src/storage/app.controller.spec.js~describe9.describe15.it16",
+    "longname": "src/helpers/local-storage.helper.spec.js~describe11.describe16",
     "access": null,
-    "description": "should retrieve values from localStorage service and display",
-    "lineNumber": 51
+    "description": "#get",
+    "lineNumber": 54
   },
   {
     "__docId__": 106,
     "kind": "test",
     "name": "it17",
     "testId": 17,
-    "memberof": "src/storage/app.controller.spec.js~describe9.describe15",
+    "memberof": "src/helpers/local-storage.helper.spec.js~describe11.describe16",
     "testDepth": 2,
     "static": true,
-    "longname": "src/storage/app.controller.spec.js~describe9.describe15.it17",
+    "longname": "src/helpers/local-storage.helper.spec.js~describe11.describe16.it17",
     "access": null,
-    "description": "should display message if error retrieving value",
-    "lineNumber": 63
+    "description": "should retrieve value from local storage using key",
+    "lineNumber": 56
   },
   {
     "__docId__": 107,
     "kind": "test",
-    "name": "describe18",
+    "name": "it18",
     "testId": 18,
-    "memberof": "src/storage/app.controller.spec.js~describe9",
-    "testDepth": 1,
+    "memberof": "src/helpers/local-storage.helper.spec.js~describe11.describe16",
+    "testDepth": 2,
     "static": true,
-    "longname": "src/storage/app.controller.spec.js~describe9.describe18",
+    "longname": "src/helpers/local-storage.helper.spec.js~describe11.describe16.it18",
     "access": null,
-    "description": "#clearValue",
-    "lineNumber": 66
+    "description": "should return object if object stored",
+    "lineNumber": 68
   },
   {
     "__docId__": 108,
     "kind": "test",
     "name": "it19",
     "testId": 19,
-    "memberof": "src/storage/app.controller.spec.js~describe9.describe18",
+    "memberof": "src/helpers/local-storage.helper.spec.js~describe11.describe16",
     "testDepth": 2,
     "static": true,
-    "longname": "src/storage/app.controller.spec.js~describe9.describe18.it19",
+    "longname": "src/helpers/local-storage.helper.spec.js~describe11.describe16.it19",
     "access": null,
-    "description": "should clear the input value",
-    "lineNumber": 67
+    "description": "should throw error if requesting key with no value assigned",
+    "lineNumber": 82
   }
 ]

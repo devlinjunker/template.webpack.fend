@@ -117,6 +117,7 @@
     <li data-ice="manualNav" class="indent-h1" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html" data-ice="link">Actions and Githooks</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#on-merge-to-master" data-ice="link">On Merge to Master</a></li>
 <li data-ice="manualNav" class="indent-h3" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#master-build-status" data-ice="link">Master Build Status</a></li>
+<li data-ice="manualNav" class="indent-h3" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#label-manager" data-ice="link">Label Manager</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#githooks" data-ice="link">Githooks</a></li>
 <li data-ice="manualNav" class="indent-h2" data-link="manual/README.scripts.html"><a href="manual/README.scripts.html#github-specific" data-ice="link">Github Specific</a></li>
 </ul>
@@ -157,6 +158,8 @@ the repo name is different.</p>
 <h3 id="master-build-status">Master Build Status</h3><p>This action checks the build status of the project and verifies that all of the tests and style linters are
 not failing. This occurs for every commit in a Github PR against the <code>master</code> branch, and for every commit (push)
 to the <code>master</code> branch on Github.</p>
+<h3 id="label-manager">Label Manager</h3><p>This project defines the Github Labels in a <a href="https://github.com/devlinjunker/template.webpack.fend/blob/master/.github/labels.yaml">YAML file</a> that is managed by the <a href="https://github.com/marketplace/actions/github-labeler">Github Labeler Action</a>. 
+Any labels that are not defined in this file will be removed every time this action is run. <strong>This does not affect PRs</strong></p>
 <p>Runs:</p>
 <ul>
 <li>linter</li>

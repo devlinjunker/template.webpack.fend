@@ -3,6 +3,35 @@
   "expectCount": 30,
   "actualCount": 24,
   "files": {
+    "src/example/storage/app.controller.js": {
+      "expectCount": 7,
+      "actualCount": 5,
+      "undocumentLines": [
+        13,
+        14
+      ]
+    },
+    "src/example/todo/app.controller.js": {
+      "expectCount": 12,
+      "actualCount": 10,
+      "undocumentLines": [
+        19,
+        28
+      ]
+    },
+    "src/example/todo/components/add-input/index.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "src/example/todo/models/todo.model.js": {
+      "expectCount": 5,
+      "actualCount": 3,
+      "undocumentLines": [
+        15,
+        16
+      ]
+    },
     "src/helpers/handlebars/default-val.js": {
       "expectCount": 1,
       "actualCount": 1,
@@ -17,35 +46,6 @@
       "expectCount": 3,
       "actualCount": 3,
       "undocumentLines": []
-    },
-    "src/storage/app.controller.js": {
-      "expectCount": 7,
-      "actualCount": 5,
-      "undocumentLines": [
-        13,
-        14
-      ]
-    },
-    "src/todo/app.controller.js": {
-      "expectCount": 12,
-      "actualCount": 10,
-      "undocumentLines": [
-        19,
-        28
-      ]
-    },
-    "src/todo/components/add-input/index.js": {
-      "expectCount": 1,
-      "actualCount": 1,
-      "undocumentLines": []
-    },
-    "src/todo/models/todo.model.js": {
-      "expectCount": 5,
-      "actualCount": 3,
-      "undocumentLines": [
-        15,
-        16
-      ]
     }
   }
 }

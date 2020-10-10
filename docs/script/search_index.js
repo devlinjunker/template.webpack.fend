@@ -6,92 +6,92 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "template-webpackfend/src/storage/app.controller.js~storageappcontroller",
-    "class/src/storage/app.controller.js~StorageAppController.html",
-    "<span>StorageAppController</span> <span class=\"search-result-import-path\">Template-WebpackFEND/src/storage/app.controller.js</span>",
+    "template-webpackfend/src/example/storage/app.controller.js~storageappcontroller",
+    "class/src/example/storage/app.controller.js~StorageAppController.html",
+    "<span>StorageAppController</span> <span class=\"search-result-import-path\">Template-WebpackFEND/src/example/storage/app.controller.js</span>",
     "class"
   ],
   [
-    "template-webpackfend/src/todo/models/todo.model.js~todo",
-    "class/src/todo/models/todo.model.js~Todo.html",
-    "<span>Todo</span> <span class=\"search-result-import-path\">Template-WebpackFEND/src/todo/models/todo.model.js</span>",
+    "template-webpackfend/src/example/todo/models/todo.model.js~todo",
+    "class/src/example/todo/models/todo.model.js~Todo.html",
+    "<span>Todo</span> <span class=\"search-result-import-path\">Template-WebpackFEND/src/example/todo/models/todo.model.js</span>",
     "class"
   ],
   [
-    "template-webpackfend/src/todo/app.controller.js~todoappcontroller",
-    "class/src/todo/app.controller.js~TodoAppController.html",
-    "<span>TodoAppController</span> <span class=\"search-result-import-path\">Template-WebpackFEND/src/todo/app.controller.js</span>",
+    "template-webpackfend/src/example/todo/app.controller.js~todoappcontroller",
+    "class/src/example/todo/app.controller.js~TodoAppController.html",
+    "<span>TodoAppController</span> <span class=\"search-result-import-path\">Template-WebpackFEND/src/example/todo/app.controller.js</span>",
     "class"
   ],
   [
-    "template-webpackfend/src/todo/components/add-input/index.js~addinputcomponentfactory",
+    "template-webpackfend/src/example/todo/components/add-input/index.js~addinputcomponentfactory",
     "function/index.html#static-function-addInputComponentFactory",
-    "<span>addInputComponentFactory</span> <span class=\"search-result-import-path\">Template-WebpackFEND/src/todo/components/add-input/index.js</span>",
+    "<span>addInputComponentFactory</span> <span class=\"search-result-import-path\">Template-WebpackFEND/src/example/todo/components/add-input/index.js</span>",
     "function"
   ],
   [
     "",
-    "test-file/src/storage/app.controller.spec.js.html#lineNumber4",
+    "test-file/src/example/storage/app.controller.spec.js.html#lineNumber4",
     "App Controller",
     "test"
   ],
   [
     "",
-    "test-file/src/storage/app.controller.spec.js.html#lineNumber66",
+    "test-file/src/example/storage/app.controller.spec.js.html#lineNumber66",
     "App Controller #clearValue",
     "test"
   ],
   [
     "",
-    "test-file/src/storage/app.controller.spec.js.html#lineNumber67",
+    "test-file/src/example/storage/app.controller.spec.js.html#lineNumber67",
     "App Controller #clearValue should clear the input value",
     "test"
   ],
   [
     "",
-    "test-file/src/storage/app.controller.spec.js.html#lineNumber10",
+    "test-file/src/example/storage/app.controller.spec.js.html#lineNumber10",
     "App Controller #constructor",
     "test"
   ],
   [
     "",
-    "test-file/src/storage/app.controller.spec.js.html#lineNumber11",
+    "test-file/src/example/storage/app.controller.spec.js.html#lineNumber11",
     "App Controller #constructor should set up handlers",
     "test"
   ],
   [
     "",
-    "test-file/src/storage/app.controller.spec.js.html#lineNumber30",
+    "test-file/src/example/storage/app.controller.spec.js.html#lineNumber30",
     "App Controller #save",
     "test"
   ],
   [
     "",
-    "test-file/src/storage/app.controller.spec.js.html#lineNumber47",
+    "test-file/src/example/storage/app.controller.spec.js.html#lineNumber47",
     "App Controller #save should display message to user when saving",
     "test"
   ],
   [
     "",
-    "test-file/src/storage/app.controller.spec.js.html#lineNumber31",
+    "test-file/src/example/storage/app.controller.spec.js.html#lineNumber31",
     "App Controller #save should save values with localStorage service",
     "test"
   ],
   [
     "",
-    "test-file/src/storage/app.controller.spec.js.html#lineNumber50",
+    "test-file/src/example/storage/app.controller.spec.js.html#lineNumber50",
     "App Controller #view",
     "test"
   ],
   [
     "",
-    "test-file/src/storage/app.controller.spec.js.html#lineNumber63",
+    "test-file/src/example/storage/app.controller.spec.js.html#lineNumber63",
     "App Controller #view should display message if error retrieving value",
     "test"
   ],
   [
     "",
-    "test-file/src/storage/app.controller.spec.js.html#lineNumber51",
+    "test-file/src/example/storage/app.controller.spec.js.html#lineNumber51",
     "App Controller #view should retrieve values from localStorage service and display",
     "test"
   ],
@@ -432,6 +432,162 @@ window.esdocSearchIndex = [
     "external"
   ],
   [
+    "src/example/storage/app.controller.js",
+    "file/src/example/storage/app.controller.js.html",
+    "src/example/storage/app.controller.js",
+    "file"
+  ],
+  [
+    "src/example/storage/app.controller.js~storageappcontroller#clearvalue",
+    "class/src/example/storage/app.controller.js~StorageAppController.html#instance-method-clearValue",
+    "src/example/storage/app.controller.js~StorageAppController#clearValue",
+    "method"
+  ],
+  [
+    "src/example/storage/app.controller.js~storageappcontroller#constructor",
+    "class/src/example/storage/app.controller.js~StorageAppController.html#instance-constructor-constructor",
+    "src/example/storage/app.controller.js~StorageAppController#constructor",
+    "method"
+  ],
+  [
+    "src/example/storage/app.controller.js~storageappcontroller#keyinput",
+    "class/src/example/storage/app.controller.js~StorageAppController.html#instance-member-keyInput",
+    "src/example/storage/app.controller.js~StorageAppController#keyInput",
+    "member"
+  ],
+  [
+    "src/example/storage/app.controller.js~storageappcontroller#save",
+    "class/src/example/storage/app.controller.js~StorageAppController.html#instance-method-save",
+    "src/example/storage/app.controller.js~StorageAppController#save",
+    "method"
+  ],
+  [
+    "src/example/storage/app.controller.js~storageappcontroller#valinput",
+    "class/src/example/storage/app.controller.js~StorageAppController.html#instance-member-valInput",
+    "src/example/storage/app.controller.js~StorageAppController#valInput",
+    "member"
+  ],
+  [
+    "src/example/storage/app.controller.js~storageappcontroller#view",
+    "class/src/example/storage/app.controller.js~StorageAppController.html#instance-method-view",
+    "src/example/storage/app.controller.js~StorageAppController#view",
+    "method"
+  ],
+  [
+    "src/example/storage/app.controller.spec.js",
+    "test-file/src/example/storage/app.controller.spec.js.html",
+    "src/example/storage/app.controller.spec.js",
+    "testFile"
+  ],
+  [
+    "src/example/todo/app.controller.js",
+    "file/src/example/todo/app.controller.js.html",
+    "src/example/todo/app.controller.js",
+    "file"
+  ],
+  [
+    "src/example/todo/app.controller.js~todoappcontroller#add",
+    "class/src/example/todo/app.controller.js~TodoAppController.html#instance-method-add",
+    "src/example/todo/app.controller.js~TodoAppController#add",
+    "method"
+  ],
+  [
+    "src/example/todo/app.controller.js~todoappcontroller#addinput",
+    "class/src/example/todo/app.controller.js~TodoAppController.html#instance-member-addInput",
+    "src/example/todo/app.controller.js~TodoAppController#addInput",
+    "member"
+  ],
+  [
+    "src/example/todo/app.controller.js~todoappcontroller#constructor",
+    "class/src/example/todo/app.controller.js~TodoAppController.html#instance-constructor-constructor",
+    "src/example/todo/app.controller.js~TodoAppController#constructor",
+    "method"
+  ],
+  [
+    "src/example/todo/app.controller.js~todoappcontroller#handleaddtodo",
+    "class/src/example/todo/app.controller.js~TodoAppController.html#instance-method-handleAddTodo",
+    "src/example/todo/app.controller.js~TodoAppController#handleAddTodo",
+    "method"
+  ],
+  [
+    "src/example/todo/app.controller.js~todoappcontroller#handleremovetodo",
+    "class/src/example/todo/app.controller.js~TodoAppController.html#instance-method-handleRemoveTodo",
+    "src/example/todo/app.controller.js~TodoAppController#handleRemoveTodo",
+    "method"
+  ],
+  [
+    "src/example/todo/app.controller.js~todoappcontroller#handletoggletodo",
+    "class/src/example/todo/app.controller.js~TodoAppController.html#instance-method-handleToggleTodo",
+    "src/example/todo/app.controller.js~TodoAppController#handleToggleTodo",
+    "method"
+  ],
+  [
+    "src/example/todo/app.controller.js~todoappcontroller#list",
+    "class/src/example/todo/app.controller.js~TodoAppController.html#instance-member-list",
+    "src/example/todo/app.controller.js~TodoAppController#list",
+    "member"
+  ],
+  [
+    "src/example/todo/app.controller.js~todoappcontroller#loadlist",
+    "class/src/example/todo/app.controller.js~TodoAppController.html#instance-method-loadList",
+    "src/example/todo/app.controller.js~TodoAppController#loadList",
+    "method"
+  ],
+  [
+    "src/example/todo/app.controller.js~todoappcontroller#remove",
+    "class/src/example/todo/app.controller.js~TodoAppController.html#instance-method-remove",
+    "src/example/todo/app.controller.js~TodoAppController#remove",
+    "method"
+  ],
+  [
+    "src/example/todo/app.controller.js~todoappcontroller#renderlist",
+    "class/src/example/todo/app.controller.js~TodoAppController.html#instance-method-renderList",
+    "src/example/todo/app.controller.js~TodoAppController#renderList",
+    "method"
+  ],
+  [
+    "src/example/todo/app.controller.js~todoappcontroller#savelist",
+    "class/src/example/todo/app.controller.js~TodoAppController.html#instance-method-saveList",
+    "src/example/todo/app.controller.js~TodoAppController#saveList",
+    "method"
+  ],
+  [
+    "src/example/todo/components/add-input/index.js",
+    "file/src/example/todo/components/add-input/index.js.html",
+    "src/example/todo/components/add-input/index.js",
+    "file"
+  ],
+  [
+    "src/example/todo/models/todo.model.js",
+    "file/src/example/todo/models/todo.model.js.html",
+    "src/example/todo/models/todo.model.js",
+    "file"
+  ],
+  [
+    "src/example/todo/models/todo.model.js~todo#complete",
+    "class/src/example/todo/models/todo.model.js~Todo.html#instance-member-complete",
+    "src/example/todo/models/todo.model.js~Todo#complete",
+    "member"
+  ],
+  [
+    "src/example/todo/models/todo.model.js~todo#constructor",
+    "class/src/example/todo/models/todo.model.js~Todo.html#instance-constructor-constructor",
+    "src/example/todo/models/todo.model.js~Todo#constructor",
+    "method"
+  ],
+  [
+    "src/example/todo/models/todo.model.js~todo#description",
+    "class/src/example/todo/models/todo.model.js~Todo.html#instance-member-description",
+    "src/example/todo/models/todo.model.js~Todo#description",
+    "member"
+  ],
+  [
+    "src/example/todo/models/todo.model.js~todo#togglecomplete",
+    "class/src/example/todo/models/todo.model.js~Todo.html#instance-method-toggleComplete",
+    "src/example/todo/models/todo.model.js~Todo#toggleComplete",
+    "method"
+  ],
+  [
     "src/helpers/handlebars/default-val.js",
     "file/src/helpers/handlebars/default-val.js.html",
     "src/helpers/handlebars/default-val.js",
@@ -472,161 +628,5 @@ window.esdocSearchIndex = [
     "file/src/helpers/relative-href.helper.js.html",
     "src/helpers/relative-href.helper.js",
     "file"
-  ],
-  [
-    "src/storage/app.controller.js",
-    "file/src/storage/app.controller.js.html",
-    "src/storage/app.controller.js",
-    "file"
-  ],
-  [
-    "src/storage/app.controller.js~storageappcontroller#clearvalue",
-    "class/src/storage/app.controller.js~StorageAppController.html#instance-method-clearValue",
-    "src/storage/app.controller.js~StorageAppController#clearValue",
-    "method"
-  ],
-  [
-    "src/storage/app.controller.js~storageappcontroller#constructor",
-    "class/src/storage/app.controller.js~StorageAppController.html#instance-constructor-constructor",
-    "src/storage/app.controller.js~StorageAppController#constructor",
-    "method"
-  ],
-  [
-    "src/storage/app.controller.js~storageappcontroller#keyinput",
-    "class/src/storage/app.controller.js~StorageAppController.html#instance-member-keyInput",
-    "src/storage/app.controller.js~StorageAppController#keyInput",
-    "member"
-  ],
-  [
-    "src/storage/app.controller.js~storageappcontroller#save",
-    "class/src/storage/app.controller.js~StorageAppController.html#instance-method-save",
-    "src/storage/app.controller.js~StorageAppController#save",
-    "method"
-  ],
-  [
-    "src/storage/app.controller.js~storageappcontroller#valinput",
-    "class/src/storage/app.controller.js~StorageAppController.html#instance-member-valInput",
-    "src/storage/app.controller.js~StorageAppController#valInput",
-    "member"
-  ],
-  [
-    "src/storage/app.controller.js~storageappcontroller#view",
-    "class/src/storage/app.controller.js~StorageAppController.html#instance-method-view",
-    "src/storage/app.controller.js~StorageAppController#view",
-    "method"
-  ],
-  [
-    "src/storage/app.controller.spec.js",
-    "test-file/src/storage/app.controller.spec.js.html",
-    "src/storage/app.controller.spec.js",
-    "testFile"
-  ],
-  [
-    "src/todo/app.controller.js",
-    "file/src/todo/app.controller.js.html",
-    "src/todo/app.controller.js",
-    "file"
-  ],
-  [
-    "src/todo/app.controller.js~todoappcontroller#add",
-    "class/src/todo/app.controller.js~TodoAppController.html#instance-method-add",
-    "src/todo/app.controller.js~TodoAppController#add",
-    "method"
-  ],
-  [
-    "src/todo/app.controller.js~todoappcontroller#addinput",
-    "class/src/todo/app.controller.js~TodoAppController.html#instance-member-addInput",
-    "src/todo/app.controller.js~TodoAppController#addInput",
-    "member"
-  ],
-  [
-    "src/todo/app.controller.js~todoappcontroller#constructor",
-    "class/src/todo/app.controller.js~TodoAppController.html#instance-constructor-constructor",
-    "src/todo/app.controller.js~TodoAppController#constructor",
-    "method"
-  ],
-  [
-    "src/todo/app.controller.js~todoappcontroller#handleaddtodo",
-    "class/src/todo/app.controller.js~TodoAppController.html#instance-method-handleAddTodo",
-    "src/todo/app.controller.js~TodoAppController#handleAddTodo",
-    "method"
-  ],
-  [
-    "src/todo/app.controller.js~todoappcontroller#handleremovetodo",
-    "class/src/todo/app.controller.js~TodoAppController.html#instance-method-handleRemoveTodo",
-    "src/todo/app.controller.js~TodoAppController#handleRemoveTodo",
-    "method"
-  ],
-  [
-    "src/todo/app.controller.js~todoappcontroller#handletoggletodo",
-    "class/src/todo/app.controller.js~TodoAppController.html#instance-method-handleToggleTodo",
-    "src/todo/app.controller.js~TodoAppController#handleToggleTodo",
-    "method"
-  ],
-  [
-    "src/todo/app.controller.js~todoappcontroller#list",
-    "class/src/todo/app.controller.js~TodoAppController.html#instance-member-list",
-    "src/todo/app.controller.js~TodoAppController#list",
-    "member"
-  ],
-  [
-    "src/todo/app.controller.js~todoappcontroller#loadlist",
-    "class/src/todo/app.controller.js~TodoAppController.html#instance-method-loadList",
-    "src/todo/app.controller.js~TodoAppController#loadList",
-    "method"
-  ],
-  [
-    "src/todo/app.controller.js~todoappcontroller#remove",
-    "class/src/todo/app.controller.js~TodoAppController.html#instance-method-remove",
-    "src/todo/app.controller.js~TodoAppController#remove",
-    "method"
-  ],
-  [
-    "src/todo/app.controller.js~todoappcontroller#renderlist",
-    "class/src/todo/app.controller.js~TodoAppController.html#instance-method-renderList",
-    "src/todo/app.controller.js~TodoAppController#renderList",
-    "method"
-  ],
-  [
-    "src/todo/app.controller.js~todoappcontroller#savelist",
-    "class/src/todo/app.controller.js~TodoAppController.html#instance-method-saveList",
-    "src/todo/app.controller.js~TodoAppController#saveList",
-    "method"
-  ],
-  [
-    "src/todo/components/add-input/index.js",
-    "file/src/todo/components/add-input/index.js.html",
-    "src/todo/components/add-input/index.js",
-    "file"
-  ],
-  [
-    "src/todo/models/todo.model.js",
-    "file/src/todo/models/todo.model.js.html",
-    "src/todo/models/todo.model.js",
-    "file"
-  ],
-  [
-    "src/todo/models/todo.model.js~todo#complete",
-    "class/src/todo/models/todo.model.js~Todo.html#instance-member-complete",
-    "src/todo/models/todo.model.js~Todo#complete",
-    "member"
-  ],
-  [
-    "src/todo/models/todo.model.js~todo#constructor",
-    "class/src/todo/models/todo.model.js~Todo.html#instance-constructor-constructor",
-    "src/todo/models/todo.model.js~Todo#constructor",
-    "method"
-  ],
-  [
-    "src/todo/models/todo.model.js~todo#description",
-    "class/src/todo/models/todo.model.js~Todo.html#instance-member-description",
-    "src/todo/models/todo.model.js~Todo#description",
-    "member"
-  ],
-  [
-    "src/todo/models/todo.model.js~todo#togglecomplete",
-    "class/src/todo/models/todo.model.js~Todo.html#instance-method-toggleComplete",
-    "src/todo/models/todo.model.js~Todo#toggleComplete",
-    "method"
   ]
 ]

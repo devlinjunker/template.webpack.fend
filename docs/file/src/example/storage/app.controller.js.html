@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">src/example/storage/app.controller.js | Template-WebpackFEND</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+  <script src="script/matomo.js"></script>
+<meta name="description" content="Template using Webpack to create a html/javascript/css pages with multiple files"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="Template-WebpackFEND"><meta property="twitter:description" content="Template using Webpack to create a html/javascript/css pages with multiple files"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <a href="demo/index.html">Demo</a>
+<a style="position:relative; top:3px;" href="https://github.com/devlinjunker/template.webpack.fend"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#example-storage">example/storage</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/example/storage/app.controller.js~StorageAppController.html">StorageAppController</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#example-todo">example/todo</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/example/todo/app.controller.js~TodoAppController.html">TodoAppController</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#example-todo-components-add-input">example/todo/components/add-input</a><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-addInputComponentFactory">addInputComponentFactory</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#example-todo-models">example/todo/models</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/example/todo/models/todo.model.js~Todo.html">Todo</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#helpers">helpers</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/src/helpers/local-storage.helper.js~LocalStorageHelper.html">LocalStorageHelper</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/example/storage/app.controller.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">/**
+ * @flow
+ */
+import LocalStorageHelper from &apos;../../helpers/local-storage.helper&apos;;
+import &apos;./app.scss&apos;;
+/**
+ * Controller for the application
+ */
+class StorageAppController {
+  keyInput: any;
+  valInput: any;
+
+  /**
+   * Set up the app, generate html and set up event handlers
+   */
+  constructor() {
+    // TODO: Set up HTML from Template?
+    this.keyInput = document.getElementById(&apos;key-input&apos;);
+    this.valInput = document.getElementById(&apos;value-input&apos;);
+
+    document.getElementsByClassName(&apos;save-btn&apos;)[0].onclick = this.save.bind(this);
+    document.getElementsByClassName(&apos;get-btn&apos;)[0].onclick = this.view.bind(this);
+
+    document.getElementsByClassName(&apos;clear-value-btn&apos;)[0].onclick = this.clearValue.bind(this);
+  }
+
+  /**
+   * saves the value at the provided key
+   * @return {void}
+   */
+  save() {
+    // Get key and value from ui
+    const key = this.keyInput.value;
+    const val = this.valInput.value;
+
+    // save with local storage
+    LocalStorageHelper.save({ key, val });
+
+    // TODO: display message to user
+  }
+
+  /**
+   * retrieves a value using the provided key
+   * @return {String} value retrieved from local storage with key
+   */
+  view() {
+    // get key from ui
+    const key = this.keyInput.value;
+
+    // get from local storage
+    const val = LocalStorageHelper.get({ key });
+
+    // display value to user
+    this.valInput.value = val;
+  }
+
+  /**
+   * Clear the value input element of text
+   * @return {void}
+   */
+  clearValue() {
+    this.valInput.value = &apos;&apos;;
+  }
+}
+
+export default StorageAppController;
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+
+<script src="script/github-link.js"></script>
+</body>
+</html>
