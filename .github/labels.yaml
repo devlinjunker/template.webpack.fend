@@ -27,7 +27,6 @@
 - name: "feature"
   color: "0075ca" # dark blue
   description: "New Feature"
-  from_name: "enhancement"
 - name: "build"
   color: "00A0FF" # basic blue
   description: "Improvements to the build process"
