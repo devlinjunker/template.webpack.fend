@@ -64,6 +64,9 @@
  - [ ] (^) Githooks
  - [ ] (^) Configuration File
  - [ ] (^) If running in development -> console errors/warnings appear in UI bubble
+ - [ ] (^) Progressive Web App
+    - Web Manifest (JSON): https://developer.mozilla.org/en-US/docs/Web/Manifest
+    - App Shell: https://www.smashingmagazine.com/2019/06/pwa-webpack-workbox/
  - [..] Helpers
    - ~~Localstorage~~
    - Performance Loggers (start/end/post to api? file?)
