@@ -7,6 +7,9 @@ chai.use(sinonChai);
 global.expect = chai.expect;
 global.sandbox = sinon.createSandbox();
 
+
+// TODO: update the require.context based on command line arg to specify file name(s?)
+
 // require.context() is a webpack feature
 // see https://webpack.js.org/guides/dependency-management/#requirecontext
 // $FlowFixMe
